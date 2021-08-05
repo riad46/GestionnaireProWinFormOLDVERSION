@@ -1,0 +1,392 @@
+﻿
+namespace Gestionnaire_Pro
+{
+    partial class vente
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.codeBarreLabel = new System.Windows.Forms.Label();
+            this.nbrArticleLabel = new System.Windows.Forms.Label();
+            this.nbrPieceLabel = new System.Windows.Forms.Label();
+            this.totalLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.client_combo = new System.Windows.Forms.ComboBox();
+            this.remise_txt = new System.Windows.Forms.TextBox();
+            this.codeBarre_txt = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.venteTable = new System.Windows.Forms.DataGridView();
+            this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remiseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.venteTable)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.dateLabel);
+            this.panel1.Controls.Add(this.codeBarreLabel);
+            this.panel1.Controls.Add(this.nbrArticleLabel);
+            this.panel1.Controls.Add(this.nbrPieceLabel);
+            this.panel1.Controls.Add(this.totalLabel);
+            this.panel1.Location = new System.Drawing.Point(299, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(681, 202);
+            this.panel1.TabIndex = 0;
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateLabel.Font = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dateLabel.Location = new System.Drawing.Point(382, 9);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(296, 48);
+            this.dateLabel.TabIndex = 4;
+            this.dateLabel.Text = "dateTime";
+            this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // codeBarreLabel
+            // 
+            this.codeBarreLabel.Font = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.codeBarreLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.codeBarreLabel.Location = new System.Drawing.Point(12, 9);
+            this.codeBarreLabel.Name = "codeBarreLabel";
+            this.codeBarreLabel.Size = new System.Drawing.Size(193, 48);
+            this.codeBarreLabel.TabIndex = 3;
+            this.codeBarreLabel.Text = "codebarre";
+            this.codeBarreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // nbrArticleLabel
+            // 
+            this.nbrArticleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nbrArticleLabel.AutoSize = true;
+            this.nbrArticleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nbrArticleLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.nbrArticleLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nbrArticleLabel.Location = new System.Drawing.Point(12, 178);
+            this.nbrArticleLabel.Name = "nbrArticleLabel";
+            this.nbrArticleLabel.Size = new System.Drawing.Size(82, 19);
+            this.nbrArticleLabel.TabIndex = 2;
+            this.nbrArticleLabel.Text = "Nbr article";
+            // 
+            // nbrPieceLabel
+            // 
+            this.nbrPieceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nbrPieceLabel.AutoSize = true;
+            this.nbrPieceLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.nbrPieceLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nbrPieceLabel.Location = new System.Drawing.Point(112, 178);
+            this.nbrPieceLabel.Name = "nbrPieceLabel";
+            this.nbrPieceLabel.Size = new System.Drawing.Size(81, 19);
+            this.nbrPieceLabel.TabIndex = 1;
+            this.nbrPieceLabel.Text = "NBR piece";
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalLabel.Font = new System.Drawing.Font("SimSun-ExtB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.totalLabel.Location = new System.Drawing.Point(265, 133);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(413, 64);
+            this.totalLabel.TabIndex = 0;
+            this.totalLabel.Text = "00000 DA";
+            this.totalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Linen;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.client_combo);
+            this.panel2.Controls.Add(this.remise_txt);
+            this.panel2.Controls.Add(this.codeBarre_txt);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(293, 578);
+            this.panel2.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 15);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Client";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 15);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Remise";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 15);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "CodeBarre";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(85, 175);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 27);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Liste d\'Article";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // client_combo
+            // 
+            this.client_combo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.client_combo.FormattingEnabled = true;
+            this.client_combo.Location = new System.Drawing.Point(92, 108);
+            this.client_combo.Name = "client_combo";
+            this.client_combo.Size = new System.Drawing.Size(184, 33);
+            this.client_combo.TabIndex = 5;
+            // 
+            // remise_txt
+            // 
+            this.remise_txt.Font = new System.Drawing.Font("PMingLiU-ExtB", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.remise_txt.Location = new System.Drawing.Point(92, 63);
+            this.remise_txt.Name = "remise_txt";
+            this.remise_txt.Size = new System.Drawing.Size(186, 39);
+            this.remise_txt.TabIndex = 4;
+            // 
+            // codeBarre_txt
+            // 
+            this.codeBarre_txt.Font = new System.Drawing.Font("PMingLiU-ExtB", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.codeBarre_txt.Location = new System.Drawing.Point(92, 18);
+            this.codeBarre_txt.Name = "codeBarre_txt";
+            this.codeBarre_txt.Size = new System.Drawing.Size(186, 39);
+            this.codeBarre_txt.TabIndex = 3;
+            this.codeBarre_txt.TextChanged += new System.EventHandler(this.codeBarre_txt_TextChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Location = new System.Drawing.Point(0, 208);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(300, 373);
+            this.panel3.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(9, 132);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(267, 48);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Supprimer";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(9, 78);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(267, 48);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Annuler";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(267, 48);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Valider";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // venteTable
+            // 
+            this.venteTable.AllowUserToAddRows = false;
+            this.venteTable.AllowUserToDeleteRows = false;
+            this.venteTable.AllowUserToOrderColumns = true;
+            this.venteTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.venteTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.venteTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.venteTable.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.venteTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.venteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codeBarre,
+            this.nom,
+            this.QNT,
+            this.prixU,
+            this.remiseCol,
+            this.Total});
+            this.venteTable.Location = new System.Drawing.Point(299, 208);
+            this.venteTable.MultiSelect = false;
+            this.venteTable.Name = "venteTable";
+            this.venteTable.RowTemplate.Height = 25;
+            this.venteTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.venteTable.Size = new System.Drawing.Size(681, 358);
+            this.venteTable.TabIndex = 2;
+            this.venteTable.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.venteTable_CellEndEdit);
+            this.venteTable.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.venteTable_RowStateChanged);
+            // 
+            // codeBarre
+            // 
+            this.codeBarre.DataPropertyName = "codeBarre";
+            this.codeBarre.HeaderText = "codeBarre";
+            this.codeBarre.Name = "codeBarre";
+            // 
+            // nom
+            // 
+            this.nom.DataPropertyName = "nom";
+            this.nom.HeaderText = "Nom Article";
+            this.nom.Name = "nom";
+            this.nom.ReadOnly = true;
+            // 
+            // QNT
+            // 
+            this.QNT.DataPropertyName = "quantité";
+            this.QNT.HeaderText = "Quantité";
+            this.QNT.Name = "QNT";
+            // 
+            // prixU
+            // 
+            this.prixU.DataPropertyName = "prixVente";
+            this.prixU.HeaderText = "P.U";
+            this.prixU.Name = "prixU";
+            this.prixU.ReadOnly = true;
+            // 
+            // remiseCol
+            // 
+            this.remiseCol.HeaderText = "Remise";
+            this.remiseCol.Name = "remiseCol";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // vente
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(992, 578);
+            this.Controls.Add(this.venteTable);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "vente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.vente_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.venteTable)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView venteTable;
+        private System.Windows.Forms.Label codeBarreLabel;
+        private System.Windows.Forms.Label nbrArticleLabel;
+        private System.Windows.Forms.Label nbrPieceLabel;
+        private System.Windows.Forms.Label totalLabel;
+        private System.Windows.Forms.ComboBox client_combo;
+        private System.Windows.Forms.TextBox remise_txt;
+        private System.Windows.Forms.TextBox codeBarre_txt;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeBarre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QNT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prixU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remiseCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Timer timer1;
+    }
+}

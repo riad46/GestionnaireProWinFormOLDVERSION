@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestionnaire Pro", "Gestionnaire Pro.csproj", "{AFFAE162-A48D-49B7-8F2E-900895464ACF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFFAE162-A48D-49B7-8F2E-900895464ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFAE162-A48D-49B7-8F2E-900895464ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFAE162-A48D-49B7-8F2E-900895464ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFAE162-A48D-49B7-8F2E-900895464ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E1E6DD8-AF48-4FFF-9DE5-5DA71AAF1232}
+	EndGlobalSection
+EndGlobal

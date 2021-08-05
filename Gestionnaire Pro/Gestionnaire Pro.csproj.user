@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="ajouteAchat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ajouteArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ajouteClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ajouteFournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ajoutVente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="caisse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Assets\GradiantPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="historiqueVente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="infosBoutique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="listeAchat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="listeArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="listeClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="listeFournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="param.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="revenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="utilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

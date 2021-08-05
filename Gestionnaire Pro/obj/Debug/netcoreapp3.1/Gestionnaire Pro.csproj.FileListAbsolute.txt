@@ -1,0 +1,134 @@
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.GenerateResource.cache
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.AssemblyInfoInputs.cache
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.AssemblyInfo.cs
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CoreCompileInputs.cache
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.exe
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.deps.json
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.runtimeconfig.json
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.runtimeconfig.dev.json
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.Menu.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.HistoriqueVente.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteAchat.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutVente.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeAchat.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteArticle.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteClient.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteFournisseur.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.caisse.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.infosBoutique.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeArticle.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeClient.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeFournisseur.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.param.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.revenue.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.utilisateur.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.Properties.Resources.resources
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CopyComplete
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Dapper.FluentMap.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.dll.config
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Dapper.Contrib.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Z.Dapper.Plus.dll
+C:\Users\riad\source\repos\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csprojAssemblyReference.cache
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.exe
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.dll.config
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.deps.json
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.runtimeconfig.json
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.runtimeconfig.dev.json
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Dapper.dll
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteAchat.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteArticle.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteClient.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteFournisseur.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutVente.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.caisse.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.historiqueVente.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.infosBoutique.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeAchat.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeArticle.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeClient.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeFournisseur.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.Menu.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.param.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.Properties.Resources.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.revenue.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.utilisateur.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.GenerateResource.cache
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.AssemblyInfoInputs.cache
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.AssemblyInfo.cs
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CoreCompileInputs.cache
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CopyComplete
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.dll
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\SQLite-net.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libsqlite3.so
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libsqlite3.dylib
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\sqlite3.dll
+P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\sqlite3.dll
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.vente.resources
+P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.tableArticle.resources
