@@ -132,3 +132,60 @@ P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\sqlite3.dll
 P:\Gestionnaire Pro\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\sqlite3.dll
 P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.vente.resources
 P:\Gestionnaire Pro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.tableArticle.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteAchat.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteArticle.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteClient.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteFournisseur.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.caisse.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.historiqueVente.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.infosBoutique.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeAchat.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.tableArticle.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeClient.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeFournisseur.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.Menu.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.param.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.Properties.Resources.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.revenue.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.utilisateur.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.vente.resources
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.GenerateResource.cache
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.AssemblyInfoInputs.cache
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.AssemblyInfo.cs
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CoreCompileInputs.cache
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.dll
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.exe
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.dll.config
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.deps.json
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.runtimeconfig.json
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.runtimeconfig.dev.json
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Dapper.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\SQLite-net.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libsqlite3.so
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libsqlite3.dylib
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\sqlite3.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\sqlite3.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+P:\Git\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CopyComplete
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache
+P:\Git\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ListArticle.resources

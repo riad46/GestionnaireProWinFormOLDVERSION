@@ -106,8 +106,8 @@ create table if not exists ventes(
 );
 create table if not EXISTS detailVentes(
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-  codeBarre Varchar(20) NOT NULL UNIQUE, 
-  nom Varchar(30) NOT NULL UNIQUE,
+  codeBarre Varchar(20) NOT NULL , 
+  nom Varchar(30) NOT NULL ,
   Type Varchar(20) ,
   Quantité float NOT NULL ,
   prixAchat FLoat not null,
@@ -190,11 +190,20 @@ create table if not EXISTS ProduitExcluDeVerification(
             }
         }
 
-        private void listArticleDropItem_Click_1(object sender, EventArgs e)
+       
+        private void tableDArticlesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (tableArticle listArticleForm = new tableArticle())
+            using (tableArticle tableArticleForm = new tableArticle())
             {
-                listArticleForm.ShowDialog();
+                tableArticleForm.ShowDialog();
+            }
+        }
+
+        private void listeDArticleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var listArticle = new ListArticle())
+            {
+                listArticle.ShowDialog();
             }
         }
     }

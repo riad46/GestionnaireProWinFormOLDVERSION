@@ -418,11 +418,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "P:\\Git\\GestionnairePro\\Gestionnaire Pro\\Gestionnaire Pro.csproj",
+      "projectUniqueName": "P:\\Git\\GestionnairePro\\Gestionnaire Pro.csproj",
       "projectName": "Gestionnaire Pro",
-      "projectPath": "P:\\Git\\GestionnairePro\\Gestionnaire Pro\\Gestionnaire Pro.csproj",
+      "projectPath": "P:\\Git\\GestionnairePro\\Gestionnaire Pro.csproj",
       "packagesPath": "C:\\Users\\riadd\\.nuget\\packages\\",
-      "outputPath": "P:\\Git\\GestionnairePro\\Gestionnaire Pro\\obj\\",
+      "outputPath": "P:\\Git\\GestionnairePro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\riadd\\AppData\\Roaming\\NuGet\\NuGet.Config",

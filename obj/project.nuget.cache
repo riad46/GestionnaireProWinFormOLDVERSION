@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mMuIlbX23tAwIfeLLCwQtl/DlSHDt8LMny2B/CgFcahSjDjQmw3kjHZjezgcZgFB2kqmz5TMTpY+nzJQVNBlaQ==",
+  "dgSpecHash": "U80YhHxtSoHaWcS+UAdJ+zYUYvS/sTLVRg0vYiapBDzdpuY4tFuwpsAEMVT+nN7rMxcbqfcYeZErWOcHRXx/MA==",
   "success": true,
-  "projectFilePath": "P:\\Git\\GestionnairePro\\Gestionnaire Pro\\Gestionnaire Pro.csproj",
+  "projectFilePath": "P:\\Git\\GestionnairePro\\Gestionnaire Pro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\riadd\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\riadd\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.8\\microsoft.data.sqlite.core.5.0.8.nupkg.sha512",

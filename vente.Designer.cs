@@ -30,7 +30,7 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateLabel = new System.Windows.Forms.Label();
             this.codeBarreLabel = new System.Windows.Forms.Label();
@@ -41,14 +41,14 @@ namespace Gestionnaire_Pro
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.listArticle_btn = new System.Windows.Forms.Button();
             this.client_combo = new System.Windows.Forms.ComboBox();
             this.remise_txt = new System.Windows.Forms.TextBox();
             this.codeBarre_txt = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.del_btn = new System.Windows.Forms.Button();
+            this.abort_btn = new System.Windows.Forms.Button();
+            this.sub_btn = new System.Windows.Forms.Button();
             this.venteTable = new System.Windows.Forms.DataGridView();
             this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -144,7 +144,7 @@ namespace Gestionnaire_Pro
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.listArticle_btn);
             this.panel2.Controls.Add(this.client_combo);
             this.panel2.Controls.Add(this.remise_txt);
             this.panel2.Controls.Add(this.codeBarre_txt);
@@ -182,14 +182,15 @@ namespace Gestionnaire_Pro
             this.label5.TabIndex = 6;
             this.label5.Text = "CodeBarre";
             // 
-            // button4
+            // listArticle_btn
             // 
-            this.button4.Location = new System.Drawing.Point(85, 175);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 27);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Liste d\'Article";
-            this.button4.UseVisualStyleBackColor = true;
+            this.listArticle_btn.Location = new System.Drawing.Point(85, 175);
+            this.listArticle_btn.Name = "listArticle_btn";
+            this.listArticle_btn.Size = new System.Drawing.Size(125, 27);
+            this.listArticle_btn.TabIndex = 3;
+            this.listArticle_btn.Text = "Liste d\'Article";
+            this.listArticle_btn.UseVisualStyleBackColor = true;
+            this.listArticle_btn.Click += new System.EventHandler(this.listArticle_btn_Click);
             // 
             // client_combo
             // 
@@ -224,40 +225,41 @@ namespace Gestionnaire_Pro
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.del_btn);
+            this.panel3.Controls.Add(this.abort_btn);
+            this.panel3.Controls.Add(this.sub_btn);
             this.panel3.Location = new System.Drawing.Point(0, 208);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 373);
             this.panel3.TabIndex = 2;
             // 
-            // button3
+            // del_btn
             // 
-            this.button3.Location = new System.Drawing.Point(9, 132);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(267, 48);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.del_btn.Location = new System.Drawing.Point(9, 132);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Size = new System.Drawing.Size(267, 48);
+            this.del_btn.TabIndex = 2;
+            this.del_btn.Text = "Supprimer";
+            this.del_btn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // abort_btn
             // 
-            this.button2.Location = new System.Drawing.Point(9, 78);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(267, 48);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Annuler";
-            this.button2.UseVisualStyleBackColor = true;
+            this.abort_btn.Location = new System.Drawing.Point(9, 78);
+            this.abort_btn.Name = "abort_btn";
+            this.abort_btn.Size = new System.Drawing.Size(267, 48);
+            this.abort_btn.TabIndex = 1;
+            this.abort_btn.Text = "Annuler";
+            this.abort_btn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // sub_btn
             // 
-            this.button1.Location = new System.Drawing.Point(9, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 48);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Valider";
-            this.button1.UseVisualStyleBackColor = true;
+            this.sub_btn.Location = new System.Drawing.Point(9, 24);
+            this.sub_btn.Name = "sub_btn";
+            this.sub_btn.Size = new System.Drawing.Size(267, 48);
+            this.sub_btn.TabIndex = 0;
+            this.sub_btn.Text = "Valider";
+            this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // venteTable
             // 
@@ -271,14 +273,14 @@ namespace Gestionnaire_Pro
             this.venteTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.venteTable.BackgroundColor = System.Drawing.SystemColors.Window;
             this.venteTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.venteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeBarre,
             this.nom,
@@ -376,10 +378,10 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button listArticle_btn;
+        private System.Windows.Forms.Button del_btn;
+        private System.Windows.Forms.Button abort_btn;
+        private System.Windows.Forms.Button sub_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeBarre;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn QNT;

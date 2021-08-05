@@ -11,7 +11,7 @@ namespace Gestionnaire_Pro.DataBase.Models
         public DateTime dateVente { get; set; }
         public float montantTotale { get; set; }
         public float remise { get; set; }
-        public float netAPayé { get; set; }
+        public float netPayé { get; set; }
         public string ajouterPar { get; set; }
         public DateTime? dateModification { get; set; }
         public string? modifierPar { get; set; }

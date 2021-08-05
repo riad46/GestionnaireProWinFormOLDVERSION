@@ -10,13 +10,13 @@ namespace Gestionnaire_Pro.DataBase.Models
         public string codeBarre { get; set; }
         public string nomArticle { get; set; }
         public string typeArticle { get; set; }
-        public int qnt { get; set; }
-        public decimal prixAchat{ get; set; }
-        public decimal prixVente { get; set; }
-        public decimal remise { get; set; }
-        public int nouvelleQnt { get; set; }
-        public decimal nouvelleRemise { get; set; }
-        public decimal nouveauTotal { get; set; }
+        public float qnt { get; set; }
+        public float prixAchat{ get; set; }
+        public float prixVente { get; set; }
+        public float remise { get; set; }
+        public float nouvelleQnt { get; set; }
+        public float nouvelleRemise { get; set; }
+        public float nouveauTotal { get; set; }
        
         public int VenteId { get; set; }
         public Vente Vente { get; set; }

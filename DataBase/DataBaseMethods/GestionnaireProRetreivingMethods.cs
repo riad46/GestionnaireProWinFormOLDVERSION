@@ -20,7 +20,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         /// <returns></returns>
         public static async Task<List<Article>> GetAllArticles()
         {
-            var sql = "SELECT a.id,a.codeBarre,a.nom,a.Type,a.Quantité,a.prixAchat,a.PrixVente,a.dateExpiration,a.articleImage,a.fournisseurId,f.* From articles a LEFT JOIN fournisseurs f ON a.fournisseurId =f.id ";
+            var sql = "SELECT a.id,a.codeBarre,a.nom,a.Type,a.Quantité,a.prixAchat,a.PrixVente,a.dateExpiration,a.fournisseurId,f.* From articles a LEFT JOIN fournisseurs f ON a.fournisseurId =f.id ";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
                 var res = await connection.QueryAsync<Article, Fournisseur, Article>(sql, (article, fournisseur) =>
@@ -72,7 +72,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
     /// <returns></returns>
         public static async Task<Article> GetArticleForVente(string codeBarre)
         {
-            var sql = $"SELECT codeBarre,nom,prixVente FROM articles where codeBarre ='{codeBarre}' ";
+            var sql = $"SELECT id,codeBarre,nom,type,prixAchat,prixVente FROM articles where codeBarre ='{codeBarre}' ";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
                 var res = await connection.QueryAsync<Article>(sql);
@@ -82,7 +82,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 }
                 else
                 {
-                    return res.Where(a=>a.Id != null).First();
+                    return res.First(a =>a.Id != null);
                 }
                 
             }
@@ -154,7 +154,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
 
         }
-        /// <summary>
+ /// <summary>
         /// use when clicking on a "Client" in Liste de Clients
         /// </summary>
         /// <param name="clientID"></param>
@@ -315,14 +315,17 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
 
         public static async Task<int> RetreiveLastInsertedRowId(string tableName)
         {
-            var sql = $"SELECT last_insert_rowid() FROM {tableName}";
+            var sql = $"SELECT max(id) FROM {tableName}";
+            
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
 
-                var res = await connection.QueryAsync<int>(sql);
-                return res.AsList()[0];
-
+                return  await connection.ExecuteScalarAsync<int>(sql);
+                
+               
+                
             }
+            
         }
         public static async Task<int> RetreiveNumRows(string tableName)
         {

@@ -13,9 +13,6 @@
     <Compile Update="ajouteFournisseur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ajoutVente.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="caisse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -28,10 +25,13 @@
     <Compile Update="infosBoutique.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ListArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="listeAchat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="listeArticle.cs">
+    <Compile Update="tableArticle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="listeClient.cs">

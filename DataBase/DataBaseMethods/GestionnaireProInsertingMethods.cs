@@ -109,41 +109,40 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
         }
        //vente
-        public static void AddVente(Vente vente)
+        public static async  void AddVente(Vente vente)
         {
-            var sql = @"INSERT INTO ventes (dateVente,montantTotale,remise,netPayé,ajouterPar,clientId) VALUES (
+            var sql = @"INSERT INTO ventes(dateVente,montantTotale,remise,netPayé,ajouterPar,clientId) VALUES(
                         @dateVente,
                         @montantTotale,
                         @remise,
                         @netPayé,
                         @ajouterPar,
-                        @clientId";
+                        @clientId)";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                connection.ExecuteAsync(sql, vente);
+               await connection.ExecuteScalarAsync(sql, vente);
             }
         }
-        public void AddDetailVente(List<DetailVente> detailVentes)
+        public static async void AddDetailVente(List<DetailVente> detailVentes)
         {
-            var sql = @"INSERT INTO detailVentes (id,codeBarre,nom,Type,Quantité,prixAchat,prixVente,remise,venteId) VALUES (
-                      @id,
+            var sql = @"INSERT INTO detailVentes(codeBarre,nom,Type,Quantité,prixAchat,prixVente,remise,venteId) VALUES(
                       @codeBarre,
-                      @nom
-                      @type,
+                      @nomArticle,
+                      @typeArticle,
                       @qnt,
                       @prixAchat,
                       @prixVente,
                       @remise,
-                      @VenteId
-                      ";
-            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
-            {
-                
-                foreach (var detail in detailVentes)
-                {
-                    connection.ExecuteAsync(sql, detail);
-                }
+                      @VenteId)";
 
+            foreach (var item in detailVentes)
+            {
+                using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+                {
+
+                     await connection.ExecuteAsync(sql, item);
+                }
+                
             }
         }
 

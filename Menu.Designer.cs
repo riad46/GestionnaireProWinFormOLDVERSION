@@ -44,7 +44,7 @@ namespace Gestionnaire_Pro
             this.listAchatDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articleItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addArticleDropItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listArticleDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableDArticlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClientDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listClientsDropItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +57,8 @@ namespace Gestionnaire_Pro
             this.utilisateurDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoBoutiqueDropList = new System.Windows.Forms.ToolStripMenuItem();
             this.parametreDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listeDArticleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableDArticlesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gradiantPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -175,7 +177,9 @@ namespace Gestionnaire_Pro
             // 
             this.articleItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addArticleDropItem,
-            this.listArticleDropItem});
+            this.tableDArticlesToolStripMenuItem,
+            this.listeDArticleToolStripMenuItem,
+            this.tableDArticlesToolStripMenuItem1});
             this.articleItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.articleItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
             this.articleItem.Name = "articleItem";
@@ -186,17 +190,16 @@ namespace Gestionnaire_Pro
             // 
             this.addArticleDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.addArticleDropItem.Name = "addArticleDropItem";
-            this.addArticleDropItem.Size = new System.Drawing.Size(180, 22);
-            this.addArticleDropItem.Text = "Nouveau Article";
+            this.addArticleDropItem.Size = new System.Drawing.Size(232, 30);
+            this.addArticleDropItem.Text = "Table d\'Articles";
             this.addArticleDropItem.Click += new System.EventHandler(this.addArticleDropItem_Click_1);
             // 
-            // listArticleDropItem
+            // tableDArticlesToolStripMenuItem
             // 
-            this.listArticleDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.listArticleDropItem.Name = "listArticleDropItem";
-            this.listArticleDropItem.Size = new System.Drawing.Size(180, 22);
-            this.listArticleDropItem.Text = "Liste d\'Article";
-            this.listArticleDropItem.Click += new System.EventHandler(this.listArticleDropItem_Click_1);
+            this.tableDArticlesToolStripMenuItem.Name = "tableDArticlesToolStripMenuItem";
+            this.tableDArticlesToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
+            this.tableDArticlesToolStripMenuItem.Text = "Table d\'Articles";
+            this.tableDArticlesToolStripMenuItem.Click += new System.EventHandler(this.tableDArticlesToolStripMenuItem_Click);
             // 
             // clientItem
             // 
@@ -300,6 +303,19 @@ namespace Gestionnaire_Pro
             this.parametreDropItem.Size = new System.Drawing.Size(279, 22);
             this.parametreDropItem.Text = "Paramètre";
             // 
+            // listeDArticleToolStripMenuItem
+            // 
+            this.listeDArticleToolStripMenuItem.Name = "listeDArticleToolStripMenuItem";
+            this.listeDArticleToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
+            this.listeDArticleToolStripMenuItem.Text = "Liste d\'Article";
+            this.listeDArticleToolStripMenuItem.Click += new System.EventHandler(this.listeDArticleToolStripMenuItem_Click);
+            // 
+            // tableDArticlesToolStripMenuItem1
+            // 
+            this.tableDArticlesToolStripMenuItem1.Name = "tableDArticlesToolStripMenuItem1";
+            this.tableDArticlesToolStripMenuItem1.Size = new System.Drawing.Size(232, 30);
+            this.tableDArticlesToolStripMenuItem1.Text = "Table d\'Articles";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -360,7 +376,7 @@ namespace Gestionnaire_Pro
 
         private void nvVenteDropItem_Click(object sender, EventArgs e)
         {
-            using (var form = new ajoutVente())
+            using (var form = new vente())
             {
                 form.ShowDialog();
             }
@@ -466,7 +482,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ToolStripMenuItem listAchatDropItem;
         private System.Windows.Forms.ToolStripMenuItem articleItem;
         private System.Windows.Forms.ToolStripMenuItem addArticleDropItem;
-        private System.Windows.Forms.ToolStripMenuItem listArticleDropItem;
         private System.Windows.Forms.ToolStripMenuItem clientItem;
         private System.Windows.Forms.ToolStripMenuItem addClientDropItem;
         private System.Windows.Forms.ToolStripMenuItem listClientsDropItem;
@@ -479,6 +494,9 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ToolStripMenuItem utilisateurDropItem;
         private System.Windows.Forms.ToolStripMenuItem infoBoutiqueDropList;
         private System.Windows.Forms.ToolStripMenuItem parametreDropItem;
+        private System.Windows.Forms.ToolStripMenuItem tableDArticlesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listeDArticleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableDArticlesToolStripMenuItem1;
     }
 }
 

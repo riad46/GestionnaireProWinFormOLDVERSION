@@ -28,9 +28,14 @@ namespace Gestionnaire_Pro
         {
             InitializeComponent();
         }
-       
+        private void ResetTable() 
+        {
+            _mesArticleAvendre = new List<Article>();
+            SetUpTable();
+        }
         private void AddVente()
         {
+            if (remise_txt.Text == "") remise_txt.Text = "0";
             totalRemise += Convert.ToSingle(remise_txt.Text);
             var monVente = new Vente()
             {
@@ -38,7 +43,7 @@ namespace Gestionnaire_Pro
                 dateVente=DateTime.Now,
                 montantTotale=total,
                 remise=totalRemise,
-                netAPayé=total-totalRemise
+                netPayé=total-totalRemise
                 
           };
             if (!string.IsNullOrWhiteSpace(client_combo.Text) && client_combo.Text != "") 
@@ -49,7 +54,27 @@ namespace Gestionnaire_Pro
         }
         private void AddDetailVente()
         {
+            var venteId = GestionnaireProRetreivingMethods.RetreiveLastInsertedRowId("ventes").Result;
+            var details = new List<DetailVente>();
+            int i = 0;
+            foreach (var item in _mesArticleAvendre)
+            {
+                
+                details.Add(new DetailVente
+                {
+                    codeBarre = item.codeBarre,
+                    nomArticle = item.nom,
+                    typeArticle=item.type,
+                    prixAchat = item.prixAchat,
+                    prixVente = item.prixVente,
+                    qnt = item.quantité,
+                    remise= Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
+                    VenteId = venteId
 
+                });
+                i++;
+            }
+            GestionnaireProInsertingMethods.AddDetailVente(details);
         }
         private void SetUpTable()
         {
@@ -59,7 +84,12 @@ namespace Gestionnaire_Pro
             venteTable.AutoGenerateColumns = false;
             venteTable.DataSource = source;
             venteTable.Refresh();
-
+            if(venteTable.RowCount>0)
+            for(int i=0;i< venteTable.RowCount;i++)
+            {
+                if (string.IsNullOrEmpty((string)venteTable.Rows[i].Cells[_remiseIndex].Value)) venteTable.Rows[i].Cells[_remiseIndex].Value = 0.0f;
+            }
+            
             CalculateAll();
         }
         private void AddClientsToCombo()
@@ -84,7 +114,7 @@ namespace Gestionnaire_Pro
              venteTable.Rows[i].Cells[_totalIndex].Value =( Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_prixVenteIndex].Value) )- (Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value));
              total += (float)venteTable.Rows[i].Cells[_totalIndex].Value;
 
-                if ((string)venteTable.Rows[i].Cells[_remiseIndex].Value != "") 
+               
                     totalRemise += Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value);
              
                 nbrPiece += Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value);
@@ -150,6 +180,41 @@ namespace Gestionnaire_Pro
         private void vente_Load(object sender, EventArgs e)
         {
             AddClientsToCombo();
+        }
+
+        private void sub_btn_Click(object sender, EventArgs e)
+        {
+                if(_mesArticleAvendre.Count == 0)
+            {
+                
+                return;
+            }
+            
+            AddVente(); 
+            AddDetailVente();     
+            ResetTable(); 
+          
+            
+        }
+        private void AddToVenteFromListArticles(Article article)
+        {
+           
+            var result = _mesArticleAvendre.FindIndex(a=>a.nom == article.nom);
+            if(result == -1)
+            {
+                _mesArticleAvendre.Add(article);
+                return;
+            }
+            _mesArticleAvendre[result].quantité += 1;
+        }
+        private void listArticle_btn_Click(object sender, EventArgs e)
+        {
+            using (var listArticle = new ListArticle())
+            {
+                listArticle.ShowDialog();
+              AddToVenteFromListArticles(listArticle.monArticle);
+                SetUpTable();
+            }
         }
     }
 }
