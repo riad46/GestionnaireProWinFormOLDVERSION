@@ -62,6 +62,50 @@ namespace Gestionnaire_Pro
             }
 
         }
-       
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void credit_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void address_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numTlf_txt_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nom_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace Gestionnaire_Pro
     {
         public Article monArticle = new Article();
         private readonly int _idCell = 0;
-        private readonly int _fournisseurCell = 8;
+        private readonly int _fournisseurCell = 7;
         private readonly int _codeBarreCell =1;
         private readonly int _nomCell = 2;
         private readonly int _typeCell = 4;

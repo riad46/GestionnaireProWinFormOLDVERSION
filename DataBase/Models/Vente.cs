@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gestionnaire_Pro.DataBase.Models
 {
-    class Vente
+   public class Vente
     {
 
         public int Id { get; set; }

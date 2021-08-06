@@ -1,4 +1,4 @@
-﻿using Gestionnaire_Pro.DataBase.DataConnection;
+﻿ using Gestionnaire_Pro.DataBase.DataConnection;
 using Gestionnaire_Pro.DataBase.Models;
 
 using System.Collections.Generic;
@@ -41,15 +41,14 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         /// <param name="codeBarre"></param>
         /// <param name="nom"></param>
         /// <returns></returns>
-        public static async Task<List<Article>> SearchForArticle(int id,string codeBarre,string nom)
+        public static async Task<List<Article>> SearchForArticle(string codeBarre,string nom,string type,string nomFournisseur)
         {
+            var param =new {code =codeBarre,nom=nom,type=type,nomF =nomFournisseur };
             var sql = "SELECT a.codeBarre,a.nom,a.Quantité,a.prixVente,a.dateExpiration,f.* FROM articles a LEFT JOIN fournisseurs f ON a.fournisseurId=f.id WHERE ";
          
             
             
-                if (id != null) sql.Insert(sql.Length - 1, "id=@id");
-                if (!string.IsNullOrEmpty(codeBarre) && !string.IsNullOrWhiteSpace(codeBarre)) sql.Insert(sql.Length - 1, " And codeBarre=@codeBarre");
-                if (!string.IsNullOrEmpty(nom) && !string.IsNullOrWhiteSpace(nom)) sql.Insert(sql.Length - 1, " And nom=@nom");
+               
             
             
           
@@ -107,11 +106,11 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         }
         public static int GetFournisseurIdByNom(string nomFournisseur)
         {
-            var sql = $"SELECT Id FROM fournisseurs WHERE nom ='{nomFournisseur}'";
+            var sql = $"SELECT Id FROM fournisseurs WHERE nom =@nom";
 
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                var result = connection.QueryAsync<int>(sql, new DynamicParameters()).Result.First();
+                var result = connection.QueryAsync<int>(sql, new { nom =nomFournisseur} ).Result.First();
                 return result;
             }
         }
@@ -154,19 +153,46 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
 
         }
- /// <summary>
+        public static async Task<List<Client>> GetClientsByFilter(string nom,string numTlf)
+        {
+            var param = new { name = "%"+nom+"%", num = "%" + numTlf+ "%"  };
+            var sql = "SELECT id,nom,Address,numTlf,credit FROM clients WHERE ";
+            if (!string.IsNullOrWhiteSpace(nom) && nom != "") 
+            { 
+                sql += " nom LIKE @name";
+                if (!string.IsNullOrWhiteSpace(numTlf) && numTlf != "") 
+                    sql += "AND numTlf LIKE @num";
+            }
+            else if (!string.IsNullOrWhiteSpace(numTlf) && numTlf != "")
+            {
+                sql += "numTlf LIKE @num";
+            }
+            else
+            {
+                sql += "1";
+            }
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                var res = await connection.QueryAsync<Client>(sql,param);
+                return res.ToList();
+            }
+        
+        }
+        /// <summary>
         /// use when clicking on a "Client" in Liste de Clients
         /// </summary>
         /// <param name="clientID"></param>
         /// <returns></returns>
-        public List<DetailCreditClient> GetDetailCreditClients(int clientID)
+        public static async Task<List<DetailCreditClient>> GetDetailsCreditClient(int clientID)
         {
-            var detailCredits = new List<DetailCreditClient>();
+            var param = new { id=clientID };
+            var sql = "SELECT id,descriptionProduit,dateCredit,prixTotale,restApayé,estPayé FROM detailCreditClients WHERE clientId =@id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-
+             var res = await  connection.QueryAsync<DetailCreditClient>(sql,param);
+                return res.ToList();
             }
-            return detailCredits;
+            
         }
         /// <summary>
         /// use when trying to put clientId in vente

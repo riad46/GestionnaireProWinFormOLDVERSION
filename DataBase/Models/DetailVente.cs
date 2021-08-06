@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gestionnaire_Pro.DataBase.Models
 {
-    class DetailVente
+    public class DetailVente
     {
         public int Id { get; set; }
         public string codeBarre { get; set; }

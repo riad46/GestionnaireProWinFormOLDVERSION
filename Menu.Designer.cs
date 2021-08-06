@@ -36,6 +36,7 @@ namespace Gestionnaire_Pro
             this.fichierItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitDropList = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutDropList = new System.Windows.Forms.ToolStripMenuItem();
+            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.venteItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nvVenteDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyVenteDropItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,11 +44,16 @@ namespace Gestionnaire_Pro
             this.nvAchatDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listAchatDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articleItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addArticleDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableDArticlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listeDArticleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableDArticlesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClientDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listClientsDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gérerLesClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableDeClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterCreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paimentDeCreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fournisseurItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFournisseurDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listFournisseurDropItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +63,6 @@ namespace Gestionnaire_Pro
             this.utilisateurDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoBoutiqueDropList = new System.Windows.Forms.ToolStripMenuItem();
             this.parametreDropItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listeDArticleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableDArticlesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gradiantPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +100,8 @@ namespace Gestionnaire_Pro
             // 
             this.fichierItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quitDropList,
-            this.logOutDropList});
+            this.logOutDropList,
+            this.fichierToolStripMenuItem});
             this.fichierItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.fichierItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
             this.fichierItem.Name = "fichierItem";
@@ -108,7 +113,7 @@ namespace Gestionnaire_Pro
             this.quitDropList.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.quitDropList.Name = "quitDropList";
             this.quitDropList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitDropList.Size = new System.Drawing.Size(237, 24);
+            this.quitDropList.Size = new System.Drawing.Size(237, 30);
             this.quitDropList.Text = "Quitter";
             // 
             // logOutDropList
@@ -116,8 +121,14 @@ namespace Gestionnaire_Pro
             this.logOutDropList.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.logOutDropList.Name = "logOutDropList";
             this.logOutDropList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.End)));
-            this.logOutDropList.Size = new System.Drawing.Size(237, 24);
+            this.logOutDropList.Size = new System.Drawing.Size(237, 30);
             this.logOutDropList.Text = "Déconnection";
+            // 
+            // fichierToolStripMenuItem
+            // 
+            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
+            this.fichierToolStripMenuItem.Text = "Fichier";
             // 
             // venteItem
             // 
@@ -176,7 +187,6 @@ namespace Gestionnaire_Pro
             // articleItem
             // 
             this.articleItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addArticleDropItem,
             this.tableDArticlesToolStripMenuItem,
             this.listeDArticleToolStripMenuItem,
             this.tableDArticlesToolStripMenuItem1});
@@ -186,26 +196,32 @@ namespace Gestionnaire_Pro
             this.articleItem.Size = new System.Drawing.Size(87, 29);
             this.articleItem.Text = "Article";
             // 
-            // addArticleDropItem
-            // 
-            this.addArticleDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addArticleDropItem.Name = "addArticleDropItem";
-            this.addArticleDropItem.Size = new System.Drawing.Size(232, 30);
-            this.addArticleDropItem.Text = "Table d\'Articles";
-            this.addArticleDropItem.Click += new System.EventHandler(this.addArticleDropItem_Click_1);
-            // 
             // tableDArticlesToolStripMenuItem
             // 
             this.tableDArticlesToolStripMenuItem.Name = "tableDArticlesToolStripMenuItem";
             this.tableDArticlesToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
-            this.tableDArticlesToolStripMenuItem.Text = "Table d\'Articles";
+            this.tableDArticlesToolStripMenuItem.Text = "Ajouter Article";
             this.tableDArticlesToolStripMenuItem.Click += new System.EventHandler(this.tableDArticlesToolStripMenuItem_Click);
+            // 
+            // listeDArticleToolStripMenuItem
+            // 
+            this.listeDArticleToolStripMenuItem.Name = "listeDArticleToolStripMenuItem";
+            this.listeDArticleToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
+            this.listeDArticleToolStripMenuItem.Text = "Liste d\'Article";
+            this.listeDArticleToolStripMenuItem.Click += new System.EventHandler(this.listeDArticleToolStripMenuItem_Click);
+            // 
+            // tableDArticlesToolStripMenuItem1
+            // 
+            this.tableDArticlesToolStripMenuItem1.Name = "tableDArticlesToolStripMenuItem1";
+            this.tableDArticlesToolStripMenuItem1.Size = new System.Drawing.Size(232, 30);
+            this.tableDArticlesToolStripMenuItem1.Text = "Table d\'Articles";
             // 
             // clientItem
             // 
             this.clientItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addClientDropItem,
-            this.listClientsDropItem});
+            this.listClientsDropItem,
+            this.gérerLesClientsToolStripMenuItem});
             this.clientItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.clientItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
             this.clientItem.Name = "clientItem";
@@ -215,14 +231,47 @@ namespace Gestionnaire_Pro
             // addClientDropItem
             // 
             this.addClientDropItem.Name = "addClientDropItem";
-            this.addClientDropItem.Size = new System.Drawing.Size(231, 30);
+            this.addClientDropItem.Size = new System.Drawing.Size(236, 30);
             this.addClientDropItem.Text = "Nouveau Client";
+            this.addClientDropItem.Click += new System.EventHandler(this.addClientDropItem_Click_1);
             // 
             // listClientsDropItem
             // 
             this.listClientsDropItem.Name = "listClientsDropItem";
-            this.listClientsDropItem.Size = new System.Drawing.Size(231, 30);
+            this.listClientsDropItem.Size = new System.Drawing.Size(236, 30);
             this.listClientsDropItem.Text = "Liste de Clients";
+            this.listClientsDropItem.Click += new System.EventHandler(this.listClientsDropItem_Click_1);
+            // 
+            // gérerLesClientsToolStripMenuItem
+            // 
+            this.gérerLesClientsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tableDeClientToolStripMenuItem,
+            this.ajouterCreditToolStripMenuItem,
+            this.paimentDeCreditToolStripMenuItem});
+            this.gérerLesClientsToolStripMenuItem.Name = "gérerLesClientsToolStripMenuItem";
+            this.gérerLesClientsToolStripMenuItem.Size = new System.Drawing.Size(236, 30);
+            this.gérerLesClientsToolStripMenuItem.Text = "Gérer les clients";
+            // 
+            // tableDeClientToolStripMenuItem
+            // 
+            this.tableDeClientToolStripMenuItem.Name = "tableDeClientToolStripMenuItem";
+            this.tableDeClientToolStripMenuItem.Size = new System.Drawing.Size(256, 30);
+            this.tableDeClientToolStripMenuItem.Text = "Table de Client";
+            this.tableDeClientToolStripMenuItem.Click += new System.EventHandler(this.tableDeClientToolStripMenuItem_Click);
+            // 
+            // ajouterCreditToolStripMenuItem
+            // 
+            this.ajouterCreditToolStripMenuItem.Name = "ajouterCreditToolStripMenuItem";
+            this.ajouterCreditToolStripMenuItem.Size = new System.Drawing.Size(256, 30);
+            this.ajouterCreditToolStripMenuItem.Text = "Ajouter Credit";
+            this.ajouterCreditToolStripMenuItem.Click += new System.EventHandler(this.ajouterCreditToolStripMenuItem_Click);
+            // 
+            // paimentDeCreditToolStripMenuItem
+            // 
+            this.paimentDeCreditToolStripMenuItem.Name = "paimentDeCreditToolStripMenuItem";
+            this.paimentDeCreditToolStripMenuItem.Size = new System.Drawing.Size(256, 30);
+            this.paimentDeCreditToolStripMenuItem.Text = "Paiment de Credit";
+            this.paimentDeCreditToolStripMenuItem.Click += new System.EventHandler(this.paimentDeCreditToolStripMenuItem_Click);
             // 
             // fournisseurItem
             // 
@@ -241,6 +290,7 @@ namespace Gestionnaire_Pro
             this.addFournisseurDropItem.Name = "addFournisseurDropItem";
             this.addFournisseurDropItem.Size = new System.Drawing.Size(213, 22);
             this.addFournisseurDropItem.Text = "Nouveau Fournisseur";
+            this.addFournisseurDropItem.Click += new System.EventHandler(this.addFournisseurDropItem_Click_1);
             // 
             // listFournisseurDropItem
             // 
@@ -248,6 +298,7 @@ namespace Gestionnaire_Pro
             this.listFournisseurDropItem.Name = "listFournisseurDropItem";
             this.listFournisseurDropItem.Size = new System.Drawing.Size(213, 22);
             this.listFournisseurDropItem.Text = "Liste de Fournisseurs";
+            this.listFournisseurDropItem.Click += new System.EventHandler(this.listFournisseurDropItem_Click_1);
             // 
             // extrasItem
             // 
@@ -302,19 +353,6 @@ namespace Gestionnaire_Pro
             this.parametreDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.parametreDropItem.Size = new System.Drawing.Size(279, 22);
             this.parametreDropItem.Text = "Paramètre";
-            // 
-            // listeDArticleToolStripMenuItem
-            // 
-            this.listeDArticleToolStripMenuItem.Name = "listeDArticleToolStripMenuItem";
-            this.listeDArticleToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
-            this.listeDArticleToolStripMenuItem.Text = "Liste d\'Article";
-            this.listeDArticleToolStripMenuItem.Click += new System.EventHandler(this.listeDArticleToolStripMenuItem_Click);
-            // 
-            // tableDArticlesToolStripMenuItem1
-            // 
-            this.tableDArticlesToolStripMenuItem1.Name = "tableDArticlesToolStripMenuItem1";
-            this.tableDArticlesToolStripMenuItem1.Size = new System.Drawing.Size(232, 30);
-            this.tableDArticlesToolStripMenuItem1.Text = "Table d\'Articles";
             // 
             // Menu
             // 
@@ -481,7 +519,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ToolStripMenuItem nvAchatDropItem;
         private System.Windows.Forms.ToolStripMenuItem listAchatDropItem;
         private System.Windows.Forms.ToolStripMenuItem articleItem;
-        private System.Windows.Forms.ToolStripMenuItem addArticleDropItem;
         private System.Windows.Forms.ToolStripMenuItem clientItem;
         private System.Windows.Forms.ToolStripMenuItem addClientDropItem;
         private System.Windows.Forms.ToolStripMenuItem listClientsDropItem;
@@ -497,6 +534,11 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ToolStripMenuItem tableDArticlesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listeDArticleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tableDArticlesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gérerLesClientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableDeClientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajouterCreditToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paimentDeCreditToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
     }
 }
 

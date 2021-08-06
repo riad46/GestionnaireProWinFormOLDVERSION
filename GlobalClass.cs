@@ -3,7 +3,7 @@ using Gestionnaire_Pro.DataBase.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Windows.Forms;
 
 namespace Gestionnaire_Pro
 {
@@ -52,6 +52,24 @@ namespace Gestionnaire_Pro
 
             }
             return data;
+        }
+    
+     public static void CheckForInputToBeNumbers(System.Windows.Forms.KeyPressEventArgs e,TextBox t1 )
+        {
+            char ch = e.KeyChar;
+            if (ch == '.')
+            {
+                ch = ',';
+            }
+            if ((ch == 44 || ch == 46) && (t1.Text.IndexOf(',') != -1 || t1.Text.IndexOf('.') != -1))
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!char.IsDigit(ch) && ch != 44 && ch != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

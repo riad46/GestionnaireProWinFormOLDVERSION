@@ -20,14 +20,14 @@ namespace Gestionnaire_Pro
             InitializeComponent();
         }
 
-        private int GetCurrentSelectedTableRow()
+        private int GetCurrentSelectedTableRowId()
         {
             return (int)articleTable.SelectedRows[0].Cells[0].Value;
         }
 
         private void DeleteArticle()
         {
-            var id = GetCurrentSelectedTableRow();
+            var id = GetCurrentSelectedTableRowId();
             GestionnaireProModifyDeleteMethods.DeleteArticle(id);
         }
         private void DeleteAllArticles()
@@ -71,7 +71,7 @@ namespace Gestionnaire_Pro
                     }
                     break;
                 case 1:
-                    using (var addArticleForm = new ajouteArticle(articles.Find(a=>a.Id == GetCurrentSelectedTableRow())))
+                    using (var addArticleForm = new ajouteArticle(articles.Find(a=>a.Id == GetCurrentSelectedTableRowId())))
                     {
                         addArticleForm.ShowDialog();
                     }

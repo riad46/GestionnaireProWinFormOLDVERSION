@@ -44,20 +44,27 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         ////---------------------------------------------Client
         public static async void ModifyClientInfos(Client client)
         {
+            var sql = @"UPDATE clients
+SET 
+nom=@nom,
+numTlf=@numTlf,
+address=@address,
+credit=@credit
+WHERE id=@Id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
 
-                await connection.ExecuteAsync("dbo.spClient_ModifyClient", client);
+                await connection.ExecuteAsync(sql, client);
 
 
             }
         }
         public static async void DeleteClient(int id)
         {
-            var sql = $"DELETE FROM clients WHERE id={id}";
+            var sql = $"DELETE FROM clients WHERE id=@id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                await connection.ExecuteAsync(sql);
+                await connection.ExecuteAsync(sql,new { id=id});
             }
         }
         public static async void DeleteAllClient()
@@ -68,33 +75,44 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 await connection.ExecuteAsync(sql);
             }
         }
+        public static async void SetClientCredit(int clientId, float credit)
+        {
+            var param = new { id = clientId, credit = credit };
+            var sql = @"Update clients
+                        SET
+                        credit=@credit
+                        WHERE id=@id";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                await connection.ExecuteAsync(sql, param);
+            }
+        }
         ////---------------------------------------------DetailClient
-     
-        public static async void ModifyDetailClient(DetailAchat[] detailAchats)
+
+        public static async void ModifyDetailCreditClient(List<DetailCreditClient> details)
         {
             var sql = @"UPDATE detailCreditClients
-                        SET 
-                        descriptionProduit=@descriptionCredit,
-                        prixTotale=@prixTotal,
-                        restApayé=@restApayé,
-                        estPayé=@estPayé
+                        SET
+                        restApayé=@rest,
+                        estPayé=@ispayed
                          WHERE id=@Id";
                          
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                foreach (var detail in detailAchats)
+                foreach (var item in details)
                 {
-                    await connection.ExecuteAsync(sql, detail);
+
+                    await connection.ExecuteAsync(sql,new{ rest=item.restApayé,ispayed=item.estPayé,Id=item.Id });
                 }
                 
             }
         }
-        public static async void DeleteDetailCreditClient(int[] ids)
+        public static async void DeleteDetailCreditClient(int id)
         {
-            var sql = $"DELETE FROM clients WHERE id IN @ids";
+            var sql = $"DELETE FROM clients WHERE id =@id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                await connection.ExecuteAsync(sql, ids);
+                await connection.ExecuteAsync(sql, new { id = id });
             }
         }
 

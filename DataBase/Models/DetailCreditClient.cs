@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Gestionnaire_Pro.DataBase.Models
 {
-    class DetailCreditClient
+   public class DetailCreditClient
     {
         public int Id { get; set; }
-        public string descriptionCredit { get; set; }
-        public decimal prixTotal { get; set; }
-        public decimal restApaye { get; set; }
-        public DateTime date { get; set; }
+        public string descriptionProduit { get; set; }
+        public float prixTotale { get; set; }
+        public float restApayé { get; set; }
+        public DateTime dateCredit { get; set; }
         public bool estPayé { get; set; }
 
         public int ClientId { get; set; }

@@ -150,28 +150,48 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         public static async void AddClient(Client client)
         {
             var sql = $@"INSERT INTO clients (nom,address,numTlf,credit) VALUES (
-                         '{client.nom}',
-                         '{client.numTlf}',
-                         '{client.Address}',
-                         '{client.credit}')";
+                         @nom,
+                         @address,
+                         @numTlf,
+                         @credit
+                         )";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
 
-                await connection.ExecuteAsync(sql);
+                await connection.ExecuteAsync(sql,client);
             }
         }
-        public static void AddDetailCreditClient(List<DetailCreditClient> detailCreditClients)
+       
+         public static void AddDetailCreditClient(List<DetailCreditClient> detailCreditClients)
         {
+            
+            var sql = @"INSERT INTO detailCreditClients (descriptionProduit,dateCredit,prixTotale,restApayé,estPayé,clientId) VALUES (
+                        @desc,
+                        @date,
+                        @total,
+                        @rest,
+                        @estpaye,
+                        @clientId
+)";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
                 foreach (var detail in detailCreditClients)
                 {
-                    connection.ExecuteAsync("dbo.spDetailCreditClient_AddDetailCredit", detail);
+                    var param = new { 
+                        desc =detail.descriptionProduit,
+                        date=detail.dateCredit,
+                        total=detail.prixTotale,
+                        rest=detail.restApayé,
+                        estpaye=detail.estPayé,
+                        clientId=detail.ClientId
+                    };
+                    connection.ExecuteAsync(sql, param);
                 }
 
 
             }
         }
+
 
 
         

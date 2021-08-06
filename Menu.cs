@@ -206,5 +206,59 @@ create table if not EXISTS ProduitExcluDeVerification(
                 listArticle.ShowDialog();
             }
         }
+
+        private void addClientDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var c = new ajouteClient())
+            {
+                c.ShowDialog();
+            }
+        }
+
+        private void listClientsDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var c = new listeClient())
+            {
+                c.ShowDialog();
+            }
+        }
+
+        private void tableDeClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var c = new tableClient())
+            {
+                c.ShowDialog();
+            }
+        }
+        private void ajouterCreditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var c = new ajoutCredit())
+            {
+                c.ShowDialog();
+            }
+        }
+        private void addFournisseurDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var f = new ajouteFournisseur())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void listFournisseurDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var f = new listeFournisseur())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void paimentDeCreditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var p = new paimentCreditClient())
+            {
+                p.ShowDialog();
+            }
+        }
     }
 }

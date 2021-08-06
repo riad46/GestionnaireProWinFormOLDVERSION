@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="ajoutCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ajoutCreditDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ajouteAchat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -31,6 +37,9 @@
     <Compile Update="listeAchat.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="paimentCreditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="tableArticle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -47,6 +56,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="revenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="tableClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="utilisateur.cs">
