@@ -12,6 +12,7 @@ namespace Gestionnaire_Pro
 {
     public partial class vente : Form
     {
+        private List<Article> _mesArticles = new List<Article>();
         private List<Article> _mesArticleAvendre = new List<Article>();
         private readonly int _codeBarreIndex = 0;
         private readonly int _qntIndex = 2;
@@ -30,7 +31,9 @@ namespace Gestionnaire_Pro
         }
         private int GetCurrentSelectedTableRow()
         {
+            if (venteTable.RowCount>0)
             return venteTable.SelectedRows[0].Index;
+            return -1;
         }
         private string GetCurrentSelectedTableRow_CodeBarre()
         {
@@ -112,7 +115,8 @@ namespace Gestionnaire_Pro
         }
         private void SetCodeBarre()
         {
-            if (venteTable.SelectedRows.Count > 0)
+            if (venteTable.RowCount>0 && venteTable.SelectedRows.Count > 0)
+                if(venteTable[_codeBarreIndex, venteTable.SelectedRows[0].Index].Value!=null)
                 codeBarreLabel.Text = venteTable[_codeBarreIndex, venteTable.SelectedRows[0].Index].Value.ToString();
         }
         private void CalculateAll()
@@ -152,14 +156,14 @@ namespace Gestionnaire_Pro
 
         private void codeBarre_txt_TextChanged(object sender, EventArgs e)
         {
-            if (codeBarre_txt.Text.Length > 0)
+            if (codeBarre_txt.Text.Length > 0 && !string.IsNullOrWhiteSpace(codeBarre_txt.Text))
             {
                 var monArticle = SearchForArticle(codeBarre_txt.Text);
                 if (monArticle != null)
                 {
                     var monArticleSearch =_mesArticleAvendre.Find(a => a.codeBarre == monArticle.codeBarre);
                     
-                    if (monArticleSearch == null) 
+                    if (monArticleSearch == null || monArticleSearch.nom == null) 
                     {
                         monArticle.quantité=1;
                         _mesArticleAvendre.Add(monArticle);
@@ -178,6 +182,8 @@ namespace Gestionnaire_Pro
         }
         private void venteTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            if (venteTable[QNT.Index, GetCurrentSelectedTableRow()].Value == null)
+                venteTable[QNT.Index, GetCurrentSelectedTableRow()].Value = 0;
             CalculateAll();
         }
         private void timer1_Tick(object sender , EventArgs e)
@@ -191,7 +197,9 @@ namespace Gestionnaire_Pro
 
         private void vente_Load(object sender, EventArgs e)
         {
+           
             AddClientsToCombo();
+            _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
         }
 
         private void sub_btn_Click(object sender, EventArgs e)
@@ -221,11 +229,15 @@ namespace Gestionnaire_Pro
         }
         private void listArticle_btn_Click(object sender, EventArgs e)
         {
+            GlobalClass.typeOp = 10;
             using (var listArticle = new ListArticle())
             {
                 listArticle.ShowDialog();
-              AddToVenteFromListArticles(listArticle.monArticle);
+                if(listArticle.monArticle!=null) { 
+                AddToVenteFromListArticles(listArticle.monArticle);
+                _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
                 SetUpTable();
+                }
             }
         }
 
@@ -236,6 +248,7 @@ namespace Gestionnaire_Pro
         }
         private void abort_btn_Click(object sender, EventArgs e)
         {
+            ResetArticlesStock();
             AbortVente();
         }
 
@@ -252,6 +265,28 @@ namespace Gestionnaire_Pro
         private void del_btn_Click(object sender, EventArgs e)
         {
             DeleteCurrentSelectedRow();
+        }
+
+        private void ResetArticlesStock()
+        {
+            if (venteTable.RowCount > 0)
+            {
+                var entryData = new Dictionary<int, float>();
+                foreach (var item in _mesArticleAvendre)
+                {
+                    if (_mesArticles.Find(a => a.Id == item.Id)!=null)
+                    entryData.Add(item.Id, item.quantité + _mesArticles.Find(a => a.Id == item.Id).quantité);
+                }
+                foreach (var item in entryData)
+                {
+                    GestionnaireProModifyDeleteMethods.SetArticleQnt(item.Key, item.Value);
+                }
+            }
+
+        }
+        private void vente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ResetArticlesStock();
         }
     }
 }

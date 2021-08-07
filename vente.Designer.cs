@@ -50,13 +50,13 @@ namespace Gestionnaire_Pro
             this.abort_btn = new System.Windows.Forms.Button();
             this.sub_btn = new System.Windows.Forms.Button();
             this.venteTable = new System.Windows.Forms.DataGridView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.codeBarreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prixU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remiseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -290,6 +290,7 @@ namespace Gestionnaire_Pro
             this.prixU,
             this.remiseCol,
             this.Total});
+            this.venteTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.venteTable.Location = new System.Drawing.Point(299, 208);
             this.venteTable.MultiSelect = false;
             this.venteTable.Name = "venteTable";
@@ -299,12 +300,6 @@ namespace Gestionnaire_Pro
             this.venteTable.TabIndex = 2;
             this.venteTable.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.venteTable_CellEndEdit);
             this.venteTable.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.venteTable_RowStateChanged);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // codeBarreCol
             // 
@@ -341,6 +336,12 @@ namespace Gestionnaire_Pro
             // 
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // vente
             // 

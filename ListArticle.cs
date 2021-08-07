@@ -13,11 +13,12 @@ namespace Gestionnaire_Pro
    
     public partial class ListArticle : Form
     {
-        public Article monArticle = new Article();
+        public Article monArticle = null;
         private readonly int _idCell = 0;
         private readonly int _fournisseurCell = 7;
         private readonly int _codeBarreCell =1;
         private readonly int _nomCell = 2;
+        private readonly int _qntCell = 3;
         private readonly int _typeCell = 4;
         private readonly int _prixVenteCell = 5;
         
@@ -47,6 +48,7 @@ namespace Gestionnaire_Pro
         }
         private void SetUpArticleToSend()
         {
+            monArticle = new Article();
             monArticle.Id = (int)articleTable.SelectedRows[0].Cells[_idCell].Value;
             monArticle.codeBarre = (string)articleTable.SelectedRows[0].Cells[_codeBarreCell].Value;
             monArticle.nom = (string)articleTable.SelectedRows[0].Cells[_nomCell].Value;
@@ -55,6 +57,7 @@ namespace Gestionnaire_Pro
             monArticle.quantité = 1;
             monArticle.prixAchat = articles.Find(a => a.Id == monArticle.Id).prixAchat;
 
+            GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, (float)articleTable.SelectedRows[0].Cells[_qntCell].Value - 1);
         }
         private void ListArticle_Load(object sender, EventArgs e)
         {
@@ -63,8 +66,12 @@ namespace Gestionnaire_Pro
 
         private void articleTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            SetUpArticleToSend();
-            Close();
+            if (GlobalClass.typeOp == 10) 
+            {
+                SetUpArticleToSend();
+                Close();
+                GlobalClass.typeOp = 0;
+            }
 
 
         }
