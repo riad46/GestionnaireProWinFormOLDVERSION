@@ -107,12 +107,12 @@ WHERE id=@Id";
                 
             }
         }
-        public static async void DeleteDetailCreditClient(int id)
+        public static async void DeleteDetailCreditClient(int clientId)
         {
-            var sql = $"DELETE FROM clients WHERE id =@id";
+            var sql = $"DELETE FROM detailCreditClients WHERE clientId =@id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                await connection.ExecuteAsync(sql, new { id = id });
+                await connection.ExecuteAsync(sql, new { id = clientId });
             }
         }
 

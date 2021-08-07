@@ -28,6 +28,14 @@ namespace Gestionnaire_Pro
         {
             InitializeComponent();
         }
+        private int GetCurrentSelectedTableRow()
+        {
+            return venteTable.SelectedRows[0].Index;
+        }
+        private string GetCurrentSelectedTableRow_CodeBarre()
+        {
+            return venteTable[codeBarreCol.Index, venteTable.SelectedRows[0].Index].Value.ToString();
+        }
         private void ResetTable() 
         {
             _mesArticleAvendre = new List<Article>();
@@ -95,7 +103,11 @@ namespace Gestionnaire_Pro
         private void AddClientsToCombo()
         {
             var mesClients = GestionnaireProRetreivingMethods.GetAllClients().Result;
-            client_combo.Items.AddRange(mesClients.ToArray());
+            foreach (var client in mesClients)
+            {
+                client_combo.Items.Add(client.nom);
+            }
+            
 
         }
         private void SetCodeBarre()
@@ -215,6 +227,31 @@ namespace Gestionnaire_Pro
               AddToVenteFromListArticles(listArticle.monArticle);
                 SetUpTable();
             }
+        }
+
+        private void AbortVente()
+        {
+            _mesArticleAvendre = new List<Article>();
+            SetUpTable();
+        }
+        private void abort_btn_Click(object sender, EventArgs e)
+        {
+            AbortVente();
+        }
+
+        private void DeleteCurrentSelectedRow()
+        {
+           
+            var myRow = GetCurrentSelectedTableRow();
+            if (myRow == -1) return;
+            var myArticleIndex = _mesArticleAvendre.FindIndex(a => a.codeBarre == GetCurrentSelectedTableRow_CodeBarre());
+            _mesArticleAvendre.RemoveAt(myArticleIndex);
+            SetUpTable();
+        }
+
+        private void del_btn_Click(object sender, EventArgs e)
+        {
+            DeleteCurrentSelectedRow();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateLabel = new System.Windows.Forms.Label();
             this.codeBarreLabel = new System.Windows.Forms.Label();
@@ -50,13 +50,13 @@ namespace Gestionnaire_Pro
             this.abort_btn = new System.Windows.Forms.Button();
             this.sub_btn = new System.Windows.Forms.Button();
             this.venteTable = new System.Windows.Forms.DataGridView();
-            this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.codeBarreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prixU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remiseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -241,6 +241,7 @@ namespace Gestionnaire_Pro
             this.del_btn.TabIndex = 2;
             this.del_btn.Text = "Supprimer";
             this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // abort_btn
             // 
@@ -250,6 +251,7 @@ namespace Gestionnaire_Pro
             this.abort_btn.TabIndex = 1;
             this.abort_btn.Text = "Annuler";
             this.abort_btn.UseVisualStyleBackColor = true;
+            this.abort_btn.Click += new System.EventHandler(this.abort_btn_Click);
             // 
             // sub_btn
             // 
@@ -273,16 +275,16 @@ namespace Gestionnaire_Pro
             this.venteTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.venteTable.BackgroundColor = System.Drawing.SystemColors.Window;
             this.venteTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.venteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codeBarre,
+            this.codeBarreCol,
             this.nom,
             this.QNT,
             this.prixU,
@@ -298,11 +300,17 @@ namespace Gestionnaire_Pro
             this.venteTable.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.venteTable_CellEndEdit);
             this.venteTable.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.venteTable_RowStateChanged);
             // 
-            // codeBarre
+            // timer1
             // 
-            this.codeBarre.DataPropertyName = "codeBarre";
-            this.codeBarre.HeaderText = "codeBarre";
-            this.codeBarre.Name = "codeBarre";
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // codeBarreCol
+            // 
+            this.codeBarreCol.DataPropertyName = "codeBarre";
+            this.codeBarreCol.HeaderText = "codeBarre";
+            this.codeBarreCol.Name = "codeBarreCol";
             // 
             // nom
             // 
@@ -333,12 +341,6 @@ namespace Gestionnaire_Pro
             // 
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // vente
             // 
@@ -382,13 +384,13 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Button del_btn;
         private System.Windows.Forms.Button abort_btn;
         private System.Windows.Forms.Button sub_btn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeBarre;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeBarreCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn QNT;
         private System.Windows.Forms.DataGridViewTextBoxColumn prixU;
         private System.Windows.Forms.DataGridViewTextBoxColumn remiseCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Timer timer1;
     }
 }

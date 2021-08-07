@@ -116,27 +116,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         }
         //--------------------------------------------------------------------------------  Client
 
-        /// <summary>
-        /// use in Table du Client
-        /// </summary>
-        /// <returns></returns>
-        public static async Task<List<Client>> GetAllClientsWithTheirCredits()
-        {
-            var sql = "SELECT id,nom,Address,numTlf,credit,dc.* FROM clients c LEFT JOIN detailCreditClients ON dc.clientId=c.id ";
-            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
-            {
-                var res= await connection.QueryAsync<Client, DetailCreditClient, Client>(sql,
-                 (client, detailCreditClient) =>
-                 {
-                     if (detailCreditClient != null)
-
-                         client.DetailCreditClients.Add(detailCreditClient);
-                     return client;
-                 });
-
-                return res.ToList();
-            }
-        }
+       
         /// <summary>
         /// use in Liste de Clients
         /// </summary>
