@@ -71,7 +71,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
     /// <returns></returns>
         public static async Task<Article> GetArticleForVente(string codeBarre)
         {
-            var sql = $"SELECT id,codeBarre,nom,type,prixAchat,prixVente FROM articles where codeBarre ='{codeBarre}' ";
+            var sql = $"SELECT id,codeBarre,nom,Quantité,type,prixAchat,prixVente FROM articles where codeBarre ='{codeBarre}' ";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
                 var res = await connection.QueryAsync<Article>(sql);
@@ -184,7 +184,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
                 
-                var res = await connection.QueryAsync<int>(sql,nom);
+                var res = await connection.QueryAsync<int>(sql,new { nom = nom });
                 return res.First();
             }
         }

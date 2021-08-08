@@ -20,6 +20,7 @@ namespace Gestionnaire_Pro
         private readonly int _remiseIndex = 4;
         private readonly int _totalIndex = 5;
 
+        private float ancientQnt=0;
         private float total = 0;
         private float totalRemise = 0;
         private int nbrArticle = 0;
@@ -146,32 +147,67 @@ namespace Gestionnaire_Pro
             nbrPieceLabel.Text = "Pieces :"+nbrPiece;
         }
 
-        
         private Article SearchForArticle(string codeBarre)
         {
 
             var res= GestionnaireProRetreivingMethods.GetArticleForVente(codeBarre).Result;
             return res;
         }
+        private void ResetArticlesStock()
+        {
+            _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+            if (venteTable.RowCount > 0)
+            {
+                var entryData = new Dictionary<int, float>();
+                foreach (var item in _mesArticleAvendre)
+                {
+                    if (_mesArticles.Find(a => a.Id == item.Id) != null)
+                        entryData.Add(item.Id, item.quantité + _mesArticles.Find(a => a.Id == item.Id).quantité);
+                }
+                foreach (var item in entryData)
+                {
+                    GestionnaireProModifyDeleteMethods.SetArticleQnt(item.Key, item.Value);
+                }
+            }
+
+        }
 
         private void codeBarre_txt_TextChanged(object sender, EventArgs e)
         {
-            if (codeBarre_txt.Text.Length > 0 && !string.IsNullOrWhiteSpace(codeBarre_txt.Text))
+            if (codeBarre_txt.Text.Length > 0)
             {
                 var monArticle = SearchForArticle(codeBarre_txt.Text);
                 if (monArticle != null)
                 {
                     var monArticleSearch =_mesArticleAvendre.Find(a => a.codeBarre == monArticle.codeBarre);
                     
-                    if (monArticleSearch == null || monArticleSearch.nom == null) 
+                    if (monArticleSearch == null) 
                     {
+                        if (monArticle.quantité > 0) 
+                        { 
+                        GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité-1);
                         monArticle.quantité=1;
                         _mesArticleAvendre.Add(monArticle);
                         nbrArticle++;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Quantité Insuffisant !!");
+                            return;
+                        }
+
                     }
                     else
                     {
-                        _mesArticleAvendre[_mesArticleAvendre.IndexOf(monArticleSearch)].quantité +=1;
+                        if (monArticle.quantité > 0)
+                        {
+                            _mesArticleAvendre[_mesArticleAvendre.IndexOf(monArticleSearch)].quantité += 1;
+                            GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité - 1);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Quantité Insuffisant !!");
+                        }
                     }
 
                     codeBarre_txt.Text = "";
@@ -182,8 +218,33 @@ namespace Gestionnaire_Pro
         }
         private void venteTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (venteTable[QNT.Index, GetCurrentSelectedTableRow()].Value == null)
-                venteTable[QNT.Index, GetCurrentSelectedTableRow()].Value = 0;
+            
+            if (venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value == null ) venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value = 0;
+            if (venteTable[remiseCol.Index, venteTable.SelectedRows[0].Index].Value == null) venteTable[remiseCol.Index, venteTable.SelectedRows[0].Index].Value = 0;
+           
+
+                var monArticle = SearchForArticle(venteTable[codeBarreCol.Index, venteTable.SelectedRows[0].Index].Value.ToString());
+           
+               
+                if (monArticle.quantité+ancientQnt-(float)venteTable[QNT.Index,venteTable.SelectedRows[0].Index].Value > 0)
+                {
+                
+                    GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité+ancientQnt- (float)venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value);
+                    return;
+                }
+                else
+                {
+                
+                    venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value = monArticle.quantité+ancientQnt;
+
+                    GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id,0.0f);
+                    MessageBox.Show("Quantité Insuffisant !!");
+                    return;
+
+                }
+
+           
+           
             CalculateAll();
         }
         private void timer1_Tick(object sender , EventArgs e)
@@ -233,7 +294,8 @@ namespace Gestionnaire_Pro
             using (var listArticle = new ListArticle())
             {
                 listArticle.ShowDialog();
-                if(listArticle.monArticle!=null) { 
+                if (listArticle.monArticle == null) return;
+                if (listArticle.monArticle.nom != null) { 
                 AddToVenteFromListArticles(listArticle.monArticle);
                 _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
                 SetUpTable();
@@ -267,26 +329,15 @@ namespace Gestionnaire_Pro
             DeleteCurrentSelectedRow();
         }
 
-        private void ResetArticlesStock()
-        {
-            if (venteTable.RowCount > 0)
-            {
-                var entryData = new Dictionary<int, float>();
-                foreach (var item in _mesArticleAvendre)
-                {
-                    if (_mesArticles.Find(a => a.Id == item.Id)!=null)
-                    entryData.Add(item.Id, item.quantité + _mesArticles.Find(a => a.Id == item.Id).quantité);
-                }
-                foreach (var item in entryData)
-                {
-                    GestionnaireProModifyDeleteMethods.SetArticleQnt(item.Key, item.Value);
-                }
-            }
-
-        }
+     
         private void vente_FormClosing(object sender, FormClosingEventArgs e)
         {
             ResetArticlesStock();
+        }
+
+        private void venteTable_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            ancientQnt = (float)venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value;
         }
     }
 }

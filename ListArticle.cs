@@ -13,7 +13,7 @@ namespace Gestionnaire_Pro
    
     public partial class ListArticle : Form
     {
-        public Article monArticle = null;
+        public Article monArticle = new Article();
         private readonly int _idCell = 0;
         private readonly int _fournisseurCell = 7;
         private readonly int _codeBarreCell =1;
@@ -48,7 +48,6 @@ namespace Gestionnaire_Pro
         }
         private void SetUpArticleToSend()
         {
-            monArticle = new Article();
             monArticle.Id = (int)articleTable.SelectedRows[0].Cells[_idCell].Value;
             monArticle.codeBarre = (string)articleTable.SelectedRows[0].Cells[_codeBarreCell].Value;
             monArticle.nom = (string)articleTable.SelectedRows[0].Cells[_nomCell].Value;
@@ -56,8 +55,18 @@ namespace Gestionnaire_Pro
             monArticle.type = (string)articleTable.SelectedRows[0].Cells[_typeCell].Value;
             monArticle.quantité = 1;
             monArticle.prixAchat = articles.Find(a => a.Id == monArticle.Id).prixAchat;
-
-            GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, (float)articleTable.SelectedRows[0].Cells[_qntCell].Value - 1);
+            if ((float)articleTable.SelectedRows[0].Cells[_qntCell].Value > 0) 
+            {
+                GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, (float)articleTable.SelectedRows[0].Cells[_qntCell].Value - 1);
+                
+            }
+            else
+            {
+                MessageBox.Show("Quantité Insuffisante!!");
+                monArticle = null;
+                return;
+            }
+            
         }
         private void ListArticle_Load(object sender, EventArgs e)
         {

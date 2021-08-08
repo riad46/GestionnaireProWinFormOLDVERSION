@@ -290,7 +290,6 @@ namespace Gestionnaire_Pro
             this.prixU,
             this.remiseCol,
             this.Total});
-            this.venteTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.venteTable.Location = new System.Drawing.Point(299, 208);
             this.venteTable.MultiSelect = false;
             this.venteTable.Name = "venteTable";
@@ -298,6 +297,7 @@ namespace Gestionnaire_Pro
             this.venteTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.venteTable.Size = new System.Drawing.Size(681, 358);
             this.venteTable.TabIndex = 2;
+            this.venteTable.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.venteTable_CellBeginEdit);
             this.venteTable.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.venteTable_CellEndEdit);
             this.venteTable.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.venteTable_RowStateChanged);
             // 
@@ -354,6 +354,7 @@ namespace Gestionnaire_Pro
             this.Name = "vente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.vente_FormClosing);
             this.Load += new System.EventHandler(this.vente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -313,7 +313,7 @@ WHERE id=@Id";
             }
         }
         ////---------------------------------------------Vente
-        public static async void ModifyVente(DetailVente[] detailVentes)
+        public static async void ModifyVente(Vente vente)
         {
             var sql = @"UPDATE ventes
                        SET
@@ -327,7 +327,7 @@ WHERE id=@Id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
 
-                await connection.ExecuteAsync(sql, detailVentes);
+                await connection.ExecuteAsync(sql, vente);
 
 
             }
@@ -348,20 +348,33 @@ WHERE id=@Id";
                 await connection.ExecuteAsync(sql);
             }
         }
-        ////---------------------------------------------DetailVente
-        public static async void ModifyDetailVente(Vente vente)
+
+        public static async void SetArticleQnt(int id,float qnt)
         {
-            var sql = @"UPDATE ventes
+            var param = new { id = id, qnt = qnt };
+            var sql = "UPDATE articles SET Quantité=@qnt WHERE id=@id";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                await connection.ExecuteAsync(sql,param);
+            }
+        }
+        ////---------------------------------------------DetailVente
+        public static async void ModifyDetailVente(DetailVente[] detailVentes)
+        {
+            var sql = @"UPDATE detailVentes
                        SET
                        nouvelleQnt=@nouvelleQnt,
                        nouveauTotal=@nouveauMontantTotal,
                        nouvelleRemise=@nouvelleRemise,
                        WHERE id=@Id 
-                       "; ;
+                       "; 
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-
-                await connection.ExecuteAsync(sql, vente);
+                foreach (var detail in detailVentes)
+                {
+                    await connection.ExecuteAsync(sql,detail);
+                }
+                
 
 
             }
