@@ -15,30 +15,26 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         ////---------------------------------------------Utilisateur 
         public static async void ModifyUserInfos(Utilisateur utilisateur)
         {
+            var param =new {id=utilisateur.Id, username=utilisateur.nomUtilisateur,pass=utilisateur.motDePass,numTlf=utilisateur.numTlf,estAdmin=utilisateur.estAdmin };
             var sql = $@" UPDATE utilisateurs
                       Set
-                      nom={utilisateur.nomUtilisateur},
-                      motDePass={utilisateur.motDePasse},
-                      numTlf={utilisateur.numTlf},
-                      isAdmin={utilisateur.estAdmin}";
+                      nomUtilisateur=@username,
+                      motDePass=@pass,
+                      numTlf=@numTlf,
+                      estAdmin=@estAdmin
+                          where id=@id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                await connection.ExecuteAsync(sql);
+                await connection.ExecuteAsync(sql,param);
             }
         }
         public static async void DeleteUser(int id)
         {
-            //check if users are +1
-            if (GestionnaireProRetreivingMethods.GetAllUtilisateurs().Count <= 1)
-            {
-                System.Windows.Forms.MessageBox.Show("Il y a un seul Utilisateur dans ce Programme", "Attention !!!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
-                return;
-            }
-
-            var sql = $"DELETE FROM utilisateurs WHERE id={id}";
+            
+            var sql = $"DELETE FROM utilisateurs WHERE id=@id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                await connection.ExecuteAsync(sql);
+                await connection.ExecuteAsync(sql,new { id=id});
             }
         }
         ////---------------------------------------------Client

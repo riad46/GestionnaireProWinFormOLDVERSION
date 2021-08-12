@@ -57,12 +57,14 @@ namespace Gestionnaire_Pro
             this.fournisseurItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFournisseurDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listFournisseurDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableFournisseursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extrasItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revenueDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caisseDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilisateurDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoBoutiqueDropList = new System.Windows.Forms.ToolStripMenuItem();
             this.parametreDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableDAchatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gradiantPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -157,12 +159,14 @@ namespace Gestionnaire_Pro
             this.historyVenteDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
             this.historyVenteDropItem.Size = new System.Drawing.Size(253, 22);
             this.historyVenteDropItem.Text = "Historique de Vente";
+            this.historyVenteDropItem.Click += new System.EventHandler(this.historyVenteDropItem_Click_1);
             // 
             // achatItem
             // 
             this.achatItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nvAchatDropItem,
-            this.listAchatDropItem});
+            this.listAchatDropItem,
+            this.tableDAchatsToolStripMenuItem});
             this.achatItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.achatItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
             this.achatItem.Name = "achatItem";
@@ -176,13 +180,15 @@ namespace Gestionnaire_Pro
             this.nvAchatDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.nvAchatDropItem.Size = new System.Drawing.Size(223, 22);
             this.nvAchatDropItem.Text = "Nouveau Achat";
+            this.nvAchatDropItem.Click += new System.EventHandler(this.nvAchatDropItem_Click_1);
             // 
             // listAchatDropItem
             // 
             this.listAchatDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.listAchatDropItem.Name = "listAchatDropItem";
-            this.listAchatDropItem.Size = new System.Drawing.Size(223, 22);
-            this.listAchatDropItem.Text = "Liste d\'Achat";
+            this.listAchatDropItem.Size = new System.Drawing.Size(224, 30);
+            this.listAchatDropItem.Text = "Liste d\'Achats";
+            this.listAchatDropItem.Click += new System.EventHandler(this.listAchatDropItem_Click_1);
             // 
             // articleItem
             // 
@@ -215,6 +221,7 @@ namespace Gestionnaire_Pro
             this.tableDArticlesToolStripMenuItem1.Name = "tableDArticlesToolStripMenuItem1";
             this.tableDArticlesToolStripMenuItem1.Size = new System.Drawing.Size(232, 30);
             this.tableDArticlesToolStripMenuItem1.Text = "Table d\'Articles";
+            this.tableDArticlesToolStripMenuItem1.Click += new System.EventHandler(this.tableDArticlesToolStripMenuItem1_Click);
             // 
             // clientItem
             // 
@@ -277,7 +284,8 @@ namespace Gestionnaire_Pro
             // 
             this.fournisseurItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addFournisseurDropItem,
-            this.listFournisseurDropItem});
+            this.listFournisseurDropItem,
+            this.tableFournisseursToolStripMenuItem});
             this.fournisseurItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.fournisseurItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
             this.fournisseurItem.Name = "fournisseurItem";
@@ -288,7 +296,7 @@ namespace Gestionnaire_Pro
             // 
             this.addFournisseurDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.addFournisseurDropItem.Name = "addFournisseurDropItem";
-            this.addFournisseurDropItem.Size = new System.Drawing.Size(213, 22);
+            this.addFournisseurDropItem.Size = new System.Drawing.Size(264, 30);
             this.addFournisseurDropItem.Text = "Nouveau Fournisseur";
             this.addFournisseurDropItem.Click += new System.EventHandler(this.addFournisseurDropItem_Click_1);
             // 
@@ -296,9 +304,16 @@ namespace Gestionnaire_Pro
             // 
             this.listFournisseurDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.listFournisseurDropItem.Name = "listFournisseurDropItem";
-            this.listFournisseurDropItem.Size = new System.Drawing.Size(213, 22);
+            this.listFournisseurDropItem.Size = new System.Drawing.Size(264, 30);
             this.listFournisseurDropItem.Text = "Liste de Fournisseurs";
             this.listFournisseurDropItem.Click += new System.EventHandler(this.listFournisseurDropItem_Click_1);
+            // 
+            // tableFournisseursToolStripMenuItem
+            // 
+            this.tableFournisseursToolStripMenuItem.Name = "tableFournisseursToolStripMenuItem";
+            this.tableFournisseursToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.tableFournisseursToolStripMenuItem.Text = "Table Fournisseurs";
+            this.tableFournisseursToolStripMenuItem.Click += new System.EventHandler(this.tableFournisseursToolStripMenuItem_Click);
             // 
             // extrasItem
             // 
@@ -322,6 +337,7 @@ namespace Gestionnaire_Pro
             this.revenueDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.revenueDropItem.Size = new System.Drawing.Size(279, 22);
             this.revenueDropItem.Text = "Revenue";
+            this.revenueDropItem.Click += new System.EventHandler(this.revenueDropItem_Click_1);
             // 
             // caisseDropItem
             // 
@@ -329,6 +345,7 @@ namespace Gestionnaire_Pro
             this.caisseDropItem.Name = "caisseDropItem";
             this.caisseDropItem.Size = new System.Drawing.Size(279, 22);
             this.caisseDropItem.Text = "Caisse";
+            this.caisseDropItem.Click += new System.EventHandler(this.caisseDropItem_Click_1);
             // 
             // utilisateurDropItem
             // 
@@ -337,6 +354,7 @@ namespace Gestionnaire_Pro
             this.utilisateurDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
             this.utilisateurDropItem.Size = new System.Drawing.Size(279, 22);
             this.utilisateurDropItem.Text = "Gérer les Utilisateurs";
+            this.utilisateurDropItem.Click += new System.EventHandler(this.utilisateurDropItem_Click_1);
             // 
             // infoBoutiqueDropList
             // 
@@ -345,6 +363,7 @@ namespace Gestionnaire_Pro
             this.infoBoutiqueDropList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.infoBoutiqueDropList.Size = new System.Drawing.Size(279, 22);
             this.infoBoutiqueDropList.Text = "Information de Boutique";
+            this.infoBoutiqueDropList.Click += new System.EventHandler(this.infoBoutiqueDropList_Click_1);
             // 
             // parametreDropItem
             // 
@@ -353,6 +372,14 @@ namespace Gestionnaire_Pro
             this.parametreDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.parametreDropItem.Size = new System.Drawing.Size(279, 22);
             this.parametreDropItem.Text = "Paramètre";
+            this.parametreDropItem.Click += new System.EventHandler(this.parametreDropItem_Click_1);
+            // 
+            // tableDAchatsToolStripMenuItem
+            // 
+            this.tableDAchatsToolStripMenuItem.Name = "tableDAchatsToolStripMenuItem";
+            this.tableDAchatsToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.tableDAchatsToolStripMenuItem.Text = "Table d\'Achats";
+            this.tableDAchatsToolStripMenuItem.Click += new System.EventHandler(this.tableDAchatsToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -440,7 +467,7 @@ namespace Gestionnaire_Pro
 
         private void listFournisseurDropItem_Click(object sender, EventArgs e)
         {
-            using (var form = new listeFournisseur())
+            using (var form = new TableFournisseur())
             {
                 form.ShowDialog();
             }
@@ -539,6 +566,8 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ToolStripMenuItem ajouterCreditToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paimentDeCreditToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableFournisseursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableDAchatsToolStripMenuItem;
     }
 }
 

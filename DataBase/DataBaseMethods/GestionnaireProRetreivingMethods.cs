@@ -281,9 +281,40 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
 
         }
 
-        
-        //--------------------------------------------------------------------------------  infoBoutique
-        public static async Task<InfoBoutique> GetBoutiqueInfos()
+        public static async Task<List<Vente>> GetHistoriqueDeVenteByFilter(int id,int clientId, float total,DateTime dateMin,DateTime dateMax)
+        {
+            var param = new { id=id,clientId=clientId,total=total,dateMin=dateMin,dateMax=dateMax };
+            var sql = "Select v.id,v.dateVente,v.montantTotale,v.remise,v.netPayé,v.ajouterPar,v.dateModification,v.modifierPar,v.nouveauMontantTotal,v.nouvelleRemise,c.* FROM ventes v LEFT JOIN clients c ";
+            if(id!=0 || clientId>0 ||total >=0 || dateMin!=null ||dateMax!=null)
+            {
+                sql += " WHERE ";
+                if (id >-1)
+                {
+                    sql += " id=@id AND";
+                }
+                if(clientId >-1) sql += " clientId=@clientId AND ";
+                if (total > -1) sql+="montantTotale=@total AND ";
+                if (dateMin != null) sql += "dateVente >=@dateMin AND ";
+                if (dateMin != null) sql += "dateVente <=@dateMax  ";
+
+            }
+            
+            
+
+
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                var res = await connection.QueryAsync<Vente, Client, Vente>(sql, (vente, client) =>
+                {
+                    if (vente.clientId != null)
+                        vente.Client = client;
+                    return vente;
+                }, param);
+                return res.ToList();
+            }
+        }
+            //--------------------------------------------------------------------------------  infoBoutique
+            public static async Task<InfoBoutique> GetBoutiqueInfos()
         {
             var sql = "SELECT * FROM infosBoutique where id=1";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
@@ -298,14 +329,16 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         /// use in Table d'Utilisateurs
         /// </summary>
         /// <returns></returns>
-        public static List<Utilisateur> GetAllUtilisateurs()
+        public static async Task<List<Utilisateur>> GetAllUtilisateurs()
         {
-            var utilisateurs = new List<Utilisateur>();
+            
+            var sql = "SELECT id,nomUtilisateur,motDePass,numTlf,estAdmin FROM utilisateurs";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-
+            var res=    await connection.QueryAsync<Utilisateur>(sql);
+                return res.ToList();
             }
-            return utilisateurs;
+            
         }
         //----------------------------------------------------------------------------------- Action
         public List<ActionEffectuer> GetAllActions()

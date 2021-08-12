@@ -79,14 +79,14 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
         }
         //utilisateur
-        public void AddUtilisateur(Utilisateur utilisateur)
+        public static async void AddUtilisateur(Utilisateur utilisateur)
         {
             var sql = "INSERT INTO utilisateurs(nomUtilisateur,motDePass,numTlf,estAdmin) VALUES(@username,@password,@numTlf,@isAdmin)"; ;
-            if (string.IsNullOrEmpty(utilisateur.numTlf))
-                 sql = "INSERT INTO utilisateurs(nomUtilisateur,motDePass,estAdmin) VALUES(@username,@password,@isAdmin)";
+          
+          
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                connection.ExecuteAsync(sql,new {username=utilisateur.nomUtilisateur,password=utilisateur.motDePasse,numTlf=utilisateur.numTlf,isAdmin=utilisateur.estAdmin });
+                await connection.ExecuteAsync(sql,new {username=utilisateur.nomUtilisateur,password=utilisateur.motDePass,numTlf=utilisateur.numTlf,isAdmin=utilisateur.estAdmin });
             }
         }
         //achat

@@ -19,25 +19,38 @@ namespace Gestionnaire_Pro
         }
         private void SetUpTable()
         {
+            historique_Table.AutoGenerateColumns = false;
            _myTableData=  GestionnaireProRetreivingMethods.GetHistoriqueDeVente().Result;
             historique_Table.DataSource = _myTableData;
-      
-            int i = 0;
-            foreach (var item in _myTableData)
-            {
-                historique_Table.Rows[i].Cells[6].Value = item.Client.nom;
 
-            }
+           
+                int i = 0;
+                foreach (var item in _myTableData)
+                {
+                    if(item.Client!=null)
+                    historique_Table.Rows[i].Cells[6].Value = item.Client.nom;
+
+                }
+            historique_Table.Refresh();
+            
         }
-        private void historiqueVente_Load(object sender, EventArgs e)
+      
+        private void historiqueVente_Shown(object sender, EventArgs e)
         {
+
             SetUpTable();
         }
 
-        private void historiqueVente_Resize(object sender, EventArgs e)
+        private void sub_btn_Click(object sender, EventArgs e)
         {
-            historique_Table.Width = this.Width;
-            historique_Table.Height = this.Height - panel1.Height;
+          //  var id = Convert.ToInt32(id_txt.Text);
+            var clientId =0;
+        //    var total = Convert.ToSingle(total_txt.Text);
+            var dateMin = Convert.ToDateTime(datemin_txt.Text);
+            var dateMax = Convert.ToDateTime(datemax_txt.Text);
+            _myTableData=GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(-1,-1,-1,dateMin,dateMax).Result;
+            SetUpTable();
+            
         }
     }
 }

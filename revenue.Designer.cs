@@ -30,7 +30,7 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revenue));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.recherche = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@ namespace Gestionnaire_Pro
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.revenueTable = new System.Windows.Forms.DataGridView();
             this.codeBarre_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,17 +48,21 @@ namespace Gestionnaire_Pro
             this.total_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.revenueTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // recherche
             // 
-            this.groupBox1.Location = new System.Drawing.Point(712, 20);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(437, 176);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.recherche.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.recherche.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.recherche.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.recherche.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.recherche.Location = new System.Drawing.Point(714, 11);
+            this.recherche.Name = "recherche";
+            this.recherche.Size = new System.Drawing.Size(437, 200);
+            this.recherche.TabIndex = 0;
+            this.recherche.TabStop = false;
+            this.recherche.Text = "Filtre";
             // 
             // label1
             // 
@@ -141,7 +145,7 @@ namespace Gestionnaire_Pro
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.recherche);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label7);
@@ -156,53 +160,66 @@ namespace Gestionnaire_Pro
             this.panel1.Size = new System.Drawing.Size(1154, 226);
             this.panel1.TabIndex = 10;
             // 
-            // dataGridView1
+            // revenueTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.revenueTable.AllowUserToAddRows = false;
+            this.revenueTable.AllowUserToDeleteRows = false;
+            this.revenueTable.AllowUserToOrderColumns = true;
+            this.revenueTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.revenueTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.revenueTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.revenueTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.revenueTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeBarre_Col,
             this.nom_Col,
             this.type_Col,
             this.qnt_Col,
             this.total_Col});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 226);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1154, 449);
-            this.dataGridView1.TabIndex = 11;
+            this.revenueTable.Location = new System.Drawing.Point(0, 226);
+            this.revenueTable.Name = "revenueTable";
+            this.revenueTable.ReadOnly = true;
+            this.revenueTable.RowTemplate.Height = 25;
+            this.revenueTable.Size = new System.Drawing.Size(1154, 449);
+            this.revenueTable.TabIndex = 11;
             // 
             // codeBarre_Col
             // 
             this.codeBarre_Col.HeaderText = "Code Barre";
             this.codeBarre_Col.Name = "codeBarre_Col";
+            this.codeBarre_Col.ReadOnly = true;
             // 
             // nom_Col
             // 
             this.nom_Col.HeaderText = "Nom Article";
             this.nom_Col.Name = "nom_Col";
+            this.nom_Col.ReadOnly = true;
             // 
             // type_Col
             // 
             this.type_Col.HeaderText = "Type";
             this.type_Col.Name = "type_Col";
+            this.type_Col.ReadOnly = true;
             // 
             // qnt_Col
             // 
             this.qnt_Col.HeaderText = "Quantité";
             this.qnt_Col.Name = "qnt_Col";
+            this.qnt_Col.ReadOnly = true;
             // 
             // total_Col
             // 
             this.total_Col.HeaderText = "Total";
             this.total_Col.Name = "total_Col";
+            this.total_Col.ReadOnly = true;
             // 
             // revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 675);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.revenueTable);
             this.Controls.Add(this.panel1);
             this.Name = "revenue";
             this.Text = "revenue";
@@ -210,14 +227,14 @@ namespace Gestionnaire_Pro
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.revenueTable)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox recherche;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -227,7 +244,7 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView revenueTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeBarre_Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn type_Col;

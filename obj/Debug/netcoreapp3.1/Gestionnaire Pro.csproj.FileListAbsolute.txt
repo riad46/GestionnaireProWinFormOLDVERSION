@@ -223,7 +223,6 @@ P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqli
 P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutCredit.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutCreditDetail.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteAchat.resources
@@ -236,7 +235,6 @@ P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.infosBoutique
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ListArticle.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeAchat.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeClient.resources
-P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.listeFournisseur.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.Menu.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.paimentCreditClient.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.param.resources
@@ -254,3 +252,7 @@ P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CopyCo
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.dll
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache
+P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
+P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ListFournisseurs.resources
+P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.TableAchat.resources
+P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.TableFournisseur.resources

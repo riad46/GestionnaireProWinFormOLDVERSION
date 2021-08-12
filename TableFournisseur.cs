@@ -5,19 +5,19 @@ using System.Windows.Forms;
 
 namespace Gestionnaire_Pro
 {
-    public partial class listeFournisseur : Form
+    public partial class TableFournisseur : Form
     {
         List<Fournisseur> fournisseurs = new List<Fournisseur>();
-        public listeFournisseur()
+        public TableFournisseur()
         {
             InitializeComponent();
         }
 
-        private void listeFournisseur_Load_1(object sender, EventArgs e)
+        private void TableFournisseur_Load_1(object sender, EventArgs e)
         {
             setUpTable();
         }
-        private void listeFournisseur_FormClosing(object sender, FormClosingEventArgs e)
+        private void TableFournisseur_FormClosing(object sender, FormClosingEventArgs e)
         {
 
             GlobalClass.typeOp = 0;

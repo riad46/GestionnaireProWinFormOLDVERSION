@@ -191,13 +191,7 @@ create table if not EXISTS ProduitExcluDeVerification(
         }
 
        
-        private void tableDArticlesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (tableArticle tableArticleForm = new tableArticle())
-            {
-                tableArticleForm.ShowDialog();
-            }
-        }
+       
 
         private void listeDArticleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -247,9 +241,9 @@ create table if not EXISTS ProduitExcluDeVerification(
 
         private void listFournisseurDropItem_Click_1(object sender, EventArgs e)
         {
-            using (var f = new listeFournisseur())
+            using (var listF = new ListFournisseurs())
             {
-                f.ShowDialog();
+                listF.ShowDialog();
             }
         }
 
@@ -258,6 +252,104 @@ create table if not EXISTS ProduitExcluDeVerification(
             using (var p = new paimentCreditClient())
             {
                 p.ShowDialog();
+            }
+        }
+
+        private void infoBoutiqueDropList_Click_1(object sender, EventArgs e)
+        {
+          //  if (GlobalClass.isAdmin != true) return;
+            using(var infoWin =new infosBoutique())
+            {
+                infoWin.ShowDialog();
+            }
+        }
+
+        private void tableDArticlesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (tableArticle tableArticleForm = new tableArticle())
+            {
+                tableArticleForm.ShowDialog();
+            }
+        }
+
+        private void tableDArticlesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        using(var AjoutAForm =new ajouteArticle())
+            {
+                AjoutAForm.ShowDialog();
+            }    
+        }
+
+        private void caisseDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var caisseForm = new caisse())
+            {
+                caisseForm.ShowDialog();
+            }
+        }
+
+        private void utilisateurDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var userForm = new utilisateur())
+            {
+                userForm.ShowDialog();
+            }
+        }
+
+        private void revenueDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var revForm = new revenue())
+            {
+                revForm.ShowDialog();
+            }
+        }
+
+        private void parametreDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var paramForm = new param())
+            {
+                paramForm.ShowDialog();
+            }
+        }
+
+        private void tableFournisseursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var f = new TableFournisseur())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void nvAchatDropItem_Click_1(object sender, EventArgs e)
+        {
+            using (var AjoutAchatForm = new ajouteAchat())
+            {
+                AjoutAchatForm.ShowDialog();
+            }
+        }
+
+        private void listAchatDropItem_Click_1(object sender, EventArgs e)
+        {
+            using( var listAchatForm =new listeAchat())
+            {
+                listAchatForm.ShowDialog();
+            }
+        }
+
+        private void tableDAchatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var tableAchat= new TableAchat())
+            {
+                tableAchat.ShowDialog();
+
+            }
+        }
+
+        private void historyVenteDropItem_Click_1(object sender, EventArgs e)
+        {
+            using(var historiqueVente =new historiqueVente())
+            {
+                historiqueVente.ShowDialog();
             }
         }
     }

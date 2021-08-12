@@ -8,7 +8,7 @@ namespace Gestionnaire_Pro.DataBase.Models
     {
         public int Id { get; set; }
         public string nomUtilisateur { get; set; }
-        public string motDePasse { get; set; }
+        public string motDePass { get; set; }
         public string numTlf { get; set; }
         public bool estAdmin { get; set; }
     }

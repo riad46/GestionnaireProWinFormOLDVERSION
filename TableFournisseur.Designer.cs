@@ -1,7 +1,7 @@
 ﻿
 namespace Gestionnaire_Pro
 {
-    partial class listeFournisseur
+    partial class TableFournisseur
     {
         /// <summary>
         /// Required designer variable.
@@ -166,7 +166,7 @@ namespace Gestionnaire_Pro
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // listeFournisseur
+            // TableFournisseur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,10 +175,10 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "listeFournisseur";
-            this.Text = "listeFournisseur";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.listeFournisseur_FormClosing);
-            this.Load += new System.EventHandler(this.listeFournisseur_Load_1);
+            this.Name = "TableFournisseur";
+            this.Text = "TableFournisseur";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TableFournisseur_FormClosing);
+            this.Load += new System.EventHandler(this.TableFournisseur_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
