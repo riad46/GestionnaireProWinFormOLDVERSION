@@ -32,6 +32,12 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             this.gradiantPanel1 = new Gestionnaire_Pro.GradiantPanel();
+            this.listArticlesLabel = new System.Windows.Forms.Label();
+            this.historiqueVenteLabel = new System.Windows.Forms.Label();
+            this.venteLabel = new System.Windows.Forms.Label();
+            this.articlesList_pic = new System.Windows.Forms.PictureBox();
+            this.historiqueVente_pic = new System.Windows.Forms.PictureBox();
+            this.nvVente_pic = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitDropList = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +48,7 @@ namespace Gestionnaire_Pro
             this.historyVenteDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.achatItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nvAchatDropItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listAchatDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableDAchatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articleItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableDArticlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listeDArticleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,22 +70,122 @@ namespace Gestionnaire_Pro
             this.utilisateurDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoBoutiqueDropList = new System.Windows.Forms.ToolStripMenuItem();
             this.parametreDropItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableDAchatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gradiantPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.articlesList_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historiqueVente_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvVente_pic)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gradiantPanel1
             // 
             this.gradiantPanel1.angle = 0F;
+            this.gradiantPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gradiantPanel1.Controls.Add(this.listArticlesLabel);
+            this.gradiantPanel1.Controls.Add(this.historiqueVenteLabel);
+            this.gradiantPanel1.Controls.Add(this.venteLabel);
+            this.gradiantPanel1.Controls.Add(this.articlesList_pic);
+            this.gradiantPanel1.Controls.Add(this.historiqueVente_pic);
+            this.gradiantPanel1.Controls.Add(this.nvVente_pic);
             this.gradiantPanel1.Controls.Add(this.menuStrip1);
             this.gradiantPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradiantPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gradiantPanel1.lowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gradiantPanel1.lowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.gradiantPanel1.Name = "gradiantPanel1";
             this.gradiantPanel1.Size = new System.Drawing.Size(1250, 690);
             this.gradiantPanel1.TabIndex = 0;
             this.gradiantPanel1.topColor = System.Drawing.Color.Red;
+            // 
+            // listArticlesLabel
+            // 
+            this.listArticlesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listArticlesLabel.AutoSize = true;
+            this.listArticlesLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listArticlesLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.listArticlesLabel.Location = new System.Drawing.Point(880, 545);
+            this.listArticlesLabel.Name = "listArticlesLabel";
+            this.listArticlesLabel.Size = new System.Drawing.Size(163, 32);
+            this.listArticlesLabel.TabIndex = 9;
+            this.listArticlesLabel.Text = "Liste d\'articles";
+            this.listArticlesLabel.Click += new System.EventHandler(this.listArticlesLabel_Click);
+            // 
+            // historiqueVenteLabel
+            // 
+            this.historiqueVenteLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.historiqueVenteLabel.AutoSize = true;
+            this.historiqueVenteLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.historiqueVenteLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.historiqueVenteLabel.Location = new System.Drawing.Point(513, 545);
+            this.historiqueVenteLabel.Name = "historiqueVenteLabel";
+            this.historiqueVenteLabel.Size = new System.Drawing.Size(226, 32);
+            this.historiqueVenteLabel.TabIndex = 8;
+            this.historiqueVenteLabel.Text = "Historique de Vente";
+            this.historiqueVenteLabel.Click += new System.EventHandler(this.historiqueVenteLabel_Click);
+            // 
+            // venteLabel
+            // 
+            this.venteLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.venteLabel.AutoSize = true;
+            this.venteLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.venteLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.venteLabel.Location = new System.Drawing.Point(186, 545);
+            this.venteLabel.Name = "venteLabel";
+            this.venteLabel.Size = new System.Drawing.Size(179, 32);
+            this.venteLabel.TabIndex = 7;
+            this.venteLabel.Text = "Nouveau Vente";
+            this.venteLabel.Click += new System.EventHandler(this.venteLabel_Click);
+            // 
+            // articlesList_pic
+            // 
+            this.articlesList_pic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.articlesList_pic.BackColor = System.Drawing.Color.Transparent;
+            this.articlesList_pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.articlesList_pic.Image = global::Gestionnaire_Pro.Properties.Resources.cosmetics;
+            this.articlesList_pic.Location = new System.Drawing.Point(827, 230);
+            this.articlesList_pic.MaximumSize = new System.Drawing.Size(300, 300);
+            this.articlesList_pic.MinimumSize = new System.Drawing.Size(150, 150);
+            this.articlesList_pic.Name = "articlesList_pic";
+            this.articlesList_pic.Size = new System.Drawing.Size(273, 290);
+            this.articlesList_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.articlesList_pic.TabIndex = 6;
+            this.articlesList_pic.TabStop = false;
+            this.articlesList_pic.Click += new System.EventHandler(this.articlesList_pic_Click);
+
+            // 
+            // historiqueVente_pic
+            // 
+            this.historiqueVente_pic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.historiqueVente_pic.BackColor = System.Drawing.Color.Transparent;
+            this.historiqueVente_pic.Image = global::Gestionnaire_Pro.Properties.Resources.history;
+            this.historiqueVente_pic.Location = new System.Drawing.Point(479, 230);
+            this.historiqueVente_pic.MaximumSize = new System.Drawing.Size(300, 300);
+            this.historiqueVente_pic.MinimumSize = new System.Drawing.Size(150, 150);
+            this.historiqueVente_pic.Name = "historiqueVente_pic";
+            this.historiqueVente_pic.Size = new System.Drawing.Size(273, 290);
+            this.historiqueVente_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.historiqueVente_pic.TabIndex = 5;
+            this.historiqueVente_pic.TabStop = false;
+            this.historiqueVente_pic.Click += new System.EventHandler(this.historiqueVente_pic_Click);
+            // 
+            // nvVente_pic
+            // 
+            this.nvVente_pic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.nvVente_pic.BackColor = System.Drawing.Color.Transparent;
+            this.nvVente_pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nvVente_pic.Image = global::Gestionnaire_Pro.Properties.Resources.shopping_basket;
+            this.nvVente_pic.Location = new System.Drawing.Point(136, 230);
+            this.nvVente_pic.MaximumSize = new System.Drawing.Size(300, 300);
+            this.nvVente_pic.MinimumSize = new System.Drawing.Size(150, 150);
+            this.nvVente_pic.Name = "nvVente_pic";
+            this.nvVente_pic.Size = new System.Drawing.Size(273, 290);
+            this.nvVente_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.nvVente_pic.TabIndex = 4;
+            this.nvVente_pic.TabStop = false;
+            this.nvVente_pic.Click += new System.EventHandler(this.nvVente_pic_Click);
             // 
             // menuStrip1
             // 
@@ -165,30 +271,29 @@ namespace Gestionnaire_Pro
             // 
             this.achatItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nvAchatDropItem,
-            this.listAchatDropItem,
             this.tableDAchatsToolStripMenuItem});
             this.achatItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.achatItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
             this.achatItem.Name = "achatItem";
             this.achatItem.Size = new System.Drawing.Size(79, 29);
             this.achatItem.Text = "Achat";
+            this.achatItem.Visible = false;
             // 
             // nvAchatDropItem
             // 
             this.nvAchatDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nvAchatDropItem.Name = "nvAchatDropItem";
             this.nvAchatDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.nvAchatDropItem.Size = new System.Drawing.Size(223, 22);
+            this.nvAchatDropItem.Size = new System.Drawing.Size(224, 30);
             this.nvAchatDropItem.Text = "Nouveau Achat";
             this.nvAchatDropItem.Click += new System.EventHandler(this.nvAchatDropItem_Click_1);
             // 
-            // listAchatDropItem
+            // tableDAchatsToolStripMenuItem
             // 
-            this.listAchatDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.listAchatDropItem.Name = "listAchatDropItem";
-            this.listAchatDropItem.Size = new System.Drawing.Size(224, 30);
-            this.listAchatDropItem.Text = "Liste d\'Achats";
-            this.listAchatDropItem.Click += new System.EventHandler(this.listAchatDropItem_Click_1);
+            this.tableDAchatsToolStripMenuItem.Name = "tableDAchatsToolStripMenuItem";
+            this.tableDAchatsToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.tableDAchatsToolStripMenuItem.Text = "Table d\'Achats";
+            this.tableDAchatsToolStripMenuItem.Click += new System.EventHandler(this.tableDAchatsToolStripMenuItem_Click);
             // 
             // articleItem
             // 
@@ -345,6 +450,7 @@ namespace Gestionnaire_Pro
             this.caisseDropItem.Name = "caisseDropItem";
             this.caisseDropItem.Size = new System.Drawing.Size(279, 22);
             this.caisseDropItem.Text = "Caisse";
+            this.caisseDropItem.Visible = false;
             this.caisseDropItem.Click += new System.EventHandler(this.caisseDropItem_Click_1);
             // 
             // utilisateurDropItem
@@ -372,14 +478,8 @@ namespace Gestionnaire_Pro
             this.parametreDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.parametreDropItem.Size = new System.Drawing.Size(279, 22);
             this.parametreDropItem.Text = "Paramètre";
+            this.parametreDropItem.Visible = false;
             this.parametreDropItem.Click += new System.EventHandler(this.parametreDropItem_Click_1);
-            // 
-            // tableDAchatsToolStripMenuItem
-            // 
-            this.tableDAchatsToolStripMenuItem.Name = "tableDAchatsToolStripMenuItem";
-            this.tableDAchatsToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
-            this.tableDAchatsToolStripMenuItem.Text = "Table d\'Achats";
-            this.tableDAchatsToolStripMenuItem.Click += new System.EventHandler(this.tableDAchatsToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -392,6 +492,9 @@ namespace Gestionnaire_Pro
             this.Load += new System.EventHandler(this.Menu_Load);
             this.gradiantPanel1.ResumeLayout(false);
             this.gradiantPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.articlesList_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historiqueVente_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvVente_pic)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -544,7 +647,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ToolStripMenuItem historyVenteDropItem;
         private System.Windows.Forms.ToolStripMenuItem achatItem;
         private System.Windows.Forms.ToolStripMenuItem nvAchatDropItem;
-        private System.Windows.Forms.ToolStripMenuItem listAchatDropItem;
         private System.Windows.Forms.ToolStripMenuItem articleItem;
         private System.Windows.Forms.ToolStripMenuItem clientItem;
         private System.Windows.Forms.ToolStripMenuItem addClientDropItem;
@@ -568,6 +670,12 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tableFournisseursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tableDAchatsToolStripMenuItem;
+        private System.Windows.Forms.PictureBox articlesList_pic;
+        private System.Windows.Forms.PictureBox historiqueVente_pic;
+        private System.Windows.Forms.PictureBox nvVente_pic;
+        private System.Windows.Forms.Label listArticlesLabel;
+        private System.Windows.Forms.Label historiqueVenteLabel;
+        private System.Windows.Forms.Label venteLabel;
     }
 }
 

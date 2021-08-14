@@ -30,7 +30,7 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateLabel = new System.Windows.Forms.Label();
             this.codeBarreLabel = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@ namespace Gestionnaire_Pro
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(296, 48);
             this.dateLabel.TabIndex = 4;
-            this.dateLabel.Text = "dateTime";
+            this.dateLabel.Text = "11/11/1111 00:00:00";
             this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // codeBarreLabel
@@ -135,7 +135,7 @@ namespace Gestionnaire_Pro
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(413, 64);
             this.totalLabel.TabIndex = 0;
-            this.totalLabel.Text = "00000 DA";
+            this.totalLabel.Text = "00.00 DA";
             this.totalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel2
@@ -275,14 +275,14 @@ namespace Gestionnaire_Pro
             this.venteTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.venteTable.BackgroundColor = System.Drawing.SystemColors.Window;
             this.venteTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.venteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeBarreCol,
             this.nom,

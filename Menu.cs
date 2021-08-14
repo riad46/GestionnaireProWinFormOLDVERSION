@@ -352,5 +352,55 @@ create table if not EXISTS ProduitExcluDeVerification(
                 historiqueVente.ShowDialog();
             }
         }
+
+        private void nvVente_pic_Click(object sender, EventArgs e)
+        {
+            using (var v = new vente())
+            {
+                v.ShowDialog();
+            }
+        }
+
+        private void historiqueVente_pic_Click(object sender, EventArgs e)
+        {
+            using (var historiqueVente = new historiqueVente())
+            {
+                historiqueVente.ShowDialog();
+            }
+        }
+
+        private void articlesList_pic_Click(object sender, EventArgs e)
+        {
+            using (var listArticle = new ListArticle())
+            {
+                listArticle.ShowDialog();
+            }
+        }
+
+        private void venteLabel_Click(object sender, EventArgs e)
+        {
+            using (var v = new vente())
+            {
+                v.ShowDialog();
+            }
+        }
+
+        private void historiqueVenteLabel_Click(object sender, EventArgs e)
+        {
+            using (var historiqueVente = new historiqueVente())
+            {
+                historiqueVente.ShowDialog();
+            }
+        }
+
+        private void listArticlesLabel_Click(object sender, EventArgs e)
+        {
+            using (var listArticle = new ListArticle())
+            {
+                listArticle.ShowDialog();
+            }
+        }
+
+      
     }
 }

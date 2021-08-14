@@ -20,7 +20,7 @@ namespace Gestionnaire_Pro
         private void SetUpTable()
         {
             historique_Table.AutoGenerateColumns = false;
-           _myTableData=  GestionnaireProRetreivingMethods.GetHistoriqueDeVente().Result;
+          
             historique_Table.DataSource = _myTableData;
 
            
@@ -37,7 +37,7 @@ namespace Gestionnaire_Pro
       
         private void historiqueVente_Shown(object sender, EventArgs e)
         {
-
+            _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVente().Result;
             SetUpTable();
         }
 
