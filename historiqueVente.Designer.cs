@@ -44,6 +44,7 @@ namespace Gestionnaire_Pro
             this.nvNetCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sub_btn = new System.Windows.Forms.Button();
             this.datemax_txt = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@ namespace Gestionnaire_Pro
             this.id_txt = new System.Windows.Forms.TextBox();
             this.datemin_txt = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.sub_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.historique_Table)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -209,12 +209,22 @@ namespace Gestionnaire_Pro
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recherche";
             // 
+            // sub_btn
+            // 
+            this.sub_btn.Location = new System.Drawing.Point(179, 147);
+            this.sub_btn.Name = "sub_btn";
+            this.sub_btn.Size = new System.Drawing.Size(97, 33);
+            this.sub_btn.TabIndex = 10;
+            this.sub_btn.Text = "Valider";
+            this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
+            // 
             // datemax_txt
             // 
             this.datemax_txt.Location = new System.Drawing.Point(264, 24);
-            this.datemax_txt.Mask = "00/00/0000 00:00";
+            this.datemax_txt.Mask = "00/00/0000 00:00:00";
             this.datemax_txt.Name = "datemax_txt";
-            this.datemax_txt.Size = new System.Drawing.Size(109, 23);
+            this.datemax_txt.Size = new System.Drawing.Size(122, 23);
             this.datemax_txt.TabIndex = 9;
             this.datemax_txt.ValidatingType = typeof(System.DateTime);
             // 
@@ -263,7 +273,7 @@ namespace Gestionnaire_Pro
             // 
             // total_txt
             // 
-            this.total_txt.Location = new System.Drawing.Point(264, 67);
+            this.total_txt.Location = new System.Drawing.Point(277, 70);
             this.total_txt.Name = "total_txt";
             this.total_txt.Size = new System.Drawing.Size(109, 23);
             this.total_txt.TabIndex = 3;
@@ -277,10 +287,10 @@ namespace Gestionnaire_Pro
             // 
             // datemin_txt
             // 
-            this.datemin_txt.Location = new System.Drawing.Point(101, 24);
-            this.datemin_txt.Mask = "00/00/0000 00:00";
+            this.datemin_txt.Location = new System.Drawing.Point(106, 24);
+            this.datemin_txt.Mask = "00/00/0000 00:00:00";
             this.datemin_txt.Name = "datemin_txt";
-            this.datemin_txt.Size = new System.Drawing.Size(94, 23);
+            this.datemin_txt.Size = new System.Drawing.Size(121, 23);
             this.datemin_txt.TabIndex = 1;
             this.datemin_txt.ValidatingType = typeof(System.DateTime);
             // 
@@ -292,16 +302,6 @@ namespace Gestionnaire_Pro
             this.label1.Size = new System.Drawing.Size(94, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Date Vente     DU";
-            // 
-            // sub_btn
-            // 
-            this.sub_btn.Location = new System.Drawing.Point(179, 147);
-            this.sub_btn.Name = "sub_btn";
-            this.sub_btn.Size = new System.Drawing.Size(97, 33);
-            this.sub_btn.TabIndex = 10;
-            this.sub_btn.Text = "Valider";
-            this.sub_btn.UseVisualStyleBackColor = true;
-            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // historiqueVente
             // 

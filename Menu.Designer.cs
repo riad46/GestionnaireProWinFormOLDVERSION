@@ -70,6 +70,9 @@ namespace Gestionnaire_Pro
             this.utilisateurDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoBoutiqueDropList = new System.Windows.Forms.ToolStripMenuItem();
             this.parametreDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.factureItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajoutFactureDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableFactureDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gradiantPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.articlesList_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historiqueVente_pic)).BeginInit();
@@ -92,7 +95,7 @@ namespace Gestionnaire_Pro
             this.gradiantPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradiantPanel1.lowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.gradiantPanel1.Name = "gradiantPanel1";
-            this.gradiantPanel1.Size = new System.Drawing.Size(1250, 690);
+            this.gradiantPanel1.Size = new System.Drawing.Size(1215, 690);
             this.gradiantPanel1.TabIndex = 0;
             this.gradiantPanel1.topColor = System.Drawing.Color.Red;
             // 
@@ -103,7 +106,7 @@ namespace Gestionnaire_Pro
             this.listArticlesLabel.AutoSize = true;
             this.listArticlesLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listArticlesLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.listArticlesLabel.Location = new System.Drawing.Point(880, 545);
+            this.listArticlesLabel.Location = new System.Drawing.Point(845, 545);
             this.listArticlesLabel.Name = "listArticlesLabel";
             this.listArticlesLabel.Size = new System.Drawing.Size(163, 32);
             this.listArticlesLabel.TabIndex = 9;
@@ -116,7 +119,7 @@ namespace Gestionnaire_Pro
             this.historiqueVenteLabel.AutoSize = true;
             this.historiqueVenteLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.historiqueVenteLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.historiqueVenteLabel.Location = new System.Drawing.Point(513, 545);
+            this.historiqueVenteLabel.Location = new System.Drawing.Point(488, 545);
             this.historiqueVenteLabel.Name = "historiqueVenteLabel";
             this.historiqueVenteLabel.Size = new System.Drawing.Size(226, 32);
             this.historiqueVenteLabel.TabIndex = 8;
@@ -142,9 +145,9 @@ namespace Gestionnaire_Pro
             this.articlesList_pic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.articlesList_pic.BackColor = System.Drawing.Color.Transparent;
-            this.articlesList_pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.articlesList_pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.articlesList_pic.Image = global::Gestionnaire_Pro.Properties.Resources.cosmetics;
-            this.articlesList_pic.Location = new System.Drawing.Point(827, 230);
+            this.articlesList_pic.Location = new System.Drawing.Point(792, 230);
             this.articlesList_pic.MaximumSize = new System.Drawing.Size(300, 300);
             this.articlesList_pic.MinimumSize = new System.Drawing.Size(150, 150);
             this.articlesList_pic.Name = "articlesList_pic";
@@ -153,14 +156,14 @@ namespace Gestionnaire_Pro
             this.articlesList_pic.TabIndex = 6;
             this.articlesList_pic.TabStop = false;
             this.articlesList_pic.Click += new System.EventHandler(this.articlesList_pic_Click);
-
             // 
             // historiqueVente_pic
             // 
             this.historiqueVente_pic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.historiqueVente_pic.BackColor = System.Drawing.Color.Transparent;
+            this.historiqueVente_pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.historiqueVente_pic.Image = global::Gestionnaire_Pro.Properties.Resources.history;
-            this.historiqueVente_pic.Location = new System.Drawing.Point(479, 230);
+            this.historiqueVente_pic.Location = new System.Drawing.Point(461, 230);
             this.historiqueVente_pic.MaximumSize = new System.Drawing.Size(300, 300);
             this.historiqueVente_pic.MinimumSize = new System.Drawing.Size(150, 150);
             this.historiqueVente_pic.Name = "historiqueVente_pic";
@@ -176,6 +179,7 @@ namespace Gestionnaire_Pro
             | System.Windows.Forms.AnchorStyles.Left)));
             this.nvVente_pic.BackColor = System.Drawing.Color.Transparent;
             this.nvVente_pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nvVente_pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nvVente_pic.Image = global::Gestionnaire_Pro.Properties.Resources.shopping_basket;
             this.nvVente_pic.Location = new System.Drawing.Point(136, 230);
             this.nvVente_pic.MaximumSize = new System.Drawing.Size(300, 300);
@@ -192,15 +196,16 @@ namespace Gestionnaire_Pro
             this.menuStrip1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierItem,
-            this.venteItem,
             this.achatItem,
+            this.venteItem,
+            this.factureItem,
             this.articleItem,
             this.clientItem,
             this.fournisseurItem,
             this.extrasItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1250, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1215, 33);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -448,6 +453,8 @@ namespace Gestionnaire_Pro
             // 
             this.caisseDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.caisseDropItem.Name = "caisseDropItem";
+            this.caisseDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.C)));
             this.caisseDropItem.Size = new System.Drawing.Size(279, 22);
             this.caisseDropItem.Text = "Caisse";
             this.caisseDropItem.Visible = false;
@@ -481,11 +488,35 @@ namespace Gestionnaire_Pro
             this.parametreDropItem.Visible = false;
             this.parametreDropItem.Click += new System.EventHandler(this.parametreDropItem_Click_1);
             // 
+            // factureItem
+            // 
+            this.factureItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ajoutFactureDropItem,
+            this.tableFactureDropItem});
+            this.factureItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.factureItem.ForeColor = System.Drawing.Color.Red;
+            this.factureItem.Name = "factureItem";
+            this.factureItem.Size = new System.Drawing.Size(97, 29);
+            this.factureItem.Text = "Facture";
+            this.factureItem.Visible = false;
+            // 
+            // ajoutFactureDropItem
+            // 
+            this.ajoutFactureDropItem.Name = "ajoutFactureDropItem";
+            this.ajoutFactureDropItem.Size = new System.Drawing.Size(178, 22);
+            this.ajoutFactureDropItem.Text = "Ajouter une Facture";
+            // 
+            // tableFactureDropItem
+            // 
+            this.tableFactureDropItem.Name = "tableFactureDropItem";
+            this.tableFactureDropItem.Size = new System.Drawing.Size(178, 22);
+            this.tableFactureDropItem.Text = "Table de factures";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 690);
+            this.ClientSize = new System.Drawing.Size(1215, 690);
             this.Controls.Add(this.gradiantPanel1);
             this.Name = "Menu";
             this.Text = "Menu";
@@ -676,6 +707,9 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Label listArticlesLabel;
         private System.Windows.Forms.Label historiqueVenteLabel;
         private System.Windows.Forms.Label venteLabel;
+        private System.Windows.Forms.ToolStripMenuItem factureItem;
+        private System.Windows.Forms.ToolStripMenuItem ajoutFactureDropItem;
+        private System.Windows.Forms.ToolStripMenuItem tableFactureDropItem;
     }
 }
 

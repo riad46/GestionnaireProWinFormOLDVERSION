@@ -31,6 +31,15 @@ namespace Gestionnaire_Pro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revenue));
             this.recherche = new System.Windows.Forms.GroupBox();
+            this.dateMax_box = new System.Windows.Forms.DateTimePicker();
+            this.dateMin_box = new System.Windows.Forms.DateTimePicker();
+            this.sub_btn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nom_txt = new System.Windows.Forms.TextBox();
+            this.type_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,14 +55,6 @@ namespace Gestionnaire_Pro
             this.type_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qnt_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.recherche.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -64,22 +65,113 @@ namespace Gestionnaire_Pro
             // 
             this.recherche.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.recherche.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.recherche.Controls.Add(this.dateMax_box);
+            this.recherche.Controls.Add(this.dateMin_box);
+            this.recherche.Controls.Add(this.sub_btn);
             this.recherche.Controls.Add(this.label8);
             this.recherche.Controls.Add(this.label7);
             this.recherche.Controls.Add(this.label6);
             this.recherche.Controls.Add(this.label5);
-            this.recherche.Controls.Add(this.maskedTextBox2);
-            this.recherche.Controls.Add(this.maskedTextBox1);
-            this.recherche.Controls.Add(this.textBox2);
-            this.recherche.Controls.Add(this.textBox1);
+            this.recherche.Controls.Add(this.nom_txt);
+            this.recherche.Controls.Add(this.type_txt);
             this.recherche.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.recherche.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.recherche.Location = new System.Drawing.Point(714, 3);
+            this.recherche.Location = new System.Drawing.Point(724, 3);
             this.recherche.Name = "recherche";
-            this.recherche.Size = new System.Drawing.Size(437, 208);
+            this.recherche.Size = new System.Drawing.Size(530, 208);
             this.recherche.TabIndex = 0;
             this.recherche.TabStop = false;
             this.recherche.Text = "Filtre";
+            // 
+            // dateMax_box
+            // 
+            this.dateMax_box.CalendarFont = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateMax_box.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateMax_box.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateMax_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateMax_box.Location = new System.Drawing.Point(316, 31);
+            this.dateMax_box.Name = "dateMax_box";
+            this.dateMax_box.Size = new System.Drawing.Size(205, 32);
+            this.dateMax_box.TabIndex = 15;
+            this.dateMax_box.Value = new System.DateTime(2021, 8, 19, 13, 51, 34, 0);
+            // 
+            // dateMin_box
+            // 
+            this.dateMin_box.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateMin_box.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateMin_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateMin_box.Location = new System.Drawing.Point(83, 31);
+            this.dateMin_box.Name = "dateMin_box";
+            this.dateMin_box.Size = new System.Drawing.Size(207, 32);
+            this.dateMin_box.TabIndex = 10;
+            this.dateMin_box.Value = new System.DateTime(2021, 8, 19, 13, 51, 34, 0);
+            // 
+            // sub_btn
+            // 
+            this.sub_btn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.Location = new System.Drawing.Point(197, 165);
+            this.sub_btn.Name = "sub_btn";
+            this.sub_btn.Size = new System.Drawing.Size(117, 37);
+            this.sub_btn.TabIndex = 14;
+            this.sub_btn.Text = "Valider";
+            this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(293, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(21, 21);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "A";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(6, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 21);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Date De";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(255, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Nom";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(6, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 21);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Type";
+            // 
+            // nom_txt
+            // 
+            this.nom_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nom_txt.Location = new System.Drawing.Point(316, 110);
+            this.nom_txt.Name = "nom_txt";
+            this.nom_txt.Size = new System.Drawing.Size(123, 32);
+            this.nom_txt.TabIndex = 1;
+            // 
+            // type_txt
+            // 
+            this.type_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.type_txt.Location = new System.Drawing.Point(83, 110);
+            this.type_txt.Name = "type_txt";
+            this.type_txt.Size = new System.Drawing.Size(123, 32);
+            this.type_txt.TabIndex = 0;
             // 
             // label1
             // 
@@ -155,6 +247,7 @@ namespace Gestionnaire_Pro
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Image = global::Gestionnaire_Pro.Properties.Resources.money;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(9, 11);
             this.pictureBox1.Name = "pictureBox1";
@@ -177,7 +270,7 @@ namespace Gestionnaire_Pro
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1154, 226);
+            this.panel1.Size = new System.Drawing.Size(1257, 226);
             this.panel1.TabIndex = 10;
             // 
             // revenueTable
@@ -201,29 +294,33 @@ namespace Gestionnaire_Pro
             this.revenueTable.Name = "revenueTable";
             this.revenueTable.ReadOnly = true;
             this.revenueTable.RowTemplate.Height = 25;
-            this.revenueTable.Size = new System.Drawing.Size(1154, 449);
+            this.revenueTable.Size = new System.Drawing.Size(1257, 449);
             this.revenueTable.TabIndex = 11;
             // 
             // codeBarre_Col
             // 
+            this.codeBarre_Col.DataPropertyName = "codeBarre";
             this.codeBarre_Col.HeaderText = "Code Barre";
             this.codeBarre_Col.Name = "codeBarre_Col";
             this.codeBarre_Col.ReadOnly = true;
             // 
             // nom_Col
             // 
+            this.nom_Col.DataPropertyName = "nom";
             this.nom_Col.HeaderText = "Nom Article";
             this.nom_Col.Name = "nom_Col";
             this.nom_Col.ReadOnly = true;
             // 
             // type_Col
             // 
+            this.type_Col.DataPropertyName = "type";
             this.type_Col.HeaderText = "Type";
             this.type_Col.Name = "type_Col";
             this.type_Col.ReadOnly = true;
             // 
             // qnt_Col
             // 
+            this.qnt_Col.DataPropertyName = "Quantité";
             this.qnt_Col.HeaderText = "Quantité";
             this.qnt_Col.Name = "qnt_Col";
             this.qnt_Col.ReadOnly = true;
@@ -234,88 +331,11 @@ namespace Gestionnaire_Pro
             this.total_Col.Name = "total_Col";
             this.total_Col.ReadOnly = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(83, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 32);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(287, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(123, 32);
-            this.textBox2.TabIndex = 1;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.maskedTextBox1.Location = new System.Drawing.Point(83, 42);
-            this.maskedTextBox1.Mask = "00/00/0000 00:00:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(153, 32);
-            this.maskedTextBox1.TabIndex = 2;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBox2.Location = new System.Drawing.Point(276, 39);
-            this.maskedTextBox2.Mask = "00/00/0000 00:00:00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(152, 32);
-            this.maskedTextBox2.TabIndex = 3;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 116);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 21);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Type";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(226, 116);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Nom";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(6, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 21);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Date De";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(242, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 21);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "A";
-            // 
             // revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 675);
+            this.ClientSize = new System.Drawing.Size(1257, 675);
             this.Controls.Add(this.revenueTable);
             this.Controls.Add(this.panel1);
             this.Name = "revenue";
@@ -344,18 +364,19 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView revenueTable;
+        private System.Windows.Forms.TextBox nom_txt;
+        private System.Windows.Forms.TextBox type_txt;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button sub_btn;
+        private System.Windows.Forms.DateTimePicker dateMin_box;
+        private System.Windows.Forms.DateTimePicker dateMax_box;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeBarre_Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn type_Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn qnt_Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_Col;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
     }
 }

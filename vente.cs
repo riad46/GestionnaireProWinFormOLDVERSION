@@ -75,11 +75,11 @@ namespace Gestionnaire_Pro
                 details.Add(new DetailVente
                 {
                     codeBarre = item.codeBarre,
-                    nomArticle = item.nom,
-                    typeArticle=item.type,
+                    nom = item.nom,
+                    Type=item.type,
                     prixAchat = item.prixAchat,
                     prixVente = item.prixVente,
-                    qnt = item.quantité,
+                    Quantité = item.quantité,
                     remise= Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
                     VenteId = venteId
 

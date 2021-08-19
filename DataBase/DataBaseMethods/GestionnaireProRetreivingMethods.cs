@@ -216,7 +216,8 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             var sql = "SELECT * FROM achats";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                var res = await connection.QueryAsync<Achat>(sql); ;
+                var res = await connection.QueryAsync<Achat>(sql); 
+                
                 return res.ToList();
             }
 
@@ -229,7 +230,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         public async Task<List<DetailAchat>> GetDetailAchats(int achatID)
         {
             var sql = $@"SELECT da.codeBarre,da.nom,da.Type,da.Quantité,da.prixAchat,da.prixVente,da.dateExpiration,da.fournisseurId,a.* 
-                FROM detailAchats da LEFT JOIN achat a where da.achatId = a.id and a.id={achatID}";
+                FROM detailAchats da LEFT JOIN achat a where da.achatId = a.id and a.id=@achatID";
 
 
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
@@ -237,7 +238,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 var res = await connection.QueryAsync<DetailAchat, Achat, DetailAchat>(sql, (detailAchats, achats) =>
                 {
                     detailAchats.Achat = achats; return detailAchats;
-                });
+                },new { achatID=achatID});
                 return res.ToList();
             }
 
@@ -260,11 +261,36 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
             return detailsVentes;
         }
-        /// <summary>
-        /// Historique de vente 
-        /// </summary>
-        /// <returns></returns>
-        public static async Task<List<Vente>> GetHistoriqueDeVente()
+
+        //use in revenue
+        public static async Task<List<int>> GetVenteIds(DateTime dateMin,DateTime dateMax)
+        {
+            var sql = "Select id FROM ventes where dateVente>=@dateMin and dateVente<=@dateMax";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+              var res=  await connection.QueryAsync<int>(sql,new { dateMin=dateMin,dateMax=dateMax}) ;
+                return res.ToList();
+            }
+
+        }
+        public static async Task<List<DetailVente>> GetAllDetailVentes(List<int> ids)
+        {
+            
+            var sql = "select  id,codeBarre,nom,Type,Quantité,prixAchat,prixVente From detailVentes where venteId IN @ids";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                
+                    var res = await connection.QueryAsync<DetailVente>(sql,new {ids });
+                
+                return res.ToList();
+                
+            }
+        }
+            /// <summary>
+            /// Historique de vente 
+            /// </summary>
+            /// <returns></returns>
+            public static async Task<List<Vente>> GetHistoriqueDeVente()
         {
             var sql = "Select v.id,v.dateVente,v.montantTotale,v.remise,v.netPayé,v.ajouterPar,v.dateModification,v.modifierPar,v.nouveauMontantTotal,v.nouvelleRemise,c.* FROM ventes v LEFT JOIN clients c";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
