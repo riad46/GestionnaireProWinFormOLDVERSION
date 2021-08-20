@@ -18,6 +18,12 @@ namespace Gestionnaire_Pro
         {
             InitializeComponent();
         }
+        private void SearchForHistoriqueVentes()
+        {
+            _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVente().Result;
+            _myTableData.Reverse();
+            SetUpTable();
+        }
         private void SetUpTable()
         {
             historique_Table.AutoGenerateColumns = false;
@@ -40,10 +46,9 @@ namespace Gestionnaire_Pro
         {
 
             var datemin =  DateTime.Now;
-            datemin_txt.Text = new DateTime(datemin.Year,datemin.Month,datemin.Day,00,00,00).ToString();
-            datemax_txt.Text = DateTime.Now.ToString();
-            _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVente().Result;
-            SetUpTable();
+            dateMin_box.Value = new DateTime(datemin.Year,datemin.Month,datemin.Day,00,00,00);
+            dateMax_box.Value = DateTime.Now;
+            SearchForHistoriqueVentes();
         }
 
         private void SetValueToFilter(out float total,out int id,out DateTime dateMin,out DateTime dateMax) 
@@ -58,23 +63,36 @@ namespace Gestionnaire_Pro
                 total = Convert.ToSingle(total_txt.Text);
 
 
-             dateMin = Convert.ToDateTime(datemin_txt.Text);
-             dateMax = Convert.ToDateTime(datemax_txt.Text);
+            dateMin = dateMin_box.Value;
+            dateMax = dateMax_box.Value;
 
         }
         private void sub_btn_Click(object sender, EventArgs e)
         {
             float total;
-            int id;
-            
-            DateTime dateMin=default;
+            int Id;
+
+            DateTime dateMin = default ;
             DateTime dateMax=DateTime.Now;
 
-            SetValueToFilter(out total,out id,out dateMin,out dateMax);
-            if (datemin_txt.Text == "" || datemin_txt.Text == "") return;
-            _myTableData=GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(id,clientID,total,dateMin,dateMax).Result;
-            SetUpTable();
-            
+            SetValueToFilter(out total,out Id,out dateMin,out dateMax);
+            //if (dateMin_box.Value==null || dateMax_box.Value ==null) return;
+            if(id_txt.Text.Trim() !="" || total_txt.Text.Trim() !="" || nomClient_txt.Text.Trim()!="")
+            {
+                _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(Id, clientID, total,default,DateTime.Now).Result;
+                _myTableData.Reverse();
+
+                SetUpTable();
+                return;
+                
+            }
+            SearchForHistoriqueVentes();
+
+        }
+
+        private void historiqueVente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

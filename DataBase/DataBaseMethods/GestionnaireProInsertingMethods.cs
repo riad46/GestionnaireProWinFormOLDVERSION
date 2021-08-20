@@ -125,11 +125,12 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         }
         public static async void AddDetailVente(List<DetailVente> detailVentes)
         {
+            
             var sql = @"INSERT INTO detailVentes(codeBarre,nom,Type,Quantité,prixAchat,prixVente,remise,venteId) VALUES(
                       @codeBarre,
-                      @nomArticle,
-                      @typeArticle,
-                      @qnt,
+                      @nom,
+                      @Type,
+                      @Quantité,
                       @prixAchat,
                       @prixVente,
                       @remise,

@@ -44,8 +44,9 @@ namespace Gestionnaire_Pro
             this.nvNetCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateMax_box = new System.Windows.Forms.DateTimePicker();
+            this.dateMin_box = new System.Windows.Forms.DateTimePicker();
             this.sub_btn = new System.Windows.Forms.Button();
-            this.datemax_txt = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@ namespace Gestionnaire_Pro
             this.nomClient_txt = new System.Windows.Forms.TextBox();
             this.total_txt = new System.Windows.Forms.TextBox();
             this.id_txt = new System.Windows.Forms.TextBox();
-            this.datemin_txt = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.historique_Table)).BeginInit();
             this.panel1.SuspendLayout();
@@ -191,8 +191,9 @@ namespace Gestionnaire_Pro
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dateMax_box);
+            this.groupBox1.Controls.Add(this.dateMin_box);
             this.groupBox1.Controls.Add(this.sub_btn);
-            this.groupBox1.Controls.Add(this.datemax_txt);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -200,14 +201,31 @@ namespace Gestionnaire_Pro
             this.groupBox1.Controls.Add(this.nomClient_txt);
             this.groupBox1.Controls.Add(this.total_txt);
             this.groupBox1.Controls.Add(this.id_txt);
-            this.groupBox1.Controls.Add(this.datemin_txt);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(626, 0);
+            this.groupBox1.Location = new System.Drawing.Point(605, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(416, 181);
+            this.groupBox1.Size = new System.Drawing.Size(437, 181);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recherche";
+            // 
+            // dateMax_box
+            // 
+            this.dateMax_box.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateMax_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateMax_box.Location = new System.Drawing.Point(277, 22);
+            this.dateMax_box.Name = "dateMax_box";
+            this.dateMax_box.Size = new System.Drawing.Size(152, 23);
+            this.dateMax_box.TabIndex = 12;
+            // 
+            // dateMin_box
+            // 
+            this.dateMin_box.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateMin_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateMin_box.Location = new System.Drawing.Point(103, 22);
+            this.dateMin_box.Name = "dateMin_box";
+            this.dateMin_box.Size = new System.Drawing.Size(147, 23);
+            this.dateMin_box.TabIndex = 11;
             // 
             // sub_btn
             // 
@@ -219,19 +237,10 @@ namespace Gestionnaire_Pro
             this.sub_btn.UseVisualStyleBackColor = true;
             this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
-            // datemax_txt
-            // 
-            this.datemax_txt.Location = new System.Drawing.Point(264, 24);
-            this.datemax_txt.Mask = "00/00/0000 00:00:00";
-            this.datemax_txt.Name = "datemax_txt";
-            this.datemax_txt.Size = new System.Drawing.Size(122, 23);
-            this.datemax_txt.TabIndex = 9;
-            this.datemax_txt.ValidatingType = typeof(System.DateTime);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(233, 29);
+            this.label5.Location = new System.Drawing.Point(256, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(15, 15);
             this.label5.TabIndex = 8;
@@ -285,19 +294,10 @@ namespace Gestionnaire_Pro
             this.id_txt.Size = new System.Drawing.Size(75, 23);
             this.id_txt.TabIndex = 2;
             // 
-            // datemin_txt
-            // 
-            this.datemin_txt.Location = new System.Drawing.Point(106, 24);
-            this.datemin_txt.Mask = "00/00/0000 00:00:00";
-            this.datemin_txt.Name = "datemin_txt";
-            this.datemin_txt.Size = new System.Drawing.Size(121, 23);
-            this.datemin_txt.TabIndex = 1;
-            this.datemin_txt.ValidatingType = typeof(System.DateTime);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 29);
+            this.label1.Location = new System.Drawing.Point(6, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 15);
             this.label1.TabIndex = 0;
@@ -312,6 +312,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.historique_Table);
             this.Name = "historiqueVente";
             this.Text = "historyVente";
+            this.Load += new System.EventHandler(this.historiqueVente_Load);
             this.Shown += new System.EventHandler(this.historiqueVente_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.historique_Table)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -338,7 +339,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.DataGridViewTextBoxColumn NvtotaleCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn nvRemise;
         private System.Windows.Forms.DataGridViewTextBoxColumn nvNetCol;
-        private System.Windows.Forms.MaskedTextBox datemin_txt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -346,8 +346,9 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.TextBox nomClient_txt;
         private System.Windows.Forms.TextBox total_txt;
         private System.Windows.Forms.TextBox id_txt;
-        private System.Windows.Forms.MaskedTextBox datemax_txt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button sub_btn;
+        private System.Windows.Forms.DateTimePicker dateMax_box;
+        private System.Windows.Forms.DateTimePicker dateMin_box;
     }
 }
