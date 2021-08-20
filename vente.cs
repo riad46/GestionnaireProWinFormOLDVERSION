@@ -20,6 +20,7 @@ namespace Gestionnaire_Pro
         private readonly int _remiseIndex = 4;
         private readonly int _totalIndex = 5;
 
+        private int currentlySelectedRow = 0;
         private float ancientQnt=0;
         private float total = 0;
         private float totalRemise = 0;
@@ -29,6 +30,30 @@ namespace Gestionnaire_Pro
         public vente()
         {
             InitializeComponent();
+        }
+        public vente(int venteId)
+        {
+            
+            InitializeComponent();
+            var mesArticle = GestionnaireProRetreivingMethods.GetAllDetailVentes(new List<int> { venteId }).Result;
+            foreach (var item in mesArticle)
+            {
+                _mesArticleAvendre.Add(new Article
+                {
+
+                    Id = item.Id,
+                    codeBarre = item.codeBarre,
+                    nom = item.nom,
+                    prixAchat = item.prixAchat,
+                    prixVente = item.prixVente,
+                    quantité = item.Quantité,
+                    type = item.Type
+
+                });
+
+            }
+            
+           
         }
         private int GetCurrentSelectedTableRow()
         {
@@ -87,6 +112,41 @@ namespace Gestionnaire_Pro
                 i++;
             }
             GestionnaireProInsertingMethods.AddDetailVente(details);
+        }
+
+        private void ModifyVente()
+        {
+            var vente = new Vente
+            {
+                dateModification = DateTime.Now,
+                modifierPar = GlobalClass.username,
+                nouveauMontantTotal = total,
+                nouvelleRemise = totalRemise,
+                nouveauNetAPayé = total - totalRemise
+
+            };
+            GestionnaireProModifyDeleteMethods.ModifyVente(vente);
+           
+
+        }
+        private void ModifyDetailVente()
+        {
+            List<DetailVente> details = new List<DetailVente>();
+
+            int i = 0;
+            foreach (var item in _mesArticleAvendre)
+            {
+                details.Add(new DetailVente
+                {
+                    nouveauTotal = item.prixVente * item.quantité,
+                    nouvelleQnt = item.quantité,
+                    nouvelleRemise = Convert.ToSingle(venteTable[_remiseIndex, i].Value),
+
+
+                });
+                i++;
+            }
+            GestionnaireProModifyDeleteMethods.ModifyDetailVente(details);
         }
         private void SetUpTable()
         {
@@ -216,36 +276,44 @@ namespace Gestionnaire_Pro
             }
 
         }
+
+        private void venteTable_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            currentlySelectedRow = venteTable.SelectedRows[0].Index;
+            ancientQnt = (float)venteTable[QNT.Index, currentlySelectedRow].Value;
+        }
         private void venteTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             
-            if (venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value == null ) venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value = 0;
-            if (venteTable[remiseCol.Index, venteTable.SelectedRows[0].Index].Value == null) venteTable[remiseCol.Index, venteTable.SelectedRows[0].Index].Value = 0;
+            if (venteTable[QNT.Index,currentlySelectedRow].Value == null ) venteTable[QNT.Index, currentlySelectedRow].Value = 0;
+            if (venteTable[remiseCol.Index, currentlySelectedRow].Value == null) venteTable[remiseCol.Index, currentlySelectedRow].Value = 0;
            
 
-                var monArticle = SearchForArticle(venteTable[codeBarreCol.Index, venteTable.SelectedRows[0].Index].Value.ToString());
-           
+                var monArticle = SearchForArticle(venteTable[codeBarreCol.Index, currentlySelectedRow].Value.ToString());
+            if (monArticle == null) return;
                
-                if (monArticle.quantité+ancientQnt-(float)venteTable[QNT.Index,venteTable.SelectedRows[0].Index].Value > 0)
+                if (monArticle.quantité+ancientQnt-(float)venteTable[QNT.Index, currentlySelectedRow].Value > 0)
                 {
                 
-                    GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité+ancientQnt- (float)venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value);
-                    return;
+                    GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité+ancientQnt- (float)venteTable[QNT.Index, currentlySelectedRow].Value);
+                CalculateAll();
+                return;
                 }
                 else
                 {
                 
-                    venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value = monArticle.quantité+ancientQnt;
+                    venteTable[QNT.Index, currentlySelectedRow].Value = monArticle.quantité+ancientQnt;
 
                     GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id,0.0f);
                     MessageBox.Show("Quantité Insuffisant !!");
-                    return;
+                CalculateAll();
+                return;
 
                 }
 
            
            
-            CalculateAll();
+           
         }
         private void timer1_Tick(object sender , EventArgs e)
         {
@@ -258,21 +326,36 @@ namespace Gestionnaire_Pro
 
         private void vente_Load(object sender, EventArgs e)
         {
-           
+            if (GlobalClass.typeOp == 1)
+            {
+                SetUpTable();
+            }
             AddClientsToCombo();
             _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
         }
 
         private void sub_btn_Click(object sender, EventArgs e)
         {
-                if(_mesArticleAvendre.Count == 0)
+            if(GlobalClass.typeOp == 1)
             {
-                
-                return;
+                ModifyVente();
+                ModifyDetailVente();
+
+                //reset Operation type
+                GlobalClass.typeOp = 0;
             }
+            else
+            {
+                if (_mesArticleAvendre.Count == 0)
+                {
+
+                    return;
+                }
+
+                AddVente();
+                AddDetailVente();
+            } 
             
-            AddVente(); 
-            AddDetailVente();     
             ResetTable(); 
           
             
@@ -335,9 +418,6 @@ namespace Gestionnaire_Pro
             ResetArticlesStock();
         }
 
-        private void venteTable_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            ancientQnt = (float)venteTable[QNT.Index, venteTable.SelectedRows[0].Index].Value;
-        }
+      
     }
 }

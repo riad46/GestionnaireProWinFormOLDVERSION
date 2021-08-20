@@ -90,6 +90,20 @@ namespace Gestionnaire_Pro
 
         }
 
+
+
+        private void historique_Table_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var venteId = (int)historique_Table[idCol.Index,historique_Table.SelectedRows[0].Index].Value;
+            using (var f=new vente(venteId))
+            {
+                GlobalClass.typeOp = 1;
+                this.Visible = false;
+                f.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
         private void historiqueVente_Load(object sender, EventArgs e)
         {
 

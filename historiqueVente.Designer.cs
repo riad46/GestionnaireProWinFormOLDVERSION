@@ -89,11 +89,14 @@ namespace Gestionnaire_Pro
             this.historique_Table.Cursor = System.Windows.Forms.Cursors.Default;
             this.historique_Table.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.historique_Table.Location = new System.Drawing.Point(0, 190);
+            this.historique_Table.MultiSelect = false;
             this.historique_Table.Name = "historique_Table";
             this.historique_Table.ReadOnly = true;
             this.historique_Table.RowTemplate.Height = 25;
+            this.historique_Table.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.historique_Table.Size = new System.Drawing.Size(1045, 569);
             this.historique_Table.TabIndex = 0;
+            this.historique_Table.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.historique_Table_CellDoubleClick);
             // 
             // idCol
             // 

@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Gestionnaire_Pro</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>Gestionnaire_Pro.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

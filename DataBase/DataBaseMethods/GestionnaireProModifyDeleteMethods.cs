@@ -355,7 +355,7 @@ WHERE id=@Id";
             }
         }
         ////---------------------------------------------DetailVente
-        public static async void ModifyDetailVente(DetailVente[] detailVentes)
+        public static async void ModifyDetailVente(List<DetailVente> detailVentes)
         {
             var sql = @"UPDATE detailVentes
                        SET

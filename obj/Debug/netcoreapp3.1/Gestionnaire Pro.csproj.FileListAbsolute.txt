@@ -252,7 +252,7 @@ P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CopyCo
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.dll
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache
-P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ListFournisseurs.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.TableAchat.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.TableFournisseur.resources
+P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
