@@ -33,13 +33,6 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.articleTable = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.reset_Stock = new System.Windows.Forms.Button();
-            this.FullRevenue_btn = new System.Windows.Forms.Button();
-            this.deleteAll_btn = new System.Windows.Forms.Button();
-            this.delete_btn = new System.Windows.Forms.Button();
-            this.modify_btn = new System.Windows.Forms.Button();
-            this.add_btn = new System.Windows.Forms.Button();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +42,25 @@ namespace Gestionnaire_Pro
             this.prixVCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomFournisseur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.reset_Stock = new System.Windows.Forms.Button();
+            this.FullRevenue_btn = new System.Windows.Forms.Button();
+            this.deleteAll_btn = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
+            this.modify_btn = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.codeBarre_txt = new System.Windows.Forms.TextBox();
+            this.nomArticle_txt = new System.Windows.Forms.TextBox();
+            this.type_txt = new System.Windows.Forms.TextBox();
+            this.nomF_txt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.articleTable)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // articleTable
@@ -86,7 +96,7 @@ namespace Gestionnaire_Pro
             this.prixVCol,
             this.dateCol,
             this.NomFournisseur});
-            this.articleTable.Location = new System.Drawing.Point(0, 0);
+            this.articleTable.Location = new System.Drawing.Point(0, 124);
             this.articleTable.MultiSelect = false;
             this.articleTable.Name = "articleTable";
             this.articleTable.ReadOnly = true;
@@ -102,8 +112,74 @@ namespace Gestionnaire_Pro
             this.articleTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.articleTable.RowTemplate.Height = 25;
             this.articleTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.articleTable.Size = new System.Drawing.Size(806, 535);
+            this.articleTable.Size = new System.Drawing.Size(806, 411);
             this.articleTable.TabIndex = 0;
+            // 
+            // idCol
+            // 
+            this.idCol.DataPropertyName = "id";
+            this.idCol.HeaderText = "Réf";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
+            // 
+            // codeBarre
+            // 
+            this.codeBarre.DataPropertyName = "codeBarre";
+            this.codeBarre.HeaderText = "Code Barre";
+            this.codeBarre.Name = "codeBarre";
+            this.codeBarre.ReadOnly = true;
+            // 
+            // nomCol
+            // 
+            this.nomCol.DataPropertyName = "nom";
+            this.nomCol.HeaderText = "Nom";
+            this.nomCol.Name = "nomCol";
+            this.nomCol.ReadOnly = true;
+            // 
+            // typeCol
+            // 
+            this.typeCol.DataPropertyName = "type";
+            this.typeCol.HeaderText = "Type";
+            this.typeCol.Name = "typeCol";
+            this.typeCol.ReadOnly = true;
+            this.typeCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // qntCol
+            // 
+            this.qntCol.DataPropertyName = "quantité";
+            this.qntCol.HeaderText = "Quantité";
+            this.qntCol.Name = "qntCol";
+            this.qntCol.ReadOnly = true;
+            this.qntCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // prixACol
+            // 
+            this.prixACol.DataPropertyName = "prixAchat";
+            this.prixACol.HeaderText = "prix d\'Achat";
+            this.prixACol.Name = "prixACol";
+            this.prixACol.ReadOnly = true;
+            // 
+            // prixVCol
+            // 
+            this.prixVCol.DataPropertyName = "prixVente";
+            this.prixVCol.HeaderText = "Prix de Vente";
+            this.prixVCol.Name = "prixVCol";
+            this.prixVCol.ReadOnly = true;
+            // 
+            // dateCol
+            // 
+            this.dateCol.DataPropertyName = "dateExpiration";
+            this.dateCol.HeaderText = "Date d\'Expiration";
+            this.dateCol.Name = "dateCol";
+            this.dateCol.ReadOnly = true;
+            // 
+            // NomFournisseur
+            // 
+            this.NomFournisseur.DataPropertyName = "Fournisseur.nom";
+            this.NomFournisseur.HeaderText = "Nom de Fournisseur";
+            this.NomFournisseur.Name = "NomFournisseur";
+            this.NomFournisseur.ReadOnly = true;
             // 
             // panel1
             // 
@@ -185,77 +261,98 @@ namespace Gestionnaire_Pro
             this.add_btn.UseVisualStyleBackColor = true;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
-            // idCol
+            // panel2
             // 
-            this.idCol.DataPropertyName = "id";
-            this.idCol.HeaderText = "Réf";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.codeBarre_txt);
+            this.panel2.Controls.Add(this.nomArticle_txt);
+            this.panel2.Controls.Add(this.type_txt);
+            this.panel2.Controls.Add(this.nomF_txt);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(0, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(806, 113);
+            this.panel2.TabIndex = 2;
             // 
-            // codeBarre
+            // codeBarre_txt
             // 
-            this.codeBarre.DataPropertyName = "codeBarre";
-            this.codeBarre.HeaderText = "Code Barre";
-            this.codeBarre.Name = "codeBarre";
-            this.codeBarre.ReadOnly = true;
+            this.codeBarre_txt.Location = new System.Drawing.Point(211, 9);
+            this.codeBarre_txt.Name = "codeBarre_txt";
+            this.codeBarre_txt.Size = new System.Drawing.Size(154, 23);
+            this.codeBarre_txt.TabIndex = 15;
+            this.codeBarre_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
-            // nomCol
+            // nomArticle_txt
             // 
-            this.nomCol.DataPropertyName = "nom";
-            this.nomCol.HeaderText = "Nom";
-            this.nomCol.Name = "nomCol";
-            this.nomCol.ReadOnly = true;
+            this.nomArticle_txt.Location = new System.Drawing.Point(498, 9);
+            this.nomArticle_txt.Name = "nomArticle_txt";
+            this.nomArticle_txt.Size = new System.Drawing.Size(154, 23);
+            this.nomArticle_txt.TabIndex = 14;
+            this.nomArticle_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
-            // typeCol
+            // type_txt
             // 
-            this.typeCol.DataPropertyName = "type";
-            this.typeCol.HeaderText = "Type";
-            this.typeCol.Name = "typeCol";
-            this.typeCol.ReadOnly = true;
-            this.typeCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.type_txt.Location = new System.Drawing.Point(211, 51);
+            this.type_txt.Name = "type_txt";
+            this.type_txt.Size = new System.Drawing.Size(154, 23);
+            this.type_txt.TabIndex = 13;
+            this.type_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
-            // qntCol
+            // nomF_txt
             // 
-            this.qntCol.DataPropertyName = "quantité";
-            this.qntCol.HeaderText = "Quantité";
-            this.qntCol.Name = "qntCol";
-            this.qntCol.ReadOnly = true;
-            this.qntCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nomF_txt.Location = new System.Drawing.Point(498, 48);
+            this.nomF_txt.Name = "nomF_txt";
+            this.nomF_txt.Size = new System.Drawing.Size(154, 23);
+            this.nomF_txt.TabIndex = 12;
+            this.nomF_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
-            // prixACol
+            // label4
             // 
-            this.prixACol.DataPropertyName = "prixAchat";
-            this.prixACol.HeaderText = "prix d\'Achat";
-            this.prixACol.Name = "prixACol";
-            this.prixACol.ReadOnly = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(131, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Type";
             // 
-            // prixVCol
+            // label3
             // 
-            this.prixVCol.DataPropertyName = "prixVente";
-            this.prixVCol.HeaderText = "Prix de Vente";
-            this.prixVCol.Name = "prixVCol";
-            this.prixVCol.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(392, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Nom";
             // 
-            // dateCol
+            // label2
             // 
-            this.dateCol.DataPropertyName = "dateExpiration";
-            this.dateCol.HeaderText = "Date d\'Expiration";
-            this.dateCol.Name = "dateCol";
-            this.dateCol.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(392, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Nom Fournisseur";
             // 
-            // NomFournisseur
+            // label1
             // 
-            this.NomFournisseur.DataPropertyName = "Fournisseur.nom";
-            this.NomFournisseur.HeaderText = "Nom de Fournisseur";
-            this.NomFournisseur.Name = "NomFournisseur";
-            this.NomFournisseur.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(131, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "CodeBarre";
             // 
             // tableArticle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 535);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.articleTable);
             this.Name = "tableArticle";
@@ -263,6 +360,8 @@ namespace Gestionnaire_Pro
             this.Load += new System.EventHandler(this.tableArticle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.articleTable)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -286,5 +385,14 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.DataGridViewTextBoxColumn prixVCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomFournisseur;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox codeBarre_txt;
+        private System.Windows.Forms.TextBox nomArticle_txt;
+        private System.Windows.Forms.TextBox type_txt;
+        private System.Windows.Forms.TextBox nomF_txt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

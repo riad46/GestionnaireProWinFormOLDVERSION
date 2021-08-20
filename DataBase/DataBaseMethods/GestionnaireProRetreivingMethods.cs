@@ -43,15 +43,48 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         /// <returns></returns>
         public static async Task<List<Article>> SearchForArticle(string codeBarre,string nom,string type,string nomFournisseur)
         {
-            var param =new {code =codeBarre,nom=nom,type=type,nomF =nomFournisseur };
-            var sql = "SELECT a.codeBarre,a.nom,a.Quantité,a.prixVente,a.dateExpiration,f.* FROM articles a LEFT JOIN fournisseurs f ON a.fournisseurId=f.id WHERE ";
-         
-            
-            
-               
-            
-            
-          
+            var param =new {code ="%"+codeBarre+"%",nom= "%" + nom + "%", type= "%" + type + "%", nomF = "%" + nomFournisseur + "%" };
+            var sql = "SELECT a.Id,a.codeBarre,a.nom,a.type,a.Quantité,a.prixAchat,a.prixVente,a.dateExpiration,f.* FROM articles a LEFT JOIN fournisseurs f ON a.fournisseurId=f.id  ";
+
+            if (codeBarre != null || nom != null || type != null || nomFournisseur != null)
+            {
+                sql += "where";
+                if (codeBarre != null) sql += " a.codeBarre LIKE @code ";
+
+                if (codeBarre != null && nom != null)
+                {
+                    sql += " AND a.nom LIKE @nom ";
+                }
+                else if (nom != null)
+                {
+                    sql += " a.nom LIKE @nom";
+                }
+
+                if ((codeBarre != null || nom != null) && type != null)
+                {
+                    sql += " And a.type LIKE @type ";
+                }
+                else if (type != null)
+                {
+                    sql += " a.type LIKE @type ";
+                }
+
+
+                if ((codeBarre != null || nom != null || type != null) && nomFournisseur != null)
+                {
+                    sql += " AND f.nom LIKE @nomF";
+                }
+                else if (nomFournisseur != null)
+                {
+                    sql += " f.nom LIKE @nomF";
+                }
+
+
+
+
+
+            }
+
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
                 var res = await connection.QueryAsync<Article, Fournisseur, Article>(sql, (article, fournisseur) =>
@@ -60,7 +93,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                     if (fournisseur != null)
                         article.Fournisseur = fournisseur;
                     return article;
-                });
+                },param);
                 return res.ToList();
             }
         }

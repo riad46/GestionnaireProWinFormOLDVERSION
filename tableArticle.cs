@@ -39,10 +39,10 @@ namespace Gestionnaire_Pro
             GestionnaireProModifyDeleteMethods.ResetStock();
         }
 
-        private void setUpTable()
+        private void SetUpTable()
         {
             
-            articles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+           
             articleTable.AutoGenerateColumns = false;
             articleTable.DataSource = articles;
 
@@ -90,11 +90,13 @@ namespace Gestionnaire_Pro
                 default:
                     break;
             }
-            setUpTable();
+            articles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+            SetUpTable();
         }
         private void tableArticle_Load(object sender, EventArgs e)
         {
-            setUpTable();
+            articles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+            SetUpTable();
         }
 
 
@@ -129,6 +131,42 @@ namespace Gestionnaire_Pro
         {
             GlobalClass.typeOp = 4;
             ActionToDo();
+        }
+
+
+        private void SearchForArticlesWithFilers(string codeBarre, string nomArticle, string typeArticle, string nomF)
+        {
+            if (string.IsNullOrEmpty(codeBarre)) codeBarre = null;
+            if (string.IsNullOrEmpty(nomF)) nomF = null;
+            if (string.IsNullOrEmpty(nomArticle)) nomArticle = null;
+            if (string.IsNullOrEmpty(typeArticle)) typeArticle = null;
+
+            articles = GestionnaireProRetreivingMethods.SearchForArticle(codeBarre, nomArticle, typeArticle, nomF).Result;
+            SetUpTable();
+        }
+        private void SearchText_TextChanged(object sender, EventArgs e)
+        {
+            var codeBarre = codeBarre_txt.Text.Trim();
+            var nomArticle = nomArticle_txt.Text.Trim();
+            var typeArticle = type_txt.Text.Trim();
+            var nomF = nomF_txt.Text.Trim();
+
+            if (codeBarre == "" && nomArticle == "" && typeArticle == "" && nomF == "")
+            {
+                articles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+                SetUpTable();
+            }
+
+            SearchForArticlesWithFilers(codeBarre, nomArticle, typeArticle, nomF);
+
+
+
+
+
+
+
+
+
         }
     }
 }

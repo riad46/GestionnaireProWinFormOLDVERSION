@@ -30,10 +30,10 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.codeBarre_txt = new System.Windows.Forms.TextBox();
+            this.nomArticle_txt = new System.Windows.Forms.TextBox();
+            this.type_txt = new System.Windows.Forms.TextBox();
+            this.nomF_txt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,10 +54,10 @@ namespace Gestionnaire_Pro
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.codeBarre_txt);
+            this.panel1.Controls.Add(this.nomArticle_txt);
+            this.panel1.Controls.Add(this.type_txt);
+            this.panel1.Controls.Add(this.nomF_txt);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -68,33 +68,37 @@ namespace Gestionnaire_Pro
             this.panel1.Size = new System.Drawing.Size(745, 151);
             this.panel1.TabIndex = 0;
             // 
-            // textBox4
+            // codeBarre_txt
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 24);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(185, 23);
-            this.textBox4.TabIndex = 7;
+            this.codeBarre_txt.Location = new System.Drawing.Point(117, 24);
+            this.codeBarre_txt.Name = "codeBarre_txt";
+            this.codeBarre_txt.Size = new System.Drawing.Size(185, 23);
+            this.codeBarre_txt.TabIndex = 7;
+            this.codeBarre_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
-            // textBox3
+            // nomArticle_txt
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 23);
-            this.textBox3.TabIndex = 6;
+            this.nomArticle_txt.Location = new System.Drawing.Point(117, 68);
+            this.nomArticle_txt.Name = "nomArticle_txt";
+            this.nomArticle_txt.Size = new System.Drawing.Size(185, 23);
+            this.nomArticle_txt.TabIndex = 6;
+            this.nomArticle_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
-            // textBox2
+            // type_txt
             // 
-            this.textBox2.Location = new System.Drawing.Point(488, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 23);
-            this.textBox2.TabIndex = 5;
+            this.type_txt.Location = new System.Drawing.Point(488, 65);
+            this.type_txt.Name = "type_txt";
+            this.type_txt.Size = new System.Drawing.Size(185, 23);
+            this.type_txt.TabIndex = 5;
+            this.type_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
-            // textBox1
+            // nomF_txt
             // 
-            this.textBox1.Location = new System.Drawing.Point(488, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 23);
-            this.textBox1.TabIndex = 4;
+            this.nomF_txt.Location = new System.Drawing.Point(488, 24);
+            this.nomF_txt.Name = "nomF_txt";
+            this.nomF_txt.Size = new System.Drawing.Size(185, 23);
+            this.nomF_txt.TabIndex = 4;
+            this.nomF_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // label4
             // 
@@ -136,6 +140,7 @@ namespace Gestionnaire_Pro
             // 
             this.articleTable.AllowUserToAddRows = false;
             this.articleTable.AllowUserToDeleteRows = false;
+            this.articleTable.AllowUserToOrderColumns = true;
             this.articleTable.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.articleTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articleTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -163,6 +168,7 @@ namespace Gestionnaire_Pro
             this.id.HeaderText = "réf";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // codeBarre
             // 
@@ -237,6 +243,10 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox codeBarre_txt;
+        private System.Windows.Forms.TextBox nomArticle_txt;
+        private System.Windows.Forms.TextBox type_txt;
+        private System.Windows.Forms.TextBox nomF_txt;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeBarre;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
@@ -245,9 +255,5 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.DataGridViewTextBoxColumn prixVente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateExp;
         private System.Windows.Forms.DataGridViewTextBoxColumn fournisseur;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
