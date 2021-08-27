@@ -23,7 +23,7 @@ namespace Gestionnaire_Pro
         {
             InitializeComponent();
             _id = article.Id;
-            mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs();
+            mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs().Result;
             codeBarre_txt.Text = article.codeBarre;
             nom_txt.Text = article.nom;
             qnt_txt.Text =  article.quantité.ToString();
@@ -139,7 +139,7 @@ namespace Gestionnaire_Pro
 
         private void ajouteArticle_Load(object sender, EventArgs e)
         {
-            mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs();
+            mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs().Result;
             foreach (var fournisseur in mesFournisseurs)
             {
                 Fournisseur_combo.Items.Add(fournisseur.nom);

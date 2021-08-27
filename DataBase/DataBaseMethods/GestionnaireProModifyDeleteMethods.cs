@@ -230,7 +230,7 @@ WHERE id=@Id";
                 {
                     if (detail.dateExpiration != null)
                     {
-                        if (detail.FournisseurId != null)
+                        if (detail.fournisseurId != null)
                         {
                             sql = $@"UPDATE articles
                             SET
@@ -261,7 +261,7 @@ WHERE id=@Id";
                     }
                     else
                     {
-                        if (detail.FournisseurId != null)
+                        if (detail.fournisseurId != null)
                         {
                             sql = $@"UPDATE articles
                             SET

@@ -1,4 +1,5 @@
-﻿using Gestionnaire_Pro.DataBase.Models;
+﻿using Gestionnaire_Pro.DataBase.DataBaseMethods;
+using Gestionnaire_Pro.DataBase.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -7,15 +8,19 @@ namespace Gestionnaire_Pro
 {
     public partial class TableFournisseur : Form
     {
-        List<Fournisseur> fournisseurs = new List<Fournisseur>();
+        List<Fournisseur> _mesFournisseurs = new List<Fournisseur>();
         public TableFournisseur()
         {
             InitializeComponent();
         }
-
+        private void ResetTable()
+        {
+            _mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs().Result;
+            SetUpTable();
+        }
         private void TableFournisseur_Load_1(object sender, EventArgs e)
         {
-            setUpTable();
+            ResetTable();
         }
         private void TableFournisseur_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -30,19 +35,19 @@ namespace Gestionnaire_Pro
         {
             GlobalClass.typeOp = 0;
             ActionToDo();
-            setUpTable();
+            ResetTable();
         }
         private void button2_Click(object sender, EventArgs e)
         {
             GlobalClass.typeOp = 1;
             ActionToDo();
-            setUpTable();
+            ResetTable();
         }
         private void button3_Click(object sender, EventArgs e)
         {
             GlobalClass.typeOp = 2;
             ActionToDo();
-            setUpTable();
+            ResetTable();
         }
         private void ActionToDo()
         {
@@ -60,7 +65,7 @@ namespace Gestionnaire_Pro
                     break;
                 case 1:
                   
-                    var fournisseurAmodfier = fournisseurs.Find(f => f.Id == fournisseurId);
+                    var fournisseurAmodfier = _mesFournisseurs.Find(f => f.Id == fournisseurId);
                     using (ajouteFournisseur frnForm = new ajouteFournisseur(fournisseurAmodfier))
                     {
                         frnForm.ShowDialog();
@@ -88,15 +93,30 @@ namespace Gestionnaire_Pro
            
         }
 
-        private void setUpTable()
+        private void SetUpTable()
         {
-            fournisseurs= DataBase.DataBaseMethods.GestionnaireProRetreivingMethods.GetAllFournisseurs();
+            
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = fournisseurs;
+            dataGridView1.DataSource = _mesFournisseurs;
         }
-        
 
-       
+        private void SearchForFournisseur(string nom, string numTlf, float credit)
+        {
+            _mesFournisseurs = GestionnaireProRetreivingMethods.SearchForFournisseur(nom, numTlf, credit).Result;
+            SetUpTable();
+        }
+        private void SearchText_TextChanged(object sender, EventArgs e)
+        {
+            var nom = nom_txt.Text.Trim();
+            var numTlf = num_txt.Text.Trim();
+            float credit = -1;
+            if (!string.IsNullOrEmpty(credit_txt.Text.Trim()))
+                credit = Convert.ToSingle(credit_txt.Text);
+
+
+            SearchForFournisseur(nom, numTlf, credit);
+        }
+
     }
 
 

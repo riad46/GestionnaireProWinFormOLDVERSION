@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "6zuSrFiiZ0NibYEmoHoM/xAaRxO4MuND9JK6mhHO1b7mN39jFUbKItOi3ACrTPa6xGsEpcsfB0PCcbD/H9mraQ==",
+  "success": true,
+  "projectFilePath": "P:\\GitHub\\GestionnairePro\\Gestionnaire Pro.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\riadd\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.8\\microsoft.data.sqlite.core.5.0.8.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.3\\sqlitepclraw.lib.e_sqlite3.2.0.3.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.3\\sqlitepclraw.provider.dynamic_cdecl.2.0.3.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.17\\microsoft.netcore.app.runtime.win-x86.3.1.17.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.17\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.17.nupkg.sha512",
+    "C:\\Users\\riadd\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.17\\microsoft.aspnetcore.app.runtime.win-x86.3.1.17.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -26,8 +26,26 @@ namespace Gestionnaire_Pro
         }
         private void ListFournisseurs_Load(object sender, EventArgs e)
         {
-            _mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs();
+            _mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs().Result;
             SetUpTable();
         }
+
+        private void SearchForFournisseur(string nom,string numTlf,float credit)
+        {
+            _mesFournisseurs=GestionnaireProRetreivingMethods.SearchForFournisseur(nom, numTlf, credit).Result;
+            SetUpTable();
+        }
+        private void SearchText_TextChanged(object sender, EventArgs e)
+        {
+            var nom = nom_txt.Text.Trim();
+            var numTlf = num_txt.Text.Trim();
+            float credit=-1;
+            if(!string.IsNullOrEmpty( credit_txt.Text.Trim()))
+            credit = Convert.ToSingle(credit_txt.Text);
+           
+           
+            SearchForFournisseur(nom, numTlf, credit);
+        }
+
     }
 }

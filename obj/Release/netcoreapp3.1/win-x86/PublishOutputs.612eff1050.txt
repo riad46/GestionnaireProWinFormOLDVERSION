@@ -1,0 +1,2 @@
+P:\GitHub\GestionnairePro\bin\Release\netcoreapp3.1\publish\Gestionnaire Pro.pdb
+P:\GitHub\GestionnairePro\bin\Release\netcoreapp3.1\publish\Gestionnaire Pro.exe

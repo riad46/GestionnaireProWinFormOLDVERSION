@@ -30,17 +30,17 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.num_txt = new System.Windows.Forms.TextBox();
+            this.nom_txt = new System.Windows.Forms.TextBox();
+            this.credit_txt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.fournisseurTable = new System.Windows.Forms.DataGridView();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fournisseurTable)).BeginInit();
             this.SuspendLayout();
@@ -48,9 +48,9 @@ namespace Gestionnaire_Pro
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.num_txt);
+            this.panel1.Controls.Add(this.nom_txt);
+            this.panel1.Controls.Add(this.credit_txt);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -59,6 +59,57 @@ namespace Gestionnaire_Pro
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(497, 142);
             this.panel1.TabIndex = 0;
+            // 
+            // num_txt
+            // 
+            this.num_txt.Location = new System.Drawing.Point(201, 51);
+            this.num_txt.Name = "num_txt";
+            this.num_txt.Size = new System.Drawing.Size(136, 23);
+            this.num_txt.TabIndex = 5;
+            this.num_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
+            // 
+            // nom_txt
+            // 
+            this.nom_txt.Location = new System.Drawing.Point(201, 8);
+            this.nom_txt.Name = "nom_txt";
+            this.nom_txt.Size = new System.Drawing.Size(136, 23);
+            this.nom_txt.TabIndex = 4;
+            this.nom_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
+            // 
+            // credit_txt
+            // 
+            this.credit_txt.Location = new System.Drawing.Point(201, 99);
+            this.credit_txt.Name = "credit_txt";
+            this.credit_txt.Size = new System.Drawing.Size(93, 23);
+            this.credit_txt.TabIndex = 3;
+            this.credit_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(105, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Crédit A rendre";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(105, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "N° Téléphone";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(105, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom";
             // 
             // fournisseurTable
             // 
@@ -111,54 +162,6 @@ namespace Gestionnaire_Pro
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "N° Téléphone";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(281, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Crédit A rendre";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(390, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 23);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(126, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 23);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(126, 89);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 23);
-            this.textBox3.TabIndex = 5;
-            // 
             // ListFournisseurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -184,9 +187,9 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.DataGridViewTextBoxColumn num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox num_txt;
+        private System.Windows.Forms.TextBox nom_txt;
+        private System.Windows.Forms.TextBox credit_txt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

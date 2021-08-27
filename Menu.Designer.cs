@@ -41,14 +41,15 @@ namespace Gestionnaire_Pro
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitDropList = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutDropList = new System.Windows.Forms.ToolStripMenuItem();
-            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.venteItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nvVenteDropItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historyVenteDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.achatItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nvAchatDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableDAchatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.venteItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nvVenteDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyVenteDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.factureItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajoutFactureDropItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableFactureDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articleItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableDArticlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listeDArticleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,9 +71,6 @@ namespace Gestionnaire_Pro
             this.utilisateurDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoBoutiqueDropList = new System.Windows.Forms.ToolStripMenuItem();
             this.parametreDropItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.factureItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajoutFactureDropItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableFactureDropItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gradiantPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.articlesList_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historiqueVente_pic)).BeginInit();
@@ -212,9 +210,7 @@ namespace Gestionnaire_Pro
             // fichierItem
             // 
             this.fichierItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quitDropList,
-            this.logOutDropList,
-            this.fichierToolStripMenuItem});
+            this.quitDropList});
             this.fichierItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.fichierItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
             this.fichierItem.Name = "fichierItem";
@@ -226,22 +222,37 @@ namespace Gestionnaire_Pro
             this.quitDropList.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.quitDropList.Name = "quitDropList";
             this.quitDropList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitDropList.Size = new System.Drawing.Size(237, 30);
+            this.quitDropList.Size = new System.Drawing.Size(185, 24);
             this.quitDropList.Text = "Quitter";
+            this.quitDropList.Click += new System.EventHandler(this.quitDropList_Click_1);
             // 
-            // logOutDropList
+            // achatItem
             // 
-            this.logOutDropList.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.logOutDropList.Name = "logOutDropList";
-            this.logOutDropList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.End)));
-            this.logOutDropList.Size = new System.Drawing.Size(237, 30);
-            this.logOutDropList.Text = "Déconnection";
+            this.achatItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nvAchatDropItem,
+            this.tableDAchatsToolStripMenuItem});
+            this.achatItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.achatItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
+            this.achatItem.Name = "achatItem";
+            this.achatItem.Size = new System.Drawing.Size(79, 29);
+            this.achatItem.Text = "Achat";
+            this.achatItem.Click += new System.EventHandler(this.achatItem_Click);
             // 
-            // fichierToolStripMenuItem
+            // nvAchatDropItem
             // 
-            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
-            this.fichierToolStripMenuItem.Text = "Fichier";
+            this.nvAchatDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nvAchatDropItem.Name = "nvAchatDropItem";
+            this.nvAchatDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.nvAchatDropItem.Size = new System.Drawing.Size(224, 30);
+            this.nvAchatDropItem.Text = "Nouveau Achat";
+            this.nvAchatDropItem.Click += new System.EventHandler(this.nvAchatDropItem_Click_1);
+            // 
+            // tableDAchatsToolStripMenuItem
+            // 
+            this.tableDAchatsToolStripMenuItem.Name = "tableDAchatsToolStripMenuItem";
+            this.tableDAchatsToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.tableDAchatsToolStripMenuItem.Text = "Table d\'Achats";
+            this.tableDAchatsToolStripMenuItem.Click += new System.EventHandler(this.tableDAchatsToolStripMenuItem_Click);
             // 
             // venteItem
             // 
@@ -272,33 +283,29 @@ namespace Gestionnaire_Pro
             this.historyVenteDropItem.Text = "Historique de Vente";
             this.historyVenteDropItem.Click += new System.EventHandler(this.historyVenteDropItem_Click_1);
             // 
-            // achatItem
+            // factureItem
             // 
-            this.achatItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nvAchatDropItem,
-            this.tableDAchatsToolStripMenuItem});
-            this.achatItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.achatItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(33)))), ((int)(((byte)(0)))));
-            this.achatItem.Name = "achatItem";
-            this.achatItem.Size = new System.Drawing.Size(79, 29);
-            this.achatItem.Text = "Achat";
-            this.achatItem.Visible = false;
+            this.factureItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ajoutFactureDropItem,
+            this.tableFactureDropItem});
+            this.factureItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.factureItem.ForeColor = System.Drawing.Color.Red;
+            this.factureItem.Name = "factureItem";
+            this.factureItem.Size = new System.Drawing.Size(97, 29);
+            this.factureItem.Text = "Facture";
+            this.factureItem.Visible = false;
             // 
-            // nvAchatDropItem
+            // ajoutFactureDropItem
             // 
-            this.nvAchatDropItem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nvAchatDropItem.Name = "nvAchatDropItem";
-            this.nvAchatDropItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.nvAchatDropItem.Size = new System.Drawing.Size(224, 30);
-            this.nvAchatDropItem.Text = "Nouveau Achat";
-            this.nvAchatDropItem.Click += new System.EventHandler(this.nvAchatDropItem_Click_1);
+            this.ajoutFactureDropItem.Name = "ajoutFactureDropItem";
+            this.ajoutFactureDropItem.Size = new System.Drawing.Size(274, 30);
+            this.ajoutFactureDropItem.Text = "Ajouter une Facture";
             // 
-            // tableDAchatsToolStripMenuItem
+            // tableFactureDropItem
             // 
-            this.tableDAchatsToolStripMenuItem.Name = "tableDAchatsToolStripMenuItem";
-            this.tableDAchatsToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
-            this.tableDAchatsToolStripMenuItem.Text = "Table d\'Achats";
-            this.tableDAchatsToolStripMenuItem.Click += new System.EventHandler(this.tableDAchatsToolStripMenuItem_Click);
+            this.tableFactureDropItem.Name = "tableFactureDropItem";
+            this.tableFactureDropItem.Size = new System.Drawing.Size(274, 30);
+            this.tableFactureDropItem.Text = "Table de factures";
             // 
             // articleItem
             // 
@@ -457,7 +464,6 @@ namespace Gestionnaire_Pro
             | System.Windows.Forms.Keys.C)));
             this.caisseDropItem.Size = new System.Drawing.Size(279, 22);
             this.caisseDropItem.Text = "Caisse";
-            this.caisseDropItem.Visible = false;
             this.caisseDropItem.Click += new System.EventHandler(this.caisseDropItem_Click_1);
             // 
             // utilisateurDropItem
@@ -487,30 +493,6 @@ namespace Gestionnaire_Pro
             this.parametreDropItem.Text = "Paramètre";
             this.parametreDropItem.Visible = false;
             this.parametreDropItem.Click += new System.EventHandler(this.parametreDropItem_Click_1);
-            // 
-            // factureItem
-            // 
-            this.factureItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ajoutFactureDropItem,
-            this.tableFactureDropItem});
-            this.factureItem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.factureItem.ForeColor = System.Drawing.Color.Red;
-            this.factureItem.Name = "factureItem";
-            this.factureItem.Size = new System.Drawing.Size(97, 29);
-            this.factureItem.Text = "Facture";
-            this.factureItem.Visible = false;
-            // 
-            // ajoutFactureDropItem
-            // 
-            this.ajoutFactureDropItem.Name = "ajoutFactureDropItem";
-            this.ajoutFactureDropItem.Size = new System.Drawing.Size(178, 22);
-            this.ajoutFactureDropItem.Text = "Ajouter une Facture";
-            // 
-            // tableFactureDropItem
-            // 
-            this.tableFactureDropItem.Name = "tableFactureDropItem";
-            this.tableFactureDropItem.Size = new System.Drawing.Size(178, 22);
-            this.tableFactureDropItem.Text = "Table de factures";
             // 
             // Menu
             // 
@@ -672,7 +654,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fichierItem;
         private System.Windows.Forms.ToolStripMenuItem quitDropList;
-        private System.Windows.Forms.ToolStripMenuItem logOutDropList;
         private System.Windows.Forms.ToolStripMenuItem venteItem;
         private System.Windows.Forms.ToolStripMenuItem nvVenteDropItem;
         private System.Windows.Forms.ToolStripMenuItem historyVenteDropItem;
@@ -698,7 +679,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ToolStripMenuItem tableDeClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterCreditToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paimentDeCreditToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tableFournisseursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tableDAchatsToolStripMenuItem;
         private System.Windows.Forms.PictureBox articlesList_pic;

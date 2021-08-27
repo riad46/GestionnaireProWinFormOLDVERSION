@@ -29,273 +29,448 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            Gestionnaire_Pro.GradiantPanel gradiantPanel1;
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.articleTable = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixAchat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixVente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateExp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fournisseur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.del_btn = new System.Windows.Forms.Button();
+            this.sub_btn = new System.Windows.Forms.Button();
+            this.ajoutArticle_btn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.prixV_txt = new System.Windows.Forms.TextBox();
+            this.prixA_txt = new System.Windows.Forms.TextBox();
+            this.qnt_txt = new System.Windows.Forms.TextBox();
+            this.nom_txt = new System.Windows.Forms.TextBox();
+            this.codeBarre_txt = new System.Windows.Forms.TextBox();
+            this.fournisseurs_combo = new System.Windows.Forms.ComboBox();
+            this.dateExp_box = new System.Windows.Forms.DateTimePicker();
+            this.dateAchat_box = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            gradiantPanel1 = new Gestionnaire_Pro.GradiantPanel();
-            this.groupBox1.SuspendLayout();
+            this.label8 = new System.Windows.Forms.Label();
+            this.type_txt = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.articleTable)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // articleTable
             // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(981, 205);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.UseWaitCursor = true;
+            this.articleTable.AllowUserToAddRows = false;
+            this.articleTable.AllowUserToDeleteRows = false;
+            this.articleTable.AllowUserToOrderColumns = true;
+            this.articleTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.articleTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.articleTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.articleTable.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.articleTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.articleTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.articleTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.codeBarre,
+            this.nom,
+            this.type,
+            this.qnt,
+            this.prixAchat,
+            this.prixVente,
+            this.dateExp,
+            this.fournisseur});
+            this.articleTable.Location = new System.Drawing.Point(0, 235);
+            this.articleTable.MultiSelect = false;
+            this.articleTable.Name = "articleTable";
+            this.articleTable.ReadOnly = true;
+            this.articleTable.RowTemplate.Height = 25;
+            this.articleTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.articleTable.Size = new System.Drawing.Size(981, 268);
+            this.articleTable.TabIndex = 22;
             // 
-            // button1
+            // id
             // 
-            this.button1.Location = new System.Drawing.Point(264, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(385, 41);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.UseWaitCursor = true;
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "réf";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
-            // checkBox1
+            // codeBarre
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(392, 117);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(83, 19);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.UseWaitCursor = true;
+            this.codeBarre.DataPropertyName = "codeBarre";
+            this.codeBarre.HeaderText = "CodeBarre";
+            this.codeBarre.Name = "codeBarre";
+            this.codeBarre.ReadOnly = true;
             // 
-            // textBox8
+            // nom
             // 
-            this.textBox8.Location = new System.Drawing.Point(563, 89);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(152, 23);
-            this.textBox8.TabIndex = 15;
-            this.textBox8.UseWaitCursor = true;
+            this.nom.DataPropertyName = "nom";
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
+            this.nom.ReadOnly = true;
             // 
-            // label8
+            // type
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(510, 92);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 15);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "label8";
-            this.label8.UseWaitCursor = true;
+            this.type.DataPropertyName = "type";
+            this.type.HeaderText = "Type";
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
             // 
-            // textBox7
+            // qnt
             // 
-            this.textBox7.Location = new System.Drawing.Point(796, 56);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(152, 23);
-            this.textBox7.TabIndex = 13;
-            this.textBox7.UseWaitCursor = true;
+            this.qnt.DataPropertyName = "quantité";
+            this.qnt.HeaderText = "Quantité";
+            this.qnt.Name = "qnt";
+            this.qnt.ReadOnly = true;
+            // 
+            // prixAchat
+            // 
+            this.prixAchat.DataPropertyName = "prixAchat";
+            this.prixAchat.HeaderText = "Prix Achat";
+            this.prixAchat.Name = "prixAchat";
+            this.prixAchat.ReadOnly = true;
+            // 
+            // prixVente
+            // 
+            this.prixVente.DataPropertyName = "prixVente";
+            this.prixVente.HeaderText = "Prix de Vente";
+            this.prixVente.Name = "prixVente";
+            this.prixVente.ReadOnly = true;
+            // 
+            // dateExp
+            // 
+            this.dateExp.DataPropertyName = "dateExpiration";
+            this.dateExp.HeaderText = "date Expiration";
+            this.dateExp.Name = "dateExp";
+            this.dateExp.ReadOnly = true;
+            // 
+            // fournisseur
+            // 
+            this.fournisseur.HeaderText = "Nom fournisseur ";
+            this.fournisseur.Name = "fournisseur";
+            this.fournisseur.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.type_txt);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.del_btn);
+            this.panel1.Controls.Add(this.sub_btn);
+            this.panel1.Controls.Add(this.ajoutArticle_btn);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.prixV_txt);
+            this.panel1.Controls.Add(this.prixA_txt);
+            this.panel1.Controls.Add(this.qnt_txt);
+            this.panel1.Controls.Add(this.nom_txt);
+            this.panel1.Controls.Add(this.codeBarre_txt);
+            this.panel1.Controls.Add(this.fournisseurs_combo);
+            this.panel1.Controls.Add(this.dateExp_box);
+            this.panel1.Controls.Add(this.dateAchat_box);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(981, 229);
+            this.panel1.TabIndex = 23;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(743, 59);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(435, 94);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "label7";
-            this.label7.UseWaitCursor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(330, 85);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(152, 23);
-            this.textBox6.TabIndex = 11;
-            this.textBox6.UseWaitCursor = true;
+            this.label7.Size = new System.Drawing.Size(79, 19);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "Fournisseur";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(277, 86);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(192, 93);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "label6";
-            this.label6.UseWaitCursor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(563, 54);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(152, 23);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.UseWaitCursor = true;
+            this.label6.Size = new System.Drawing.Size(103, 19);
+            this.label6.TabIndex = 60;
+            this.label6.Text = "Date Expiration";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(510, 57);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(9, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "label5";
-            this.label5.UseWaitCursor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(330, 56);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 23);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.UseWaitCursor = true;
+            this.label5.Size = new System.Drawing.Size(71, 19);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "Prix Vente";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(277, 59);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(813, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
-            this.label4.UseWaitCursor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(102, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 23);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.UseWaitCursor = true;
+            this.label4.Size = new System.Drawing.Size(72, 19);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "Prix Achat";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 89);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(655, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
-            this.label3.UseWaitCursor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(102, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 23);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseWaitCursor = true;
+            this.label3.Size = new System.Drawing.Size(60, 19);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "Quantité";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 57);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(229, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
-            this.label2.UseWaitCursor = true;
+            this.label2.Size = new System.Drawing.Size(40, 19);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Nom";
             // 
-            // textBox1
+            // label9
             // 
-            this.textBox1.Location = new System.Drawing.Point(102, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 23);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.UseWaitCursor = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(3, 50);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 19);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "Code Barre";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.Location = new System.Drawing.Point(772, 157);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(206, 23);
+            this.checkBox1.TabIndex = 54;
+            this.checkBox1.Text = "Modifier la Liste d\'articles";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // del_btn
+            // 
+            this.del_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.del_btn.Location = new System.Drawing.Point(12, 198);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Size = new System.Drawing.Size(135, 28);
+            this.del_btn.TabIndex = 53;
+            this.del_btn.Text = "Supprimer Ligne";
+            this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
+            // 
+            // sub_btn
+            // 
+            this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.Location = new System.Drawing.Point(772, 186);
+            this.sub_btn.Name = "sub_btn";
+            this.sub_btn.Size = new System.Drawing.Size(197, 40);
+            this.sub_btn.TabIndex = 52;
+            this.sub_btn.Text = "Valider Achat";
+            this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
+            // 
+            // ajoutArticle_btn
+            // 
+            this.ajoutArticle_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ajoutArticle_btn.Location = new System.Drawing.Point(657, 90);
+            this.ajoutArticle_btn.Name = "ajoutArticle_btn";
+            this.ajoutArticle_btn.Size = new System.Drawing.Size(165, 28);
+            this.ajoutArticle_btn.TabIndex = 51;
+            this.ajoutArticle_btn.Text = "Ajouter au Tableau";
+            this.ajoutArticle_btn.UseVisualStyleBackColor = true;
+            this.ajoutArticle_btn.Click += new System.EventHandler(this.ajoutArticle_btn_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(219, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 28);
+            this.button2.TabIndex = 50;
+            this.button2.Text = "Liste d\'Articles";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.ListArticle_Click);
+            // 
+            // prixV_txt
+            // 
+            this.prixV_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.prixV_txt.Location = new System.Drawing.Point(87, 90);
+            this.prixV_txt.Name = "prixV_txt";
+            this.prixV_txt.Size = new System.Drawing.Size(87, 26);
+            this.prixV_txt.TabIndex = 49;
+            // 
+            // prixA_txt
+            // 
+            this.prixA_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.prixA_txt.Location = new System.Drawing.Point(884, 43);
+            this.prixA_txt.Name = "prixA_txt";
+            this.prixA_txt.Size = new System.Drawing.Size(85, 26);
+            this.prixA_txt.TabIndex = 48;
+            // 
+            // qnt_txt
+            // 
+            this.qnt_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.qnt_txt.Location = new System.Drawing.Point(732, 41);
+            this.qnt_txt.Name = "qnt_txt";
+            this.qnt_txt.Size = new System.Drawing.Size(75, 26);
+            this.qnt_txt.TabIndex = 47;
+            // 
+            // nom_txt
+            // 
+            this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nom_txt.Location = new System.Drawing.Point(274, 43);
+            this.nom_txt.Name = "nom_txt";
+            this.nom_txt.Size = new System.Drawing.Size(138, 26);
+            this.nom_txt.TabIndex = 46;
+            // 
+            // codeBarre_txt
+            // 
+            this.codeBarre_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codeBarre_txt.Location = new System.Drawing.Point(88, 46);
+            this.codeBarre_txt.Name = "codeBarre_txt";
+            this.codeBarre_txt.Size = new System.Drawing.Size(135, 26);
+            this.codeBarre_txt.TabIndex = 45;
+            // 
+            // fournisseurs_combo
+            // 
+            this.fournisseurs_combo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fournisseurs_combo.FormattingEnabled = true;
+            this.fournisseurs_combo.Location = new System.Drawing.Point(528, 90);
+            this.fournisseurs_combo.Name = "fournisseurs_combo";
+            this.fournisseurs_combo.Size = new System.Drawing.Size(123, 27);
+            this.fournisseurs_combo.Sorted = true;
+            this.fournisseurs_combo.TabIndex = 44;
+            // 
+            // dateExp_box
+            // 
+            this.dateExp_box.CustomFormat = "dd-MM-yyyy";
+            this.dateExp_box.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateExp_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateExp_box.Location = new System.Drawing.Point(304, 89);
+            this.dateExp_box.Name = "dateExp_box";
+            this.dateExp_box.Size = new System.Drawing.Size(125, 26);
+            this.dateExp_box.TabIndex = 43;
+            // 
+            // dateAchat_box
+            // 
+            this.dateAchat_box.CustomFormat = "dd-MM-yyyy";
+            this.dateAchat_box.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateAchat_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateAchat_box.Location = new System.Drawing.Point(88, 3);
+            this.dateAchat_box.Name = "dateAchat_box";
+            this.dateAchat_box.Size = new System.Drawing.Size(125, 26);
+            this.dateAchat_box.TabIndex = 42;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 15);
+            this.label1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 19);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Date Achat";
             this.label1.UseWaitCursor = true;
             // 
-            // gradiantPanel1
+            // label8
             // 
-            gradiantPanel1.angle = 0F;
-            gradiantPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            gradiantPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gradiantPanel1.Location = new System.Drawing.Point(0, 205);
-            gradiantPanel1.lowerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            gradiantPanel1.Name = "gradiantPanel1";
-            gradiantPanel1.Size = new System.Drawing.Size(981, 320);
-            gradiantPanel1.TabIndex = 1;
-            gradiantPanel1.topColor = System.Drawing.Color.Lime;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(436, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 19);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "Type";
+            // 
+            // type_txt
+            // 
+            this.type_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.type_txt.Location = new System.Drawing.Point(481, 43);
+            this.type_txt.Name = "type_txt";
+            this.type_txt.Size = new System.Drawing.Size(138, 26);
+            this.type_txt.TabIndex = 62;
             // 
             // ajouteAchat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 525);
-            this.Controls.Add(gradiantPanel1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.articleTable);
             this.Name = "ajouteAchat";
             this.Text = "addAchat";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.ajouteAchat_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.articleTable)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView articleTable;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-      //  private GradiantPanel gradiantPanel1;
+        private System.Windows.Forms.DateTimePicker dateAchat_box;
+        private System.Windows.Forms.TextBox prixV_txt;
+        private System.Windows.Forms.TextBox prixA_txt;
+        private System.Windows.Forms.TextBox qnt_txt;
+        private System.Windows.Forms.TextBox nom_txt;
+        private System.Windows.Forms.TextBox codeBarre_txt;
+        private System.Windows.Forms.ComboBox fournisseurs_combo;
+        private System.Windows.Forms.DateTimePicker dateExp_box;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button del_btn;
+        private System.Windows.Forms.Button sub_btn;
+        private System.Windows.Forms.Button ajoutArticle_btn;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeBarre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qnt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prixAchat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prixVente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateExp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fournisseur;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox type_txt;
+        //  private GradiantPanel gradiantPanel1;
     }
 }

@@ -8,17 +8,17 @@ namespace Gestionnaire_Pro.DataBase.Models
     {
         public int Id { get; set; }
         public string codeBarre { get; set; }
-        public string? typeArticle { get; set; }
+        public string? Type { get; set; }
         public string nom { get; set; }
-        public int qnt { get; set; }
-        public decimal prixAchat { get; set; }
-        public decimal prixVente { get; set; }
+        public float Quantité { get; set; }
+        public float prixAchat { get; set; }
+        public float prixVente { get; set; }
         public DateTime? dateExpiration { get; set; }
        
         public int AchatId { get; set; }
         public Achat Achat { get; set; }
 
-        public int? FournisseurId { get; set; }
+        public int? fournisseurId { get; set; }
         public Fournisseur fournisseur { get; set; }
     }
 }

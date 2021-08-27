@@ -126,30 +126,78 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         /// use in Liste/Table de Founisseurs
         /// </summary>
         /// <returns></returns>
-        public static List<Fournisseur> GetAllFournisseurs()
+        public static async Task<List<Fournisseur>> GetAllFournisseurs()
         {
 
             var sql = "SELECT id,nom,address,numTlf,creditArendre FROM fournisseurs";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                var fournisseurs = connection.Query<Fournisseur>(sql, new DynamicParameters());
+                var fournisseurs =await connection.QueryAsync<Fournisseur>(sql, new DynamicParameters());
                 return fournisseurs.ToList();
             }
 
         }
         public static int GetFournisseurIdByNom(string nomFournisseur)
         {
+            if (nomFournisseur == "")
+                nomFournisseur = "23qf4q8674fq534d1q32sd41q3";
             var sql = $"SELECT Id FROM fournisseurs WHERE nom =@nom";
 
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                var result = connection.QueryAsync<int>(sql, new { nom =nomFournisseur} ).Result.First();
-                return result;
+                var result = connection.QueryAsync<int>(sql, new { nom =nomFournisseur} ).Result;
+                if (result.Count() > 0)
+                {
+                    return result.First();
+                }
+                else
+                {
+                    return -1;
+                }
+                
+            }
+        }
+        public static async Task<List<Fournisseur>> SearchForFournisseur(string nom, string numTlf,float credit)
+        {
+            var param = new
+            {
+                nom = "%"+ nom+"%",
+                num = "%" + numTlf + "%",
+                credit = credit
+            };
+            var sql = "SELECT * FROM fournisseurs ";
+            if(nom !=null || numTlf!=null || credit != -1)
+            {
+                sql += "WHERE";
+                if (nom != null) sql += " nom LIKE @nom";
+
+                if (nom != null && numTlf != null)
+                {
+                    sql += " AND numTlf LIKE @num";
+                }
+                else if(numTlf != null)
+                {
+                    sql += " numTlf LIKE @num";
+                }
+                if((nom != null || numTlf != null) && credit != -1)
+                {
+                    sql += " AND creditArendre =@credit";
+                }
+                else if(credit !=-1)
+                {
+                    sql += " creditArendre =@credit";
+                }
+                
+            }
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                var result = await connection.QueryAsync<Fournisseur>(sql,param);
+                return result.ToList();
             }
         }
         //--------------------------------------------------------------------------------  Client
 
-       
+
         /// <summary>
         /// use in Liste de Clients
         /// </summary>
@@ -228,16 +276,18 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         /// use in Table d'Achats
         /// </summary>
         /// <returns></returns>
-        public static List<Achat> GetAllAchatsWithDetails()
+        public static async  Task< List<Achat> > GetAllAchatsWithDetails()
         {
             var sql = "SELECT a.*,da.* from achats a LEFT JOIN detailAchats da ON da.AchatId=a.Id;";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                return connection.Query<Achat, DetailAchat, Achat>(sql, (achat, detailAchat) => {
+                var res = await connection.QueryAsync<Achat, DetailAchat, Achat>(sql, (achat, detailAchat) =>
+                {
                     if (detailAchat != null)
                         achat.DetailAchats.Add(detailAchat);
                     return achat;
-                }).ToList();
+                }) ;
+                return res.ToList();
             }
         }
         /// <summary>
@@ -260,7 +310,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         /// </summary>
         /// <param name="achatID"></param>
         /// <returns></returns>
-        public async Task<List<DetailAchat>> GetDetailAchats(int achatID)
+        public static async Task<List<DetailAchat>> GetDetailAchats(int achatID)
         {
             var sql = $@"SELECT da.codeBarre,da.nom,da.Type,da.Quantité,da.prixAchat,da.prixVente,da.dateExpiration,da.fournisseurId,a.* 
                 FROM detailAchats da LEFT JOIN achat a where da.achatId = a.id and a.id=@achatID";
@@ -394,7 +444,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             var sql = "SELECT id,nomUtilisateur,motDePass,numTlf,estAdmin FROM utilisateurs";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-            var res=    await connection.QueryAsync<Utilisateur>(sql);
+            var res= await connection.QueryAsync<Utilisateur>(sql);
                 return res.ToList();
             }
             

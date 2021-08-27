@@ -255,4 +255,5 @@ P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.genruntimecon
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ListFournisseurs.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.TableAchat.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.TableFournisseur.resources
+P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.LoginForm.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache

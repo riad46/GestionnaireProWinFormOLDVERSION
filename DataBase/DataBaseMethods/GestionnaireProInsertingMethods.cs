@@ -90,21 +90,40 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
         }
         //achat
-        public void AddAchat(Achat achat)
+        public static async void AddAchat(Achat achat)
         {
+            var param = new { dateAchat=achat.dateAchat,total=achat.montantTotal };
+            var sql = "Insert INTO achats(dateAchat,montantTotal) VALUES(@dateAchat,@total)";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                connection.ExecuteAsync("dbo.spAchat_AddAchat", achat);
+               await connection.ExecuteAsync(sql,param);
             }
         }
-        public void AddDetailAchat(List<DetailAchat> detailAchats)
+        public static async void AddDetailAchat(List<DetailAchat> detailAchats)
         {
+            var sql = @"INSERT INTO detailAchats(codeBarre, nom, Type, Quantité, prixAchat, prixVente, dateExpiration, fournisseurId,achatId) VALUES(
+                              @codeBarre,
+                              @nom,
+                              @typeArticle,
+                              @qnt,
+                              @prixAchat,
+                              @prixVente,
+                              @dateExp,
+                              @fournisseurId,
+                              @achatId
+                             )";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                foreach (var detail in detailAchats)
+
+                foreach (var item in detailAchats)
                 {
-                    connection.ExecuteAsync("dbo.spAchat_AddDetail", detail);
+                    var param = new { codeBarre = item.codeBarre, nom = item.nom, typeArticle = item.Type,
+                        qnt = item.Quantité, prixAchat = item.prixAchat, prixVente = item.prixVente,
+                        dateExp = item.dateExpiration, fournisseurId = item.fournisseurId,achatId=item.AchatId };
+                    await connection.ExecuteAsync(sql, param);
                 }
+                  
+                
                 
             }
         }

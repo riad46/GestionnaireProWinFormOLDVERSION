@@ -14,6 +14,7 @@ namespace Gestionnaire_Pro
         /// type 1 = Modify the Database row,
         /// type 3 = delete record,
         /// type 4 =delete all records from DB
+        /// 10 = add an article  to List from Article List 
         /// </summary>
         public static short typeOp = 0;
        /// <summary>

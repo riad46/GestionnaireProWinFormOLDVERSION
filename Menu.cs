@@ -1,19 +1,10 @@
 ﻿using Dapper;
-using Gestionnaire_Pro.DataBase.DataBaseMethods;
 using Gestionnaire_Pro.DataBase.DataConnection;
 using Microsoft.Data.Sqlite;
-using SQLite;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Gestionnaire_Pro
 {
@@ -26,11 +17,11 @@ namespace Gestionnaire_Pro
 
 
 
-      
 
-      
 
-       
+
+
+
         private void Menu_Load(object sender, EventArgs e)
         {
             //check if the file is there
@@ -39,12 +30,12 @@ namespace Gestionnaire_Pro
             {
                 CreateFullDb();
             }
-            
+
         }
-       
+
         private void CreateFullDb()
         {
-            
+
             var c = File.Create(@".\GestionnairePro.db");
             c.Close();
             var sql = @"CREATE TABLE IF NOT EXISTS utilisateurs(
@@ -123,13 +114,13 @@ create table if not EXISTS detailVentes(
 create table if not EXISTS achats(
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
   dateAchat date not null,
-  montantTotale float NOT NULL
+  montantTotal float NOT NULL
   
 );
 create table if not EXISTS detailAchats(
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
   codeBarre Varchar(20) NOT NULL UNIQUE, 
-  nom Varchar(30) NOT NULL UNIQUE,
+  nom Varchar(30) NOT NULL ,
   Type Varchar(20) ,
   Quantité float NOT NULL ,
   prixAchat FLoat NOT NULL,
@@ -167,16 +158,16 @@ create table if not EXISTS ProduitExcluDeVerification(
 );";
             using (var connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-               
+
                 connection.Execute(sql);
             }
         }
 
-     
+
 
         private void nvVenteDropItem_Click_1(object sender, EventArgs e)
         {
-            using(var  v = new vente())
+            using (var v = new vente())
             {
                 v.ShowDialog();
             }
@@ -184,14 +175,14 @@ create table if not EXISTS ProduitExcluDeVerification(
 
         private void addArticleDropItem_Click_1(object sender, EventArgs e)
         {
-            using (var addArticle= new ajouteArticle())
+            using (var addArticle = new ajouteArticle())
             {
                 addArticle.ShowDialog();
             }
         }
 
-       
-       
+
+
 
         private void listeDArticleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -219,10 +210,18 @@ create table if not EXISTS ProduitExcluDeVerification(
 
         private void tableDeClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var c = new tableClient())
+            if (GlobalClass.isAdmin)
             {
-                c.ShowDialog();
+                using (var c = new tableClient())
+                {
+                    c.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+            }
+           
         }
         private void ajouterCreditToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -249,6 +248,7 @@ create table if not EXISTS ProduitExcluDeVerification(
 
         private void paimentDeCreditToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
             using (var p = new paimentCreditClient())
             {
                 p.ShowDialog();
@@ -257,24 +257,41 @@ create table if not EXISTS ProduitExcluDeVerification(
 
         private void infoBoutiqueDropList_Click_1(object sender, EventArgs e)
         {
-          //  if (GlobalClass.isAdmin != true) return;
-            using(var infoWin =new infosBoutique())
+            if (GlobalClass.isAdmin)
             {
-                infoWin.ShowDialog();
+                using (var infoWin = new infosBoutique())
+                {
+                    infoWin.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+            } 
+
+            
         }
 
         private void tableDArticlesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            using (tableArticle tableArticleForm = new tableArticle())
+            if (GlobalClass.isAdmin)
             {
-                tableArticleForm.ShowDialog();
+                using (tableArticle tableArticleForm = new tableArticle())
+                {
+                    tableArticleForm.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+            }
+
+            
         }
 
         private void tableDArticlesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        using(var AjoutAForm =new ajouteArticle())
+            using(var AjoutAForm =new ajouteArticle())
             {
                 AjoutAForm.ShowDialog();
             }    
@@ -282,42 +299,82 @@ create table if not EXISTS ProduitExcluDeVerification(
 
         private void caisseDropItem_Click_1(object sender, EventArgs e)
         {
-            using (var caisseForm = new caisse())
+            if (GlobalClass.isAdmin)
             {
-                caisseForm.ShowDialog();
+                using (var caisseForm = new caisse())
+                {
+                    caisseForm.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+            }
+            
         }
 
         private void utilisateurDropItem_Click_1(object sender, EventArgs e)
         {
-            using (var userForm = new utilisateur())
+            if (GlobalClass.isAdmin)
             {
-                userForm.ShowDialog();
+                using (var userForm = new utilisateur())
+                {
+                    userForm.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+            }
+          
         }
 
         private void revenueDropItem_Click_1(object sender, EventArgs e)
         {
-            using (var revForm = new revenue())
+            if (GlobalClass.isAdmin)
             {
-                revForm.ShowDialog();
+                using (var revForm = new revenue())
+                {
+                    revForm.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+            }
+           
         }
 
         private void parametreDropItem_Click_1(object sender, EventArgs e)
         {
-            using (var paramForm = new param())
+            if (GlobalClass.isAdmin)
             {
-                paramForm.ShowDialog();
+                using (var paramForm = new param())
+                {
+                    paramForm.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+            }
+            
         }
 
         private void tableFournisseursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var f = new TableFournisseur())
+            if (GlobalClass.isAdmin)
             {
-                f.ShowDialog();
+                using (var f = new TableFournisseur())
+                {
+                    f.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+            }
+           
         }
 
         private void nvAchatDropItem_Click_1(object sender, EventArgs e)
@@ -338,7 +395,7 @@ create table if not EXISTS ProduitExcluDeVerification(
 
         private void tableDAchatsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var tableAchat= new TableAchat())
+            using (var tableAchat= new listeAchat())
             {
                 tableAchat.ShowDialog();
 
@@ -401,6 +458,24 @@ create table if not EXISTS ProduitExcluDeVerification(
             }
         }
 
-      
+        private void logOutDropList_Click_1(object sender, EventArgs e)
+        {
+            using (var log=new LoginForm())
+            {
+                this.Visible = false;
+                log.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void quitDropList_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void achatItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

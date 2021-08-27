@@ -55,11 +55,20 @@ namespace Gestionnaire_Pro
             monArticle.type = (string)articleTable.SelectedRows[0].Cells[_typeCell].Value;
             monArticle.quantité = 1;
             monArticle.prixAchat = articles.Find(a => a.Id == monArticle.Id).prixAchat;
+           if(articleTable.SelectedRows[0].Cells[6].RowIndex >-1 && articles[articleTable.SelectedRows[0].Cells[6].RowIndex].dateExpiration !=null)
+            monArticle.dateExpiration = Convert.ToDateTime(articleTable.SelectedRows[0].Cells[6].Value);
+            if (articleTable.SelectedRows[0].Cells[_fournisseurCell].RowIndex > -1 && articles[articleTable.SelectedRows[0].Cells[_fournisseurCell].RowIndex].Fournisseur != null)
+            {
+                monArticle.Fournisseur = articles[articleTable.SelectedRows[0].Cells[_fournisseurCell].RowIndex].Fournisseur;
+            }
+
+
             if ((float)articleTable.SelectedRows[0].Cells[_qntCell].Value > 0) 
             {
                 GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, (float)articleTable.SelectedRows[0].Cells[_qntCell].Value - 1);
                 
             }
+           
             else
             {
                 MessageBox.Show("Quantité Insuffisante!!");
