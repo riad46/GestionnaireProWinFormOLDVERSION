@@ -326,7 +326,18 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
 
         }
+        public static async Task<List<Achat>> GetAchatByFilter(DateTime dateMin,DateTime dateMax)
+        {
+            var param = new { dateMin = dateMin, dateMax = dateMax };
+            var sql = "SELECT * FROM achats where dateAchat<=@dateMax AND dateAchat>=@dateMin";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                var res = await connection.QueryAsync<Achat>(sql,param);
 
+                return res.ToList();
+            }
+
+        }
 
         //--------------------------------------------------------------------------------  vente+detail
 
@@ -373,7 +384,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             /// Historique de vente 
             /// </summary>
             /// <returns></returns>
-            public static async Task<List<Vente>> GetHistoriqueDeVente()
+        public static async Task<List<Vente>> GetHistoriqueDeVente()
         {
             var sql = "Select v.id,v.dateVente,v.montantTotale,v.remise,v.netPayé,v.ajouterPar,v.dateModification,v.modifierPar,v.nouveauMontantTotal,v.nouvelleRemise,c.* FROM ventes v LEFT JOIN clients c";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
