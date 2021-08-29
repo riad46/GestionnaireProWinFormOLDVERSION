@@ -45,6 +45,7 @@ namespace Gestionnaire_Pro
             this.label1.Size = new System.Drawing.Size(192, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom d\'utilisateur";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // username_txt
             // 
@@ -53,6 +54,7 @@ namespace Gestionnaire_Pro
             this.username_txt.Name = "username_txt";
             this.username_txt.Size = new System.Drawing.Size(198, 35);
             this.username_txt.TabIndex = 1;
+            this.username_txt.TextChanged += new System.EventHandler(this.username_txt_TextChanged);
             // 
             // password_txt
             // 
@@ -62,6 +64,7 @@ namespace Gestionnaire_Pro
             this.password_txt.PasswordChar = '*';
             this.password_txt.Size = new System.Drawing.Size(198, 35);
             this.password_txt.TabIndex = 3;
+            this.password_txt.TextChanged += new System.EventHandler(this.password_txt_TextChanged);
             // 
             // label2
             // 
@@ -72,6 +75,7 @@ namespace Gestionnaire_Pro
             this.label2.Size = new System.Drawing.Size(147, 26);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mot de Passe";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // sub_btn
             // 
@@ -98,8 +102,6 @@ namespace Gestionnaire_Pro
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 

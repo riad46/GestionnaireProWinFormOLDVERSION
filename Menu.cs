@@ -1,7 +1,10 @@
 ﻿using Dapper;
+using Gestionnaire_Pro.DataBase.DataBaseMethods;
 using Gestionnaire_Pro.DataBase.DataConnection;
 using Microsoft.Data.Sqlite;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,29 +13,21 @@ namespace Gestionnaire_Pro
 {
     public partial class Menu : Form
     {
+        private Button currentButton;
+        //for chosing the color
+        private Random random=new Random();
+        private int tempIndex;
+        private Form activeForm;
+
+        private List<Button> _btns = new List<Button>();
+
         public Menu()
         {
             InitializeComponent();
+            greetingPanel.Parent = mainPanel;
+            DesactivatePanel();
         }
-
-
-
-
-
-
-
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-            //check if the file is there
-            var myDb = new System.IO.FileInfo("./GestionnairePro.db");
-            if (!myDb.Exists)
-            {
-                CreateFullDb();
-            }
-
-        }
-
+      
         private void CreateFullDb()
         {
 
@@ -162,320 +157,427 @@ create table if not EXISTS ProduitExcluDeVerification(
                 connection.Execute(sql);
             }
         }
-
-
-
-        private void nvVenteDropItem_Click_1(object sender, EventArgs e)
+        private void GiveOptionToRole()
         {
-            using (var v = new vente())
+            if (! GlobalClass.isAdmin)
             {
-                v.ShowDialog();
-            }
-        }
-
-        private void addArticleDropItem_Click_1(object sender, EventArgs e)
-        {
-            using (var addArticle = new ajouteArticle())
-            {
-                addArticle.ShowDialog();
-            }
-        }
-
-
-
-
-        private void listeDArticleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var listArticle = new ListArticle())
-            {
-                listArticle.ShowDialog();
-            }
-        }
-
-        private void addClientDropItem_Click_1(object sender, EventArgs e)
-        {
-            using (var c = new ajouteClient())
-            {
-                c.ShowDialog();
-            }
-        }
-
-        private void listClientsDropItem_Click_1(object sender, EventArgs e)
-        {
-            using (var c = new listeClient())
-            {
-                c.ShowDialog();
-            }
-        }
-
-        private void tableDeClientToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (GlobalClass.isAdmin)
-            {
-                using (var c = new tableClient())
-                {
-                    c.ShowDialog();
-                }
+                user_btn.Enabled = false;
+                rev_btn.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+                user_btn.Enabled = true;
+                rev_btn.Enabled = true;
+            }
+        }
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            
+
+
+            //check if the file is there
+            var myDb = new System.IO.FileInfo("./GestionnairePro.db");
+            if (!myDb.Exists)
+            {
+                CreateFullDb();
+            }
+        }
+
+        #region Btn and Panel Effects
+        private void Reset()
+        {
+            DisableButton();
+            titleLbl.Text = "Acceuil";
+            titlePanel.BackColor = Color.FromArgb(186, 86, 211);
+            logoPanel.BackColor = Color.FromArgb(39, 39, 58);
+            logoLbl.ForeColor = Color.White;
+            currentButton = null;
+            exitChildForm_btn.Visible = false;
+        }
+        private void ActivatePanel()
+        {
+            buttonsPanel.Enabled = true;
+        }
+        private void DesactivatePanel()
+        {
+            buttonsPanel.Enabled = false;
+
+        }
+        private Color SelectThemeColor()
+        {
+            int index = random.Next(ThemeColor.ColorList.Count-1);
+            while (tempIndex == index)
+            {
+                index = random.Next(ThemeColor.ColorList.Count-1);
+            }
+            tempIndex = index;
+            string color = ThemeColor.ColorList[index];
+            return ColorTranslator.FromHtml(color);
+        }
+        private void ActivateButton(object btnSender)
+        {
+
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                    Color btnColor = SelectThemeColor();
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = btnColor;
+                    currentButton.ForeColor = Color.White;
+                    currentButton.Font = new Font("Times New Roman", 16.5F, FontStyle.Bold, GraphicsUnit.Point);
+                    titlePanel.BackColor = btnColor;
+                    logoPanel.BackColor= ThemeColor.ChangeColorBrightness(btnColor, -0.2);
+                    ThemeColor.PrimaryColor = btnColor;
+                    ThemeColor.SecondaryColor= ThemeColor.ChangeColorBrightness(btnColor, -0.3);
+
+                }
+            }
+        }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in buttonsPanel.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.White;
+                    previousBtn.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+                }
+            }
+        }
+        private void OpenChildForm(Form childForm)
+        {
+        if(activeForm != null)
+            {
+                activeForm.Close();
             }
            
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(childForm);
+            mainPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            titleLbl.Text = childForm.Text;
+
+            exitChildForm_btn.Visible = true;
         }
-        private void ajouterCreditToolStripMenuItem_Click(object sender, EventArgs e)
+        #endregion
+
+        #region CreateButtons Methods
+        private void RemoveBtns(List<Button> buttons)
         {
-            using (var c = new ajoutCredit())
+            foreach (var btn in buttons)
             {
-                c.ShowDialog();
+                if (mainPanel.Controls.Contains(btn))
+                {
+                    mainPanel.Controls[mainPanel.Controls.IndexOf(btn)].Visible = false;
+                    btn.Dispose();
+
+                }
+
             }
-        }
-        private void addFournisseurDropItem_Click_1(object sender, EventArgs e)
-        {
-            using (var f = new ajouteFournisseur())
-            {
-                f.ShowDialog();
-            }
+           // _btns = new List<Button>();
+
         }
 
-        private void listFournisseurDropItem_Click_1(object sender, EventArgs e)
-        {
-            using (var listF = new ListFournisseurs())
-            {
-                listF.ShowDialog();
-            }
-        }
 
-        private void paimentDeCreditToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CreateVenteBtns()
         {
+            var historiqueVente_btn = new Button();
+            historiqueVente_btn.Anchor = AnchorStyles.None;
+            historiqueVente_btn.FlatStyle = FlatStyle.Flat;
+            historiqueVente_btn.Location = new Point(200,180);
+            historiqueVente_btn.Name = "historique_btn";
+            historiqueVente_btn.Size = new System.Drawing.Size(420, 80);
+            historiqueVente_btn.TabIndex = 0;
+            historiqueVente_btn.BackColor = ThemeColor.PrimaryColor;
+            historiqueVente_btn.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold);
+            historiqueVente_btn.Text = "Historique de Vente";
+            historiqueVente_btn.UseVisualStyleBackColor = true;
+            historiqueVente_btn.Click += new EventHandler(historiqueVente_btn_Click);
            
-            using (var p = new paimentCreditClient())
-            {
-                p.ShowDialog();
-            }
-        }
+            var nvVente_btn = new Button();
+            nvVente_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            nvVente_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            nvVente_btn.Location = new System.Drawing.Point(200,180);
+            nvVente_btn.Name = "nvVente_btn";
+            nvVente_btn.Size = new System.Drawing.Size(420, 80);
+            nvVente_btn.BackColor = ThemeColor.SecondaryColor;
+            nvVente_btn.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold);
+            nvVente_btn.TabIndex = 1;
+            nvVente_btn.Text = "Nouveau Vente";
+            nvVente_btn.UseVisualStyleBackColor = true;
 
-        private void infoBoutiqueDropList_Click_1(object sender, EventArgs e)
-        {
-            if (GlobalClass.isAdmin)
+            if (mainPanel.Controls.Contains(historiqueVente_btn))
             {
-                using (var infoWin = new infosBoutique())
-                {
-                    infoWin.ShowDialog();
-                }
+                mainPanel.Controls[mainPanel.Controls.IndexOf(historiqueVente_btn)].Visible = true;
             }
-            else
+            if (mainPanel.Controls.Contains(nvVente_btn))
             {
-                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
-            } 
-
-            
-        }
-
-        private void tableDArticlesToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (GlobalClass.isAdmin)
-            {
-                using (tableArticle tableArticleForm = new tableArticle())
-                {
-                    tableArticleForm.ShowDialog();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+                mainPanel.Controls[mainPanel.Controls.IndexOf(nvVente_btn)].Visible = true;
+                
             }
 
-            
-        }
-
-        private void tableDArticlesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using(var AjoutAForm =new ajouteArticle())
+            if (!mainPanel.Controls.Contains(historiqueVente_btn))
             {
-                AjoutAForm.ShowDialog();
-            }    
-        }
+                mainPanel.Controls.Add(historiqueVente_btn);
+                _btns.Add(historiqueVente_btn);
 
-        private void caisseDropItem_Click_1(object sender, EventArgs e)
-        {
-            if (GlobalClass.isAdmin)
-            {
-                using (var caisseForm = new caisse())
-                {
-                    caisseForm.ShowDialog();
-                }
             }
-            else
+
+
+            if (!mainPanel.Controls.Contains(nvVente_btn))
             {
-                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
+                mainPanel.Controls.Add(nvVente_btn);
+                _btns.Add(nvVente_btn);
             }
             
-        }
 
-        private void utilisateurDropItem_Click_1(object sender, EventArgs e)
-        {
-            if (GlobalClass.isAdmin)
-            {
-                using (var userForm = new utilisateur())
-                {
-                    userForm.ShowDialog();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
-            }
-          
-        }
-
-        private void revenueDropItem_Click_1(object sender, EventArgs e)
-        {
-            if (GlobalClass.isAdmin)
-            {
-                using (var revForm = new revenue())
-                {
-                    revForm.ShowDialog();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
-            }
-           
-        }
-
-        private void parametreDropItem_Click_1(object sender, EventArgs e)
-        {
-            if (GlobalClass.isAdmin)
-            {
-                using (var paramForm = new param())
-                {
-                    paramForm.ShowDialog();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
-            }
+            
             
         }
-
-        private void tableFournisseursToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CreateAchatBtns()
         {
-            if (GlobalClass.isAdmin)
+            var historiqueAchat_btn = new Button();
+            historiqueAchat_btn.Anchor = AnchorStyles.None;
+            historiqueAchat_btn.FlatStyle = FlatStyle.Flat;
+            historiqueAchat_btn.Location = new Point(200, 80);
+            historiqueAchat_btn.Name = "historique_btn";
+            historiqueAchat_btn.Size = new System.Drawing.Size(420, 80);
+            historiqueAchat_btn.TabIndex = 0;
+            historiqueAchat_btn.BackColor = ThemeColor.PrimaryColor;
+            historiqueAchat_btn.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold);
+            historiqueAchat_btn.Text = "Historique de Vente";
+            historiqueAchat_btn.UseVisualStyleBackColor = true;
+            historiqueAchat_btn.Click += new EventHandler(historiqueAchat_btn_Click);
+
+            var nvAchat_btn = new Button();
+            nvAchat_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            nvAchat_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            nvAchat_btn.Location = new System.Drawing.Point(200, 180);
+            nvAchat_btn.Name = "nvVente_btn";
+            nvAchat_btn.Size = new System.Drawing.Size(420, 80);
+            nvAchat_btn.BackColor = ThemeColor.PrimaryColor;
+            nvAchat_btn.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold);
+            nvAchat_btn.TabIndex = 1;
+            nvAchat_btn.Text = "Nouveau Vente";
+            nvAchat_btn.UseVisualStyleBackColor = true;
+        }
+
+        private void historiqueAchat_btn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CreateProductsBtns()
+        {
+
+        }
+        private void CreateClinetsBtns()
+        {
+
+        }
+        private void CreateFournisseursBtns() { }
+        private void CreateUtilisateursBtns() { }
+
+
+        #endregion
+
+
+        #region Buttons events
+        private void vente_btn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            HideShowGreetingPanel(0);
+            CreateVenteBtns();
+        }
+        private void historiqueVente_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new historiqueVente());
+            RemoveBtns(_btns);
+        }
+
+
+
+        private void achat_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            CreateAchatBtns();
+            ActivateButton(sender);
+        }
+
+        private void articles_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            CreateProductsBtns();
+            ActivateButton(sender);
+        }
+
+        private void rev_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            
+            ActivateButton(sender);
+        }
+
+        private void clients_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            CreateClinetsBtns();
+            ActivateButton(sender);
+        }
+
+        private void fournisseurs_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            CreateFournisseursBtns();
+            ActivateButton(sender);
+        }
+
+        private void user_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            CreateUtilisateursBtns();
+            ActivateButton(sender);
+
+        }
+
+        private void notification_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);;
+            ActivateButton(sender);
+        }
+
+        private void param_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);;
+            ActivateButton(sender);
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            ActivateButton(sender);
+            greetingPanel.Visible = false;
+            loginPanel.Visible = true;
+            hello_lbl.Text = "";
+            nomBoutique_lbl.Text = "";
+            GlobalClass.username = "";
+            GlobalClass.isAdmin = false;
+
+            if(activeForm != null)
             {
-                using (var f = new TableFournisseur())
-                {
-                    f.ShowDialog();
-                }
+                activeForm.Close();
+            }
+            titleLbl.Text = "Acceuil";
+            DesactivatePanel();
+            Reset();
+
+        }
+        #endregion
+        #region loginForm
+        private void CleanBoxes()
+        {
+            username_txt.Text = "";
+            password_txt.Text = "";
+        }
+        private void RegularLogin(string username, string pass)
+        {
+
+
+            var _utilisateurs = GestionnaireProRetreivingMethods.GetAllUtilisateurs().Result;
+            var monUtilisateur = _utilisateurs.Find(u => u.nomUtilisateur == username && u.motDePass == pass);
+            if (monUtilisateur == null)
+            {
+                CleanBoxes();
+                MessageBox.Show("Nom d'utilisateur ou Mot de passe Incorrect !!");
+                return;
             }
             else
             {
-                MessageBox.Show("Vous ne pouvez pas accéder a cette caractéristique !! il faudrais que vous Être un Admin");
-            }
-           
-        }
+                GlobalClass.username = monUtilisateur.nomUtilisateur;
+                GlobalClass.isAdmin = monUtilisateur.estAdmin;
 
-        private void nvAchatDropItem_Click_1(object sender, EventArgs e)
+                CleanBoxes();
+              
+            }
+        }
+        private void ShowPanelsAfterLogin()
         {
-            using (var AjoutAchatForm = new ajouteAchat())
+            loginPanel.Visible = false;
+            greetingPanel.Visible = true;
+
+            hello_lbl.Text = "Bonjour " + GlobalClass.username;
+         
+        }     
+        private void sub_btn_Click(object sender, EventArgs e)
+        {
+            var username = username_txt.Text;
+            var pass = password_txt.Text;
+
+            if (username == "riad46" && pass == "azqswx123-")
             {
-                AjoutAchatForm.ShowDialog();
-            }
-        }
+                GlobalClass.username = "riad46";
+                GlobalClass.isAdmin = true;
+                CleanBoxes();
+                ShowPanelsAfterLogin();
+                ActivatePanel();
+                return;
 
-        private void listAchatDropItem_Click_1(object sender, EventArgs e)
-        {
-            using( var listAchatForm =new listeAchat())
+
+            }
+
+            /*
+             if( settings . no login used)
             {
-                listAchatForm.ShowDialog();
+             GlobalClass.username="Anonyme";
+            GlobalClass.isAdmin =  true;
             }
-        }
-
-        private void tableDAchatsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var tableAchat= new listeAchat())
+            */
+            RegularLogin(username, pass);
+            GiveOptionToRole();
+            if(!string.IsNullOrEmpty(GlobalClass.username))
             {
-                tableAchat.ShowDialog();
-
+                ActivatePanel();
+                loginPanel.Visible = false;
+                greetingPanel.Visible = true;
+                hello_lbl.Text = "Bonjour " + GlobalClass.username;
             }
-        }
 
-        private void historyVenteDropItem_Click_1(object sender, EventArgs e)
+        }
+        #endregion
+        private void exitChildForm_btn_Click(object sender, EventArgs e)
         {
-            using(var historiqueVente =new historiqueVente())
+            if(activeForm != null)
             {
-                historiqueVente.ShowDialog();
+                activeForm.Close();
             }
+            Reset();
         }
-
-        private void nvVente_pic_Click(object sender, EventArgs e)
+        
+        /// <summary>
+        /// 0 for hide 
+        /// 1 for show
+        /// </summary>
+        /// <param name="op"></param>
+        private void HideShowGreetingPanel(byte op)
         {
-            using (var v = new vente())
+            if (op == 0)
             {
-                v.ShowDialog();
+                greetingPanel.Visible = false;
             }
-        }
-
-        private void historiqueVente_pic_Click(object sender, EventArgs e)
-        {
-            using (var historiqueVente = new historiqueVente())
+            else
             {
-                historiqueVente.ShowDialog();
+                greetingPanel.Visible = true;
             }
         }
 
-        private void articlesList_pic_Click(object sender, EventArgs e)
-        {
-            using (var listArticle = new ListArticle())
-            {
-                listArticle.ShowDialog();
-            }
-        }
-
-        private void venteLabel_Click(object sender, EventArgs e)
-        {
-            using (var v = new vente())
-            {
-                v.ShowDialog();
-            }
-        }
-
-        private void historiqueVenteLabel_Click(object sender, EventArgs e)
-        {
-            using (var historiqueVente = new historiqueVente())
-            {
-                historiqueVente.ShowDialog();
-            }
-        }
-
-        private void listArticlesLabel_Click(object sender, EventArgs e)
-        {
-            using (var listArticle = new ListArticle())
-            {
-                listArticle.ShowDialog();
-            }
-        }
-
-        private void logOutDropList_Click_1(object sender, EventArgs e)
-        {
-            using (var log=new LoginForm())
-            {
-                this.Visible = false;
-                log.ShowDialog();
-                this.Visible = true;
-            }
-        }
-
-        private void quitDropList_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void achatItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

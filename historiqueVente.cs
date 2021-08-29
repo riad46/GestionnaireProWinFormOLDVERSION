@@ -17,6 +17,22 @@ namespace Gestionnaire_Pro
         public historiqueVente()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+          //  historique_Table.Font =;
+            historique_Table.BackgroundColor = ThemeColor.SecondaryColor;
         }
         private void SearchForHistoriqueVentes()
         {
@@ -103,10 +119,7 @@ namespace Gestionnaire_Pro
                 this.Visible = true;
             }
         }
-
-        private void historiqueVente_Load(object sender, EventArgs e)
-        {
-
-        }
+     
+      
     }
 }

@@ -193,7 +193,6 @@ namespace Gestionnaire_Pro
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dateMax_box);
             this.groupBox1.Controls.Add(this.dateMin_box);
             this.groupBox1.Controls.Add(this.sub_btn);
@@ -205,7 +204,7 @@ namespace Gestionnaire_Pro
             this.groupBox1.Controls.Add(this.total_txt);
             this.groupBox1.Controls.Add(this.id_txt);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(605, 0);
+            this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(437, 181);
             this.groupBox1.TabIndex = 0;
@@ -315,7 +314,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.historique_Table);
             this.Name = "historiqueVente";
             this.Text = "historyVente";
-            this.Load += new System.EventHandler(this.historiqueVente_Load);
+          
             this.Shown += new System.EventHandler(this.historiqueVente_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.historique_Table)).EndInit();
             this.panel1.ResumeLayout(false);
