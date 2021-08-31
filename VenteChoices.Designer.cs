@@ -29,21 +29,9 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            this.historique_btn = new System.Windows.Forms.Button();
             this.nvVente_btn = new System.Windows.Forms.Button();
+            this.roundButton1 = new Gestionnaire_Pro.Assets.RoundButton();
             this.SuspendLayout();
-            // 
-            // historique_btn
-            // 
-            this.historique_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.historique_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historique_btn.Location = new System.Drawing.Point(294, 141);
-            this.historique_btn.Name = "historique_btn";
-            this.historique_btn.Size = new System.Drawing.Size(413, 72);
-            this.historique_btn.TabIndex = 0;
-            this.historique_btn.Text = "Historique de Vente";
-            this.historique_btn.UseVisualStyleBackColor = true;
-            this.historique_btn.Click += new System.EventHandler(this.historique_btn_Click);
             // 
             // nvVente_btn
             // 
@@ -58,13 +46,26 @@ namespace Gestionnaire_Pro
             this.nvVente_btn.Text = "Nouveau Vente";
             this.nvVente_btn.UseVisualStyleBackColor = true;
             // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.roundButton1.FlatAppearance.BorderSize = 0;
+            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.roundButton1.Location = new System.Drawing.Point(121, 149);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(571, 130);
+            this.roundButton1.TabIndex = 2;
+            this.roundButton1.Text = "roundButton1";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            // 
             // VenteChoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 343);
+            this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.nvVente_btn);
-            this.Controls.Add(this.historique_btn);
             this.Name = "VenteChoices";
             this.Text = "Opérations dans Vente";
             this.Load += new System.EventHandler(this.VenteChoices_Load);
@@ -73,8 +74,7 @@ namespace Gestionnaire_Pro
         }
 
         #endregion
-
-        private System.Windows.Forms.Button historique_btn;
         private System.Windows.Forms.Button nvVente_btn;
+        private Assets.RoundButton roundButton1;
     }
 }

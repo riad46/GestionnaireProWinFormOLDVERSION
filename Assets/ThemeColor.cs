@@ -21,7 +21,7 @@ namespace Gestionnaire_Pro
                                                                     "#E41A4A",
                                                                     "#5978BB",
                                                                     "#018790",
-                                                                    "#0E3441",
+                                                                    
                                                                     "#00B0AD",
                                                                     "#721D47",
                                                                     "#EA4833",

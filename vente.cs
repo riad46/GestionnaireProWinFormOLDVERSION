@@ -30,6 +30,32 @@ namespace Gestionnaire_Pro
         public vente()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (Control btns in panel3.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            foreach (Control btns in panel2.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //  historique_Table.Font =;
+            venteTable.BackgroundColor = ThemeColor.SecondaryColor;
         }
         public vente(int venteId)
         {

@@ -30,8 +30,21 @@ namespace Gestionnaire_Pro
                     btn.ForeColor = Color.White;
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
+
             }
-          //  historique_Table.Font =;
+            foreach (Control btns in panel1.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+
+            }
+
+            //  historique_Table.Font =;
             historique_Table.BackgroundColor = ThemeColor.SecondaryColor;
         }
         private void SearchForHistoriqueVentes()

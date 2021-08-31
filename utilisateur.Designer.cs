@@ -30,6 +30,11 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             this.userTable = new System.Windows.Forms.DataGridView();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.username_txt = new System.Windows.Forms.TextBox();
             this.pass_txt = new System.Windows.Forms.TextBox();
             this.numTlf_txt = new System.Windows.Forms.TextBox();
@@ -41,11 +46,6 @@ namespace Gestionnaire_Pro
             this.modify_btn = new System.Windows.Forms.Button();
             this.del_btn = new System.Windows.Forms.Button();
             this.sub_btn = new System.Windows.Forms.Button();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.userTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,108 +74,6 @@ namespace Gestionnaire_Pro
             this.userTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.userTable.Size = new System.Drawing.Size(580, 288);
             this.userTable.TabIndex = 0;
-            // 
-            // username_txt
-            // 
-            this.username_txt.Location = new System.Drawing.Point(169, 339);
-            this.username_txt.Name = "username_txt";
-            this.username_txt.Size = new System.Drawing.Size(217, 23);
-            this.username_txt.TabIndex = 1;
-            // 
-            // pass_txt
-            // 
-            this.pass_txt.Location = new System.Drawing.Point(169, 394);
-            this.pass_txt.Name = "pass_txt";
-            this.pass_txt.PasswordChar = '*';
-            this.pass_txt.PlaceholderText = "PASSWORD";
-            this.pass_txt.Size = new System.Drawing.Size(217, 23);
-            this.pass_txt.TabIndex = 2;
-            // 
-            // numTlf_txt
-            // 
-            this.numTlf_txt.Location = new System.Drawing.Point(169, 441);
-            this.numTlf_txt.Name = "numTlf_txt";
-            this.numTlf_txt.Size = new System.Drawing.Size(217, 23);
-            this.numTlf_txt.TabIndex = 3;
-            // 
-            // estAdmin
-            // 
-            this.estAdmin.AutoSize = true;
-            this.estAdmin.Location = new System.Drawing.Point(169, 495);
-            this.estAdmin.Name = "estAdmin";
-            this.estAdmin.Size = new System.Drawing.Size(105, 19);
-            this.estAdmin.TabIndex = 4;
-            this.estAdmin.Text = "Administrateur";
-            this.estAdmin.UseVisualStyleBackColor = true;
-            // 
-            // lab1
-            // 
-            this.lab1.AutoSize = true;
-            this.lab1.Location = new System.Drawing.Point(12, 347);
-            this.lab1.Name = "lab1";
-            this.lab1.Size = new System.Drawing.Size(100, 15);
-            this.lab1.TabIndex = 5;
-            this.lab1.Text = "Nom d\'Utilisateur";
-            // 
-            // lab2
-            // 
-            this.lab2.AutoSize = true;
-            this.lab2.Location = new System.Drawing.Point(12, 394);
-            this.lab2.Name = "lab2";
-            this.lab2.Size = new System.Drawing.Size(71, 15);
-            this.lab2.TabIndex = 6;
-            this.lab2.Text = "Mot de Pass";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 444);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "N° Téléphone";
-            // 
-            // add_btn
-            // 
-            this.add_btn.Location = new System.Drawing.Point(622, 25);
-            this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(155, 51);
-            this.add_btn.TabIndex = 8;
-            this.add_btn.Text = "Ajouter";
-            this.add_btn.UseVisualStyleBackColor = true;
-            // 
-            // modify_btn
-            // 
-            this.modify_btn.Location = new System.Drawing.Point(622, 105);
-            this.modify_btn.Name = "modify_btn";
-            this.modify_btn.Size = new System.Drawing.Size(155, 51);
-            this.modify_btn.TabIndex = 9;
-            this.modify_btn.Text = "Modifier";
-            this.modify_btn.UseVisualStyleBackColor = true;
-            this.modify_btn.Click += new System.EventHandler(this.modify_btn_Click);
-            // 
-            // del_btn
-            // 
-            this.del_btn.Location = new System.Drawing.Point(622, 185);
-            this.del_btn.Name = "del_btn";
-            this.del_btn.Size = new System.Drawing.Size(155, 51);
-            this.del_btn.TabIndex = 10;
-            this.del_btn.Text = "Supprimer";
-            this.del_btn.UseVisualStyleBackColor = true;
-            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
-            // 
-            // sub_btn
-            // 
-            this.sub_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.sub_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.sub_btn.Location = new System.Drawing.Point(437, 379);
-            this.sub_btn.Name = "sub_btn";
-            this.sub_btn.Size = new System.Drawing.Size(155, 51);
-            this.sub_btn.TabIndex = 11;
-            this.sub_btn.Text = "Valider";
-            this.sub_btn.UseVisualStyleBackColor = true;
-            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // idCol
             // 
@@ -216,10 +114,136 @@ namespace Gestionnaire_Pro
             this.AdminCol.ReadOnly = true;
             this.AdminCol.TrueValue = "1";
             // 
+            // username_txt
+            // 
+            this.username_txt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.username_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.username_txt.Location = new System.Drawing.Point(188, 312);
+            this.username_txt.Name = "username_txt";
+            this.username_txt.Size = new System.Drawing.Size(189, 32);
+            this.username_txt.TabIndex = 1;
+            // 
+            // pass_txt
+            // 
+            this.pass_txt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pass_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pass_txt.Location = new System.Drawing.Point(188, 367);
+            this.pass_txt.Name = "pass_txt";
+            this.pass_txt.PasswordChar = '*';
+            this.pass_txt.Size = new System.Drawing.Size(189, 32);
+            this.pass_txt.TabIndex = 2;
+            // 
+            // numTlf_txt
+            // 
+            this.numTlf_txt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numTlf_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numTlf_txt.Location = new System.Drawing.Point(188, 414);
+            this.numTlf_txt.Name = "numTlf_txt";
+            this.numTlf_txt.Size = new System.Drawing.Size(189, 32);
+            this.numTlf_txt.TabIndex = 3;
+            // 
+            // estAdmin
+            // 
+            this.estAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.estAdmin.AutoSize = true;
+            this.estAdmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.estAdmin.ForeColor = System.Drawing.SystemColors.Control;
+            this.estAdmin.Location = new System.Drawing.Point(188, 468);
+            this.estAdmin.Name = "estAdmin";
+            this.estAdmin.Size = new System.Drawing.Size(133, 25);
+            this.estAdmin.TabIndex = 4;
+            this.estAdmin.Text = "Administrateur";
+            this.estAdmin.UseVisualStyleBackColor = true;
+            // 
+            // lab1
+            // 
+            this.lab1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lab1.AutoSize = true;
+            this.lab1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lab1.ForeColor = System.Drawing.SystemColors.Control;
+            this.lab1.Location = new System.Drawing.Point(12, 319);
+            this.lab1.Name = "lab1";
+            this.lab1.Size = new System.Drawing.Size(170, 25);
+            this.lab1.TabIndex = 5;
+            this.lab1.Text = "Nom d\'Utilisateur";
+            // 
+            // lab2
+            // 
+            this.lab2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lab2.AutoSize = true;
+            this.lab2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lab2.ForeColor = System.Drawing.SystemColors.Control;
+            this.lab2.Location = new System.Drawing.Point(12, 366);
+            this.lab2.Name = "lab2";
+            this.lab2.Size = new System.Drawing.Size(129, 25);
+            this.lab2.TabIndex = 6;
+            this.lab2.Text = "Mot de Passe";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(12, 416);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "N° Téléphone";
+            // 
+            // add_btn
+            // 
+            this.add_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.add_btn.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.add_btn.Location = new System.Drawing.Point(622, 25);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(155, 51);
+            this.add_btn.TabIndex = 8;
+            this.add_btn.Text = "Ajouter";
+            this.add_btn.UseVisualStyleBackColor = true;
+            // 
+            // modify_btn
+            // 
+            this.modify_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.modify_btn.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.modify_btn.Location = new System.Drawing.Point(622, 105);
+            this.modify_btn.Name = "modify_btn";
+            this.modify_btn.Size = new System.Drawing.Size(155, 51);
+            this.modify_btn.TabIndex = 9;
+            this.modify_btn.Text = "Modifier";
+            this.modify_btn.UseVisualStyleBackColor = true;
+            this.modify_btn.Click += new System.EventHandler(this.modify_btn_Click);
+            // 
+            // del_btn
+            // 
+            this.del_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.del_btn.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.del_btn.Location = new System.Drawing.Point(622, 185);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Size = new System.Drawing.Size(155, 51);
+            this.del_btn.TabIndex = 10;
+            this.del_btn.Text = "Supprimer";
+            this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
+            // 
+            // sub_btn
+            // 
+            this.sub_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sub_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.sub_btn.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.sub_btn.Location = new System.Drawing.Point(396, 312);
+            this.sub_btn.Name = "sub_btn";
+            this.sub_btn.Size = new System.Drawing.Size(155, 51);
+            this.sub_btn.TabIndex = 11;
+            this.sub_btn.Text = "Valider";
+            this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
+            // 
             // utilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(800, 541);
             this.Controls.Add(this.sub_btn);
             this.Controls.Add(this.del_btn);
@@ -234,6 +258,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.username_txt);
             this.Controls.Add(this.userTable);
             this.Name = "utilisateur";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "utilisateur";
             this.Load += new System.EventHandler(this.utilisateur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userTable)).EndInit();

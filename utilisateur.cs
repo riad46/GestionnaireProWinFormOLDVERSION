@@ -22,6 +22,23 @@ namespace Gestionnaire_Pro
         public utilisateur()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+           
+            foreach (Control btns in Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //  historique_Table.Font =;
+            userTable.BackgroundColor = ThemeColor.SecondaryColor;
         }
         private void SetUpTable()
         {

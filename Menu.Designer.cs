@@ -312,15 +312,16 @@ namespace Gestionnaire_Pro
             this.titleLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.titleLbl.Font = new System.Drawing.Font("Times New Roman", 22.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.titleLbl.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.titleLbl.Location = new System.Drawing.Point(195, 19);
+            this.titleLbl.Location = new System.Drawing.Point(178, 19);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(311, 35);
+            this.titleLbl.Size = new System.Drawing.Size(377, 35);
             this.titleLbl.TabIndex = 0;
             this.titleLbl.Text = "Acceuil";
             this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainPanel
             // 
+            this.mainPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mainPanel.Controls.Add(this.loginPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(229, 72);
@@ -366,21 +367,26 @@ namespace Gestionnaire_Pro
             // sub_btn
             // 
             this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sub_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.sub_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.sub_btn.Location = new System.Drawing.Point(448, 237);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(141, 43);
             this.sub_btn.TabIndex = 15;
             this.sub_btn.Text = "Valider";
-            this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.UseVisualStyleBackColor = false;
             this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(18, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 25);
@@ -401,7 +407,10 @@ namespace Gestionnaire_Pro
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(18, 280);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 25);
