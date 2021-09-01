@@ -32,6 +32,26 @@ namespace Gestionnaire_Pro
             InitializeComponent();
             LoadTheme();
         }
+        private void vente_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.venteLocation != new Point(0, 0))
+                this.Location = Properties.Settings.Default.venteLocation;
+            this.Size = Properties.Settings.Default.venteSize;
+
+                if (GlobalClass.typeOp == 1)
+            {
+                SetUpTable();
+            }
+            AddClientsToCombo();
+            _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+        }
+        private void vente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.venteSize = this.Size;
+            Properties.Settings.Default.venteLocation = this.Location;
+            Properties.Settings.Default.Save();
+            ResetArticlesStock();
+        }
         private void LoadTheme()
         {
             foreach (Control btns in panel3.Controls)
@@ -350,15 +370,7 @@ namespace Gestionnaire_Pro
             SetCodeBarre();
         }
 
-        private void vente_Load(object sender, EventArgs e)
-        {
-            if (GlobalClass.typeOp == 1)
-            {
-                SetUpTable();
-            }
-            AddClientsToCombo();
-            _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
-        }
+       
 
         private void sub_btn_Click(object sender, EventArgs e)
         {
@@ -439,10 +451,7 @@ namespace Gestionnaire_Pro
         }
 
      
-        private void vente_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ResetArticlesStock();
-        }
+      
 
       
     }

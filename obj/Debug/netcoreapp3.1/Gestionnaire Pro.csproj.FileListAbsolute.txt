@@ -223,7 +223,6 @@ P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqli
 P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutCredit.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutCreditDetail.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteAchat.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteArticle.resources
@@ -258,3 +257,4 @@ P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.TableFourniss
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.LoginForm.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.VenteChoices.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
+P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutCreditClient.resources

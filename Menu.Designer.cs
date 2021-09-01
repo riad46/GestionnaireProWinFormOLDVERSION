@@ -33,7 +33,7 @@ namespace Gestionnaire_Pro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.buttonsPanel = new System.Windows.Forms.Panel();
-            this.param_btn = new System.Windows.Forms.Button();
+            this.actions_btn = new System.Windows.Forms.Button();
             this.notification_btn = new System.Windows.Forms.Button();
             this.user_btn = new System.Windows.Forms.Button();
             this.fournisseurs_btn = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@ namespace Gestionnaire_Pro
             this.titleLbl = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.loginPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.username_txt = new System.Windows.Forms.TextBox();
             this.sub_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,19 +59,24 @@ namespace Gestionnaire_Pro
             this.greetingPanel = new System.Windows.Forms.Panel();
             this.hello_lbl = new System.Windows.Forms.Label();
             this.nomBoutique_lbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonsPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.titlePanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.greetingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonsPanel
             // 
             this.buttonsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.buttonsPanel.Controls.Add(this.param_btn);
+            this.buttonsPanel.Controls.Add(this.actions_btn);
             this.buttonsPanel.Controls.Add(this.notification_btn);
             this.buttonsPanel.Controls.Add(this.user_btn);
             this.buttonsPanel.Controls.Add(this.fournisseurs_btn);
@@ -88,22 +93,22 @@ namespace Gestionnaire_Pro
             this.buttonsPanel.Size = new System.Drawing.Size(229, 581);
             this.buttonsPanel.TabIndex = 0;
             // 
-            // param_btn
+            // actions_btn
             // 
-            this.param_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.param_btn.FlatAppearance.BorderSize = 0;
-            this.param_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.param_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.param_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.param_btn.Image = global::Gestionnaire_Pro.Properties.Resources.adjust__1_;
-            this.param_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.param_btn.Location = new System.Drawing.Point(0, 472);
-            this.param_btn.Name = "param_btn";
-            this.param_btn.Size = new System.Drawing.Size(229, 50);
-            this.param_btn.TabIndex = 18;
-            this.param_btn.Text = "Paramètres";
-            this.param_btn.UseVisualStyleBackColor = true;
-            this.param_btn.Click += new System.EventHandler(this.param_btn_Click);
+            this.actions_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.actions_btn.FlatAppearance.BorderSize = 0;
+            this.actions_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.actions_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.actions_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.actions_btn.Image = global::Gestionnaire_Pro.Properties.Resources.rinse__1_;
+            this.actions_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.actions_btn.Location = new System.Drawing.Point(0, 471);
+            this.actions_btn.Name = "actions_btn";
+            this.actions_btn.Size = new System.Drawing.Size(229, 50);
+            this.actions_btn.TabIndex = 18;
+            this.actions_btn.Text = "Historique";
+            this.actions_btn.UseVisualStyleBackColor = true;
+            this.actions_btn.Click += new System.EventHandler(this.param_btn_Click);
             // 
             // notification_btn
             // 
@@ -120,6 +125,7 @@ namespace Gestionnaire_Pro
             this.notification_btn.TabIndex = 17;
             this.notification_btn.Text = "Notifications";
             this.notification_btn.UseVisualStyleBackColor = true;
+            this.notification_btn.Visible = false;
             this.notification_btn.Click += new System.EventHandler(this.notification_btn_Click);
             // 
             // user_btn
@@ -321,8 +327,10 @@ namespace Gestionnaire_Pro
             // 
             // mainPanel
             // 
-            this.mainPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.mainPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mainPanel.Controls.Add(this.loginPanel);
+            this.mainPanel.Controls.Add(this.pictureBox1);
+            this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(229, 72);
             this.mainPanel.Name = "mainPanel";
@@ -332,34 +340,34 @@ namespace Gestionnaire_Pro
             // loginPanel
             // 
             this.loginPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginPanel.Controls.Add(this.pictureBox1);
+            this.loginPanel.Controls.Add(this.pictureBox2);
             this.loginPanel.Controls.Add(this.username_txt);
             this.loginPanel.Controls.Add(this.sub_btn);
             this.loginPanel.Controls.Add(this.label3);
             this.loginPanel.Controls.Add(this.password_txt);
             this.loginPanel.Controls.Add(this.label2);
             this.loginPanel.Controls.Add(this.greetingPanel);
-            this.loginPanel.Location = new System.Drawing.Point(48, 37);
+            this.loginPanel.Location = new System.Drawing.Point(28, 20);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(628, 427);
-            this.loginPanel.TabIndex = 2;
+            this.loginPanel.Size = new System.Drawing.Size(649, 380);
+            this.loginPanel.TabIndex = 5;
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(221, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 189);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(234, -2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(197, 189);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
             // 
             // username_txt
             // 
             this.username_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.username_txt.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.username_txt.Location = new System.Drawing.Point(216, 222);
+            this.username_txt.Location = new System.Drawing.Point(229, 207);
             this.username_txt.Name = "username_txt";
             this.username_txt.Size = new System.Drawing.Size(198, 32);
             this.username_txt.TabIndex = 12;
@@ -371,9 +379,9 @@ namespace Gestionnaire_Pro
             this.sub_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.sub_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sub_btn.Location = new System.Drawing.Point(448, 237);
+            this.sub_btn.Location = new System.Drawing.Point(479, 221);
             this.sub_btn.Name = "sub_btn";
-            this.sub_btn.Size = new System.Drawing.Size(141, 43);
+            this.sub_btn.Size = new System.Drawing.Size(156, 43);
             this.sub_btn.TabIndex = 15;
             this.sub_btn.Text = "Valider";
             this.sub_btn.UseVisualStyleBackColor = false;
@@ -386,8 +394,8 @@ namespace Gestionnaire_Pro
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(18, 225);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(31, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 25);
             this.label3.TabIndex = 11;
@@ -397,7 +405,7 @@ namespace Gestionnaire_Pro
             // 
             this.password_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.password_txt.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.password_txt.Location = new System.Drawing.Point(216, 271);
+            this.password_txt.Location = new System.Drawing.Point(229, 256);
             this.password_txt.Name = "password_txt";
             this.password_txt.PasswordChar = '*';
             this.password_txt.Size = new System.Drawing.Size(198, 32);
@@ -410,8 +418,8 @@ namespace Gestionnaire_Pro
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(18, 280);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(31, 265);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 25);
             this.label2.TabIndex = 13;
@@ -422,7 +430,7 @@ namespace Gestionnaire_Pro
             this.greetingPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.greetingPanel.Controls.Add(this.hello_lbl);
             this.greetingPanel.Controls.Add(this.nomBoutique_lbl);
-            this.greetingPanel.Location = new System.Drawing.Point(32, 60);
+            this.greetingPanel.Location = new System.Drawing.Point(45, 45);
             this.greetingPanel.Name = "greetingPanel";
             this.greetingPanel.Size = new System.Drawing.Size(556, 314);
             this.greetingPanel.TabIndex = 1;
@@ -434,7 +442,7 @@ namespace Gestionnaire_Pro
             this.hello_lbl.AutoSize = true;
             this.hello_lbl.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.hello_lbl.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.hello_lbl.Location = new System.Drawing.Point(201, 90);
+            this.hello_lbl.Location = new System.Drawing.Point(233, 84);
             this.hello_lbl.Name = "hello_lbl";
             this.hello_lbl.Size = new System.Drawing.Size(153, 43);
             this.hello_lbl.TabIndex = 1;
@@ -446,11 +454,44 @@ namespace Gestionnaire_Pro
             this.nomBoutique_lbl.AutoSize = true;
             this.nomBoutique_lbl.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nomBoutique_lbl.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.nomBoutique_lbl.Location = new System.Drawing.Point(218, 17);
+            this.nomBoutique_lbl.Location = new System.Drawing.Point(250, 11);
             this.nomBoutique_lbl.Name = "nomBoutique_lbl";
             this.nomBoutique_lbl.Size = new System.Drawing.Size(132, 46);
             this.nomBoutique_lbl.TabIndex = 0;
             this.nomBoutique_lbl.Text = "label2";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox1.Image = global::Gestionnaire_Pro.Properties.Resources.rmdaTem;
+            this.pictureBox1.Location = new System.Drawing.Point(101, 213);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(506, 235);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 456);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(717, 53);
+            this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(717, 53);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Créer par Derrar Mourad Riad ,N°Téléphone :  0799244307";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Menu
             // 
@@ -460,10 +501,10 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.titlePanel);
             this.Controls.Add(this.buttonsPanel);
-            this.MinimumSize = new System.Drawing.Size(796, 620);
+            this.MinimumSize = new System.Drawing.Size(962, 620);
             this.Name = "Menu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.buttonsPanel.ResumeLayout(false);
             this.logoPanel.ResumeLayout(false);
@@ -472,9 +513,11 @@ namespace Gestionnaire_Pro
             this.mainPanel.ResumeLayout(false);
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.greetingPanel.ResumeLayout(false);
             this.greetingPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -624,24 +667,27 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Button articles_btn;
         private System.Windows.Forms.Button achat_btn;
         private System.Windows.Forms.Button rev_btn;
-        private System.Windows.Forms.Button param_btn;
+        private System.Windows.Forms.Button actions_btn;
         private System.Windows.Forms.Button notification_btn;
         private System.Windows.Forms.Button user_btn;
         private System.Windows.Forms.Button fournisseurs_btn;
         private System.Windows.Forms.Button clients_btn;
         private System.Windows.Forms.Label logoLbl;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Panel greetingPanel;
-        private System.Windows.Forms.Label hello_lbl;
-        private System.Windows.Forms.Label nomBoutique_lbl;
+        private System.Windows.Forms.Button exitChildForm_btn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel loginPanel;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox username_txt;
         private System.Windows.Forms.Button sub_btn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox password_txt;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel greetingPanel;
+        private System.Windows.Forms.Label hello_lbl;
+        private System.Windows.Forms.Label nomBoutique_lbl;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button exitChildForm_btn;
     }
 }
 

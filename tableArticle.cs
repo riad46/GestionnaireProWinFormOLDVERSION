@@ -22,12 +22,15 @@ namespace Gestionnaire_Pro
 
         private int GetCurrentSelectedTableRowId()
         {
+            if(articles.Count>0)
             return (int)articleTable.SelectedRows[0].Cells[0].Value;
+            return 0;
         }
 
         private void DeleteArticle()
         {
             var id = GetCurrentSelectedTableRowId();
+            if(id !=0)
             GestionnaireProModifyDeleteMethods.DeleteArticle(id);
         }
         private void DeleteAllArticles()

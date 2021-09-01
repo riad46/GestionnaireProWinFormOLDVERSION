@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="menuSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">600, 400</Value>
+      <Value Profile="(Default)">962, 620</Value>
     </Setting>
     <Setting Name="venteSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">600, 400</Value>
+      <Value Profile="(Default)">1008, 617</Value>
     </Setting>
     <Setting Name="isActivated" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -16,6 +16,12 @@
     </Setting>
     <Setting Name="activeLogin" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="menuLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="venteLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

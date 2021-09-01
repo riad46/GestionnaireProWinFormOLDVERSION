@@ -173,6 +173,26 @@ namespace Gestionnaire_Pro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rinse__1_ {
+            get {
+                object obj = ResourceManager.GetObject("rinse (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rmdaTem {
+            get {
+                object obj = ResourceManager.GetObject("rmdaTem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap salesman__1_ {
             get {
                 object obj = ResourceManager.GetObject("salesman (1)", resourceCulture);

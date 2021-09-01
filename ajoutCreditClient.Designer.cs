@@ -1,7 +1,7 @@
 ﻿
 namespace Gestionnaire_Pro
 {
-    partial class ajoutCredit
+    partial class ajoutCreditClient
     {
         /// <summary>
         /// Required designer variable.

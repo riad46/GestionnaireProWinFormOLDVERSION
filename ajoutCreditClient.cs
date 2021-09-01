@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Gestionnaire_Pro
 {
-    public partial class ajoutCredit : Form
+    public partial class ajoutCreditClient : Form
     {
         
         private List<Client> _mesClients= new List<Client>();
         private float creditActuel = 0.0f;
-        public ajoutCredit()
+        public ajoutCreditClient()
         {
             InitializeComponent();
         }

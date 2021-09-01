@@ -28,7 +28,44 @@ namespace Gestionnaire_Pro
             greetingPanel.Parent = mainPanel;
             DesactivatePanel();
         }
-      
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.menuLocation != new Point(0, 0))
+                this.Location = Properties.Settings.Default.menuLocation;
+            this.Size = Properties.Settings.Default.menuSize;
+            //check if the file is there
+            var myDb = new System.IO.FileInfo("./GestionnairePro.db");
+            if (!myDb.Exists)
+            {
+                CreateFullDb();
+            }
+        }
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.menuSize = this.Size;
+            Properties.Settings.Default.menuLocation=this.Location;
+            Properties.Settings.Default.Save();
+        }
+
+
+        /// <summary>
+        /// 0 for hide 
+        /// 1 for show
+        /// </summary>
+        /// <param name="op"></param>
+        private void HideShowGreetingPanel(byte op)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            if (op == 0)
+            {
+                greetingPanel.Visible = false;
+            }
+            else
+            {
+                greetingPanel.Visible = true;
+            }
+        }
         private void CreateFullDb()
         {
 
@@ -171,18 +208,7 @@ create table if not EXISTS ProduitExcluDeVerification(
                 rev_btn.Enabled = true;
             }
         }
-        private void Menu_Load(object sender, EventArgs e)
-        {
-            
-
-
-            //check if the file is there
-            var myDb = new System.IO.FileInfo("./GestionnairePro.db");
-            if (!myDb.Exists)
-            {
-                CreateFullDb();
-            }
-        }
+       
 
         #region Btn and Panel Effects
         private void Reset()
@@ -751,12 +777,33 @@ create table if not EXISTS ProduitExcluDeVerification(
             }
         }
 
-      
+
         #endregion
 
-
         #region Buttons events
+        #region Achat
+        private void achat_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(0);
+            RemoveBtns(_btns);
+            ActivateButton(sender);
+            CreateAchatBtns();
 
+        }
+        private void historiqueAchat_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new listeAchat());
+            RemoveBtns(_btns);
+        }
+        private void nvAchat_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new ajouteAchat());
+            RemoveBtns(_btns);
+        }
+        #endregion
+        #region Vente
         private void vente_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
@@ -764,16 +811,22 @@ create table if not EXISTS ProduitExcluDeVerification(
             HideShowGreetingPanel(0);
             CreateVenteBtns();
         }
-  
-        private void achat_btn_Click(object sender, EventArgs e)
+        private void nvVente_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(0);
+            using (var venteForm = new vente())
+            {
+                venteForm.ShowDialog();
+            }
+        }
+        private void historiqueVente_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new historiqueVente());
             RemoveBtns(_btns);
-            ActivateButton(sender);
-            CreateAchatBtns();
-           
         }
 
+        #endregion
+        #region Article
         private void articles_btn_Click(object sender, EventArgs e)
         {
             HideShowGreetingPanel(0);
@@ -781,16 +834,52 @@ create table if not EXISTS ProduitExcluDeVerification(
             ActivateButton(sender);
             CreateProductsBtns();
         }
+        private void nvArticle_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new ajouteArticle());
+            RemoveBtns(_btns);
+        }
 
+        private void tableArticle_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new tableArticle());
+            RemoveBtns(_btns);
+        }
+
+        private void listArticle_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new ListArticle());
+            RemoveBtns(_btns);
+        }
+        #endregion
+        #region Revenue
         private void rev_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
             HideShowGreetingPanel(0);
             ActivateButton(sender);
             CreateRevenueBtns();
-           
+
         }
 
+        private void caisse_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new caisse());
+            RemoveBtns(_btns);
+        }
+
+        private void revenue_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new revenue());
+            RemoveBtns(_btns);
+        }
+        #endregion
+        #region Client
         private void clients_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
@@ -798,7 +887,40 @@ create table if not EXISTS ProduitExcluDeVerification(
             ActivateButton(sender);
             CreateClientsBtns();
         }
+        private void nvClient_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new ajouteClient());
+            RemoveBtns(_btns);
+        }
+        private void listClient_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new listeClient());
+            RemoveBtns(_btns);
+        }
+        private void ajoutCreditClient_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new ajoutCreditClient());
+            RemoveBtns(_btns);
+        }
 
+        private void paimentCreditClient_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new paimentCreditClient());
+            RemoveBtns(_btns);
+        }
+        private void tableClient_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new tableClient());
+            RemoveBtns(_btns);
+        }
+
+        #endregion
+        #region Fournisseur
         private void fournisseurs_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
@@ -806,7 +928,29 @@ create table if not EXISTS ProduitExcluDeVerification(
             ActivateButton(sender);
             CreateFournisseursBtns();
         }
+        private void tableFournisseur_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new TableFournisseur());
+            RemoveBtns(_btns);
+        }
 
+        private void listFournisseur_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new ListFournisseurs());
+            RemoveBtns(_btns);
+        }
+
+        private void nvFournisseur_btn_Click(object sender, EventArgs e)
+        {
+            HideShowGreetingPanel(1);
+            OpenChildForm(new ajouteFournisseur());
+            RemoveBtns(_btns);
+        }
+        #endregion
+      
+       
         private void user_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
@@ -814,22 +958,21 @@ create table if not EXISTS ProduitExcluDeVerification(
             ActivateButton(sender);
             OpenChildForm(new utilisateur());
             DesactivatePanel();
-           
+
 
         }
-
         private void notification_btn_Click(object sender, EventArgs e)
         {
             HideShowGreetingPanel(0);
-            RemoveBtns(_btns);;
+            RemoveBtns(_btns); ;
             ActivateButton(sender);
         }
-
         private void param_btn_Click(object sender, EventArgs e)
         {
             HideShowGreetingPanel(0);
-            RemoveBtns(_btns);;
+            RemoveBtns(_btns); ;
             ActivateButton(sender);
+
         }
         private void exit_btn_Click(object sender, EventArgs e)
         {
@@ -851,115 +994,17 @@ create table if not EXISTS ProduitExcluDeVerification(
             Reset();
 
         }
-
-
-
-
-
-
-
-
-
-        private void listClient_btn_Click(object sender, EventArgs e)
+        private void exitChildForm_btn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
-        private void nvVente_btn_Click(object sender, EventArgs e)
-        {
-            using (var venteForm=new vente())
+            if (activeForm != null)
             {
-                venteForm.ShowDialog();
+                activeForm.Close();
             }
+            ActivatePanel();
+            Reset();
         }
-        private void historiqueVente_btn_Click(object sender, EventArgs e)
-        {
-            HideShowGreetingPanel(1);
-            OpenChildForm(new historiqueVente());
-            RemoveBtns(_btns);
-        }
-
-
-        private void tableFournisseur_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void listFournisseur_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void nvFournisseur_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        private void caisse_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void revenue_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ajoutCreditClient_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void paimentCreditClient_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void historiqueAchat_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        private void tableArticle_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void listArticle_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        private void tableClient_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void nvClient_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-
-        private void nvAchat_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-      
-        private void nvArticle_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
         #endregion
+       
         #region loginForm
         private void CleanBoxes()
         {
@@ -1030,37 +1075,10 @@ create table if not EXISTS ProduitExcluDeVerification(
             }
 
         }
+
+
+
         #endregion
-        private void exitChildForm_btn_Click(object sender, EventArgs e)
-        {
-            if(activeForm != null)
-            {
-                activeForm.Close();
-            }
-            ActivatePanel();
-            Reset();
-        }
-
-
-
-
-        
-        /// <summary>
-        /// 0 for hide 
-        /// 1 for show
-        /// </summary>
-        /// <param name="op"></param>
-        private void HideShowGreetingPanel(byte op)
-        {
-            if (op == 0)
-            {
-                greetingPanel.Visible = false;
-            }
-            else
-            {
-                greetingPanel.Visible = true;
-            }
-        }
 
        
     }

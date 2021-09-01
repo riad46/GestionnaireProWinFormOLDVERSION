@@ -25,7 +25,7 @@ namespace Gestionnaire_Pro.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("600, 400")]
+        [global::System.Configuration.DefaultSettingValueAttribute("962, 620")]
         public global::System.Drawing.Size menuSize {
             get {
                 return ((global::System.Drawing.Size)(this["menuSize"]));
@@ -37,7 +37,7 @@ namespace Gestionnaire_Pro.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("600, 400")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1008, 617")]
         public global::System.Drawing.Size venteSize {
             get {
                 return ((global::System.Drawing.Size)(this["venteSize"]));
@@ -80,6 +80,30 @@ namespace Gestionnaire_Pro.Properties {
             }
             set {
                 this["activeLogin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point menuLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["menuLocation"]));
+            }
+            set {
+                this["menuLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point venteLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["venteLocation"]));
+            }
+            set {
+                this["venteLocation"] = value;
             }
         }
     }
