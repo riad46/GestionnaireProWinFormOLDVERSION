@@ -28,12 +28,18 @@ namespace Gestionnaire_Pro
             greetingPanel.Parent = mainPanel;
             DesactivatePanel();
         }
-        private void Menu_Load(object sender, EventArgs e)
+      
+       
+        private void LoadFormSettings()
         {
             if (Properties.Settings.Default.menuLocation != new Point(0, 0))
                 this.Location = Properties.Settings.Default.menuLocation;
             this.Size = Properties.Settings.Default.menuSize;
-            //check if the file is there
+        }
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            LoadFormSettings();
+            //check if DB the file is there
             var myDb = new System.IO.FileInfo("./GestionnairePro.db");
             if (!myDb.Exists)
             {
@@ -957,7 +963,7 @@ create table if not EXISTS ProduitExcluDeVerification(
             HideShowGreetingPanel(0);
             ActivateButton(sender);
             OpenChildForm(new utilisateur());
-            DesactivatePanel();
+            
 
 
         }

@@ -258,3 +258,14 @@ P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.LoginForm.res
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.VenteChoices.resources
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
 P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutCreditClient.resources
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\System.Management.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+P:\GitHub\GestionnairePro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+P:\GitHub\GestionnairePro\obj\Debug\netcoreapp3.1\Gestionnaire_Pro.ActivationWindow.resources

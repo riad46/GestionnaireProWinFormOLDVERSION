@@ -1,8 +1,8 @@
 ﻿using Gestionnaire_Pro.DataBase.DataBaseMethods;
 using Gestionnaire_Pro.DataBase.Models;
+using Microsoft.VisualBasic;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Management;
 using System.Windows.Forms;
 
 namespace Gestionnaire_Pro
@@ -72,5 +72,7 @@ namespace Gestionnaire_Pro
                 e.Handled = true;
             }
         }
+
+       
     }
 }

@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[3.13.0, )"
             },
+            "System.Management": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.7.335, )"

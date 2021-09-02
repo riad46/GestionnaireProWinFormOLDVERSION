@@ -1,3 +1,4 @@
+using Gestionnaire_Pro.Assets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,30 @@ namespace Gestionnaire_Pro
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+
         
-{
-    Application.SetHighDpiMode(HighDpiMode.SystemAware);
+   
+        static void Main() 
+        {
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            //check for activation code 
+            if (Properties.Settings.Default.isActivated == true && ProgramActivation.GetThisActivationCode() == Properties.Settings.Default.activationCode)
+            {
+                Application.Run(new Menu());
+            }
+            else
+            {
+                Properties.Settings.Default.isActivated = false;
+                Properties.Settings.Default.activationCode = "";
+                Properties.Settings.Default.Save();
+                Application.Run(new ActivationWindow());
+
+            }
+
+
+
         }
     }
 }

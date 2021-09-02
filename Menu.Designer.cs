@@ -327,6 +327,7 @@ namespace Gestionnaire_Pro
             // 
             // mainPanel
             // 
+            this.mainPanel.AutoScroll = true;
             this.mainPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mainPanel.Controls.Add(this.loginPanel);
             this.mainPanel.Controls.Add(this.pictureBox1);
@@ -462,7 +463,7 @@ namespace Gestionnaire_Pro
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Gestionnaire_Pro.Properties.Resources.rmdaTem;
             this.pictureBox1.Location = new System.Drawing.Point(101, 213);
             this.pictureBox1.Name = "pictureBox1";

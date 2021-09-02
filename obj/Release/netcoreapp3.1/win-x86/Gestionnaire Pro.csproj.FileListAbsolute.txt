@@ -495,7 +495,6 @@ P:\GitHub\GestionnairePro\bin\Release\netcoreapp3.1\win-x86\PenImc_cor3.dll
 P:\GitHub\GestionnairePro\bin\Release\netcoreapp3.1\win-x86\PresentationNative_cor3.dll
 P:\GitHub\GestionnairePro\bin\Release\netcoreapp3.1\win-x86\vcruntime140_cor3.dll
 P:\GitHub\GestionnairePro\bin\Release\netcoreapp3.1\win-x86\wpfgfx_cor3.dll
-P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.ajoutCredit.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.ajoutCreditDetail.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.ajouteAchat.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.ajouteArticle.resources
@@ -527,3 +526,8 @@ P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire Pro.csp
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire Pro.dll
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire Pro.pdb
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire Pro.genruntimeconfig.cache
+P:\GitHub\GestionnairePro\bin\Release\netcoreapp3.1\win-x86\System.Management.dll
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.ActivationWindow.resources
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.ajoutCreditClient.resources
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.LoginForm.resources
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.VenteChoices.resources

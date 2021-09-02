@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>P:\GitHub\GestionnairePro\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="ActivationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ajoutCreditClient.cs">
       <SubType>Form</SubType>
     </Compile>
