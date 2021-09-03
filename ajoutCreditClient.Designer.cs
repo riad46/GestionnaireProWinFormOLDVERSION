@@ -41,33 +41,42 @@ namespace Gestionnaire_Pro
             // 
             // client_combo
             // 
+            this.client_combo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.client_combo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.client_combo.FormattingEnabled = true;
-            this.client_combo.Location = new System.Drawing.Point(47, 58);
+            this.client_combo.Location = new System.Drawing.Point(46, 60);
             this.client_combo.Name = "client_combo";
-            this.client_combo.Size = new System.Drawing.Size(266, 23);
+            this.client_combo.Size = new System.Drawing.Size(266, 32);
             this.client_combo.TabIndex = 0;
             this.client_combo.SelectedIndexChanged += new System.EventHandler(this.client_combo_SelectedIndexChanged);
             // 
             // creditInit_txt
             // 
-            this.creditInit_txt.Location = new System.Drawing.Point(47, 146);
+            this.creditInit_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.creditInit_txt.Enabled = false;
+            this.creditInit_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.creditInit_txt.Location = new System.Drawing.Point(46, 148);
             this.creditInit_txt.Name = "creditInit_txt";
-            this.creditInit_txt.Size = new System.Drawing.Size(268, 23);
+            this.creditInit_txt.Size = new System.Drawing.Size(268, 32);
             this.creditInit_txt.TabIndex = 1;
             this.creditInit_txt.TextChanged += new System.EventHandler(this.creditInit_txt_TextChanged);
             // 
             // creditAjout_txt
             // 
-            this.creditAjout_txt.Location = new System.Drawing.Point(47, 252);
+            this.creditAjout_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.creditAjout_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.creditAjout_txt.Location = new System.Drawing.Point(46, 266);
             this.creditAjout_txt.Name = "creditAjout_txt";
-            this.creditAjout_txt.Size = new System.Drawing.Size(268, 23);
+            this.creditAjout_txt.Size = new System.Drawing.Size(268, 32);
             this.creditAjout_txt.TabIndex = 2;
             this.creditAjout_txt.TextChanged += new System.EventHandler(this.creditAjout_txt_TextChanged);
             this.creditAjout_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.creditAjout_txt_KeyPress);
             // 
             // sub_btn
             // 
-            this.sub_btn.Location = new System.Drawing.Point(45, 327);
+            this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.Location = new System.Drawing.Point(44, 329);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(268, 60);
             this.sub_btn.TabIndex = 3;
@@ -77,7 +86,9 @@ namespace Gestionnaire_Pro
             // 
             // details_btn
             // 
-            this.details_btn.Location = new System.Drawing.Point(45, 419);
+            this.details_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.details_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.details_btn.Location = new System.Drawing.Point(44, 421);
             this.details_btn.Name = "details_btn";
             this.details_btn.Size = new System.Drawing.Size(268, 60);
             this.details_btn.TabIndex = 4;
@@ -87,35 +98,41 @@ namespace Gestionnaire_Pro
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 17);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(44, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(63, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "Client";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 114);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(46, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 15);
+            this.label2.Size = new System.Drawing.Size(71, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "Credit ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 225);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(44, 227);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 15);
+            this.label3.Size = new System.Drawing.Size(164, 24);
             this.label3.TabIndex = 7;
             this.label3.Text = "Montant a ajouté";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // ajoutCredit
+            // ajoutCreditClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,7 +145,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.creditAjout_txt);
             this.Controls.Add(this.creditInit_txt);
             this.Controls.Add(this.client_combo);
-            this.Name = "ajoutCredit";
+            this.Name = "ajoutCreditClient";
             this.Text = "ajoutCredit";
             this.Load += new System.EventHandler(this.ajoutCredit_Load);
             this.ResumeLayout(false);

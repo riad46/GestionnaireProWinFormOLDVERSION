@@ -48,7 +48,7 @@ namespace Gestionnaire_Pro
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(149, 29);
             this.nom_txt.TabIndex = 0;
-            this.nom_txt.TextChanged += new System.EventHandler(this.nom_txt_TextChanged);
+            
             // 
             // label1
             // 
@@ -58,7 +58,7 @@ namespace Gestionnaire_Pro
             this.label1.Size = new System.Drawing.Size(34, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nom";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // sub_btn
             // 
@@ -78,7 +78,7 @@ namespace Gestionnaire_Pro
             this.button2.TabIndex = 5;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            
             // 
             // label2
             // 
@@ -88,7 +88,7 @@ namespace Gestionnaire_Pro
             this.label2.Size = new System.Drawing.Size(78, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "N° Téléphone";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // label3
             // 
@@ -98,7 +98,7 @@ namespace Gestionnaire_Pro
             this.label3.Size = new System.Drawing.Size(49, 15);
             this.label3.TabIndex = 8;
             this.label3.Text = "Address";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            
             // 
             // address_txt
             // 
@@ -108,7 +108,7 @@ namespace Gestionnaire_Pro
             this.address_txt.Name = "address_txt";
             this.address_txt.Size = new System.Drawing.Size(206, 112);
             this.address_txt.TabIndex = 2;
-            this.address_txt.TextChanged += new System.EventHandler(this.address_txt_TextChanged);
+            
             // 
             // label4
             // 
@@ -118,7 +118,7 @@ namespace Gestionnaire_Pro
             this.label4.Size = new System.Drawing.Size(88, 15);
             this.label4.TabIndex = 9;
             this.label4.Text = "Credit a Rendre";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            
             // 
             // credit_txt
             // 
@@ -127,7 +127,8 @@ namespace Gestionnaire_Pro
             this.credit_txt.Name = "credit_txt";
             this.credit_txt.Size = new System.Drawing.Size(120, 29);
             this.credit_txt.TabIndex = 3;
-            this.credit_txt.TextChanged += new System.EventHandler(this.credit_txt_TextChanged);
+            
+            this.credit_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.credit_txt_KeyPress);
             // 
             // numTlf_txt
             // 
@@ -137,7 +138,7 @@ namespace Gestionnaire_Pro
             this.numTlf_txt.Name = "numTlf_txt";
             this.numTlf_txt.Size = new System.Drawing.Size(149, 29);
             this.numTlf_txt.TabIndex = 1;
-            this.numTlf_txt.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.numTlf_txt_MaskInputRejected);
+            
             // 
             // ajouteFournisseur
             // 

@@ -21,7 +21,7 @@ namespace Gestionnaire_Pro
         private readonly int _totalIndex = 5;
 
         private int currentlySelectedRow = 0;
-        private float ancientQnt=0;
+        private float ancientQnt = 0;
         private float total = 0;
         private float totalRemise = 0;
         private int nbrArticle = 0;
@@ -38,7 +38,7 @@ namespace Gestionnaire_Pro
                 this.Location = Properties.Settings.Default.venteLocation;
             this.Size = Properties.Settings.Default.venteSize;
 
-                if (GlobalClass.typeOp == 1)
+            if (GlobalClass.typeOp == 1)
             {
                 SetUpTable();
             }
@@ -79,7 +79,7 @@ namespace Gestionnaire_Pro
         }
         public vente(int venteId)
         {
-            
+
             InitializeComponent();
             var mesArticle = GestionnaireProRetreivingMethods.GetAllDetailVentes(new List<int> { venteId }).Result;
             foreach (var item in mesArticle)
@@ -98,20 +98,20 @@ namespace Gestionnaire_Pro
                 });
 
             }
-            
-           
+
+
         }
         private int GetCurrentSelectedTableRow()
         {
-            if (venteTable.RowCount>0)
-            return venteTable.SelectedRows[0].Index;
+            if (venteTable.RowCount > 0)
+                return venteTable.SelectedRows[0].Index;
             return -1;
         }
         private string GetCurrentSelectedTableRow_CodeBarre()
         {
             return venteTable[codeBarreCol.Index, venteTable.SelectedRows[0].Index].Value.ToString();
         }
-        private void ResetTable() 
+        private void ResetTable()
         {
             _mesArticleAvendre = new List<Article>();
             SetUpTable();
@@ -123,17 +123,17 @@ namespace Gestionnaire_Pro
             var monVente = new Vente()
             {
                 ajouterPar = GlobalClass.username,
-                dateVente=DateTime.Now,
-                montantTotale=total,
-                remise=totalRemise,
-                netPayé=total-totalRemise
-                
-          };
-            if (!string.IsNullOrWhiteSpace(client_combo.Text) && client_combo.Text != "") 
+                dateVente = DateTime.Now,
+                montantTotale = total,
+                remise = totalRemise,
+                netPayé = total - totalRemise
+
+            };
+            if (!string.IsNullOrWhiteSpace(client_combo.Text) && client_combo.Text != "")
             {
                 monVente.clientId = GestionnaireProRetreivingMethods.GetClientIdByName(client_combo.Text).Result;
             }
-            GestionnaireProInsertingMethods.AddVente(monVente); 
+            GestionnaireProInsertingMethods.AddVente(monVente);
         }
         private void AddDetailVente()
         {
@@ -142,16 +142,16 @@ namespace Gestionnaire_Pro
             int i = 0;
             foreach (var item in _mesArticleAvendre)
             {
-                
+
                 details.Add(new DetailVente
                 {
                     codeBarre = item.codeBarre,
                     nom = item.nom,
-                    Type=item.type,
+                    Type = item.type,
                     prixAchat = item.prixAchat,
                     prixVente = item.prixVente,
                     Quantité = item.quantité,
-                    remise= Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
+                    remise = Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
                     VenteId = venteId
 
                 });
@@ -172,7 +172,7 @@ namespace Gestionnaire_Pro
 
             };
             GestionnaireProModifyDeleteMethods.ModifyVente(vente);
-           
+
 
         }
         private void ModifyDetailVente()
@@ -202,12 +202,12 @@ namespace Gestionnaire_Pro
             venteTable.AutoGenerateColumns = false;
             venteTable.DataSource = source;
             venteTable.Refresh();
-            if(venteTable.RowCount>0)
-            for(int i=0;i< venteTable.RowCount;i++)
-            {
-                if (string.IsNullOrEmpty((string)venteTable.Rows[i].Cells[_remiseIndex].Value)) venteTable.Rows[i].Cells[_remiseIndex].Value = 0.0f;
-            }
-            
+            if (venteTable.RowCount > 0)
+                for (int i = 0; i < venteTable.RowCount; i++)
+                {
+                    if (string.IsNullOrEmpty((string)venteTable.Rows[i].Cells[_remiseIndex].Value)) venteTable.Rows[i].Cells[_remiseIndex].Value = 0.0f;
+                }
+
             CalculateAll();
         }
         private void AddClientsToCombo()
@@ -217,14 +217,14 @@ namespace Gestionnaire_Pro
             {
                 client_combo.Items.Add(client.nom);
             }
-            
+
 
         }
         private void SetCodeBarre()
         {
-            if (venteTable.RowCount>0 && venteTable.SelectedRows.Count > 0)
-                if(venteTable[_codeBarreIndex, venteTable.SelectedRows[0].Index].Value!=null)
-                codeBarreLabel.Text = venteTable[_codeBarreIndex, venteTable.SelectedRows[0].Index].Value.ToString();
+            if (venteTable.RowCount > 0 && venteTable.SelectedRows.Count > 0)
+                if (venteTable[_codeBarreIndex, venteTable.SelectedRows[0].Index].Value != null)
+                    codeBarreLabel.Text = venteTable[_codeBarreIndex, venteTable.SelectedRows[0].Index].Value.ToString();
         }
         private void CalculateAll()
         {
@@ -234,29 +234,29 @@ namespace Gestionnaire_Pro
 
             for (int i = 0; i < venteTable.Rows.Count; i++)
             {
-             venteTable.Rows[i].Cells[_totalIndex].Value =( Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_prixVenteIndex].Value) )- (Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value));
-             total += (float)venteTable.Rows[i].Cells[_totalIndex].Value;
+                venteTable.Rows[i].Cells[_totalIndex].Value = (Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_prixVenteIndex].Value)) - (Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value));
+                total += (float)venteTable.Rows[i].Cells[_totalIndex].Value;
 
-               
-                    totalRemise += Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value);
-             
+
+                totalRemise += Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value);
+
                 nbrPiece += Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value);
             }
 
-            PutValuesInTitles(total,nbrArticle,nbrPiece);
+            PutValuesInTitles(total, nbrArticle, nbrPiece);
 
         }
         private void PutValuesInTitles(float total, int nbrArticle, float nbrPiece)
         {
-            totalLabel.Text = total+ " DA";
-            nbrArticleLabel.Text = "Articles :"+nbrArticle;
-            nbrPieceLabel.Text = "Pieces :"+nbrPiece;
+            totalLabel.Text = total + " DA";
+            nbrArticleLabel.Text = "Articles :" + nbrArticle;
+            nbrPieceLabel.Text = "Pieces :" + nbrPiece;
         }
 
         private Article SearchForArticle(string codeBarre)
         {
 
-            var res= GestionnaireProRetreivingMethods.GetArticleForVente(codeBarre).Result;
+            var res = GestionnaireProRetreivingMethods.GetArticleForVente(codeBarre).Result;
             return res;
         }
         private void ResetArticlesStock()
@@ -285,16 +285,16 @@ namespace Gestionnaire_Pro
                 var monArticle = SearchForArticle(codeBarre_txt.Text);
                 if (monArticle != null)
                 {
-                    var monArticleSearch =_mesArticleAvendre.Find(a => a.codeBarre == monArticle.codeBarre);
-                    
-                    if (monArticleSearch == null) 
+                    var monArticleSearch = _mesArticleAvendre.Find(a => a.codeBarre == monArticle.codeBarre);
+
+                    if (monArticleSearch == null)
                     {
-                        if (monArticle.quantité > 0) 
-                        { 
-                        GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité-1);
-                        monArticle.quantité=1;
-                        _mesArticleAvendre.Add(monArticle);
-                        nbrArticle++;
+                        if (monArticle.quantité > 0)
+                        {
+                            GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité - 1);
+                            monArticle.quantité = 1;
+                            _mesArticleAvendre.Add(monArticle);
+                            nbrArticle++;
                         }
                         else
                         {
@@ -326,42 +326,43 @@ namespace Gestionnaire_Pro
         private void venteTable_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             currentlySelectedRow = venteTable.SelectedRows[0].Index;
-            ancientQnt = (float)venteTable[QNT.Index, currentlySelectedRow].Value;
+            ancientQnt = Convert.ToSingle(venteTable[QNT.Index, currentlySelectedRow].Value.ToString().Replace('.', ','));
+        
         }
         private void venteTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if (venteTable[QNT.Index,currentlySelectedRow].Value == null ) venteTable[QNT.Index, currentlySelectedRow].Value = 0;
+
+            if (venteTable[QNT.Index, currentlySelectedRow].Value == null) venteTable[QNT.Index, currentlySelectedRow].Value = 0;
             if (venteTable[remiseCol.Index, currentlySelectedRow].Value == null) venteTable[remiseCol.Index, currentlySelectedRow].Value = 0;
-           
 
-                var monArticle = SearchForArticle(venteTable[codeBarreCol.Index, currentlySelectedRow].Value.ToString());
+
+            var monArticle = SearchForArticle(venteTable[codeBarreCol.Index, currentlySelectedRow].Value.ToString());
             if (monArticle == null) return;
-               
-                if (monArticle.quantité+ancientQnt-(float)venteTable[QNT.Index, currentlySelectedRow].Value > 0)
-                {
-                
-                    GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité+ancientQnt- (float)venteTable[QNT.Index, currentlySelectedRow].Value);
+
+            if (monArticle.quantité + ancientQnt - Convert.ToSingle(venteTable[QNT.Index, currentlySelectedRow].Value.ToString().Replace('.',',')) > 0)
+            {
+
+                GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité + ancientQnt - Convert.ToSingle(venteTable[QNT.Index, currentlySelectedRow].Value.ToString().Replace('.', ',')));
                 CalculateAll();
                 return;
-                }
-                else
-                {
-                
-                    venteTable[QNT.Index, currentlySelectedRow].Value = monArticle.quantité+ancientQnt;
+            }
+            else
+            {
 
-                    GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id,0.0f);
-                    MessageBox.Show("Quantité Insuffisant !!");
+                venteTable[QNT.Index, currentlySelectedRow].Value = monArticle.quantité + ancientQnt;
+
+                GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, 0.0f);
+                MessageBox.Show("Quantité Insuffisant !!");
                 CalculateAll();
                 return;
 
-                }
+            }
 
-           
-           
-           
+
+
+
         }
-        private void timer1_Tick(object sender , EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             dateLabel.Text = DateTime.Now.ToString();
         }
@@ -370,11 +371,9 @@ namespace Gestionnaire_Pro
             SetCodeBarre();
         }
 
-       
-
         private void sub_btn_Click(object sender, EventArgs e)
         {
-            if(GlobalClass.typeOp == 1)
+            if (GlobalClass.typeOp == 1)
             {
                 ModifyVente();
                 ModifyDetailVente();
@@ -392,17 +391,17 @@ namespace Gestionnaire_Pro
 
                 AddVente();
                 AddDetailVente();
-            } 
-            
-            ResetTable(); 
-          
-            
+            }
+
+            ResetTable();
+
+
         }
         private void AddToVenteFromListArticles(Article article)
         {
-           
-            var result = _mesArticleAvendre.FindIndex(a=>a.nom == article.nom);
-            if(result == -1)
+
+            var result = _mesArticleAvendre.FindIndex(a => a.nom == article.nom);
+            if (result == -1)
             {
                 _mesArticleAvendre.Add(article);
                 return;
@@ -416,10 +415,11 @@ namespace Gestionnaire_Pro
             {
                 listArticle.ShowDialog();
                 if (listArticle.monArticle == null) return;
-                if (listArticle.monArticle.nom != null) { 
-                AddToVenteFromListArticles(listArticle.monArticle);
-                _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
-                SetUpTable();
+                if (listArticle.monArticle.nom != null)
+                {
+                    AddToVenteFromListArticles(listArticle.monArticle);
+                    _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+                    SetUpTable();
                 }
             }
         }
@@ -437,7 +437,7 @@ namespace Gestionnaire_Pro
 
         private void DeleteCurrentSelectedRow()
         {
-           
+
             var myRow = GetCurrentSelectedTableRow();
             if (myRow == -1) return;
             var myArticleIndex = _mesArticleAvendre.FindIndex(a => a.codeBarre == GetCurrentSelectedTableRow_CodeBarre());
@@ -450,8 +450,10 @@ namespace Gestionnaire_Pro
             DeleteCurrentSelectedRow();
         }
 
-     
-      
+        private void remise_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, remise_txt);
+        }
 
       
     }

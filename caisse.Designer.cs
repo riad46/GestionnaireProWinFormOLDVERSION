@@ -129,6 +129,7 @@ namespace Gestionnaire_Pro
             this.montantInitCaisse_txt.Name = "montantInitCaisse_txt";
             this.montantInitCaisse_txt.Size = new System.Drawing.Size(137, 29);
             this.montantInitCaisse_txt.TabIndex = 2;
+            this.montantInitCaisse_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.montantInitCaisse_txt_KeyPress);
             // 
             // dateMin_box
             // 
@@ -292,6 +293,7 @@ namespace Gestionnaire_Pro
             // 
             // montantDansCaisse_txt
             // 
+            this.montantDansCaisse_txt.Enabled = false;
             this.montantDansCaisse_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.montantDansCaisse_txt.Location = new System.Drawing.Point(308, 160);
             this.montantDansCaisse_txt.Name = "montantDansCaisse_txt";
@@ -300,6 +302,7 @@ namespace Gestionnaire_Pro
             // 
             // totalVente_txt
             // 
+            this.totalVente_txt.Enabled = false;
             this.totalVente_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.totalVente_txt.Location = new System.Drawing.Point(164, 63);
             this.totalVente_txt.Name = "totalVente_txt";
@@ -308,6 +311,7 @@ namespace Gestionnaire_Pro
             // 
             // totalAchat_txt
             // 
+            this.totalAchat_txt.Enabled = false;
             this.totalAchat_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.totalAchat_txt.Location = new System.Drawing.Point(164, 13);
             this.totalAchat_txt.Name = "totalAchat_txt";
@@ -316,6 +320,7 @@ namespace Gestionnaire_Pro
             // 
             // benfice_txt
             // 
+            this.benfice_txt.Enabled = false;
             this.benfice_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.benfice_txt.Location = new System.Drawing.Point(164, 108);
             this.benfice_txt.Name = "benfice_txt";

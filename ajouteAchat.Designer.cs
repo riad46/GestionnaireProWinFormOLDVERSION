@@ -40,6 +40,8 @@ namespace Gestionnaire_Pro
             this.dateExp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fournisseur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.type_txt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@ namespace Gestionnaire_Pro
             this.dateExp_box = new System.Windows.Forms.DateTimePicker();
             this.dateAchat_box = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.type_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.articleTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -193,6 +193,24 @@ namespace Gestionnaire_Pro
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(981, 229);
             this.panel1.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(436, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 19);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "Type";
+            // 
+            // type_txt
+            // 
+            this.type_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.type_txt.Location = new System.Drawing.Point(481, 43);
+            this.type_txt.Name = "type_txt";
+            this.type_txt.Size = new System.Drawing.Size(138, 26);
+            this.type_txt.TabIndex = 62;
             // 
             // label7
             // 
@@ -326,6 +344,7 @@ namespace Gestionnaire_Pro
             this.prixV_txt.Name = "prixV_txt";
             this.prixV_txt.Size = new System.Drawing.Size(87, 26);
             this.prixV_txt.TabIndex = 49;
+            this.prixV_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixV_txt_KeyPress);
             // 
             // prixA_txt
             // 
@@ -334,6 +353,7 @@ namespace Gestionnaire_Pro
             this.prixA_txt.Name = "prixA_txt";
             this.prixA_txt.Size = new System.Drawing.Size(85, 26);
             this.prixA_txt.TabIndex = 48;
+            this.prixA_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixA_txt_KeyPress);
             // 
             // qnt_txt
             // 
@@ -342,6 +362,7 @@ namespace Gestionnaire_Pro
             this.qnt_txt.Name = "qnt_txt";
             this.qnt_txt.Size = new System.Drawing.Size(75, 26);
             this.qnt_txt.TabIndex = 47;
+            this.qnt_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qnt_txt_KeyPress);
             // 
             // nom_txt
             // 
@@ -400,24 +421,6 @@ namespace Gestionnaire_Pro
             this.label1.TabIndex = 22;
             this.label1.Text = "Date Achat";
             this.label1.UseWaitCursor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(436, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 19);
-            this.label8.TabIndex = 63;
-            this.label8.Text = "Type";
-            // 
-            // type_txt
-            // 
-            this.type_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.type_txt.Location = new System.Drawing.Point(481, 43);
-            this.type_txt.Name = "type_txt";
-            this.type_txt.Size = new System.Drawing.Size(138, 26);
-            this.type_txt.TabIndex = 62;
             // 
             // ajouteAchat
             // 

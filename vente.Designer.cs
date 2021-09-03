@@ -209,6 +209,7 @@ namespace Gestionnaire_Pro
             this.remise_txt.Name = "remise_txt";
             this.remise_txt.Size = new System.Drawing.Size(186, 39);
             this.remise_txt.TabIndex = 4;
+            this.remise_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.remise_txt_KeyPress);
             // 
             // codeBarre_txt
             // 
@@ -301,6 +302,7 @@ namespace Gestionnaire_Pro
             this.venteTable.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.venteTable_CellBeginEdit);
             this.venteTable.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.venteTable_CellEndEdit);
             this.venteTable.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.venteTable_RowStateChanged);
+            
             // 
             // codeBarreCol
             // 

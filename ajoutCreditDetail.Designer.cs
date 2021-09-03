@@ -29,13 +29,14 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablecreditDetail = new System.Windows.Forms.DataGridView();
-            this.sub_btn = new System.Windows.Forms.Button();
             this.des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.restCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sub_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablecreditDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +48,14 @@ namespace Gestionnaire_Pro
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tablecreditDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablecreditDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablecreditDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablecreditDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablecreditDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.des,
@@ -62,17 +71,6 @@ namespace Gestionnaire_Pro
             this.tablecreditDetail.Size = new System.Drawing.Size(723, 381);
             this.tablecreditDetail.TabIndex = 0;
             this.tablecreditDetail.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
-            // 
-            // sub_btn
-            // 
-            this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.sub_btn.Location = new System.Drawing.Point(9, 395);
-            this.sub_btn.Name = "sub_btn";
-            this.sub_btn.Size = new System.Drawing.Size(723, 84);
-            this.sub_btn.TabIndex = 1;
-            this.sub_btn.Text = "Valider";
-            this.sub_btn.UseVisualStyleBackColor = true;
-            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // des
             // 
@@ -110,6 +108,17 @@ namespace Gestionnaire_Pro
             this.dateCol.HeaderText = "Date";
             this.dateCol.Name = "dateCol";
             this.dateCol.ReadOnly = true;
+            // 
+            // sub_btn
+            // 
+            this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.sub_btn.Location = new System.Drawing.Point(9, 395);
+            this.sub_btn.Name = "sub_btn";
+            this.sub_btn.Size = new System.Drawing.Size(723, 84);
+            this.sub_btn.TabIndex = 1;
+            this.sub_btn.Text = "Valider";
+            this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // ajoutCreditDetail
             // 

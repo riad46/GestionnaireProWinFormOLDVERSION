@@ -83,6 +83,7 @@ namespace Gestionnaire_Pro
             this.credit_txt.Size = new System.Drawing.Size(93, 23);
             this.credit_txt.TabIndex = 3;
             this.credit_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
+            this.credit_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.credit_txt_KeyPress);
             // 
             // label3
             // 

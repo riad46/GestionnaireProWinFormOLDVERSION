@@ -132,7 +132,10 @@ namespace Gestionnaire_Pro
                 this.Visible = true;
             }
         }
-     
-      
+
+        private void id_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, id_txt);
+        }
     }
 }

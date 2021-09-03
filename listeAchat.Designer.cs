@@ -32,7 +32,7 @@ namespace Gestionnaire_Pro
             this.panel1 = new System.Windows.Forms.Panel();
             this.del_btn = new System.Windows.Forms.Button();
             this.search_btn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.montant_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -59,7 +59,7 @@ namespace Gestionnaire_Pro
             // 
             this.panel1.Controls.Add(this.del_btn);
             this.panel1.Controls.Add(this.search_btn);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.montant_txt);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -87,12 +87,13 @@ namespace Gestionnaire_Pro
             this.search_btn.Text = "Recherche";
             this.search_btn.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // montant_txt
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 23);
-            this.textBox1.TabIndex = 6;
+            this.montant_txt.Location = new System.Drawing.Point(104, 61);
+            this.montant_txt.Name = "montant_txt";
+            this.montant_txt.Size = new System.Drawing.Size(98, 23);
+            this.montant_txt.TabIndex = 6;
+            this.montant_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
@@ -278,7 +279,7 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button del_btn;
         private System.Windows.Forms.Button search_btn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox montant_txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;

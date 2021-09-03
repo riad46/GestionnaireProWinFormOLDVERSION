@@ -86,6 +86,7 @@ namespace Gestionnaire_Pro
             // 
             // creditInit_txt
             // 
+            this.creditInit_txt.Enabled = false;
             this.creditInit_txt.Location = new System.Drawing.Point(29, 148);
             this.creditInit_txt.Name = "creditInit_txt";
             this.creditInit_txt.Size = new System.Drawing.Size(268, 23);

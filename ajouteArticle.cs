@@ -146,8 +146,19 @@ namespace Gestionnaire_Pro
             }
         }
 
-      
-      
-        
+        private void qnt_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, qnt_txt);
+        }
+
+        private void prixAchat_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e,prixAchat_txt);
+        }
+
+        private void prixVente_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e,prixVente_txt);
+        }
     }
 }

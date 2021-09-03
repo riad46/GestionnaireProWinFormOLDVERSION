@@ -215,5 +215,21 @@ namespace Gestionnaire_Pro
             }
             
         }
+
+        private void qnt_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, qnt_txt);
+            
+        }
+
+        private void prixA_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, prixA_txt);
+        }
+
+        private void prixV_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, prixV_txt);
+        }
     }
 }

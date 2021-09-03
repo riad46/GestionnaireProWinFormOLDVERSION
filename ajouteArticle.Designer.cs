@@ -105,6 +105,7 @@ namespace Gestionnaire_Pro
             this.qnt_txt.Name = "qnt_txt";
             this.qnt_txt.Size = new System.Drawing.Size(105, 29);
             this.qnt_txt.TabIndex = 10;
+            this.qnt_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qnt_txt_KeyPress);
             // 
             // lebel452
             // 
@@ -161,6 +162,7 @@ namespace Gestionnaire_Pro
             this.prixVente_txt.Name = "prixVente_txt";
             this.prixVente_txt.Size = new System.Drawing.Size(121, 29);
             this.prixVente_txt.TabIndex = 14;
+            this.prixVente_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixVente_txt_KeyPress);
             // 
             // label7
             // 
@@ -179,6 +181,7 @@ namespace Gestionnaire_Pro
             this.prixAchat_txt.Name = "prixAchat_txt";
             this.prixAchat_txt.Size = new System.Drawing.Size(121, 29);
             this.prixAchat_txt.TabIndex = 12;
+            this.prixAchat_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixAchat_txt_KeyPress);
             // 
             // label8
             // 

@@ -55,13 +55,10 @@ namespace Gestionnaire_Pro
             return data;
         }
     
-     public static void CheckForInputToBeNumbers(System.Windows.Forms.KeyPressEventArgs e,TextBox t1 )
+     public static void CheckForInputToBeNumbers(KeyPressEventArgs e,TextBox t1 )
         {
             char ch = e.KeyChar;
-            if (ch == '.')
-            {
-                ch = ',';
-            }
+            
             if ((ch == 44 || ch == 46) && (t1.Text.IndexOf(',') != -1 || t1.Text.IndexOf('.') != -1))
             {
                 e.Handled = true;
@@ -70,6 +67,13 @@ namespace Gestionnaire_Pro
             if (!char.IsDigit(ch) && ch != 44 && ch != 8)
             {
                 e.Handled = true;
+            }
+            if (ch == '.')
+            {
+
+                t1.AppendText(",");
+                return;
+
             }
         }
 

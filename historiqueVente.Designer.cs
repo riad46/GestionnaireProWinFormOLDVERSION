@@ -295,6 +295,7 @@ namespace Gestionnaire_Pro
             this.id_txt.Name = "id_txt";
             this.id_txt.Size = new System.Drawing.Size(75, 23);
             this.id_txt.TabIndex = 2;
+            this.id_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_txt_KeyPress);
             // 
             // label1
             // 
@@ -314,7 +315,6 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.historique_Table);
             this.Name = "historiqueVente";
             this.Text = "historyVente";
-          
             this.Shown += new System.EventHandler(this.historiqueVente_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.historique_Table)).EndInit();
             this.panel1.ResumeLayout(false);

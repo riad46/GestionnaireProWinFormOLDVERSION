@@ -47,5 +47,9 @@ namespace Gestionnaire_Pro
             SearchForFournisseur(nom, numTlf, credit);
         }
 
+        private void credit_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e,credit_txt);
+        }
     }
 }

@@ -117,5 +117,10 @@ namespace Gestionnaire_Pro
             CalculateAll();
             PutValuesInBoxes();
         }
+
+        private void montantInitCaisse_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e,montantInitCaisse_txt);
+        }
     }
 }

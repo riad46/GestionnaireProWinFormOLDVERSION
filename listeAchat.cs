@@ -55,5 +55,10 @@ namespace Gestionnaire_Pro
 
             }
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, montant_txt);
+        }
     }
 }

@@ -66,6 +66,7 @@ namespace Gestionnaire_Pro
             this.credit_txt.Name = "credit_txt";
             this.credit_txt.Size = new System.Drawing.Size(120, 29);
             this.credit_txt.TabIndex = 13;
+            this.credit_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.credit_txt_KeyPress);
             // 
             // label3
             // 
