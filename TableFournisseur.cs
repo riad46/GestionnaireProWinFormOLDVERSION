@@ -2,6 +2,7 @@
 using Gestionnaire_Pro.DataBase.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Gestionnaire_Pro
@@ -12,7 +13,41 @@ namespace Gestionnaire_Pro
         public TableFournisseur()
         {
             InitializeComponent();
+            LoadTheme();
         }
+        private void LoadTheme()
+        {
+            foreach (Control btns in panel1.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            foreach (Control btns in panel2.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            //dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.SecondaryColor;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+
+
+
+        }
+
+
+
         private void ResetTable()
         {
             _mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs().Result;

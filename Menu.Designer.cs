@@ -463,11 +463,11 @@ namespace Gestionnaire_Pro
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Gestionnaire_Pro.Properties.Resources.rmdaTem;
-            this.pictureBox1.Location = new System.Drawing.Point(101, 213);
+            this.pictureBox1.Location = new System.Drawing.Point(521, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(506, 235);
+            this.pictureBox1.Size = new System.Drawing.Size(193, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
