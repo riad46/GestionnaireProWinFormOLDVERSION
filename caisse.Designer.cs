@@ -31,6 +31,8 @@ namespace Gestionnaire_Pro
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.search_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,7 +80,7 @@ namespace Gestionnaire_Pro
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 106);
+            this.panel1.Size = new System.Drawing.Size(963, 106);
             this.panel1.TabIndex = 0;
             // 
             // search_btn
@@ -151,14 +153,12 @@ namespace Gestionnaire_Pro
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox1.Controls.Add(this.venteTable);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(442, 112);
+            this.groupBox1.Location = new System.Drawing.Point(483, 112);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(426, 480);
+            this.groupBox1.Size = new System.Drawing.Size(480, 480);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vente";
@@ -167,28 +167,48 @@ namespace Gestionnaire_Pro
             // 
             this.venteTable.AllowUserToAddRows = false;
             this.venteTable.AllowUserToDeleteRows = false;
-            this.venteTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.venteTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.venteTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.venteTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.venteTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.venteTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.venteTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.venteTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.venteTable.ColumnHeadersHeight = 50;
             this.venteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.dateVente,
             this.netPay});
             this.venteTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.venteTable.EnableHeadersVisualStyles = false;
             this.venteTable.Location = new System.Drawing.Point(3, 31);
+            this.venteTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.venteTable.MultiSelect = false;
             this.venteTable.Name = "venteTable";
             this.venteTable.ReadOnly = true;
-            this.venteTable.RowTemplate.Height = 25;
+            this.venteTable.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.venteTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.venteTable.RowTemplate.Height = 35;
             this.venteTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.venteTable.Size = new System.Drawing.Size(420, 446);
+            this.venteTable.Size = new System.Drawing.Size(474, 446);
             this.venteTable.TabIndex = 0;
             // 
             // Id
@@ -214,14 +234,12 @@ namespace Gestionnaire_Pro
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox2.Controls.Add(this.achatTable);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(12, 112);
+            this.groupBox2.Location = new System.Drawing.Point(0, 112);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(427, 480);
+            this.groupBox2.Size = new System.Drawing.Size(480, 480);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Achat";
@@ -230,28 +248,36 @@ namespace Gestionnaire_Pro
             // 
             this.achatTable.AllowUserToAddRows = false;
             this.achatTable.AllowUserToDeleteRows = false;
+            this.achatTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.achatTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.achatTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.achatTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.achatTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.achatTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.achatTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.achatTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.achatTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.achatTable.ColumnHeadersHeight = 50;
             this.achatTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dateAchat,
             this.MontantTotal});
             this.achatTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.achatTable.EnableHeadersVisualStyles = false;
             this.achatTable.Location = new System.Drawing.Point(3, 31);
+            this.achatTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.achatTable.MultiSelect = false;
             this.achatTable.Name = "achatTable";
             this.achatTable.ReadOnly = true;
-            this.achatTable.RowTemplate.Height = 25;
+            this.achatTable.RowHeadersVisible = false;
+            this.achatTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.achatTable.RowTemplate.Height = 35;
             this.achatTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.achatTable.Size = new System.Drawing.Size(421, 446);
+            this.achatTable.Size = new System.Drawing.Size(474, 446);
             this.achatTable.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -288,7 +314,7 @@ namespace Gestionnaire_Pro
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 598);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(880, 213);
+            this.panel2.Size = new System.Drawing.Size(963, 213);
             this.panel2.TabIndex = 1;
             // 
             // montantDansCaisse_txt
@@ -371,7 +397,7 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 811);
+            this.ClientSize = new System.Drawing.Size(963, 811);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

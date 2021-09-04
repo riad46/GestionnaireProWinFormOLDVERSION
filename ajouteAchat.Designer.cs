@@ -29,6 +29,8 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.articleTable = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,9 +79,18 @@ namespace Gestionnaire_Pro
             | System.Windows.Forms.AnchorStyles.Right)));
             this.articleTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.articleTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.articleTable.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.articleTable.BackgroundColor = System.Drawing.Color.White;
             this.articleTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.articleTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.articleTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.articleTable.ColumnHeadersHeight = 45;
             this.articleTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.codeBarre,
@@ -94,7 +105,15 @@ namespace Gestionnaire_Pro
             this.articleTable.MultiSelect = false;
             this.articleTable.Name = "articleTable";
             this.articleTable.ReadOnly = true;
-            this.articleTable.RowTemplate.Height = 25;
+            this.articleTable.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.articleTable.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.articleTable.RowTemplate.Height = 35;
             this.articleTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.articleTable.Size = new System.Drawing.Size(981, 268);
             this.articleTable.TabIndex = 22;

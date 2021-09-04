@@ -37,10 +37,11 @@ namespace Gestionnaire_Pro
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
-            //dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.SecondaryColor;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            //fournisseurTable.EnableHeadersVisualStyles = false;
+            fournisseurTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            fournisseurTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            fournisseurTable.ColumnHeadersDefaultCellStyle.SelectionBackColor= ThemeColor.PrimaryColor; 
+            
 
 
 
@@ -87,8 +88,8 @@ namespace Gestionnaire_Pro
         private void ActionToDo()
         {
             int fournisseurId = default;
-           if (dataGridView1.RowCount>0)
-             fournisseurId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+           if (fournisseurTable.RowCount>0)
+             fournisseurId = (int)fournisseurTable.SelectedRows[0].Cells[0].Value;
 
             switch (GlobalClass.typeOp)
             {
@@ -107,7 +108,7 @@ namespace Gestionnaire_Pro
                     }
                     break;
                 case 2:
-                    var selectedRows = dataGridView1.SelectedRows;
+                    var selectedRows = fournisseurTable.SelectedRows;
                     if (selectedRows.Count > 0)
                     {
                         foreach (var row in selectedRows)
@@ -131,8 +132,8 @@ namespace Gestionnaire_Pro
         private void SetUpTable()
         {
             
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = _mesFournisseurs;
+            fournisseurTable.AutoGenerateColumns = false;
+            fournisseurTable.DataSource = _mesFournisseurs;
         }
 
         private void SearchForFournisseur(string nom, string numTlf, float credit)

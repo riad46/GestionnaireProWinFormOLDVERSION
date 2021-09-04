@@ -54,28 +54,17 @@ namespace Gestionnaire_Pro
         }
         private void LoadTheme()
         {
-            foreach (Control btns in panel3.Controls)
+            
+            foreach (Control pan in Controls)
             {
-                if (btns.GetType() == typeof(Button))
-                {
-                    Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
-                }
+                if(pan.Name !="panel1")
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+
             }
-            foreach (Control btns in panel2.Controls)
-            {
-                if (btns.GetType() == typeof(Button))
-                {
-                    Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
-                }
-            }
-            //  historique_Table.Font =;
-            venteTable.BackgroundColor = ThemeColor.SecondaryColor;
+            
+            venteTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            venteTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            venteTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
         }
         public vente(int venteId)
         {
@@ -149,7 +138,7 @@ namespace Gestionnaire_Pro
                     nom = item.nom,
                     Type = item.type,
                     prixAchat = item.prixAchat,
-                    prixVente = item.prixVente,
+                    prixVente = item.prixVente *item.quantité,
                     Quantité = item.quantité,
                     remise = Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
                     VenteId = venteId

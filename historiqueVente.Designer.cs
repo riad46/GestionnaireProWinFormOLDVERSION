@@ -29,7 +29,11 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            this.historique_Table = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.historiqueTable = new System.Windows.Forms.DataGridView();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateVenteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,25 +59,42 @@ namespace Gestionnaire_Pro
             this.total_txt = new System.Windows.Forms.TextBox();
             this.id_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.historique_Table)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historiqueTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // historique_Table
+            // historiqueTable
             // 
-            this.historique_Table.AllowUserToAddRows = false;
-            this.historique_Table.AllowUserToDeleteRows = false;
-            this.historique_Table.AllowUserToOrderColumns = true;
-            this.historique_Table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.historiqueTable.AllowUserToAddRows = false;
+            this.historiqueTable.AllowUserToDeleteRows = false;
+            this.historiqueTable.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.historiqueTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.historiqueTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.historique_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.historique_Table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.historique_Table.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.historique_Table.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.historique_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.historique_Table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.historiqueTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.historiqueTable.BackgroundColor = System.Drawing.Color.White;
+            this.historiqueTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.historiqueTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.historiqueTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.historiqueTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.historiqueTable.ColumnHeadersHeight = 90;
+            this.historiqueTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
             this.DateVenteCol,
             this.totalCol,
@@ -86,17 +107,43 @@ namespace Gestionnaire_Pro
             this.NvtotaleCol,
             this.nvRemise,
             this.nvNetCol});
-            this.historique_Table.Cursor = System.Windows.Forms.Cursors.Default;
-            this.historique_Table.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.historique_Table.Location = new System.Drawing.Point(0, 190);
-            this.historique_Table.MultiSelect = false;
-            this.historique_Table.Name = "historique_Table";
-            this.historique_Table.ReadOnly = true;
-            this.historique_Table.RowTemplate.Height = 25;
-            this.historique_Table.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.historique_Table.Size = new System.Drawing.Size(1045, 569);
-            this.historique_Table.TabIndex = 0;
-            this.historique_Table.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.historique_Table_CellDoubleClick);
+            this.historiqueTable.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.historiqueTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.historiqueTable.EnableHeadersVisualStyles = false;
+            this.historiqueTable.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.historiqueTable.Location = new System.Drawing.Point(0, 190);
+            this.historiqueTable.MultiSelect = false;
+            this.historiqueTable.Name = "historiqueTable";
+            this.historiqueTable.ReadOnly = true;
+            this.historiqueTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.historiqueTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.historiqueTable.RowHeadersVisible = false;
+            this.historiqueTable.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.historiqueTable.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.historiqueTable.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.historiqueTable.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.historiqueTable.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(5);
+            this.historiqueTable.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.historiqueTable.RowTemplate.Height = 40;
+            this.historiqueTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.historiqueTable.Size = new System.Drawing.Size(1045, 569);
+            this.historiqueTable.TabIndex = 0;
+            this.historiqueTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.historique_Table_CellDoubleClick);
             // 
             // idCol
             // 
@@ -288,6 +335,7 @@ namespace Gestionnaire_Pro
             this.total_txt.Name = "total_txt";
             this.total_txt.Size = new System.Drawing.Size(109, 23);
             this.total_txt.TabIndex = 3;
+            this.total_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.total_txt_KeyPress);
             // 
             // id_txt
             // 
@@ -312,11 +360,11 @@ namespace Gestionnaire_Pro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 759);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.historique_Table);
+            this.Controls.Add(this.historiqueTable);
             this.Name = "historiqueVente";
             this.Text = "historyVente";
             this.Shown += new System.EventHandler(this.historiqueVente_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.historique_Table)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historiqueTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -326,7 +374,7 @@ namespace Gestionnaire_Pro
 
         #endregion
 
-        private System.Windows.Forms.DataGridView historique_Table;
+        private System.Windows.Forms.DataGridView historiqueTable;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCol;

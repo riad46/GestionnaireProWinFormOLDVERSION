@@ -12,7 +12,7 @@ namespace Gestionnaire_Pro
     
     public partial class historiqueVente : Form
     {
-        private List<DataBase.Models.Vente> _myTableData = null;
+        private List<DataBase.Models.Vente> _myTableData = new List<DataBase.Models.Vente>();
         private int clientID = -1;
         public historiqueVente()
         {
@@ -21,59 +21,42 @@ namespace Gestionnaire_Pro
         }
         private void LoadTheme()
         {
-            foreach (Control btns in this.Controls)
+            foreach (var panel in Controls)
             {
-                if (btns.GetType() == typeof(Button))
-                {
-                    Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
-                }
-
-            }
-            foreach (Control btns in panel1.Controls)
-            {
-                if (btns.GetType() == typeof(Button))
-                {
-                    Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
-                }
-
+                if (panel.GetType() == new Panel().GetType())
+                    ((Panel)panel).BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2); ;
             }
 
-            //  historique_Table.Font =;
-            historique_Table.BackgroundColor = ThemeColor.SecondaryColor;
+            //  historiqueTable.Font =;
+
+            historiqueTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            historiqueTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            historiqueTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+
         }
         private void SearchForHistoriqueVentes()
         {
-            _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVente().Result;
+            _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(-1,-1,-1,default,DateTime.Now).Result;
             _myTableData.Reverse();
             SetUpTable();
         }
         private void SetUpTable()
         {
-            historique_Table.AutoGenerateColumns = false;
-          
-            historique_Table.DataSource = _myTableData;
-
-           
+            historiqueTable.AutoGenerateColumns = false;
+            historiqueTable.DataSource = _myTableData;        
                 int i = 0;
                 foreach (var item in _myTableData)
                 {
                     if(item.Client!=null)
-                    historique_Table.Rows[i].Cells[6].Value = item.Client.nom;
+                    historiqueTable.Rows[i].Cells[6].Value = item.Client.nom;
 
                 }
-            historique_Table.Refresh();
+            //historiqueTable.Refresh();
             
         }
       
         private void historiqueVente_Shown(object sender, EventArgs e)
         {
-
             var datemin =  DateTime.Now;
             dateMin_box.Value = new DateTime(datemin.Year,datemin.Month,datemin.Day,00,00,00);
             dateMax_box.Value = DateTime.Now;
@@ -105,7 +88,7 @@ namespace Gestionnaire_Pro
             DateTime dateMax=DateTime.Now;
 
             SetValueToFilter(out total,out Id,out dateMin,out dateMax);
-            //if (dateMin_box.Value==null || dateMax_box.Value ==null) return;
+            
             if(id_txt.Text.Trim() !="" || total_txt.Text.Trim() !="" || nomClient_txt.Text.Trim()!="")
             {
                 _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(Id, clientID, total,default,DateTime.Now).Result;
@@ -123,7 +106,7 @@ namespace Gestionnaire_Pro
 
         private void historique_Table_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var venteId = (int)historique_Table[idCol.Index,historique_Table.SelectedRows[0].Index].Value;
+            var venteId = (int)historiqueTable[idCol.Index,historiqueTable.SelectedRows[0].Index].Value;
             using (var f=new vente(venteId))
             {
                 GlobalClass.typeOp = 1;
@@ -134,6 +117,11 @@ namespace Gestionnaire_Pro
         }
 
         private void id_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, id_txt);
+        }
+
+        private void total_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
             GlobalClass.CheckForInputToBeNumbers(e, id_txt);
         }

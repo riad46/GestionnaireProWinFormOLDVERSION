@@ -16,6 +16,23 @@ namespace Gestionnaire_Pro
         public ListFournisseurs()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (Control pan in Controls)
+            {
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor,0.2);
+            }
+           
+            //fournisseurTable.EnableHeadersVisualStyles = false;
+            fournisseurTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            fournisseurTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            fournisseurTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+
+
+
+
         }
         private void SetUpTable()
         {

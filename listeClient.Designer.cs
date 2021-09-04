@@ -29,94 +29,86 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableClient = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.numTlf_txt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nom_txt = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.clientTable = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.tableClient)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.numTlf_txt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nom_txt = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableClient
+            // clientTable
             // 
-            this.tableClient.AllowUserToAddRows = false;
-            this.tableClient.AllowUserToDeleteRows = false;
-            this.tableClient.AllowUserToOrderColumns = true;
-            this.tableClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableClient.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.tableClient.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.tableClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientTable.AllowUserToAddRows = false;
+            this.clientTable.AllowUserToDeleteRows = false;
+            this.clientTable.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.clientTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.clientTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.clientTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.clientTable.BackgroundColor = System.Drawing.Color.White;
+            this.clientTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clientTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.clientTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.clientTable.ColumnHeadersHeight = 70;
+            this.clientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.clientTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nom,
             this.address,
             this.num,
             this.credit});
-            this.tableClient.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableClient.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.tableClient.Location = new System.Drawing.Point(0, 155);
-            this.tableClient.MultiSelect = false;
-            this.tableClient.Name = "tableClient";
-            this.tableClient.ReadOnly = true;
-            this.tableClient.RowTemplate.Height = 25;
-            this.tableClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableClient.Size = new System.Drawing.Size(557, 378);
-            this.tableClient.TabIndex = 0;
-            this.tableClient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableClient_CellDoubleClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.numTlf_txt);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.nom_txt);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(557, 149);
-            this.panel1.TabIndex = 1;
-            // 
-            // numTlf_txt
-            // 
-            this.numTlf_txt.Location = new System.Drawing.Point(350, 43);
-            this.numTlf_txt.Name = "numTlf_txt";
-            this.numTlf_txt.Size = new System.Drawing.Size(173, 23);
-            this.numTlf_txt.TabIndex = 3;
-            this.numTlf_txt.TextChanged += new System.EventHandler(this.numTlf_txt_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nom";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(266, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "N° Téléphone";
-            // 
-            // nom_txt
-            // 
-            this.nom_txt.Location = new System.Drawing.Point(68, 43);
-            this.nom_txt.Name = "nom_txt";
-            this.nom_txt.Size = new System.Drawing.Size(173, 23);
-            this.nom_txt.TabIndex = 0;
-            this.nom_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.clientTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.clientTable.EnableHeadersVisualStyles = false;
+            this.clientTable.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.clientTable.Location = new System.Drawing.Point(0, 155);
+            this.clientTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.clientTable.MultiSelect = false;
+            this.clientTable.Name = "clientTable";
+            this.clientTable.ReadOnly = true;
+            this.clientTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.clientTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.clientTable.RowHeadersVisible = false;
+            this.clientTable.RowHeadersWidth = 45;
+            this.clientTable.RowTemplate.Height = 40;
+            this.clientTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clientTable.Size = new System.Drawing.Size(652, 378);
+            this.clientTable.TabIndex = 0;
+            this.clientTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableClient_CellDoubleClick);
             // 
             // id
             // 
@@ -154,19 +146,70 @@ namespace Gestionnaire_Pro
             this.credit.Name = "credit";
             this.credit.ReadOnly = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.numTlf_txt);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.nom_txt);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(652, 149);
+            this.panel1.TabIndex = 1;
+            // 
+            // numTlf_txt
+            // 
+            this.numTlf_txt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numTlf_txt.Location = new System.Drawing.Point(137, 59);
+            this.numTlf_txt.Name = "numTlf_txt";
+            this.numTlf_txt.Size = new System.Drawing.Size(173, 29);
+            this.numTlf_txt.TabIndex = 3;
+            this.numTlf_txt.TextChanged += new System.EventHandler(this.numTlf_txt_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 22);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Nom";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "N° Téléphone";
+            // 
+            // nom_txt
+            // 
+            this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nom_txt.Location = new System.Drawing.Point(137, 10);
+            this.nom_txt.Name = "nom_txt";
+            this.nom_txt.Size = new System.Drawing.Size(173, 29);
+            this.nom_txt.TabIndex = 0;
+            this.nom_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // listeClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(557, 533);
+            this.ClientSize = new System.Drawing.Size(652, 533);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tableClient);
+            this.Controls.Add(this.clientTable);
             this.Name = "listeClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listeClient";
             this.Load += new System.EventHandler(this.listeClient_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tableClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -175,7 +218,7 @@ namespace Gestionnaire_Pro
 
         #endregion
 
-        private System.Windows.Forms.DataGridView tableClient;
+        private System.Windows.Forms.DataGridView clientTable;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox nom_txt;
         private System.Windows.Forms.TextBox numTlf_txt;

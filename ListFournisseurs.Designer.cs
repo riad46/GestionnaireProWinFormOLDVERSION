@@ -29,6 +29,10 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.num_txt = new System.Windows.Forms.TextBox();
             this.nom_txt = new System.Windows.Forms.TextBox();
@@ -57,30 +61,33 @@ namespace Gestionnaire_Pro
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 142);
+            this.panel1.Size = new System.Drawing.Size(637, 142);
             this.panel1.TabIndex = 0;
             // 
             // num_txt
             // 
-            this.num_txt.Location = new System.Drawing.Point(201, 51);
+            this.num_txt.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.num_txt.Location = new System.Drawing.Point(194, 52);
             this.num_txt.Name = "num_txt";
-            this.num_txt.Size = new System.Drawing.Size(136, 23);
+            this.num_txt.Size = new System.Drawing.Size(136, 29);
             this.num_txt.TabIndex = 5;
             this.num_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // nom_txt
             // 
-            this.nom_txt.Location = new System.Drawing.Point(201, 8);
+            this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nom_txt.Location = new System.Drawing.Point(194, 9);
             this.nom_txt.Name = "nom_txt";
-            this.nom_txt.Size = new System.Drawing.Size(136, 23);
+            this.nom_txt.Size = new System.Drawing.Size(136, 29);
             this.nom_txt.TabIndex = 4;
             this.nom_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // credit_txt
             // 
-            this.credit_txt.Location = new System.Drawing.Point(201, 99);
+            this.credit_txt.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.credit_txt.Location = new System.Drawing.Point(194, 100);
             this.credit_txt.Name = "credit_txt";
-            this.credit_txt.Size = new System.Drawing.Size(93, 23);
+            this.credit_txt.Size = new System.Drawing.Size(93, 29);
             this.credit_txt.TabIndex = 3;
             this.credit_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             this.credit_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.credit_txt_KeyPress);
@@ -88,27 +95,30 @@ namespace Gestionnaire_Pro
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(105, 102);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 15);
+            this.label3.Size = new System.Drawing.Size(176, 26);
             this.label3.TabIndex = 2;
             this.label3.Text = "Crédit A rendre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(105, 54);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 15);
+            this.label2.Size = new System.Drawing.Size(151, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "N° Téléphone";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 11);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 15);
+            this.label1.Size = new System.Drawing.Size(60, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom";
             // 
@@ -117,22 +127,59 @@ namespace Gestionnaire_Pro
             this.fournisseurTable.AllowUserToAddRows = false;
             this.fournisseurTable.AllowUserToDeleteRows = false;
             this.fournisseurTable.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.fournisseurTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.fournisseurTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fournisseurTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.fournisseurTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.fournisseurTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fournisseurTable.BackgroundColor = System.Drawing.Color.White;
+            this.fournisseurTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.fournisseurTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.fournisseurTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fournisseurTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.fournisseurTable.ColumnHeadersHeight = 66;
+            this.fournisseurTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.fournisseurTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nom,
             this.num,
             this.Address,
             this.Column1});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.fournisseurTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.fournisseurTable.EnableHeadersVisualStyles = false;
             this.fournisseurTable.Location = new System.Drawing.Point(0, 152);
+            this.fournisseurTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.fournisseurTable.MultiSelect = false;
             this.fournisseurTable.Name = "fournisseurTable";
             this.fournisseurTable.ReadOnly = true;
-            this.fournisseurTable.RowTemplate.Height = 25;
-            this.fournisseurTable.Size = new System.Drawing.Size(497, 384);
+            this.fournisseurTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.fournisseurTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.fournisseurTable.RowHeadersVisible = false;
+            this.fournisseurTable.RowHeadersWidth = 45;
+            this.fournisseurTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.fournisseurTable.RowTemplate.Height = 45;
+            this.fournisseurTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.fournisseurTable.Size = new System.Drawing.Size(637, 384);
             this.fournisseurTable.TabIndex = 1;
             // 
             // Nom
@@ -167,7 +214,8 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 548);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(637, 548);
             this.Controls.Add(this.fournisseurTable);
             this.Controls.Add(this.panel1);
             this.Name = "ListFournisseurs";

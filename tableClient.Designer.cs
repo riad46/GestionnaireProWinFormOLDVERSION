@@ -29,6 +29,11 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.add_btn = new System.Windows.Forms.Button();
             this.Modify_btn = new System.Windows.Forms.Button();
@@ -38,7 +43,7 @@ namespace Gestionnaire_Pro
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nom_txt = new System.Windows.Forms.TextBox();
-            this.tableCl = new System.Windows.Forms.DataGridView();
+            this.clientTable = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +57,7 @@ namespace Gestionnaire_Pro
             this.estPayé = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableCl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailsTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,36 +155,67 @@ namespace Gestionnaire_Pro
             this.nom_txt.TabIndex = 3;
             this.nom_txt.TextChanged += new System.EventHandler(this.nom_txt_TextChanged);
             // 
-            // tableCl
+            // clientTable
             // 
-            this.tableCl.AllowUserToAddRows = false;
-            this.tableCl.AllowUserToDeleteRows = false;
-            this.tableCl.AllowUserToOrderColumns = true;
-            this.tableCl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.clientTable.AllowUserToAddRows = false;
+            this.clientTable.AllowUserToDeleteRows = false;
+            this.clientTable.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.clientTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.clientTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableCl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableCl.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.tableCl.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.tableCl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableCl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.clientTable.BackgroundColor = System.Drawing.Color.White;
+            this.clientTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.clientTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.clientTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.clientTable.ColumnHeadersHeight = 60;
+            this.clientTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nom,
             this.address,
             this.num,
             this.credit});
-            this.tableCl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.tableCl.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.tableCl.Location = new System.Drawing.Point(0, 146);
-            this.tableCl.MultiSelect = false;
-            this.tableCl.Name = "tableCl";
-            this.tableCl.ReadOnly = true;
-            this.tableCl.RowTemplate.Height = 25;
-            this.tableCl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableCl.Size = new System.Drawing.Size(800, 211);
-            this.tableCl.TabIndex = 2;
-            this.tableCl.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.tableCl_CellStateChanged);
-            this.tableCl.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tableCl_RowPostPaint);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.clientTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.clientTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.clientTable.EnableHeadersVisualStyles = false;
+            this.clientTable.GridColor = System.Drawing.Color.White;
+            this.clientTable.Location = new System.Drawing.Point(0, 146);
+            this.clientTable.MultiSelect = false;
+            this.clientTable.Name = "clientTable";
+            this.clientTable.ReadOnly = true;
+            this.clientTable.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.clientTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.clientTable.RowTemplate.Height = 40;
+            this.clientTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clientTable.Size = new System.Drawing.Size(800, 211);
+            this.clientTable.TabIndex = 2;
+            this.clientTable.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.tableCl_CellStateChanged);
+            this.clientTable.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tableCl_RowPostPaint);
             // 
             // id
             // 
@@ -229,23 +265,41 @@ namespace Gestionnaire_Pro
             this.detailsTable.AllowUserToAddRows = false;
             this.detailsTable.AllowUserToDeleteRows = false;
             this.detailsTable.AllowUserToOrderColumns = true;
+            this.detailsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.detailsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.detailsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.detailsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.detailsTable.BackgroundColor = System.Drawing.Color.White;
+            this.detailsTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.detailsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.detailsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.detailsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.detailsTable.ColumnHeadersHeight = 60;
             this.detailsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.descCol,
             this.date,
             this.Col,
             this.rest,
             this.estPayé});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detailsTable.DefaultCellStyle = dataGridViewCellStyle5;
             this.detailsTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.detailsTable.EnableHeadersVisualStyles = false;
+            this.detailsTable.GridColor = System.Drawing.Color.White;
             this.detailsTable.Location = new System.Drawing.Point(0, 363);
             this.detailsTable.MultiSelect = false;
             this.detailsTable.Name = "detailsTable";
             this.detailsTable.ReadOnly = true;
-            this.detailsTable.RowTemplate.Height = 25;
+            this.detailsTable.RowHeadersVisible = false;
+            this.detailsTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.detailsTable.RowTemplate.Height = 40;
             this.detailsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.detailsTable.Size = new System.Drawing.Size(800, 254);
             this.detailsTable.TabIndex = 3;
@@ -293,14 +347,14 @@ namespace Gestionnaire_Pro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 617);
             this.Controls.Add(this.detailsTable);
-            this.Controls.Add(this.tableCl);
+            this.Controls.Add(this.clientTable);
             this.Controls.Add(this.panel1);
             this.Name = "tableClient";
             this.Load += new System.EventHandler(this.tableClient_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableCl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailsTable)).EndInit();
             this.ResumeLayout(false);
 
@@ -309,7 +363,7 @@ namespace Gestionnaire_Pro
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView tableCl;
+        private System.Windows.Forms.DataGridView clientTable;
         private System.Windows.Forms.DataGridView detailsTable;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;

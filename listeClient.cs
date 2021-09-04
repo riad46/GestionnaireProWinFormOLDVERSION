@@ -16,6 +16,23 @@ namespace Gestionnaire_Pro
         public listeClient()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (Control pan in Controls)
+            {
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+            }
+
+           
+            clientTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            clientTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            clientTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+
+
+
+
         }
         private void GetAllClients()
         {
@@ -28,9 +45,9 @@ namespace Gestionnaire_Pro
         }
         private void SetUpTable()
         {
-            tableClient.AutoGenerateColumns = false;
-            tableClient.DataSource = mesClients;
-            tableClient.Refresh();
+            clientTable.AutoGenerateColumns = false;
+            clientTable.DataSource = mesClients;
+            clientTable.Refresh();
         }
         private void listeClient_Load(object sender, EventArgs e)
         {
@@ -51,7 +68,7 @@ namespace Gestionnaire_Pro
         }
         private int GetCurrentSelectedTableRowIdId()
         {
-            var row = tableClient.SelectedRows[0];
+            var row = clientTable.SelectedRows[0];
             return (int)row.Cells[0].Value;
         }
         private void tableClient_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -17,6 +17,19 @@ namespace Gestionnaire_Pro
         public tableClient()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (Control pan in Controls)
+            {
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+            }
+
+
+            clientTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            clientTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            clientTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
         }
         private void GetAllClients()
         {
@@ -36,8 +49,8 @@ namespace Gestionnaire_Pro
         }
         private int GetCurrentSelectedTableRowIdId()
         {
-            if(tableCl.Rows.Count>0)
-            return (int)tableCl.SelectedRows[0].Cells[0].Value;
+            if(clientTable.Rows.Count>0)
+            return (int)clientTable.SelectedRows[0].Cells[0].Value;
             return default;
         }
         private void SearchForClients(string nom, string numTlf)
@@ -53,9 +66,9 @@ namespace Gestionnaire_Pro
         
         private void SetUpClientTable()
         {
-            tableCl.AutoGenerateColumns = false;
-            tableCl.DataSource = _mesClients;
-            tableCl.Refresh();
+            clientTable.AutoGenerateColumns = false;
+            clientTable.DataSource = _mesClients;
+            clientTable.Refresh();
         }
         private void SetUpDetailsTable()
         {

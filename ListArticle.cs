@@ -28,6 +28,23 @@ namespace Gestionnaire_Pro
         public ListArticle()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (Control pan in Controls)
+            {
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+            }
+
+
+            articleTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            articleTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            articleTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+
+
+
+
         }
 
         private void SetUpTable()

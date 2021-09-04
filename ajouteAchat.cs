@@ -22,6 +22,22 @@ namespace Gestionnaire_Pro
         public ajouteAchat()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+
+            foreach (Control pan in Controls)
+            {
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+            }
+
+            articleTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            articleTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            articleTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+
+            
+
         }
 
         private void SetUpTable()
@@ -206,13 +222,10 @@ namespace Gestionnaire_Pro
 
         private void del_btn_Click(object sender, EventArgs e)
         {
-            var currentRowId =Convert.ToInt32( articleTable[1, articleTable.SelectedRows[0].Index].Value);
-            var articleIndex = _mesArticles.FindIndex(a => a.Id == currentRowId);
-            if (articleIndex != -1)
-            {
-                _mesArticles.RemoveAt(articleIndex);
-                SetUpTable();
-            }
+            if (_mesArticles.Count <= 0) return;
+            var currentRow = articleTable.SelectedRows[0];
+            _mesArticles.RemoveAt( _mesArticles.FindIndex( a=>a.nom == currentRow.Cells[2].Value.ToString()));
+
             
         }
 

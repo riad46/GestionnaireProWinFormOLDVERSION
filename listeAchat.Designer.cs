@@ -29,6 +29,14 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.del_btn = new System.Windows.Forms.Button();
             this.search_btn = new System.Windows.Forms.Button();
@@ -37,10 +45,10 @@ namespace Gestionnaire_Pro
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.achatTable = new System.Windows.Forms.DataGridView();
+            this.detailsTable = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detailsTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,9 +79,9 @@ namespace Gestionnaire_Pro
             // 
             // del_btn
             // 
-            this.del_btn.Location = new System.Drawing.Point(511, 16);
+            this.del_btn.Location = new System.Drawing.Point(484, 64);
             this.del_btn.Name = "del_btn";
-            this.del_btn.Size = new System.Drawing.Size(114, 37);
+            this.del_btn.Size = new System.Drawing.Size(150, 37);
             this.del_btn.TabIndex = 8;
             this.del_btn.Text = "Supprimer";
             this.del_btn.UseVisualStyleBackColor = true;
@@ -126,21 +134,130 @@ namespace Gestionnaire_Pro
             // 
             this.achatTable.AllowUserToAddRows = false;
             this.achatTable.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.achatTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.achatTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.achatTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.achatTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.achatTable.BackgroundColor = System.Drawing.Color.White;
+            this.achatTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.achatTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.achatTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.achatTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.achatTable.ColumnHeadersHeight = 41;
+            this.achatTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.achatTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.DateA,
             this.montant});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.achatTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.achatTable.EnableHeadersVisualStyles = false;
             this.achatTable.Location = new System.Drawing.Point(0, 114);
             this.achatTable.MultiSelect = false;
             this.achatTable.Name = "achatTable";
             this.achatTable.ReadOnly = true;
-            this.achatTable.RowTemplate.Height = 25;
+            this.achatTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.achatTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.achatTable.RowHeadersVisible = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.achatTable.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.achatTable.RowTemplate.Height = 35;
             this.achatTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.achatTable.Size = new System.Drawing.Size(637, 224);
+            this.achatTable.Size = new System.Drawing.Size(637, 232);
             this.achatTable.TabIndex = 1;
             this.achatTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.achatTable_CellClick);
+            // 
+            // detailsTable
+            // 
+            this.detailsTable.AllowUserToAddRows = false;
+            this.detailsTable.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.detailsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.detailsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.detailsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.detailsTable.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.detailsTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.detailsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.detailsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.detailsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.detailsTable.ColumnHeadersHeight = 45;
+            this.detailsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.codeBarre,
+            this.Nom,
+            this.type,
+            this.qnt,
+            this.prixA,
+            this.prixV,
+            this.dateExp,
+            this.Fournisseur});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detailsTable.DefaultCellStyle = dataGridViewCellStyle8;
+            this.detailsTable.EnableHeadersVisualStyles = false;
+            this.detailsTable.Location = new System.Drawing.Point(0, 359);
+            this.detailsTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.detailsTable.MultiSelect = false;
+            this.detailsTable.Name = "detailsTable";
+            this.detailsTable.ReadOnly = true;
+            this.detailsTable.RowHeadersVisible = false;
+            this.detailsTable.RowTemplate.Height = 35;
+            this.detailsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.detailsTable.Size = new System.Drawing.Size(637, 276);
+            this.detailsTable.TabIndex = 2;
             // 
             // id
             // 
@@ -160,33 +277,9 @@ namespace Gestionnaire_Pro
             // montant
             // 
             this.montant.DataPropertyName = "montantTotal";
-            this.montant.HeaderText = "Montant Total";
+            this.montant.HeaderText = "Montant Total (DA)";
             this.montant.Name = "montant";
             this.montant.ReadOnly = true;
-            // 
-            // detailsTable
-            // 
-            this.detailsTable.AllowUserToAddRows = false;
-            this.detailsTable.AllowUserToDeleteRows = false;
-            this.detailsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detailsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.codeBarre,
-            this.Nom,
-            this.type,
-            this.qnt,
-            this.prixA,
-            this.prixV,
-            this.dateExp,
-            this.Fournisseur});
-            this.detailsTable.Location = new System.Drawing.Point(0, 344);
-            this.detailsTable.MultiSelect = false;
-            this.detailsTable.Name = "detailsTable";
-            this.detailsTable.ReadOnly = true;
-            this.detailsTable.RowTemplate.Height = 25;
-            this.detailsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.detailsTable.Size = new System.Drawing.Size(637, 230);
-            this.detailsTable.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -227,14 +320,14 @@ namespace Gestionnaire_Pro
             // prixA
             // 
             this.prixA.DataPropertyName = "prixAchat";
-            this.prixA.HeaderText = "prix Achat";
+            this.prixA.HeaderText = "prix Achat (DA)";
             this.prixA.Name = "prixA";
             this.prixA.ReadOnly = true;
             // 
             // prixV
             // 
             this.prixV.DataPropertyName = "prixVente";
-            this.prixV.HeaderText = "Prix Vente";
+            this.prixV.HeaderText = "Prix Vente (DA)";
             this.prixV.Name = "prixV";
             this.prixV.ReadOnly = true;
             // 
@@ -256,7 +349,8 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 586);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(637, 647);
             this.Controls.Add(this.detailsTable);
             this.Controls.Add(this.achatTable);
             this.Controls.Add(this.panel1);

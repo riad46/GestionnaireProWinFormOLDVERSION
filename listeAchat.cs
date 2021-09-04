@@ -17,9 +17,29 @@ namespace Gestionnaire_Pro
         public listeAchat()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (Control pan in Controls)
+            {
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+            }
+
+
+            achatTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            achatTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            achatTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+           
+            detailsTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            detailsTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            detailsTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+
+
+
         }
 
-       
+
 
         private void listeAchat_Load(object sender, EventArgs e)
         {

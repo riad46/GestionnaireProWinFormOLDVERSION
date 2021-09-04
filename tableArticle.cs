@@ -18,9 +18,22 @@ namespace Gestionnaire_Pro
         public tableArticle()
         {
             InitializeComponent();
+            LoadTheme();
         }
+        private void LoadTheme()
+        {
 
-        private int GetCurrentSelectedTableRowId()
+            foreach (Control pan in Controls)
+            {
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+            }
+
+
+            articleTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            articleTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            articleTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+        }
+            private int GetCurrentSelectedTableRowId()
         {
             if(articles.Count>0)
             return (int)articleTable.SelectedRows[0].Cells[0].Value;

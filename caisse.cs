@@ -21,6 +21,24 @@ namespace Gestionnaire_Pro
         public caisse()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            
+                foreach (Control pan in Controls)
+                {
+                    pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+                }
+
+            achatTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            achatTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            achatTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+
+            venteTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            venteTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            venteTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
+
         }
 
         private void GetAchatVenteLists()

@@ -29,6 +29,10 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.codeBarre_txt = new System.Windows.Forms.TextBox();
             this.nomArticle_txt = new System.Windows.Forms.TextBox();
@@ -63,6 +67,7 @@ namespace Gestionnaire_Pro
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(745, 151);
@@ -70,69 +75,77 @@ namespace Gestionnaire_Pro
             // 
             // codeBarre_txt
             // 
-            this.codeBarre_txt.Location = new System.Drawing.Point(117, 24);
+            this.codeBarre_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codeBarre_txt.Location = new System.Drawing.Point(143, 24);
             this.codeBarre_txt.Name = "codeBarre_txt";
-            this.codeBarre_txt.Size = new System.Drawing.Size(185, 23);
+            this.codeBarre_txt.Size = new System.Drawing.Size(185, 32);
             this.codeBarre_txt.TabIndex = 7;
             this.codeBarre_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // nomArticle_txt
             // 
-            this.nomArticle_txt.Location = new System.Drawing.Point(117, 68);
+            this.nomArticle_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nomArticle_txt.Location = new System.Drawing.Point(143, 68);
             this.nomArticle_txt.Name = "nomArticle_txt";
-            this.nomArticle_txt.Size = new System.Drawing.Size(185, 23);
+            this.nomArticle_txt.Size = new System.Drawing.Size(185, 32);
             this.nomArticle_txt.TabIndex = 6;
             this.nomArticle_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // type_txt
             // 
-            this.type_txt.Location = new System.Drawing.Point(488, 65);
+            this.type_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.type_txt.Location = new System.Drawing.Point(518, 65);
             this.type_txt.Name = "type_txt";
-            this.type_txt.Size = new System.Drawing.Size(185, 23);
+            this.type_txt.Size = new System.Drawing.Size(185, 32);
             this.type_txt.TabIndex = 5;
             this.type_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // nomF_txt
             // 
-            this.nomF_txt.Location = new System.Drawing.Point(488, 24);
+            this.nomF_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nomF_txt.Location = new System.Drawing.Point(518, 24);
             this.nomF_txt.Name = "nomF_txt";
-            this.nomF_txt.Size = new System.Drawing.Size(185, 23);
+            this.nomF_txt.Size = new System.Drawing.Size(185, 32);
             this.nomF_txt.TabIndex = 4;
             this.nomF_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(355, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
+            this.label4.Size = new System.Drawing.Size(52, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Type";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(37, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 15);
+            this.label3.Size = new System.Drawing.Size(53, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nom";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(355, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 15);
+            this.label2.Size = new System.Drawing.Size(163, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nom Fournisseur";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(37, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 15);
+            this.label1.Size = new System.Drawing.Size(109, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "CodeBarre";
             // 
@@ -141,8 +154,31 @@ namespace Gestionnaire_Pro
             this.articleTable.AllowUserToAddRows = false;
             this.articleTable.AllowUserToDeleteRows = false;
             this.articleTable.AllowUserToOrderColumns = true;
-            this.articleTable.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.articleTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.articleTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.articleTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.articleTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.articleTable.BackgroundColor = System.Drawing.Color.White;
+            this.articleTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.articleTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.articleTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articleTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.articleTable.ColumnHeadersHeight = 65;
             this.articleTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.codeBarre,
@@ -152,11 +188,31 @@ namespace Gestionnaire_Pro
             this.prixVente,
             this.dateExp,
             this.fournisseur});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.articleTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.articleTable.EnableHeadersVisualStyles = false;
+            this.articleTable.GridColor = System.Drawing.Color.White;
             this.articleTable.Location = new System.Drawing.Point(0, 157);
+            this.articleTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.articleTable.MultiSelect = false;
             this.articleTable.Name = "articleTable";
             this.articleTable.ReadOnly = true;
-            this.articleTable.RowTemplate.Height = 25;
+            this.articleTable.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.articleTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.articleTable.RowTemplate.Height = 40;
             this.articleTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.articleTable.Size = new System.Drawing.Size(745, 396);
             this.articleTable.TabIndex = 1;
