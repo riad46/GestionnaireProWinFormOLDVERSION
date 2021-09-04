@@ -1056,6 +1056,7 @@ create table if not EXISTS ProduitExcluDeVerification(
                 GlobalClass.username = "riad46";
                 GlobalClass.isAdmin = true;
                 CleanBoxes();
+                GiveOptionToRole();
                 ShowPanelsAfterLogin();
                 ActivatePanel();
                 return;
@@ -1068,6 +1069,7 @@ create table if not EXISTS ProduitExcluDeVerification(
             {
              GlobalClass.username="Anonyme";
             GlobalClass.isAdmin =  true;
+            GlobalClass.superAdmin=true;
             }
             */
             RegularLogin(username, pass);

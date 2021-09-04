@@ -79,8 +79,5 @@
     <Compile Update="vente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VenteChoices.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

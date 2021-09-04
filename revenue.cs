@@ -18,6 +18,19 @@ namespace Gestionnaire_Pro
         public revenue()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (Control pan in Controls)
+            {
+                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+            }
+
+
+            revenueTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
+            revenueTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
+            revenueTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
         }
 
         private void SearchForRevenue()
@@ -56,12 +69,12 @@ namespace Gestionnaire_Pro
                 {
                     item.prixAchat = item.prixAchat * item.Quantité;
                     result.Add(item);
-                    totalPayedForItems.Add(item.prixVente*item.Quantité);
+                    totalPayedForItems.Add(item.prixVente);
                 }
                 else
                 {
                     result[myItemIndex].Quantité += item.Quantité;
-                    totalPayedForItems[myItemIndex] += item.prixVente * item.Quantité;
+                    totalPayedForItems[myItemIndex] += item.prixVente ;
                     
                     result[myItemIndex].prixAchat += item.prixAchat * item.Quantité;
                 }

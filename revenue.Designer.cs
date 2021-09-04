@@ -30,6 +30,9 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revenue));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.recherche = new System.Windows.Forms.GroupBox();
             this.dateMax_box = new System.Windows.Forms.DateTimePicker();
             this.dateMin_box = new System.Windows.Forms.DateTimePicker();
@@ -278,22 +281,49 @@ namespace Gestionnaire_Pro
             this.revenueTable.AllowUserToAddRows = false;
             this.revenueTable.AllowUserToDeleteRows = false;
             this.revenueTable.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.revenueTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.revenueTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.revenueTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.revenueTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.revenueTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.revenueTable.BackgroundColor = System.Drawing.Color.White;
+            this.revenueTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.revenueTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.revenueTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.revenueTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.revenueTable.ColumnHeadersHeight = 60;
             this.revenueTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeBarre_Col,
             this.nom_Col,
             this.type_Col,
             this.qnt_Col,
             this.total_Col});
+            this.revenueTable.EnableHeadersVisualStyles = false;
+            this.revenueTable.GridColor = System.Drawing.Color.White;
             this.revenueTable.Location = new System.Drawing.Point(0, 226);
+            this.revenueTable.MultiSelect = false;
             this.revenueTable.Name = "revenueTable";
             this.revenueTable.ReadOnly = true;
-            this.revenueTable.RowTemplate.Height = 25;
+            this.revenueTable.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.revenueTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.revenueTable.RowTemplate.Height = 35;
+            this.revenueTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.revenueTable.Size = new System.Drawing.Size(1257, 449);
             this.revenueTable.TabIndex = 11;
             // 
