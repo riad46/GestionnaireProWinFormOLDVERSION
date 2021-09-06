@@ -1,5 +1,4 @@
-﻿
-namespace Gestionnaire_Pro
+﻿namespace Gestionnaire_Pro
 {
     partial class vente
     {
@@ -188,9 +187,12 @@ namespace Gestionnaire_Pro
             // 
             // listArticle_btn
             // 
-            this.listArticle_btn.Location = new System.Drawing.Point(85, 175);
+            this.listArticle_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.listArticle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.listArticle_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.listArticle_btn.Location = new System.Drawing.Point(70, 175);
             this.listArticle_btn.Name = "listArticle_btn";
-            this.listArticle_btn.Size = new System.Drawing.Size(125, 27);
+            this.listArticle_btn.Size = new System.Drawing.Size(164, 27);
             this.listArticle_btn.TabIndex = 3;
             this.listArticle_btn.Text = "Liste d\'Article";
             this.listArticle_btn.UseVisualStyleBackColor = true;
@@ -240,7 +242,11 @@ namespace Gestionnaire_Pro
             // 
             // del_btn
             // 
-            this.del_btn.Location = new System.Drawing.Point(9, 132);
+            this.del_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.del_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.del_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.del_btn.Location = new System.Drawing.Point(10, 146);
             this.del_btn.Name = "del_btn";
             this.del_btn.Size = new System.Drawing.Size(267, 48);
             this.del_btn.TabIndex = 2;
@@ -250,7 +256,11 @@ namespace Gestionnaire_Pro
             // 
             // abort_btn
             // 
-            this.abort_btn.Location = new System.Drawing.Point(9, 78);
+            this.abort_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.abort_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.abort_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.abort_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.abort_btn.Location = new System.Drawing.Point(10, 80);
             this.abort_btn.Name = "abort_btn";
             this.abort_btn.Size = new System.Drawing.Size(267, 48);
             this.abort_btn.TabIndex = 1;
@@ -260,7 +270,11 @@ namespace Gestionnaire_Pro
             // 
             // sub_btn
             // 
-            this.sub_btn.Location = new System.Drawing.Point(9, 24);
+            this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sub_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.sub_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.Location = new System.Drawing.Point(10, 14);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(267, 48);
             this.sub_btn.TabIndex = 0;
@@ -329,6 +343,7 @@ namespace Gestionnaire_Pro
             this.venteTable.TabIndex = 2;
             this.venteTable.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.venteTable_CellBeginEdit);
             this.venteTable.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.venteTable_CellEndEdit);
+            this.venteTable.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.venteTable_EditingControlShowing);
             this.venteTable.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.venteTable_RowStateChanged);
             // 
             // codeBarreCol
@@ -336,6 +351,7 @@ namespace Gestionnaire_Pro
             this.codeBarreCol.DataPropertyName = "codeBarre";
             this.codeBarreCol.HeaderText = "codeBarre";
             this.codeBarreCol.Name = "codeBarreCol";
+            this.codeBarreCol.ReadOnly = true;
             // 
             // nom
             // 

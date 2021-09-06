@@ -35,12 +35,25 @@ namespace Gestionnaire_Pro
             if (Properties.Settings.Default.menuLocation != new Point(0, 0))
                 this.Location = Properties.Settings.Default.menuLocation;
             this.Size = Properties.Settings.Default.menuSize;
+
+            if (!Properties.Settings.Default.activeLogin)
+            {
+                GlobalClass.isAdmin = true;
+                GlobalClass.isSuperAdmin = true;
+                GlobalClass.username = "Utilisateur";
+                ShowPanelsAfterLogin();
+                ActivatePanel();
+                exit_btn.Enabled = false;
+
+
+
+            }
         }
         private void Menu_Load(object sender, EventArgs e)
         {
             LoadFormSettings();
             //check if DB the file is there
-            var myDb = new System.IO.FileInfo("./GestionnairePro.db");
+            var myDb = new FileInfo("./GestionnairePro.db");
             if (!myDb.Exists)
             {
                 CreateFullDb();
@@ -52,7 +65,77 @@ namespace Gestionnaire_Pro
             Properties.Settings.Default.menuLocation=this.Location;
             Properties.Settings.Default.Save();
         }
+        #region loginForm
+        private void CleanBoxes()
+        {
+            username_txt.Text = "";
+            password_txt.Text = "";
+        }
+        private void RegularLogin(string username, string pass)
+        {
 
+
+            var _utilisateurs = GestionnaireProRetreivingMethods.GetAllUtilisateurs().Result;
+            var monUtilisateur = _utilisateurs.Find(u => u.nomUtilisateur == username && u.motDePass == pass);
+            if (monUtilisateur == null)
+            {
+                CleanBoxes();
+                MessageBox.Show("Nom d'utilisateur ou Mot de passe Incorrect !!");
+                return;
+            }
+            else
+            {
+                GlobalClass.username = monUtilisateur.nomUtilisateur;
+                GlobalClass.isAdmin = monUtilisateur.estAdmin;
+
+                CleanBoxes();
+
+            }
+        }
+        private void ShowPanelsAfterLogin()
+        {
+            loginPanel.Visible = false;
+            greetingPanel.Visible = true;
+
+            hello_lbl.Text = "Bonjour " + GlobalClass.username;
+
+        }
+        private void sub_btn_Click(object sender, EventArgs e)
+        {
+            var username = username_txt.Text;
+            var pass = password_txt.Text;
+
+            if (username == "riad46" && pass == "azqswx123-")
+            {
+                GlobalClass.username = "riad46";
+                GlobalClass.isAdmin = true;
+                CleanBoxes();
+                GiveOptionToRole();
+                ShowPanelsAfterLogin();
+                ActivatePanel();
+                return;
+
+
+            }
+
+            
+            
+            RegularLogin(username, pass);
+            GiveOptionToRole();
+            if (!string.IsNullOrEmpty(GlobalClass.username))
+            {
+                ActivatePanel();
+                loginPanel.Visible = false;
+                greetingPanel.Visible = true;
+                hello_lbl.Text = "Bonjour " + GlobalClass.username;
+            }
+
+        }
+
+
+
+
+        #endregion
 
         /// <summary>
         /// 0 for hide 
@@ -207,11 +290,15 @@ create table if not EXISTS ProduitExcluDeVerification(
             {
                 user_btn.Enabled = false;
                 rev_btn.Enabled = false;
+                settings_btn.Enabled = false;
+                actions_btn.Enabled = false;
             }
             else
             {
                 user_btn.Enabled = true;
                 rev_btn.Enabled = true;
+                settings_btn.Enabled = true;
+                actions_btn.Enabled = true;
             }
         }
        
@@ -1011,83 +1098,14 @@ create table if not EXISTS ProduitExcluDeVerification(
         }
         #endregion
        
-        #region loginForm
-        private void CleanBoxes()
+     
+
+        private void seetings_btn_Click(object sender, EventArgs e)
         {
-            username_txt.Text = "";
-            password_txt.Text = "";
-        }
-        private void RegularLogin(string username, string pass)
-        {
-
-
-            var _utilisateurs = GestionnaireProRetreivingMethods.GetAllUtilisateurs().Result;
-            var monUtilisateur = _utilisateurs.Find(u => u.nomUtilisateur == username && u.motDePass == pass);
-            if (monUtilisateur == null)
+            if(GlobalClass.isAdmin == true)
             {
-                CleanBoxes();
-                MessageBox.Show("Nom d'utilisateur ou Mot de passe Incorrect !!");
-                return;
-            }
-            else
-            {
-                GlobalClass.username = monUtilisateur.nomUtilisateur;
-                GlobalClass.isAdmin = monUtilisateur.estAdmin;
-
-                CleanBoxes();
-              
+                OpenChildForm(new param());
             }
         }
-        private void ShowPanelsAfterLogin()
-        {
-            loginPanel.Visible = false;
-            greetingPanel.Visible = true;
-
-            hello_lbl.Text = "Bonjour " + GlobalClass.username;
-         
-        }     
-        private void sub_btn_Click(object sender, EventArgs e)
-        {
-            var username = username_txt.Text;
-            var pass = password_txt.Text;
-
-            if (username == "riad46" && pass == "azqswx123-")
-            {
-                GlobalClass.username = "riad46";
-                GlobalClass.isAdmin = true;
-                CleanBoxes();
-                GiveOptionToRole();
-                ShowPanelsAfterLogin();
-                ActivatePanel();
-                return;
-
-
-            }
-
-            /*
-             if( settings . no login used)
-            {
-             GlobalClass.username="Anonyme";
-            GlobalClass.isAdmin =  true;
-            GlobalClass.superAdmin=true;
-            }
-            */
-            RegularLogin(username, pass);
-            GiveOptionToRole();
-            if(!string.IsNullOrEmpty(GlobalClass.username))
-            {
-                ActivatePanel();
-                loginPanel.Visible = false;
-                greetingPanel.Visible = true;
-                hello_lbl.Text = "Bonjour " + GlobalClass.username;
-            }
-
-        }
-
-
-
-        #endregion
-
-       
     }
 }

@@ -22,6 +22,7 @@ namespace Gestionnaire_Pro
        /// </summary>
         public static string username="" ;
         public static bool isAdmin=true;
+        internal static bool isSuperAdmin=false;
 
         public static void AddAction(string descriptionAction)
         {

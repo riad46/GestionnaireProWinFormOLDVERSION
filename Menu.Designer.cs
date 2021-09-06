@@ -33,6 +33,7 @@ namespace Gestionnaire_Pro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.buttonsPanel = new System.Windows.Forms.Panel();
+            this.settings_btn = new System.Windows.Forms.Button();
             this.actions_btn = new System.Windows.Forms.Button();
             this.notification_btn = new System.Windows.Forms.Button();
             this.user_btn = new System.Windows.Forms.Button();
@@ -76,6 +77,7 @@ namespace Gestionnaire_Pro
             // buttonsPanel
             // 
             this.buttonsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.buttonsPanel.Controls.Add(this.settings_btn);
             this.buttonsPanel.Controls.Add(this.actions_btn);
             this.buttonsPanel.Controls.Add(this.notification_btn);
             this.buttonsPanel.Controls.Add(this.user_btn);
@@ -90,8 +92,25 @@ namespace Gestionnaire_Pro
             this.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonsPanel.Location = new System.Drawing.Point(0, 0);
             this.buttonsPanel.Name = "buttonsPanel";
-            this.buttonsPanel.Size = new System.Drawing.Size(229, 581);
+            this.buttonsPanel.Size = new System.Drawing.Size(229, 632);
             this.buttonsPanel.TabIndex = 0;
+            // 
+            // settings_btn
+            // 
+            this.settings_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settings_btn.FlatAppearance.BorderSize = 0;
+            this.settings_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settings_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.settings_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.settings_btn.Image = global::Gestionnaire_Pro.Properties.Resources.adjust__1_;
+            this.settings_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settings_btn.Location = new System.Drawing.Point(0, 472);
+            this.settings_btn.Name = "settings_btn";
+            this.settings_btn.Size = new System.Drawing.Size(229, 50);
+            this.settings_btn.TabIndex = 19;
+            this.settings_btn.Text = "Settings";
+            this.settings_btn.UseVisualStyleBackColor = true;
+            this.settings_btn.Click += new System.EventHandler(this.seetings_btn_Click);
             // 
             // actions_btn
             // 
@@ -102,7 +121,7 @@ namespace Gestionnaire_Pro
             this.actions_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.actions_btn.Image = global::Gestionnaire_Pro.Properties.Resources.rinse__1_;
             this.actions_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.actions_btn.Location = new System.Drawing.Point(0, 471);
+            this.actions_btn.Location = new System.Drawing.Point(0, 522);
             this.actions_btn.Name = "actions_btn";
             this.actions_btn.Size = new System.Drawing.Size(229, 50);
             this.actions_btn.TabIndex = 18;
@@ -205,7 +224,7 @@ namespace Gestionnaire_Pro
             this.exit_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.exit_btn.Image = ((System.Drawing.Image)(resources.GetObject("exit_btn.Image")));
             this.exit_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exit_btn.Location = new System.Drawing.Point(0, 521);
+            this.exit_btn.Location = new System.Drawing.Point(0, 572);
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(229, 60);
             this.exit_btn.TabIndex = 7;
@@ -335,7 +354,7 @@ namespace Gestionnaire_Pro
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(229, 72);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(717, 509);
+            this.mainPanel.Size = new System.Drawing.Size(717, 560);
             this.mainPanel.TabIndex = 2;
             // 
             // loginPanel
@@ -348,7 +367,7 @@ namespace Gestionnaire_Pro
             this.loginPanel.Controls.Add(this.password_txt);
             this.loginPanel.Controls.Add(this.label2);
             this.loginPanel.Controls.Add(this.greetingPanel);
-            this.loginPanel.Location = new System.Drawing.Point(28, 20);
+            this.loginPanel.Location = new System.Drawing.Point(28, 46);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(649, 380);
             this.loginPanel.TabIndex = 5;
@@ -477,7 +496,7 @@ namespace Gestionnaire_Pro
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 456);
+            this.panel1.Location = new System.Drawing.Point(0, 507);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(717, 53);
             this.panel1.TabIndex = 3;
@@ -498,7 +517,7 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 581);
+            this.ClientSize = new System.Drawing.Size(946, 632);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.titlePanel);
             this.Controls.Add(this.buttonsPanel);
@@ -689,6 +708,7 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Label hello_lbl;
         private System.Windows.Forms.Label nomBoutique_lbl;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button settings_btn;
     }
 }
 

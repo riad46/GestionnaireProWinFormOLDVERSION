@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Gestionnaire_Pro
@@ -54,14 +55,14 @@ namespace Gestionnaire_Pro
         }
         private void LoadTheme()
         {
-            
+
             foreach (Control pan in Controls)
             {
-                if(pan.Name !="panel1")
-                pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
+                if (pan.Name != "panel1")
+                    pan.BackColor = ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor, 0.2);
 
             }
-            
+
             venteTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
             venteTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
             venteTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
@@ -138,7 +139,7 @@ namespace Gestionnaire_Pro
                     nom = item.nom,
                     Type = item.type,
                     prixAchat = item.prixAchat,
-                    prixVente = item.prixVente *item.quantité,
+                    prixVente = item.prixVente * item.quantité,
                     Quantité = item.quantité,
                     remise = Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
                     VenteId = venteId
@@ -316,10 +317,12 @@ namespace Gestionnaire_Pro
         {
             currentlySelectedRow = venteTable.SelectedRows[0].Index;
             ancientQnt = Convert.ToSingle(venteTable[QNT.Index, currentlySelectedRow].Value.ToString().Replace('.', ','));
-        
+
         }
         private void venteTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            var cell = venteTable.CurrentCell;
+          
 
             if (venteTable[QNT.Index, currentlySelectedRow].Value == null) venteTable[QNT.Index, currentlySelectedRow].Value = 0;
             if (venteTable[remiseCol.Index, currentlySelectedRow].Value == null) venteTable[remiseCol.Index, currentlySelectedRow].Value = 0;
@@ -328,7 +331,7 @@ namespace Gestionnaire_Pro
             var monArticle = SearchForArticle(venteTable[codeBarreCol.Index, currentlySelectedRow].Value.ToString());
             if (monArticle == null) return;
 
-            if (monArticle.quantité + ancientQnt - Convert.ToSingle(venteTable[QNT.Index, currentlySelectedRow].Value.ToString().Replace('.',',')) > 0)
+            if (monArticle.quantité + ancientQnt - Convert.ToSingle(venteTable[QNT.Index, currentlySelectedRow].Value.ToString().Replace('.', ',')) > 0)
             {
 
                 GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité + ancientQnt - Convert.ToSingle(venteTable[QNT.Index, currentlySelectedRow].Value.ToString().Replace('.', ',')));
@@ -424,11 +427,20 @@ namespace Gestionnaire_Pro
             AbortVente();
         }
 
+        private void ResetSingleArticleStock(int id,float qnt)
+        {
+            var monArticle = _mesArticles.Find(a => a.Id == id);
+            if (monArticle != null)
+                qnt += monArticle.quantité;
+            GestionnaireProModifyDeleteMethods.SetArticleQnt(id,qnt);
+        }
         private void DeleteCurrentSelectedRow()
         {
 
             var myRow = GetCurrentSelectedTableRow();
             if (myRow == -1) return;
+
+            ResetSingleArticleStock(_mesArticles.Find(a => a.codeBarre == GetCurrentSelectedTableRow_CodeBarre()).Id, Convert.ToSingle(venteTable[_qntIndex, myRow].Value));
             var myArticleIndex = _mesArticleAvendre.FindIndex(a => a.codeBarre == GetCurrentSelectedTableRow_CodeBarre());
             _mesArticleAvendre.RemoveAt(myArticleIndex);
             SetUpTable();
@@ -444,6 +456,34 @@ namespace Gestionnaire_Pro
             GlobalClass.CheckForInputToBeNumbers(e, remise_txt);
         }
 
+       
+        private void QNT_KeyPress(object sender, KeyPressEventArgs e,TextBox t1)
+        {
+            GlobalClass.CheckForInputToBeNumbers(e, t1);
+            
+        }
       
-    }
+
+        private void venteTable_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+
+
+            TextBox tb = new TextBox();
+                e.Control.KeyPress -= new KeyPressEventHandler((sender,e)=>QNT_KeyPress(sender,e,tb));
+                if (venteTable.CurrentCell.ColumnIndex == _qntIndex || venteTable.CurrentCell.ColumnIndex == _remiseIndex || venteTable.CurrentCell.ColumnIndex == _totalIndex) //Desired Column
+            {
+                    tb = e.Control as TextBox;
+                    if (tb != null)
+                    {
+                        tb.KeyPress += new KeyPressEventHandler((sender, e) => QNT_KeyPress(sender, e, tb));
+                        
+                    }
+                }
+        }
+      
+            
+           
+        }
 }
+
+
