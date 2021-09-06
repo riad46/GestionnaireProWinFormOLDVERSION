@@ -29,8 +29,6 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ajouteArticle));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.codeBarre_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.nom_txt = new System.Windows.Forms.TextBox();
@@ -49,20 +47,11 @@ namespace Gestionnaire_Pro
             this.sub_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dateExp_txt = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(562, 57);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // codeBarre_txt
             // 
+            this.codeBarre_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.codeBarre_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.codeBarre_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.codeBarre_txt.Location = new System.Drawing.Point(217, 66);
@@ -72,6 +61,7 @@ namespace Gestionnaire_Pro
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(24, 66);
@@ -82,6 +72,7 @@ namespace Gestionnaire_Pro
             // 
             // nom_txt
             // 
+            this.nom_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nom_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nom_txt.Location = new System.Drawing.Point(217, 112);
             this.nom_txt.Name = "nom_txt";
@@ -90,6 +81,7 @@ namespace Gestionnaire_Pro
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(24, 112);
@@ -100,6 +92,7 @@ namespace Gestionnaire_Pro
             // 
             // qnt_txt
             // 
+            this.qnt_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.qnt_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.qnt_txt.Location = new System.Drawing.Point(217, 200);
             this.qnt_txt.Name = "qnt_txt";
@@ -109,6 +102,7 @@ namespace Gestionnaire_Pro
             // 
             // lebel452
             // 
+            this.lebel452.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lebel452.AutoSize = true;
             this.lebel452.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lebel452.Location = new System.Drawing.Point(24, 200);
@@ -119,6 +113,7 @@ namespace Gestionnaire_Pro
             // 
             // type_txt
             // 
+            this.type_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.type_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.type_txt.Location = new System.Drawing.Point(217, 154);
             this.type_txt.Name = "type_txt";
@@ -127,6 +122,7 @@ namespace Gestionnaire_Pro
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(24, 154);
@@ -137,6 +133,7 @@ namespace Gestionnaire_Pro
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(24, 374);
@@ -147,6 +144,7 @@ namespace Gestionnaire_Pro
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(24, 328);
@@ -157,6 +155,7 @@ namespace Gestionnaire_Pro
             // 
             // prixVente_txt
             // 
+            this.prixVente_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.prixVente_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.prixVente_txt.Location = new System.Drawing.Point(217, 286);
             this.prixVente_txt.Name = "prixVente_txt";
@@ -166,6 +165,7 @@ namespace Gestionnaire_Pro
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(24, 286);
@@ -176,6 +176,7 @@ namespace Gestionnaire_Pro
             // 
             // prixAchat_txt
             // 
+            this.prixAchat_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.prixAchat_txt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.prixAchat_txt.Location = new System.Drawing.Point(217, 240);
             this.prixAchat_txt.Name = "prixAchat_txt";
@@ -185,6 +186,7 @@ namespace Gestionnaire_Pro
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(24, 240);
@@ -195,6 +197,7 @@ namespace Gestionnaire_Pro
             // 
             // Fournisseur_combo
             // 
+            this.Fournisseur_combo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Fournisseur_combo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Fournisseur_combo.FormattingEnabled = true;
             this.Fournisseur_combo.Location = new System.Drawing.Point(217, 369);
@@ -204,6 +207,7 @@ namespace Gestionnaire_Pro
             // 
             // sub_btn
             // 
+            this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sub_btn.BackColor = System.Drawing.Color.OrangeRed;
             this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.sub_btn.Location = new System.Drawing.Point(439, 66);
@@ -216,6 +220,7 @@ namespace Gestionnaire_Pro
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.BackColor = System.Drawing.Color.OrangeRed;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(438, 137);
@@ -227,6 +232,7 @@ namespace Gestionnaire_Pro
             // 
             // dateExp_txt
             // 
+            this.dateExp_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateExp_txt.BeepOnError = true;
             this.dateExp_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateExp_txt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -264,20 +270,16 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.label2);
             this.Controls.Add(this.codeBarre_txt);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "ajouteArticle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ajouter Article";
+            this.Text = "Nouveau Article";
             this.Load += new System.EventHandler(this.ajouteArticle_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox codeBarre_txt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nom_txt;

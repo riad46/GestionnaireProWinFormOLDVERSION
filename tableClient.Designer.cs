@@ -76,9 +76,13 @@ namespace Gestionnaire_Pro
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(500, 3);
+            this.add_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.add_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.add_btn.ForeColor = System.Drawing.Color.White;
+            this.add_btn.Location = new System.Drawing.Point(476, 12);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(135, 39);
+            this.add_btn.Size = new System.Drawing.Size(153, 47);
             this.add_btn.TabIndex = 3;
             this.add_btn.Text = "Ajouter";
             this.add_btn.UseVisualStyleBackColor = true;
@@ -86,9 +90,13 @@ namespace Gestionnaire_Pro
             // 
             // Modify_btn
             // 
-            this.Modify_btn.Location = new System.Drawing.Point(653, 3);
+            this.Modify_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Modify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Modify_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Modify_btn.ForeColor = System.Drawing.Color.White;
+            this.Modify_btn.Location = new System.Drawing.Point(635, 12);
             this.Modify_btn.Name = "Modify_btn";
-            this.Modify_btn.Size = new System.Drawing.Size(135, 39);
+            this.Modify_btn.Size = new System.Drawing.Size(153, 47);
             this.Modify_btn.TabIndex = 2;
             this.Modify_btn.Text = "Modifier";
             this.Modify_btn.UseVisualStyleBackColor = true;
@@ -96,9 +104,13 @@ namespace Gestionnaire_Pro
             // 
             // del_btn
             // 
-            this.del_btn.Location = new System.Drawing.Point(653, 72);
+            this.del_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.del_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.del_btn.ForeColor = System.Drawing.Color.White;
+            this.del_btn.Location = new System.Drawing.Point(635, 81);
             this.del_btn.Name = "del_btn";
-            this.del_btn.Size = new System.Drawing.Size(135, 39);
+            this.del_btn.Size = new System.Drawing.Size(153, 47);
             this.del_btn.TabIndex = 1;
             this.del_btn.Text = "Supprimer";
             this.del_btn.UseVisualStyleBackColor = true;
@@ -110,7 +122,7 @@ namespace Gestionnaire_Pro
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.nom_txt);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox1.Location = new System.Drawing.Point(11, 0);
             this.groupBox1.Name = "groupBox1";
@@ -121,37 +133,37 @@ namespace Gestionnaire_Pro
             // 
             // numTlf_txt
             // 
-            this.numTlf_txt.Location = new System.Drawing.Point(136, 80);
+            this.numTlf_txt.Location = new System.Drawing.Point(151, 80);
             this.numTlf_txt.Name = "numTlf_txt";
-            this.numTlf_txt.Size = new System.Drawing.Size(173, 36);
+            this.numTlf_txt.Size = new System.Drawing.Size(173, 35);
             this.numTlf_txt.TabIndex = 6;
             this.numTlf_txt.TextChanged += new System.EventHandler(this.numTlf_txt_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(32, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 21);
+            this.label1.Size = new System.Drawing.Size(113, 21);
             this.label1.TabIndex = 5;
             this.label1.Text = "N° Téléphone";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(32, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 21);
+            this.label2.Size = new System.Drawing.Size(48, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nom";
             // 
             // nom_txt
             // 
-            this.nom_txt.Location = new System.Drawing.Point(136, 35);
+            this.nom_txt.Location = new System.Drawing.Point(151, 35);
             this.nom_txt.Name = "nom_txt";
-            this.nom_txt.Size = new System.Drawing.Size(173, 36);
+            this.nom_txt.Size = new System.Drawing.Size(173, 35);
             this.nom_txt.TabIndex = 3;
             this.nom_txt.TextChanged += new System.EventHandler(this.nom_txt_TextChanged);
             // 

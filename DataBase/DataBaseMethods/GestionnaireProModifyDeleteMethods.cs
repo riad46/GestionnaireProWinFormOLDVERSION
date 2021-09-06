@@ -143,21 +143,33 @@ WHERE id=@Id";
         ////---------------------------------------------Article
         public static async void ModifyArticle(Article article)
         {
+            var param = new
+            {
+                Id = article.Id,
+                codeBarre = article.codeBarre,
+                nom = article.nom,
+                type = article.type,
+                qnt = article.quantité,
+                prixA = article.prixAchat,
+                prixV = article.prixVente,
+                dateExp = article.dateExpiration,
+                fournisseurId = article.FournisseurId
+            };
            var sql = $@"UPDATE articles
                             SET
                             codeBarre=@codeBarre,
                             nom=@nom,
                             Type=@type,
-                            Quantité=@quantité,
-                            prixAchat=@prixAchat,
-                            prixVente=@prixVente,
-                            dateExpiration=@dateExpiration,
-                            fournisseurId=@FournisseurId where id=@Id
+                            Quantité=@qnt,
+                            prixAchat=@prixA,
+                            prixVente=@prixV,
+                            dateExpiration=@dateExp,
+                            fournisseurId=@fournisseurId where id=@Id
                           ";
 
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                await connection.ExecuteAsync(sql,article);
+                await connection.ExecuteAsync(sql,param);
             }
 
         }

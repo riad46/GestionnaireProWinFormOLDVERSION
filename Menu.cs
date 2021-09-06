@@ -193,7 +193,7 @@ create TABLE if not EXISTS fournisseurs(
 create table if not EXISTS articles(
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
   codeBarre Varchar(20) NOT NULL UNIQUE, 
-  nom Varchar(30) NOT NULL UNIQUE,
+  nom Varchar(30) NOT NULL ,
   Type Varchar(20) ,
   Quantité float NOT NULL ,
   prixAchat FLoat NOT NULL,
@@ -241,7 +241,7 @@ create table if not EXISTS achats(
 );
 create table if not EXISTS detailAchats(
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
-  codeBarre Varchar(20) NOT NULL UNIQUE, 
+  codeBarre Varchar(20) NOT NULL , 
   nom Varchar(30) NOT NULL ,
   Type Varchar(20) ,
   Quantité float NOT NULL ,
@@ -336,6 +336,7 @@ create table if not EXISTS ProduitExcluDeVerification(
         }
         private void ActivateButton(object btnSender)
         {
+            panel1.Visible = true;
 
             if (btnSender != null)
             {
@@ -383,7 +384,7 @@ create table if not EXISTS ProduitExcluDeVerification(
             childForm.BringToFront();
             childForm.Show();
             titleLbl.Text = childForm.Text;
-
+            panel1.Visible = false;
             exitChildForm_btn.Visible = true;
         }
         #endregion
@@ -1089,6 +1090,7 @@ create table if not EXISTS ProduitExcluDeVerification(
         }
         private void exitChildForm_btn_Click(object sender, EventArgs e)
         {
+            panel1.Visible = true;
             if (activeForm != null)
             {
                 activeForm.Close();
@@ -1104,6 +1106,9 @@ create table if not EXISTS ProduitExcluDeVerification(
         {
             if(GlobalClass.isAdmin == true)
             {
+                RemoveBtns(_btns);
+                ActivateButton(sender);
+                HideShowGreetingPanel(0);
                 OpenChildForm(new param());
             }
         }

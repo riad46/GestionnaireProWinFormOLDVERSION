@@ -270,6 +270,18 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
         }
 
+        //use to add client name to combo in vente and cell in historique vente
+        public static async Task<string> GetClientNameById(int clientId)
+        {
+            
+            var sql = "SELECT nom FROM clients WHERE id=@id";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+
+                var res = await connection.QueryAsync<string>(sql, new { id=clientId });
+                return res.First();
+            }
+        }
 
         //--------------------------------------------------------------------------------  achat+detail
         /// <summary>
@@ -405,12 +417,12 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         {
             var param = new { Id=Id,clientId=clientId,total=total,dateMin=dateMin,dateMax=dateMax };
             var sql = "Select v.id,v.dateVente,v.montantTotale,v.remise,v.netPayé,v.ajouterPar,v.dateModification,v.modifierPar,v.nouveauMontantTotal,v.nouvelleRemise,c.* FROM ventes v LEFT JOIN clients c ";
-            if(Id!=0 || clientId>0 ||total >=0 || dateMin!=null ||dateMax!=null)
+            if(Id!=0 || clientId>0 ||total >=0)
             {
                 sql += " WHERE ";
                 if (Id >-1)
                 {
-                    sql += " v.id=@Id AND";
+                    sql += " v.id=@Id AND ";
                 }
                 if(clientId >-1) sql += " v.clientId=@clientId AND ";
                 if (total > -1) sql+="v.montantTotale=@total AND ";

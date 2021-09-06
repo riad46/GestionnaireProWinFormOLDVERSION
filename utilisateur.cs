@@ -127,7 +127,9 @@ namespace Gestionnaire_Pro
         }
         private void sub_btn_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(username_txt.Text.Trim()) || string.IsNullOrEmpty(pass_txt.Text.Trim()))
+            var descriptionAction = "";
+
+            if (string.IsNullOrEmpty(username_txt.Text.Trim()) || string.IsNullOrEmpty(pass_txt.Text.Trim()))
             {
                 MessageBox.Show("Remlissez le champ nom d'utilisateur et le mot de passe avant d'effectué cette Opération");
                 return;
@@ -144,7 +146,7 @@ namespace Gestionnaire_Pro
                     return;
                 }
                 AddUtilisateur();
-               
+                descriptionAction = $"{GlobalClass.username} a Ajouté l'utlisateur {username_txt.Text}";
             }
             if (GlobalClass.typeOp == 1)
             {
@@ -156,11 +158,14 @@ namespace Gestionnaire_Pro
                 }
 
                 ModifyUtilisateur();
-                GlobalClass.typeOp = 0;
+                descriptionAction = $"{GlobalClass.username} a Modifier l'utlisateur {username_txt.Text}";
+               
             }
-
+            GlobalClass.typeOp = 0;
             CleanBoxes();
             SetUpTable();
+            GlobalClass.AddAction(descriptionAction);
+           
         }
 
         private void del_btn_Click(object sender, EventArgs e)

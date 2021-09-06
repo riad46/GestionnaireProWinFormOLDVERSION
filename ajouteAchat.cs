@@ -16,7 +16,7 @@ namespace Gestionnaire_Pro
         private List<Article> _mesArticles = new List<Article>();
         private List<Fournisseur> _fournisseurs = new List<Fournisseur>();
         private int _fournisseurCellIndex =8;
-
+        private List<Article> _toutLesArticles = new List<Article>();
         private float _totalPayé=0;
 
         public ajouteAchat()
@@ -89,7 +89,7 @@ namespace Gestionnaire_Pro
         {
             CleanTheBoxes();
             GlobalClass.typeOp = 10;
-            using (var listArticle = new ListArticle())
+            using (var listArticle = new ListArticle(1))
             {
                 listArticle.ShowDialog();
                 if (listArticle.monArticle == null) return;
@@ -203,6 +203,26 @@ namespace Gestionnaire_Pro
             MessageBox.Show("Opération Terminer Avec Succée");
            
         }
+        private void ModifyArticleDbTable()
+        {
+            _toutLesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+            foreach (var item in _mesArticles)
+            {
+                var newArticle=_toutLesArticles.Find(a=>a.codeBarre ==item.codeBarre);
+                if(newArticle != null)
+                {
+
+                    item.quantité += newArticle.quantité;
+                    item.Id = newArticle.Id;
+
+                    GestionnaireProModifyDeleteMethods.ModifyArticle(item);
+                }
+                else
+                {
+                    GestionnaireProInsertingMethods.AddArticle(item);
+                }
+            }
+        }
         private void sub_btn_Click(object sender, EventArgs e)
         {
 
@@ -212,20 +232,25 @@ namespace Gestionnaire_Pro
             }
             
             AddAchat();
-
+            if (modifyArticles_checkbox.Checked)
+            {
+                ModifyArticleDbTable();
+            }
             _totalPayé = 0;
             CleanTheBoxes();
             _mesArticles = new List<Article>();
             SetUpTable();
+            var descriptionActon = $"{GlobalClass.username} a ajouté un Achat ....";
+            GlobalClass.AddAction(descriptionActon);
 
         }
 
         private void del_btn_Click(object sender, EventArgs e)
         {
             if (_mesArticles.Count <= 0) return;
-            var currentRow = articleTable.SelectedRows[0];
-            _mesArticles.RemoveAt( _mesArticles.FindIndex( a=>a.nom == currentRow.Cells[2].Value.ToString()));
-
+            var currentRow = articleTable.CurrentCell.RowIndex;
+            _mesArticles.RemoveAt( _mesArticles.FindIndex( a=>a.nom == articleTable[2,currentRow].Value.ToString()));
+            SetUpTable();
             
         }
 

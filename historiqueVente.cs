@@ -14,6 +14,9 @@ namespace Gestionnaire_Pro
     {
         private List<DataBase.Models.Vente> _myTableData = new List<DataBase.Models.Vente>();
         private int clientID = -1;
+        private readonly int _clientNameIndex = 5;
+        private DateTime _dateMin=default;
+        private DateTime _dateMax = DateTime.Now;
         public historiqueVente()
         {
             InitializeComponent();
@@ -36,9 +39,24 @@ namespace Gestionnaire_Pro
         }
         private void SearchForHistoriqueVentes()
         {
-            _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(-1,-1,-1,default,DateTime.Now).Result;
+            _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(-1,-1,-1,_dateMin,_dateMax).Result;
             _myTableData.Reverse();
             SetUpTable();
+            SetUpClientsInCells();
+            
+           
+        }
+        private void SetUpClientsInCells()
+        {
+            int i = 1;
+            foreach (var item in _myTableData)
+            {
+                if (item.Client != null)
+                {
+                    historiqueTable[_clientNameIndex, i].Value = item.Client.nom;
+                }
+
+            }
         }
         private void SetUpTable()
         {
@@ -63,7 +81,7 @@ namespace Gestionnaire_Pro
             SearchForHistoriqueVentes();
         }
 
-        private void SetValueToFilter(out float total,out int id,out DateTime dateMin,out DateTime dateMax) 
+        private void SetValueToFilter(out float total,out int id,out DateTime _dateMin,out DateTime _dateMax) 
         {
             id = -1;
             total = -1;
@@ -75,8 +93,8 @@ namespace Gestionnaire_Pro
                 total = Convert.ToSingle(total_txt.Text);
 
 
-            dateMin = dateMin_box.Value;
-            dateMax = dateMax_box.Value;
+            _dateMin = dateMin_box.Value;
+            _dateMax = dateMax_box.Value;
 
         }
         private void sub_btn_Click(object sender, EventArgs e)
@@ -84,17 +102,16 @@ namespace Gestionnaire_Pro
             float total;
             int Id;
 
-            DateTime dateMin = default ;
-            DateTime dateMax=DateTime.Now;
+           
 
-            SetValueToFilter(out total,out Id,out dateMin,out dateMax);
+            SetValueToFilter(out total,out Id,out _dateMin,out _dateMax);
             
             if(id_txt.Text.Trim() !="" || total_txt.Text.Trim() !="" || nomClient_txt.Text.Trim()!="")
             {
                 _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(Id, clientID, total,default,DateTime.Now).Result;
                 _myTableData.Reverse();
-
                 SetUpTable();
+                SetUpClientsInCells();
                 return;
                 
             }

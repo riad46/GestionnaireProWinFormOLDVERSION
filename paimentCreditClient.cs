@@ -18,6 +18,18 @@ namespace Gestionnaire_Pro
         public paimentCreditClient()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (var item in Controls)
+            {
+                if (item.GetType() == new Button().GetType())
+                {
+                    ((Button)item).BackColor = ThemeColor.PrimaryColor;
+                    ((Button)item).ForeColor = Color.White;
+                }
+            }
         }
         private void GetClients()
         {
@@ -103,6 +115,8 @@ namespace Gestionnaire_Pro
         {
             SubmitOperation();
             RefreshThePage();
+            var descriptionAction = $"{GlobalClass.username} a Payé <<{creditAjout_txt}>> du  Credit de {client_combo.Text}";
+            GlobalClass.AddAction(descriptionAction);
         }
 
         private void paimentCreditClient_Load(object sender, EventArgs e)

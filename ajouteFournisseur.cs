@@ -1,5 +1,6 @@
 ﻿using Gestionnaire_Pro.DataBase.Models;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Gestionnaire_Pro
@@ -10,15 +11,28 @@ namespace Gestionnaire_Pro
         public ajouteFournisseur()
         {
             InitializeComponent();
+            LoadTheme();
         }
         public ajouteFournisseur(Fournisseur fournisseur)
         {
             InitializeComponent();
+            LoadTheme();
             _id = fournisseur.Id;
             nom_txt.Text = fournisseur.nom;
             address_txt.Text = fournisseur.Address;
             numTlf_txt.Text = fournisseur.numTlf;
             credit_txt.Text = fournisseur.creditArendre.ToString();
+        }
+        private void LoadTheme()
+        {
+            foreach (var item in Controls)
+            {
+                if (item.GetType() == new Button().GetType())
+                {
+                    ((Button)item).BackColor = ThemeColor.PrimaryColor;
+                    ((Button)item).ForeColor = Color.White;
+                }
+            }
         }
 
         private void sub_btn_Click(object sender, EventArgs e)

@@ -17,8 +17,20 @@ namespace Gestionnaire_Pro
         public ajouteArticle()
         {
             InitializeComponent();
+            LoadTheme();   
         }
-        
+        private void LoadTheme()
+        {
+            foreach (var item in Controls)
+            {
+                if (item.GetType() == new Button().GetType())
+                {
+                    ((Button)item).BackColor = ThemeColor.PrimaryColor;
+                    ((Button)item).ForeColor = Color.White;
+                }
+            }
+        }
+
         public ajouteArticle(Article article)
         {
             InitializeComponent();
@@ -133,7 +145,7 @@ namespace Gestionnaire_Pro
 
         private void sub_btn_Click(object sender, EventArgs e)
         {
-            ActionToDo();
+            ActionToDo();      
             CleanTheFormBoxes();
         }
 

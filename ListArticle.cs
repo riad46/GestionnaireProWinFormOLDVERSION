@@ -13,6 +13,7 @@ namespace Gestionnaire_Pro
    
     public partial class ListArticle : Form
     {
+        int _achatCall = 0;
         public Article monArticle = new Article();
         private readonly int _idCell = 0;
         private readonly int _fournisseurCell = 7;
@@ -30,6 +31,17 @@ namespace Gestionnaire_Pro
             InitializeComponent();
             LoadTheme();
         }
+        /// <summary>
+        /// if it is called from achat use this  
+        /// achat call gives the value 1 to achatCall variable
+        /// </summary>
+        /// <param name="achatIndex"></param>
+        public ListArticle(int achatIndex)
+        {
+            _achatCall = achatIndex;
+            InitializeComponent();
+            LoadTheme();
+        }
         private void LoadTheme()
         {
             foreach (Control pan in Controls)
@@ -42,9 +54,6 @@ namespace Gestionnaire_Pro
             articleTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
             articleTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
 
-
-
-
         }
 
         private void SetUpTable()
@@ -53,15 +62,14 @@ namespace Gestionnaire_Pro
             articleTable.AutoGenerateColumns = false;
             articleTable.DataSource = articles;
 
-            for (int i = 0; i < articleTable.Rows.Count; i++)
+            for (int i =0; i < articleTable.Rows.Count; i++)
             {
                 var monArticle = articles.Find(a => a.Id == (int)articleTable.Rows[i].Cells[0].Value);
-                if (monArticle.Fournisseur?.nom != null)
-                    articleTable.Rows[i].Cells[_fournisseurCell].Value = monArticle.Fournisseur?.nom;
-
-
-
+                if (monArticle.Fournisseur != null)
+                    articleTable[_fournisseurCell,i].Value = monArticle.Fournisseur.nom;
             }
+
+           
         }
         private void SetUpArticleToSend()
         {
@@ -79,25 +87,30 @@ namespace Gestionnaire_Pro
                 monArticle.Fournisseur = articles[articleTable.SelectedRows[0].Cells[_fournisseurCell].RowIndex].Fournisseur;
             }
 
+            if (_achatCall != 1)
+            {
+                if ((float)articleTable.SelectedRows[0].Cells[_qntCell].Value > 0)
+                {
+                    GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, (float)articleTable.SelectedRows[0].Cells[_qntCell].Value - 1);
 
-            if ((float)articleTable.SelectedRows[0].Cells[_qntCell].Value > 0) 
-            {
-                GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, (float)articleTable.SelectedRows[0].Cells[_qntCell].Value - 1);
-                
+                }
+                else
+                {
+                    MessageBox.Show("Quantité Insuffisante!!");
+                    monArticle = null;
+                    return;
+                }
             }
-           
-            else
-            {
-                MessageBox.Show("Quantité Insuffisante!!");
-                monArticle = null;
-                return;
-            }
+            
+
             
         }
         private void ListArticle_Load(object sender, EventArgs e)
         {
             articles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
             SetUpTable();
+
+           
         }
 
         private void articleTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -145,5 +158,7 @@ namespace Gestionnaire_Pro
 
 
         }
+
+      
     }
 }

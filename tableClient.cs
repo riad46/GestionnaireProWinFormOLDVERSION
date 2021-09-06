@@ -92,8 +92,9 @@ namespace Gestionnaire_Pro
         private void tableClient_Load(object sender, EventArgs e)
         {
             RefreshClientTable();
-           
-            
+            var descriptionAction = $"{GlobalClass.username} a Entrée dans Table Client";
+            GlobalClass.AddAction(descriptionAction);
+
         }
 
         private void tableCl_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)

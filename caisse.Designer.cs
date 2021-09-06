@@ -29,10 +29,10 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.search_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -85,10 +85,10 @@ namespace Gestionnaire_Pro
             // 
             // search_btn
             // 
-            this.search_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.search_btn.Location = new System.Drawing.Point(375, 11);
+            this.search_btn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.search_btn.Location = new System.Drawing.Point(407, 9);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(97, 35);
+            this.search_btn.Size = new System.Drawing.Size(139, 35);
             this.search_btn.TabIndex = 6;
             this.search_btn.Text = "Recherche";
             this.search_btn.UseVisualStyleBackColor = true;
@@ -97,58 +97,58 @@ namespace Gestionnaire_Pro
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(218, 74);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(160, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 21);
+            this.label3.Size = new System.Drawing.Size(270, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Montant Initial dans la Caisse";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(185, 14);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(212, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 21);
+            this.label2.Size = new System.Drawing.Size(25, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "A";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(16, 17);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(20, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 21);
+            this.label1.Size = new System.Drawing.Size(36, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "De";
             // 
             // montantInitCaisse_txt
             // 
-            this.montantInitCaisse_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.montantInitCaisse_txt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.montantInitCaisse_txt.Location = new System.Drawing.Point(436, 69);
             this.montantInitCaisse_txt.Name = "montantInitCaisse_txt";
-            this.montantInitCaisse_txt.Size = new System.Drawing.Size(137, 29);
+            this.montantInitCaisse_txt.Size = new System.Drawing.Size(184, 33);
             this.montantInitCaisse_txt.TabIndex = 2;
             this.montantInitCaisse_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.montantInitCaisse_txt_KeyPress);
             // 
             // dateMin_box
             // 
-            this.dateMin_box.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateMin_box.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateMin_box.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateMin_box.Location = new System.Drawing.Point(51, 11);
+            this.dateMin_box.Location = new System.Drawing.Point(62, 9);
             this.dateMin_box.Name = "dateMin_box";
-            this.dateMin_box.Size = new System.Drawing.Size(128, 29);
+            this.dateMin_box.Size = new System.Drawing.Size(147, 33);
             this.dateMin_box.TabIndex = 1;
             // 
             // dateMax_box
             // 
-            this.dateMax_box.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateMax_box.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateMax_box.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateMax_box.Location = new System.Drawing.Point(211, 12);
+            this.dateMax_box.Location = new System.Drawing.Point(243, 10);
             this.dateMax_box.Name = "dateMax_box";
-            this.dateMax_box.Size = new System.Drawing.Size(126, 29);
+            this.dateMax_box.Size = new System.Drawing.Size(148, 33);
             this.dateMax_box.TabIndex = 0;
             // 
             // groupBox1
@@ -167,25 +167,25 @@ namespace Gestionnaire_Pro
             // 
             this.venteTable.AllowUserToAddRows = false;
             this.venteTable.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.venteTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.venteTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.venteTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.venteTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.venteTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.venteTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.venteTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.venteTable.ColumnHeadersHeight = 50;
             this.venteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -199,13 +199,13 @@ namespace Gestionnaire_Pro
             this.venteTable.Name = "venteTable";
             this.venteTable.ReadOnly = true;
             this.venteTable.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.venteTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.venteTable.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.venteTable.RowTemplate.Height = 35;
             this.venteTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.venteTable.Size = new System.Drawing.Size(474, 446);
@@ -248,19 +248,19 @@ namespace Gestionnaire_Pro
             // 
             this.achatTable.AllowUserToAddRows = false;
             this.achatTable.AllowUserToDeleteRows = false;
-            this.achatTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.achatTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.achatTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.achatTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.achatTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.achatTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.achatTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.achatTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.achatTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.achatTable.ColumnHeadersHeight = 50;
             this.achatTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -274,7 +274,7 @@ namespace Gestionnaire_Pro
             this.achatTable.Name = "achatTable";
             this.achatTable.ReadOnly = true;
             this.achatTable.RowHeadersVisible = false;
-            this.achatTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.achatTable.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.achatTable.RowTemplate.Height = 35;
             this.achatTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.achatTable.Size = new System.Drawing.Size(474, 446);

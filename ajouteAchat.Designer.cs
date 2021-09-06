@@ -29,8 +29,8 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.articleTable = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,7 @@ namespace Gestionnaire_Pro
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.modifyArticles_checkbox = new System.Windows.Forms.CheckBox();
             this.del_btn = new System.Windows.Forms.Button();
             this.sub_btn = new System.Windows.Forms.Button();
             this.ajoutArticle_btn = new System.Windows.Forms.Button();
@@ -82,14 +82,14 @@ namespace Gestionnaire_Pro
             this.articleTable.BackgroundColor = System.Drawing.Color.White;
             this.articleTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.articleTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.articleTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.articleTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.articleTable.ColumnHeadersHeight = 45;
             this.articleTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -106,13 +106,13 @@ namespace Gestionnaire_Pro
             this.articleTable.Name = "articleTable";
             this.articleTable.ReadOnly = true;
             this.articleTable.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.articleTable.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.articleTable.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.articleTable.RowTemplate.Height = 35;
             this.articleTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.articleTable.Size = new System.Drawing.Size(981, 268);
@@ -193,7 +193,7 @@ namespace Gestionnaire_Pro
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.modifyArticles_checkbox);
             this.panel1.Controls.Add(this.del_btn);
             this.panel1.Controls.Add(this.sub_btn);
             this.panel1.Controls.Add(this.ajoutArticle_btn);
@@ -216,16 +216,16 @@ namespace Gestionnaire_Pro
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(436, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 19);
+            this.label8.Size = new System.Drawing.Size(42, 19);
             this.label8.TabIndex = 63;
             this.label8.Text = "Type";
             // 
             // type_txt
             // 
-            this.type_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.type_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.type_txt.Location = new System.Drawing.Point(481, 43);
             this.type_txt.Name = "type_txt";
             this.type_txt.Size = new System.Drawing.Size(138, 26);
@@ -234,101 +234,107 @@ namespace Gestionnaire_Pro
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(435, 94);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(459, 93);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 19);
+            this.label7.Size = new System.Drawing.Size(88, 19);
             this.label7.TabIndex = 61;
             this.label7.Text = "Fournisseur";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(192, 93);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 19);
+            this.label6.Size = new System.Drawing.Size(115, 19);
             this.label6.TabIndex = 60;
             this.label6.Text = "Date Expiration";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(9, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 19);
+            this.label5.Size = new System.Drawing.Size(79, 19);
             this.label5.TabIndex = 59;
             this.label5.Text = "Prix Vente";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(813, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 19);
+            this.label4.Size = new System.Drawing.Size(78, 19);
             this.label4.TabIndex = 58;
             this.label4.Text = "Prix Achat";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(655, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 19);
+            this.label3.Size = new System.Drawing.Size(67, 19);
             this.label3.TabIndex = 57;
             this.label3.Text = "Quantité";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(229, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 19);
+            this.label2.Size = new System.Drawing.Size(41, 19);
             this.label2.TabIndex = 56;
             this.label2.Text = "Nom";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(3, 50);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 19);
+            this.label9.Size = new System.Drawing.Size(87, 19);
             this.label9.TabIndex = 55;
             this.label9.Text = "Code Barre";
             // 
-            // checkBox1
+            // modifyArticles_checkbox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.Location = new System.Drawing.Point(772, 157);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(206, 23);
-            this.checkBox1.TabIndex = 54;
-            this.checkBox1.Text = "Modifier la Liste d\'articles";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.modifyArticles_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.modifyArticles_checkbox.AutoSize = true;
+            this.modifyArticles_checkbox.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.modifyArticles_checkbox.Location = new System.Drawing.Point(708, 154);
+            this.modifyArticles_checkbox.Name = "modifyArticles_checkbox";
+            this.modifyArticles_checkbox.Size = new System.Drawing.Size(245, 26);
+            this.modifyArticles_checkbox.TabIndex = 54;
+            this.modifyArticles_checkbox.Text = "Modifier la Liste d\'articles";
+            this.modifyArticles_checkbox.UseVisualStyleBackColor = true;
             // 
             // del_btn
             // 
+            this.del_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.del_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.del_btn.Location = new System.Drawing.Point(12, 198);
             this.del_btn.Name = "del_btn";
-            this.del_btn.Size = new System.Drawing.Size(135, 28);
+            this.del_btn.Size = new System.Drawing.Size(162, 28);
             this.del_btn.TabIndex = 53;
             this.del_btn.Text = "Supprimer Ligne";
-            this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.UseVisualStyleBackColor = false;
             this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // sub_btn
             // 
-            this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.sub_btn.Location = new System.Drawing.Point(772, 186);
+            this.sub_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sub_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.ForeColor = System.Drawing.Color.White;
+            this.sub_btn.Location = new System.Drawing.Point(708, 186);
             this.sub_btn.Name = "sub_btn";
-            this.sub_btn.Size = new System.Drawing.Size(197, 40);
+            this.sub_btn.Size = new System.Drawing.Size(261, 40);
             this.sub_btn.TabIndex = 52;
             this.sub_btn.Text = "Valider Achat";
             this.sub_btn.UseVisualStyleBackColor = true;
@@ -336,13 +342,15 @@ namespace Gestionnaire_Pro
             // 
             // ajoutArticle_btn
             // 
+            this.ajoutArticle_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ajoutArticle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ajoutArticle_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ajoutArticle_btn.Location = new System.Drawing.Point(657, 90);
+            this.ajoutArticle_btn.Location = new System.Drawing.Point(682, 92);
             this.ajoutArticle_btn.Name = "ajoutArticle_btn";
-            this.ajoutArticle_btn.Size = new System.Drawing.Size(165, 28);
+            this.ajoutArticle_btn.Size = new System.Drawing.Size(175, 25);
             this.ajoutArticle_btn.TabIndex = 51;
             this.ajoutArticle_btn.Text = "Ajouter au Tableau";
-            this.ajoutArticle_btn.UseVisualStyleBackColor = true;
+            this.ajoutArticle_btn.UseVisualStyleBackColor = false;
             this.ajoutArticle_btn.Click += new System.EventHandler(this.ajoutArticle_btn_Click);
             // 
             // button2
@@ -358,7 +366,7 @@ namespace Gestionnaire_Pro
             // 
             // prixV_txt
             // 
-            this.prixV_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.prixV_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.prixV_txt.Location = new System.Drawing.Point(87, 90);
             this.prixV_txt.Name = "prixV_txt";
             this.prixV_txt.Size = new System.Drawing.Size(87, 26);
@@ -367,8 +375,8 @@ namespace Gestionnaire_Pro
             // 
             // prixA_txt
             // 
-            this.prixA_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.prixA_txt.Location = new System.Drawing.Point(884, 43);
+            this.prixA_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.prixA_txt.Location = new System.Drawing.Point(893, 43);
             this.prixA_txt.Name = "prixA_txt";
             this.prixA_txt.Size = new System.Drawing.Size(85, 26);
             this.prixA_txt.TabIndex = 48;
@@ -376,7 +384,7 @@ namespace Gestionnaire_Pro
             // 
             // qnt_txt
             // 
-            this.qnt_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.qnt_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.qnt_txt.Location = new System.Drawing.Point(732, 41);
             this.qnt_txt.Name = "qnt_txt";
             this.qnt_txt.Size = new System.Drawing.Size(75, 26);
@@ -385,7 +393,7 @@ namespace Gestionnaire_Pro
             // 
             // nom_txt
             // 
-            this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nom_txt.Location = new System.Drawing.Point(274, 43);
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(138, 26);
@@ -393,7 +401,7 @@ namespace Gestionnaire_Pro
             // 
             // codeBarre_txt
             // 
-            this.codeBarre_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codeBarre_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.codeBarre_txt.Location = new System.Drawing.Point(88, 46);
             this.codeBarre_txt.Name = "codeBarre_txt";
             this.codeBarre_txt.Size = new System.Drawing.Size(135, 26);
@@ -401,9 +409,9 @@ namespace Gestionnaire_Pro
             // 
             // fournisseurs_combo
             // 
-            this.fournisseurs_combo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fournisseurs_combo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.fournisseurs_combo.FormattingEnabled = true;
-            this.fournisseurs_combo.Location = new System.Drawing.Point(528, 90);
+            this.fournisseurs_combo.Location = new System.Drawing.Point(553, 90);
             this.fournisseurs_combo.Name = "fournisseurs_combo";
             this.fournisseurs_combo.Size = new System.Drawing.Size(123, 27);
             this.fournisseurs_combo.Sorted = true;
@@ -412,9 +420,9 @@ namespace Gestionnaire_Pro
             // dateExp_box
             // 
             this.dateExp_box.CustomFormat = "dd-MM-yyyy";
-            this.dateExp_box.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateExp_box.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateExp_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateExp_box.Location = new System.Drawing.Point(304, 89);
+            this.dateExp_box.Location = new System.Drawing.Point(313, 89);
             this.dateExp_box.Name = "dateExp_box";
             this.dateExp_box.Size = new System.Drawing.Size(125, 26);
             this.dateExp_box.TabIndex = 43;
@@ -449,7 +457,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.articleTable);
             this.Name = "ajouteAchat";
-            this.Text = "addAchat";
+            this.Text = "Nouvelle Achat";
             this.Load += new System.EventHandler(this.ajouteAchat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.articleTable)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -471,7 +479,7 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ComboBox fournisseurs_combo;
         private System.Windows.Forms.DateTimePicker dateExp_box;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox modifyArticles_checkbox;
         private System.Windows.Forms.Button del_btn;
         private System.Windows.Forms.Button sub_btn;
         private System.Windows.Forms.Button ajoutArticle_btn;

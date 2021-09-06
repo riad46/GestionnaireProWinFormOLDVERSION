@@ -217,6 +217,7 @@ namespace Gestionnaire_Pro
             this.articleTable.Size = new System.Drawing.Size(745, 396);
             this.articleTable.TabIndex = 1;
             this.articleTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.articleTable_CellDoubleClick);
+            
             // 
             // id
             // 
@@ -270,6 +271,7 @@ namespace Gestionnaire_Pro
             // 
             // fournisseur
             // 
+            this.fournisseur.DataPropertyName = "Fournisseur.nom";
             this.fournisseur.HeaderText = "Nom fournisseur ";
             this.fournisseur.Name = "fournisseur";
             this.fournisseur.ReadOnly = true;

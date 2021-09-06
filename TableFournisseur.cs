@@ -57,6 +57,8 @@ namespace Gestionnaire_Pro
         private void TableFournisseur_Load_1(object sender, EventArgs e)
         {
             ResetTable();
+            var descriptionAction = $"{GlobalClass.username} a Entrée dans Table Fournisseur";
+            GlobalClass.AddAction(descriptionAction);
         }
         private void TableFournisseur_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -71,19 +73,19 @@ namespace Gestionnaire_Pro
         {
             GlobalClass.typeOp = 0;
             ActionToDo();
-            ResetTable();
+         
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void modify_btn_Click(object sender, EventArgs e)
         {
             GlobalClass.typeOp = 1;
             ActionToDo();
-            ResetTable();
+           
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void del_btn_Click(object sender, EventArgs e)
         {
             GlobalClass.typeOp = 2;
             ActionToDo();
-            ResetTable();
+          
         }
         private void ActionToDo()
         {
@@ -113,19 +115,20 @@ namespace Gestionnaire_Pro
                     {
                         foreach (var row in selectedRows)
                         {
-                            DataBase.DataBaseMethods.GestionnaireProModifyDeleteMethods.DeleteFournisseur(fournisseurId);
+                            GestionnaireProModifyDeleteMethods.DeleteFournisseur(fournisseurId);
                         }
                         MessageBox.Show("Les Fournisseurs ont été Supprimé avec Succée");
                     }
                     else
                     {
-                        DataBase.DataBaseMethods.GestionnaireProModifyDeleteMethods.DeleteFournisseur(fournisseurId);
+                     GestionnaireProModifyDeleteMethods.DeleteFournisseur(fournisseurId);
                         
                     }
                     
                     
                     break;
             }
+            ResetTable();
            
         }
 
@@ -152,7 +155,6 @@ namespace Gestionnaire_Pro
 
             SearchForFournisseur(nom, numTlf, credit);
         }
-
     }
 
 

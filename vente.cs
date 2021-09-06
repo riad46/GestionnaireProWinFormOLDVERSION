@@ -13,6 +13,7 @@ namespace Gestionnaire_Pro
 {
     public partial class vente : Form
     {
+        private int _venteId=0;
         private List<Article> _mesArticles = new List<Article>();
         private List<Article> _mesArticleAvendre = new List<Article>();
         private readonly int _codeBarreIndex = 0;
@@ -71,6 +72,8 @@ namespace Gestionnaire_Pro
         {
 
             InitializeComponent();
+            LoadTheme();
+            _venteId = venteId;
             var mesArticle = GestionnaireProRetreivingMethods.GetAllDetailVentes(new List<int> { venteId }).Result;
             foreach (var item in mesArticle)
             {
@@ -86,6 +89,9 @@ namespace Gestionnaire_Pro
                     type = item.Type
 
                 });
+                var client_Id = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(venteId, -1, -1, default, DateTime.Now).Result[0].clientId;
+               if(client_Id !=null)
+                client_combo.Text = GestionnaireProRetreivingMethods.GetClientNameById((int)client_Id).Result ;
 
             }
 
@@ -161,6 +167,10 @@ namespace Gestionnaire_Pro
                 nouveauNetAPayé = total - totalRemise
 
             };
+            if (!string.IsNullOrWhiteSpace(client_combo.Text) && client_combo.Text != "")
+            {
+                vente.clientId = GestionnaireProRetreivingMethods.GetClientIdByName(client_combo.Text).Result;
+            }
             GestionnaireProModifyDeleteMethods.ModifyVente(vente);
 
 
@@ -365,11 +375,12 @@ namespace Gestionnaire_Pro
 
         private void sub_btn_Click(object sender, EventArgs e)
         {
+            var descriptionAction = "";
             if (GlobalClass.typeOp == 1)
             {
                 ModifyVente();
                 ModifyDetailVente();
-
+                descriptionAction = $"{GlobalClass.username} A Modifier le Vente du Référence {_venteId }";
                 //reset Operation type
                 GlobalClass.typeOp = 0;
             }
@@ -380,11 +391,13 @@ namespace Gestionnaire_Pro
 
                     return;
                 }
-
+                descriptionAction = $"{GlobalClass.username} A Modifier le Vente du Référence {_venteId }";
                 AddVente();
                 AddDetailVente();
             }
 
+
+            GlobalClass.AddAction(descriptionAction);
             ResetTable();
 
 

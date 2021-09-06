@@ -29,10 +29,10 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.fournisseurTable = new System.Windows.Forms.DataGridView();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +46,8 @@ namespace Gestionnaire_Pro
             this.nom_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.del_btn = new System.Windows.Forms.Button();
+            this.modify_btn = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.fournisseurTable)).BeginInit();
@@ -59,13 +59,13 @@ namespace Gestionnaire_Pro
             // 
             this.fournisseurTable.AllowUserToAddRows = false;
             this.fournisseurTable.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.fournisseurTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.fournisseurTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.fournisseurTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -74,15 +74,15 @@ namespace Gestionnaire_Pro
             this.fournisseurTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fournisseurTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.fournisseurTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fournisseurTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fournisseurTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.fournisseurTable.ColumnHeadersHeight = 58;
             this.fournisseurTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.fournisseurTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -91,15 +91,15 @@ namespace Gestionnaire_Pro
             this.numTlfCol,
             this.addressCol,
             this.creditCol});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.fournisseurTable.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.fournisseurTable.DefaultCellStyle = dataGridViewCellStyle11;
             this.fournisseurTable.EnableHeadersVisualStyles = false;
             this.fournisseurTable.GridColor = System.Drawing.Color.CadetBlue;
             this.fournisseurTable.Location = new System.Drawing.Point(0, 105);
@@ -108,7 +108,7 @@ namespace Gestionnaire_Pro
             this.fournisseurTable.Name = "fournisseurTable";
             this.fournisseurTable.ReadOnly = true;
             this.fournisseurTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.fournisseurTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.fournisseurTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.fournisseurTable.RowHeadersVisible = false;
             this.fournisseurTable.RowHeadersWidth = 55;
             this.fournisseurTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -224,25 +224,27 @@ namespace Gestionnaire_Pro
             this.label2.TabIndex = 7;
             this.label2.Text = "N° Téléphone";
             // 
-            // button3
+            // del_btn
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(9, 112);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(169, 46);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.del_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.del_btn.Location = new System.Drawing.Point(9, 112);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Size = new System.Drawing.Size(169, 46);
+            this.del_btn.TabIndex = 7;
+            this.del_btn.Text = "Supprimer";
+            this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
-            // button2
+            // modify_btn
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(9, 60);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(169, 46);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = true;
+            this.modify_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.modify_btn.Location = new System.Drawing.Point(9, 60);
+            this.modify_btn.Name = "modify_btn";
+            this.modify_btn.Size = new System.Drawing.Size(169, 46);
+            this.modify_btn.TabIndex = 6;
+            this.modify_btn.Text = "Modifier";
+            this.modify_btn.UseVisualStyleBackColor = true;
+            this.modify_btn.Click += new System.EventHandler(this.modify_btn_Click);
             // 
             // add_btn
             // 
@@ -257,8 +259,8 @@ namespace Gestionnaire_Pro
             // panel2
             // 
             this.panel2.Controls.Add(this.add_btn);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.del_btn);
+            this.panel2.Controls.Add(this.modify_btn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(619, 97);
             this.panel2.Name = "panel2";
@@ -294,8 +296,8 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.DataGridViewTextBoxColumn addressCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn creditCol;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button del_btn;
+        private System.Windows.Forms.Button modify_btn;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox credit_txt;

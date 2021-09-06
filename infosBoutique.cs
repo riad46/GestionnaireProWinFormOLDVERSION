@@ -19,6 +19,18 @@ namespace Gestionnaire_Pro
         public infosBoutique()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+        private void LoadTheme()
+        {
+            foreach (var item in Controls)
+            {
+                if(item.GetType()== new Button().GetType())
+                {
+                    ((Button)item).BackColor = ThemeColor.PrimaryColor;
+                    ((Button)item).ForeColor = Color.White;
+                }
+            }
         }
         private void PutImageInPictureBox()
         {
@@ -97,7 +109,9 @@ namespace Gestionnaire_Pro
         private void sub_btn_Click(object sender, EventArgs e)
         {
 
-            ActionToDo();
+            ActionToDo(); 
+            var descriptionAction = $"{GlobalClass.username} a Modifier les informations du Boutique";
+            GlobalClass.AddAction(descriptionAction);
         }
 
         private void infosBoutique_Load(object sender, EventArgs e)

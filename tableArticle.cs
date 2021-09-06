@@ -113,6 +113,8 @@ namespace Gestionnaire_Pro
         {
             articles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
             SetUpTable();
+            var descriptionAction = $"{GlobalClass.username} a Entrée dans Table Article !!";
+            GlobalClass.AddAction(descriptionAction);
         }
 
 
@@ -140,13 +142,28 @@ namespace Gestionnaire_Pro
         private void deleteAll_btn_Click(object sender, EventArgs e)
         {
             GlobalClass.typeOp = 3;
-            ActionToDo();
+            if (GlobalClass.isSuperAdmin)
+            {
+                ActionToDo();
+            }
+            else
+            {
+                MessageBox.Show("You are not Authorized");
+            }
         }
 
         private void reset_Stock_Click(object sender, EventArgs e)
         {
             GlobalClass.typeOp = 4;
-            ActionToDo();
+            if (GlobalClass.isSuperAdmin)
+            {
+                ActionToDo();
+            }
+            else
+            {
+                MessageBox.Show("You are not Authorized");
+            }
+            
         }
 
 

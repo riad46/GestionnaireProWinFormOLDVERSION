@@ -29,10 +29,10 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.historiqueTable = new System.Windows.Forms.DataGridView();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateVenteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,13 +69,13 @@ namespace Gestionnaire_Pro
             this.historiqueTable.AllowUserToAddRows = false;
             this.historiqueTable.AllowUserToDeleteRows = false;
             this.historiqueTable.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.historiqueTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            this.historiqueTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.historiqueTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -84,15 +84,15 @@ namespace Gestionnaire_Pro
             this.historiqueTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.historiqueTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.historiqueTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.historiqueTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.historiqueTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.historiqueTable.ColumnHeadersHeight = 90;
             this.historiqueTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
@@ -108,30 +108,30 @@ namespace Gestionnaire_Pro
             this.nvRemise,
             this.nvNetCol});
             this.historiqueTable.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.historiqueTable.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.historiqueTable.DefaultCellStyle = dataGridViewCellStyle15;
             this.historiqueTable.EnableHeadersVisualStyles = false;
             this.historiqueTable.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.historiqueTable.Location = new System.Drawing.Point(0, 190);
+            this.historiqueTable.Location = new System.Drawing.Point(0, 224);
             this.historiqueTable.MultiSelect = false;
             this.historiqueTable.Name = "historiqueTable";
             this.historiqueTable.ReadOnly = true;
             this.historiqueTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.historiqueTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.historiqueTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.historiqueTable.RowHeadersVisible = false;
             this.historiqueTable.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.historiqueTable.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -141,7 +141,7 @@ namespace Gestionnaire_Pro
             this.historiqueTable.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.historiqueTable.RowTemplate.Height = 40;
             this.historiqueTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.historiqueTable.Size = new System.Drawing.Size(1045, 569);
+            this.historiqueTable.Size = new System.Drawing.Size(1045, 535);
             this.historiqueTable.TabIndex = 0;
             this.historiqueTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.historique_Table_CellDoubleClick);
             // 
@@ -235,7 +235,7 @@ namespace Gestionnaire_Pro
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1045, 184);
+            this.panel1.Size = new System.Drawing.Size(1045, 218);
             this.panel1.TabIndex = 1;
             // 
             // groupBox1
@@ -251,9 +251,11 @@ namespace Gestionnaire_Pro
             this.groupBox1.Controls.Add(this.total_txt);
             this.groupBox1.Controls.Add(this.id_txt);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(437, 181);
+            this.groupBox1.Size = new System.Drawing.Size(763, 215);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recherche";
@@ -261,26 +263,32 @@ namespace Gestionnaire_Pro
             // dateMax_box
             // 
             this.dateMax_box.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateMax_box.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateMax_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateMax_box.Location = new System.Drawing.Point(277, 22);
+            this.dateMax_box.Location = new System.Drawing.Point(506, 28);
             this.dateMax_box.Name = "dateMax_box";
-            this.dateMax_box.Size = new System.Drawing.Size(152, 23);
+            this.dateMax_box.Size = new System.Drawing.Size(241, 35);
             this.dateMax_box.TabIndex = 12;
             // 
             // dateMin_box
             // 
             this.dateMin_box.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateMin_box.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateMin_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateMin_box.Location = new System.Drawing.Point(103, 22);
+            this.dateMin_box.Location = new System.Drawing.Point(206, 28);
             this.dateMin_box.Name = "dateMin_box";
-            this.dateMin_box.Size = new System.Drawing.Size(147, 23);
+            this.dateMin_box.Size = new System.Drawing.Size(246, 35);
             this.dateMin_box.TabIndex = 11;
             // 
             // sub_btn
             // 
-            this.sub_btn.Location = new System.Drawing.Point(179, 147);
+            this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.sub_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.ForeColor = System.Drawing.Color.White;
+            this.sub_btn.Location = new System.Drawing.Point(566, 151);
             this.sub_btn.Name = "sub_btn";
-            this.sub_btn.Size = new System.Drawing.Size(97, 33);
+            this.sub_btn.Size = new System.Drawing.Size(181, 46);
             this.sub_btn.TabIndex = 10;
             this.sub_btn.Text = "Valider";
             this.sub_btn.UseVisualStyleBackColor = true;
@@ -289,70 +297,78 @@ namespace Gestionnaire_Pro
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(256, 28);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(458, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(15, 15);
+            this.label5.Size = new System.Drawing.Size(42, 26);
             this.label5.TabIndex = 8;
-            this.label5.Text = "A";
+            this.label5.Text = "Au";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 118);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(6, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 15);
+            this.label4.Size = new System.Drawing.Size(129, 26);
             this.label4.TabIndex = 7;
             this.label4.Text = "Nom Client";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 70);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(9, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 15);
+            this.label3.Size = new System.Drawing.Size(64, 26);
             this.label3.TabIndex = 6;
             this.label3.Text = "Total";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 70);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(9, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 15);
+            this.label2.Size = new System.Drawing.Size(47, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "Réf";
             // 
             // nomClient_txt
             // 
-            this.nomClient_txt.Location = new System.Drawing.Point(101, 115);
+            this.nomClient_txt.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nomClient_txt.Location = new System.Drawing.Point(152, 164);
             this.nomClient_txt.Name = "nomClient_txt";
-            this.nomClient_txt.Size = new System.Drawing.Size(94, 23);
+            this.nomClient_txt.Size = new System.Drawing.Size(94, 35);
             this.nomClient_txt.TabIndex = 4;
             // 
             // total_txt
             // 
-            this.total_txt.Location = new System.Drawing.Point(277, 70);
+            this.total_txt.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.total_txt.Location = new System.Drawing.Point(79, 115);
             this.total_txt.Name = "total_txt";
-            this.total_txt.Size = new System.Drawing.Size(109, 23);
+            this.total_txt.Size = new System.Drawing.Size(109, 35);
             this.total_txt.TabIndex = 3;
             this.total_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.total_txt_KeyPress);
             // 
             // id_txt
             // 
-            this.id_txt.Location = new System.Drawing.Point(101, 67);
+            this.id_txt.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.id_txt.Location = new System.Drawing.Point(77, 70);
             this.id_txt.Name = "id_txt";
-            this.id_txt.Size = new System.Drawing.Size(75, 23);
+            this.id_txt.Size = new System.Drawing.Size(75, 35);
             this.id_txt.TabIndex = 2;
             this.id_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_txt_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(6, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 15);
+            this.label1.Size = new System.Drawing.Size(196, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Date Vente     DU";
+            this.label1.Text = "Date Vente:     DU";
             // 
             // historiqueVente
             // 
@@ -362,7 +378,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.historiqueTable);
             this.Name = "historiqueVente";
-            this.Text = "historyVente";
+            this.Text = "Historique de Vente";
             this.Shown += new System.EventHandler(this.historiqueVente_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.historiqueTable)).EndInit();
             this.panel1.ResumeLayout(false);

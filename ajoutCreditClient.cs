@@ -19,8 +19,20 @@ namespace Gestionnaire_Pro
         public ajoutCreditClient()
         {
             InitializeComponent();
+            LoadTheme();
         }
-       
+        private void LoadTheme()
+        {
+            foreach (var item in Controls)
+            {
+                if (item.GetType() == new Button().GetType())
+                {
+                    ((Button)item).BackColor = ThemeColor.PrimaryColor;
+                    ((Button)item).ForeColor = Color.White;
+                }
+            }
+        }
+
 
         private void GetClients()
         {
