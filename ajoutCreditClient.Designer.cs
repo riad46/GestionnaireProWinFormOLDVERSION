@@ -42,6 +42,8 @@ namespace Gestionnaire_Pro
             // client_combo
             // 
             this.client_combo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.client_combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.client_combo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.client_combo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.client_combo.FormattingEnabled = true;
             this.client_combo.Location = new System.Drawing.Point(46, 139);
@@ -59,7 +61,6 @@ namespace Gestionnaire_Pro
             this.creditInit_txt.Name = "creditInit_txt";
             this.creditInit_txt.Size = new System.Drawing.Size(268, 32);
             this.creditInit_txt.TabIndex = 1;
-            this.creditInit_txt.TextChanged += new System.EventHandler(this.creditInit_txt_TextChanged);
             // 
             // creditAjout_txt
             // 
@@ -106,7 +107,6 @@ namespace Gestionnaire_Pro
             this.label1.Size = new System.Drawing.Size(63, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "Client";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -118,7 +118,6 @@ namespace Gestionnaire_Pro
             this.label2.Size = new System.Drawing.Size(71, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "Credit ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -130,7 +129,6 @@ namespace Gestionnaire_Pro
             this.label3.Size = new System.Drawing.Size(164, 24);
             this.label3.TabIndex = 7;
             this.label3.Text = "Montant a ajouté";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // ajoutCreditClient
             // 

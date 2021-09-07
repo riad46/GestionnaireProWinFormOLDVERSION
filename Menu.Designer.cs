@@ -63,6 +63,7 @@ namespace Gestionnaire_Pro
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logoPic = new System.Windows.Forms.PictureBox();
             this.buttonsPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.titlePanel.SuspendLayout();
@@ -72,6 +73,7 @@ namespace Gestionnaire_Pro
             this.greetingPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonsPanel
@@ -351,6 +353,7 @@ namespace Gestionnaire_Pro
             this.mainPanel.Controls.Add(this.loginPanel);
             this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Controls.Add(this.pictureBox1);
+            this.mainPanel.Controls.Add(this.logoPic);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(229, 72);
             this.mainPanel.Name = "mainPanel";
@@ -514,6 +517,16 @@ namespace Gestionnaire_Pro
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // logoPic
+            // 
+            this.logoPic.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.logoPic.Location = new System.Drawing.Point(148, 262);
+            this.logoPic.Name = "logoPic";
+            this.logoPic.Size = new System.Drawing.Size(407, 244);
+            this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPic.TabIndex = 6;
+            this.logoPic.TabStop = false;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -540,6 +553,7 @@ namespace Gestionnaire_Pro
             this.greetingPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -711,6 +725,7 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button settings_btn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox logoPic;
     }
 }
 

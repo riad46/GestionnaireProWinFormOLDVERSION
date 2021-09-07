@@ -49,9 +49,16 @@ namespace Gestionnaire_Pro
 
             }
         }
+        private void LoadLogo()
+        {
+            var boutiqueInfos=GestionnaireProRetreivingMethods.GetBoutiqueInfos().Result;
+            logoPic.Image = GlobalClass.byteArrayToImage( boutiqueInfos.logo);
+        }
+        
         private void Menu_Load(object sender, EventArgs e)
         {
             LoadFormSettings();
+            LoadLogo();
             //check if DB the file is there
             var myDb = new FileInfo("./GestionnairePro.db");
             if (!myDb.Exists)
@@ -142,17 +149,19 @@ namespace Gestionnaire_Pro
         /// 1 for show
         /// </summary>
         /// <param name="op"></param>
-        private void HideShowGreetingPanel(byte op)
+        private void HideShowGreetingPanelAndLogo(byte op)
         {
             if (activeForm != null)
                 activeForm.Close();
             if (op == 0)
             {
                 greetingPanel.Visible = false;
+                logoPic.Visible = false;
             }
             else
             {
                 greetingPanel.Visible = true;
+                logoPic.Visible = true;
             }
         }
         private void CreateFullDb()
@@ -870,7 +879,61 @@ create table if not EXISTS ProduitExcluDeVerification(
 
             }
         }
+        private void CreateParamsBtns()
+        {
+            var parametre_btn = new RoundButton();
+            parametre_btn.Anchor = AnchorStyles.Top;
+            parametre_btn.FlatStyle = FlatStyle.Flat;
+            parametre_btn.Size = new Size(480, 80);
+            parametre_btn.Location = new Point((this.Width - parametre_btn.Width) / 2 - 100, 40);
+            parametre_btn.Name = "parametre_btn";
+            parametre_btn.BackColor = ThemeColor.PrimaryColor;
+            parametre_btn.ForeColor = Color.White;
+            parametre_btn.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold);
+            parametre_btn.TabIndex = 1;
+            parametre_btn.Text = "Paramètre";
+            parametre_btn.UseVisualStyleBackColor = true;
+            parametre_btn.Click += new EventHandler(parametre_btn_Click);
 
+            var infoBoutique_btn = new RoundButton();
+            infoBoutique_btn.Anchor = AnchorStyles.Top;
+            infoBoutique_btn.FlatStyle = FlatStyle.Flat;
+            infoBoutique_btn.Size = new Size(480, 80);
+            infoBoutique_btn.Location = new Point((this.Width - infoBoutique_btn.Width) / 2 - 100, 140);
+            infoBoutique_btn.Name = "infoBoutique_btn";
+            infoBoutique_btn.BackColor = ThemeColor.PrimaryColor;
+            infoBoutique_btn.ForeColor = Color.White;
+            infoBoutique_btn.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold);
+            infoBoutique_btn.TabIndex = 1;
+            infoBoutique_btn.Text = "Informations de Boutique";
+            infoBoutique_btn.UseVisualStyleBackColor = true;
+            infoBoutique_btn.Click += new EventHandler(infoBoutique_btn_Click);
+
+            if (mainPanel.Controls.Contains(infoBoutique_btn))
+            {
+                mainPanel.Controls[mainPanel.Controls.IndexOf(infoBoutique_btn)].Visible = true;
+
+            }
+            if (mainPanel.Controls.Contains(parametre_btn))
+            {
+                mainPanel.Controls[mainPanel.Controls.IndexOf(parametre_btn)].Visible = true;
+
+            }
+
+
+            if (!mainPanel.Controls.Contains(infoBoutique_btn))
+            {
+                mainPanel.Controls.Add(infoBoutique_btn);
+                _btns.Add(infoBoutique_btn);
+
+            }
+            if (!mainPanel.Controls.Contains(parametre_btn))
+            {
+                mainPanel.Controls.Add(parametre_btn);
+                _btns.Add(parametre_btn);
+
+            }
+        }
 
         #endregion
 
@@ -878,7 +941,7 @@ create table if not EXISTS ProduitExcluDeVerification(
         #region Achat
         private void achat_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             RemoveBtns(_btns);
             ActivateButton(sender);
             CreateAchatBtns();
@@ -886,13 +949,13 @@ create table if not EXISTS ProduitExcluDeVerification(
         }
         private void historiqueAchat_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new listeAchat());
             RemoveBtns(_btns);
         }
         private void nvAchat_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new ajouteAchat());
             RemoveBtns(_btns);
         }
@@ -902,7 +965,7 @@ create table if not EXISTS ProduitExcluDeVerification(
         {
             RemoveBtns(_btns);
             ActivateButton(sender);
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             CreateVenteBtns();
         }
         private void nvVente_btn_Click(object sender, EventArgs e)
@@ -914,7 +977,7 @@ create table if not EXISTS ProduitExcluDeVerification(
         }
         private void historiqueVente_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new historiqueVente());
             RemoveBtns(_btns);
         }
@@ -923,28 +986,28 @@ create table if not EXISTS ProduitExcluDeVerification(
         #region Article
         private void articles_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             RemoveBtns(_btns);
             ActivateButton(sender);
             CreateProductsBtns();
         }
         private void nvArticle_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new ajouteArticle());
             RemoveBtns(_btns);
         }
 
         private void tableArticle_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new tableArticle());
             RemoveBtns(_btns);
         }
 
         private void listArticle_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new ListArticle());
             RemoveBtns(_btns);
         }
@@ -953,7 +1016,7 @@ create table if not EXISTS ProduitExcluDeVerification(
         private void rev_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             ActivateButton(sender);
             CreateRevenueBtns();
 
@@ -961,14 +1024,14 @@ create table if not EXISTS ProduitExcluDeVerification(
 
         private void caisse_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new caisse());
             RemoveBtns(_btns);
         }
 
         private void revenue_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new revenue());
             RemoveBtns(_btns);
         }
@@ -977,38 +1040,38 @@ create table if not EXISTS ProduitExcluDeVerification(
         private void clients_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             ActivateButton(sender);
             CreateClientsBtns();
         }
         private void nvClient_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new ajouteClient());
             RemoveBtns(_btns);
         }
         private void listClient_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new listeClient());
             RemoveBtns(_btns);
         }
         private void ajoutCreditClient_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new ajoutCreditClient());
             RemoveBtns(_btns);
         }
 
         private void paimentCreditClient_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new paimentCreditClient());
             RemoveBtns(_btns);
         }
         private void tableClient_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new tableClient());
             RemoveBtns(_btns);
         }
@@ -1018,37 +1081,62 @@ create table if not EXISTS ProduitExcluDeVerification(
         private void fournisseurs_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             ActivateButton(sender);
             CreateFournisseursBtns();
         }
         private void tableFournisseur_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new TableFournisseur());
             RemoveBtns(_btns);
         }
 
         private void listFournisseur_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new ListFournisseurs());
             RemoveBtns(_btns);
         }
 
         private void nvFournisseur_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(1);
+            HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new ajouteFournisseur());
             RemoveBtns(_btns);
         }
         #endregion
-      
-       
+        #region settings
+
+        private void infoBoutique_btn_Click(object sender, EventArgs e)
+        {
+            if (GlobalClass.isAdmin == true)
+            {
+                RemoveBtns(_btns);      
+                OpenChildForm(new infosBoutique());
+            }
+        }
+        private void parametre_btn_Click(object sender, EventArgs e)
+        {
+            if (GlobalClass.isAdmin == true)
+            {
+                RemoveBtns(_btns);        
+                OpenChildForm(new param());
+            }
+        }
+        private void seetings_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            ActivateButton(sender);
+            HideShowGreetingPanelAndLogo(0);
+            CreateParamsBtns();
+        }
+        #endregion
+
         private void user_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             ActivateButton(sender);
             OpenChildForm(new utilisateur());
             
@@ -1057,13 +1145,13 @@ create table if not EXISTS ProduitExcluDeVerification(
         }
         private void notification_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             RemoveBtns(_btns); ;
             ActivateButton(sender);
         }
         private void param_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanel(0);
+            HideShowGreetingPanelAndLogo(0);
             RemoveBtns(_btns); ;
             ActivateButton(sender);
 
@@ -1097,20 +1185,12 @@ create table if not EXISTS ProduitExcluDeVerification(
             }
             ActivatePanel();
             Reset();
+            HideShowGreetingPanelAndLogo(1);
         }
         #endregion
-       
+
      
 
-        private void seetings_btn_Click(object sender, EventArgs e)
-        {
-            if(GlobalClass.isAdmin == true)
-            {
-                RemoveBtns(_btns);
-                ActivateButton(sender);
-                HideShowGreetingPanel(0);
-                OpenChildForm(new param());
-            }
-        }
+
     }
 }

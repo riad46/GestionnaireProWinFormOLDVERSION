@@ -47,7 +47,7 @@ namespace Gestionnaire_Pro
             // 
             this.nom_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nom_txt.Location = new System.Drawing.Point(217, 42);
+            this.nom_txt.Location = new System.Drawing.Point(283, 12);
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(156, 32);
             this.nom_txt.TabIndex = 0;
@@ -56,7 +56,7 @@ namespace Gestionnaire_Pro
             // 
             this.address_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.address_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.address_txt.Location = new System.Drawing.Point(217, 102);
+            this.address_txt.Location = new System.Drawing.Point(283, 72);
             this.address_txt.Multiline = true;
             this.address_txt.Name = "address_txt";
             this.address_txt.Size = new System.Drawing.Size(262, 136);
@@ -66,7 +66,7 @@ namespace Gestionnaire_Pro
             // 
             this.numTlf_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.numTlf_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numTlf_txt.Location = new System.Drawing.Point(217, 274);
+            this.numTlf_txt.Location = new System.Drawing.Point(283, 244);
             this.numTlf_txt.Mask = "00 00 00 00 00 0";
             this.numTlf_txt.Name = "numTlf_txt";
             this.numTlf_txt.Size = new System.Drawing.Size(236, 32);
@@ -75,7 +75,7 @@ namespace Gestionnaire_Pro
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(217, 333);
+            this.pictureBox1.Location = new System.Drawing.Point(283, 303);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(262, 176);
             this.pictureBox1.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace Gestionnaire_Pro
             // 
             this.img_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.img_btn.Location = new System.Drawing.Point(163, 366);
+            this.img_btn.Location = new System.Drawing.Point(229, 336);
             this.img_btn.Name = "img_btn";
             this.img_btn.Size = new System.Drawing.Size(26, 28);
             this.img_btn.TabIndex = 4;
@@ -98,7 +98,7 @@ namespace Gestionnaire_Pro
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(52, 48);
+            this.label1.Location = new System.Drawing.Point(118, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 26);
             this.label1.TabIndex = 5;
@@ -109,7 +109,7 @@ namespace Gestionnaire_Pro
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(52, 166);
+            this.label2.Location = new System.Drawing.Point(118, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 26);
             this.label2.TabIndex = 6;
@@ -120,7 +120,7 @@ namespace Gestionnaire_Pro
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(52, 280);
+            this.label3.Location = new System.Drawing.Point(118, 250);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 26);
             this.label3.TabIndex = 7;
@@ -129,10 +129,11 @@ namespace Gestionnaire_Pro
             // sub_btn
             // 
             this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.sub_btn.Location = new System.Drawing.Point(469, 36);
+            this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.ForeColor = System.Drawing.Color.White;
+            this.sub_btn.Location = new System.Drawing.Point(118, 524);
             this.sub_btn.Name = "sub_btn";
-            this.sub_btn.Size = new System.Drawing.Size(162, 60);
+            this.sub_btn.Size = new System.Drawing.Size(482, 77);
             this.sub_btn.TabIndex = 8;
             this.sub_btn.Text = "Valider";
             this.sub_btn.UseVisualStyleBackColor = true;
@@ -142,7 +143,7 @@ namespace Gestionnaire_Pro
             // 
             this.deleteImg_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.deleteImg_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteImg_btn.Location = new System.Drawing.Point(163, 431);
+            this.deleteImg_btn.Location = new System.Drawing.Point(229, 401);
             this.deleteImg_btn.Name = "deleteImg_btn";
             this.deleteImg_btn.Size = new System.Drawing.Size(26, 28);
             this.deleteImg_btn.TabIndex = 9;
@@ -155,7 +156,7 @@ namespace Gestionnaire_Pro
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(52, 410);
+            this.label4.Location = new System.Drawing.Point(118, 380);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 26);
             this.label4.TabIndex = 10;
@@ -166,7 +167,7 @@ namespace Gestionnaire_Pro
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(643, 573);
+            this.ClientSize = new System.Drawing.Size(777, 658);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.deleteImg_btn);
             this.Controls.Add(this.sub_btn);

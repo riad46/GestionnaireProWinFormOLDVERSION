@@ -13,8 +13,8 @@ namespace Gestionnaire_Pro
 {
     public partial class ajoutCreditClient : Form
     {
-        
-        private List<Client> _mesClients= new List<Client>();
+
+        private List<Client> _mesClients = new List<Client>();
         private float creditActuel = 0.0f;
         public ajoutCreditClient()
         {
@@ -49,11 +49,11 @@ namespace Gestionnaire_Pro
         private void RefreshThePage()
         {
             CleanTheBoxes();
-            
+
             //Refresh
             GetClients();
             SetTheBoxes();
-        } 
+        }
         private void CleanTheBoxes()
         {
             client_combo.Text = "";
@@ -92,12 +92,12 @@ namespace Gestionnaire_Pro
             SubmitOperation();
             CleanTheBoxes();
             RefreshThePage();
-           
+
         }
 
         private void client_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            creditActuel=_mesClients[client_combo.SelectedIndex].credit;
+            creditActuel = _mesClients[client_combo.SelectedIndex].credit;
             creditInit_txt.Text = creditActuel.ToString();
         }
 
@@ -117,15 +117,15 @@ namespace Gestionnaire_Pro
             {
                 addedString = creditAjout_txt.Text;
             }
-             
+
 
             creditInit_txt.Text = (creditActuel + Convert.ToSingle(addedString)).ToString();
         }
 
         private void creditAjout_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            GlobalClass.CheckForInputToBeNumbers(e,creditAjout_txt);
-        
+            GlobalClass.CheckForInputToBeNumbers(e, creditAjout_txt);
+
         }
 
         private void details_btn_Click(object sender, EventArgs e)
@@ -139,30 +139,12 @@ namespace Gestionnaire_Pro
             {
                 c.ShowDialog();
                 var newCredit = Convert.ToSingle(creditInit_txt.Text) + c.AddedCredit;
-                GestionnaireProModifyDeleteMethods.SetClientCredit(_mesClients.Find(c => c.nom == client_combo.Text).Id,newCredit);
+                GestionnaireProModifyDeleteMethods.SetClientCredit(_mesClients.Find(c => c.nom == client_combo.Text).Id, newCredit);
                 CleanTheBoxes();
                 RefreshThePage();
-            } 
+            }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void creditInit_txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

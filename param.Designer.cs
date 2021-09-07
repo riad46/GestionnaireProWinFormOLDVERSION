@@ -35,15 +35,15 @@ namespace Gestionnaire_Pro
             // 
             // sub_btn
             // 
-            this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sub_btn.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sub_btn.Location = new System.Drawing.Point(85, 346);
+            this.sub_btn.Location = new System.Drawing.Point(72, 149);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(306, 61);
             this.sub_btn.TabIndex = 3;
             this.sub_btn.Text = "Valider";
             this.sub_btn.UseVisualStyleBackColor = true;
-            this.sub_btn.Click += new System.EventHandler(sub_btn_Click);
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // loginAcrive_checkBox
             // 

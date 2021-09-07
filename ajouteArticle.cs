@@ -42,7 +42,7 @@ namespace Gestionnaire_Pro
             type_txt.Text = article.type;
             prixAchat_txt.Text = article.prixAchat.ToString();
             prixVente_txt.Text = article.prixVente.ToString();
-            dateExp_txt.Text = article.dateExpiration.ToString();
+            dateExp.Value = article.dateExpiration.Value;
             if(article.FournisseurId !=null)
             Fournisseur_combo.Text = mesFournisseurs.Find(f=>f.Id==article.FournisseurId).nom;
            
@@ -57,7 +57,7 @@ namespace Gestionnaire_Pro
             qnt_txt.Text = "";
             prixAchat_txt.Text = "";
             prixVente_txt.Text = "";
-            dateExp_txt.Text = "";
+           dateExp.Value = DateTime.Now;
             Fournisseur_combo.Text = "";
            
         }
@@ -77,14 +77,10 @@ namespace Gestionnaire_Pro
             };
             
 
-            if (dateExp_txt.Text == "  /  /") 
-            {
-                myArticle.dateExpiration = null;
-            }
-            else
-            {
-                myArticle.dateExpiration = Convert.ToDateTime(dateExp_txt.Text);
-            }              
+           
+              
+            myArticle.dateExpiration = dateExp.Value;
+                     
                 if (Fournisseur_combo.Text != "")
             {
                 myArticle.FournisseurId = GestionnaireProRetreivingMethods.GetFournisseurIdByNom(Fournisseur_combo.Text);
@@ -107,10 +103,9 @@ namespace Gestionnaire_Pro
 
             };
            
-            if (dateExp_txt.Text.Trim()!="/  /")
-            {
-                myArticle.dateExpiration = Convert.ToDateTime(dateExp_txt.Text);
-            }
+          
+                myArticle.dateExpiration = dateExp.Value;
+            
             if (Fournisseur_combo.Text != "")
             {
                 myArticle.FournisseurId = GestionnaireProRetreivingMethods.GetFournisseurIdByNom(Fournisseur_combo.Text);

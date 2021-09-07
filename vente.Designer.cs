@@ -200,6 +200,8 @@
             // 
             // client_combo
             // 
+            this.client_combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.client_combo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.client_combo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.client_combo.FormattingEnabled = true;
             this.client_combo.Location = new System.Drawing.Point(92, 108);

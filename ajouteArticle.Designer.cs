@@ -46,7 +46,7 @@ namespace Gestionnaire_Pro
             this.Fournisseur_combo = new System.Windows.Forms.ComboBox();
             this.sub_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dateExp_txt = new System.Windows.Forms.MaskedTextBox();
+            this.dateExp = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // codeBarre_txt
@@ -198,6 +198,8 @@ namespace Gestionnaire_Pro
             // Fournisseur_combo
             // 
             this.Fournisseur_combo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Fournisseur_combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Fournisseur_combo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Fournisseur_combo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Fournisseur_combo.FormattingEnabled = true;
             this.Fournisseur_combo.Location = new System.Drawing.Point(217, 369);
@@ -230,21 +232,16 @@ namespace Gestionnaire_Pro
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // dateExp_txt
+            // dateExp
             // 
-            this.dateExp_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateExp_txt.BeepOnError = true;
-            this.dateExp_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateExp_txt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateExp_txt.Location = new System.Drawing.Point(217, 328);
-            this.dateExp_txt.Mask = "00/00/0000";
-            this.dateExp_txt.MaximumSize = new System.Drawing.Size(200, 300);
-            this.dateExp_txt.MinimumSize = new System.Drawing.Size(4, 29);
-            this.dateExp_txt.Name = "dateExp_txt";
-            this.dateExp_txt.Size = new System.Drawing.Size(140, 32);
-            this.dateExp_txt.TabIndex = 19;
-            this.dateExp_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.dateExp_txt.ValidatingType = typeof(System.DateTime);
+            this.dateExp.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateExp.CustomFormat = "dd/MM/yyyy";
+            this.dateExp.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateExp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateExp.Location = new System.Drawing.Point(217, 328);
+            this.dateExp.Name = "dateExp";
+            this.dateExp.Size = new System.Drawing.Size(121, 27);
+            this.dateExp.TabIndex = 23;
             // 
             // ajouteArticle
             // 
@@ -252,7 +249,7 @@ namespace Gestionnaire_Pro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(598, 428);
-            this.Controls.Add(this.dateExp_txt);
+            this.Controls.Add(this.dateExp);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.sub_btn);
             this.Controls.Add(this.Fournisseur_combo);
@@ -297,6 +294,7 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.ComboBox Fournisseur_combo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button sub_btn;
-        private System.Windows.Forms.MaskedTextBox dateExp_txt;
+    
+        private System.Windows.Forms.DateTimePicker dateExp;
     }
 }
