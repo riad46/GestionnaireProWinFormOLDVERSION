@@ -57,7 +57,7 @@ namespace Gestionnaire_Pro
             this.codeBarre_txt.Location = new System.Drawing.Point(217, 66);
             this.codeBarre_txt.Name = "codeBarre_txt";
             this.codeBarre_txt.Size = new System.Drawing.Size(168, 29);
-            this.codeBarre_txt.TabIndex = 4;
+            this.codeBarre_txt.TabIndex = 1;
             // 
             // label1
             // 
@@ -77,7 +77,7 @@ namespace Gestionnaire_Pro
             this.nom_txt.Location = new System.Drawing.Point(217, 112);
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(168, 29);
-            this.nom_txt.TabIndex = 6;
+            this.nom_txt.TabIndex = 2;
             // 
             // label2
             // 
@@ -97,7 +97,7 @@ namespace Gestionnaire_Pro
             this.qnt_txt.Location = new System.Drawing.Point(217, 200);
             this.qnt_txt.Name = "qnt_txt";
             this.qnt_txt.Size = new System.Drawing.Size(105, 29);
-            this.qnt_txt.TabIndex = 10;
+            this.qnt_txt.TabIndex = 4;
             this.qnt_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qnt_txt_KeyPress);
             // 
             // lebel452
@@ -118,7 +118,7 @@ namespace Gestionnaire_Pro
             this.type_txt.Location = new System.Drawing.Point(217, 154);
             this.type_txt.Name = "type_txt";
             this.type_txt.Size = new System.Drawing.Size(140, 29);
-            this.type_txt.TabIndex = 8;
+            this.type_txt.TabIndex = 3;
             // 
             // label4
             // 
@@ -160,7 +160,7 @@ namespace Gestionnaire_Pro
             this.prixVente_txt.Location = new System.Drawing.Point(217, 286);
             this.prixVente_txt.Name = "prixVente_txt";
             this.prixVente_txt.Size = new System.Drawing.Size(121, 29);
-            this.prixVente_txt.TabIndex = 14;
+            this.prixVente_txt.TabIndex = 6;
             this.prixVente_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixVente_txt_KeyPress);
             // 
             // label7
@@ -181,7 +181,7 @@ namespace Gestionnaire_Pro
             this.prixAchat_txt.Location = new System.Drawing.Point(217, 240);
             this.prixAchat_txt.Name = "prixAchat_txt";
             this.prixAchat_txt.Size = new System.Drawing.Size(121, 29);
-            this.prixAchat_txt.TabIndex = 12;
+            this.prixAchat_txt.TabIndex = 5;
             this.prixAchat_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prixAchat_txt_KeyPress);
             // 
             // label8
@@ -205,7 +205,7 @@ namespace Gestionnaire_Pro
             this.Fournisseur_combo.Location = new System.Drawing.Point(217, 369);
             this.Fournisseur_combo.Name = "Fournisseur_combo";
             this.Fournisseur_combo.Size = new System.Drawing.Size(215, 29);
-            this.Fournisseur_combo.TabIndex = 20;
+            this.Fournisseur_combo.TabIndex = 8;
             // 
             // sub_btn
             // 
@@ -215,7 +215,7 @@ namespace Gestionnaire_Pro
             this.sub_btn.Location = new System.Drawing.Point(439, 66);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(147, 46);
-            this.sub_btn.TabIndex = 21;
+            this.sub_btn.TabIndex = 9;
             this.sub_btn.Text = "Valider";
             this.sub_btn.UseVisualStyleBackColor = false;
             this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
@@ -228,7 +228,7 @@ namespace Gestionnaire_Pro
             this.button2.Location = new System.Drawing.Point(438, 137);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 43);
-            this.button2.TabIndex = 22;
+            this.button2.TabIndex = 10;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -241,7 +241,7 @@ namespace Gestionnaire_Pro
             this.dateExp.Location = new System.Drawing.Point(217, 328);
             this.dateExp.Name = "dateExp";
             this.dateExp.Size = new System.Drawing.Size(121, 27);
-            this.dateExp.TabIndex = 23;
+            this.dateExp.TabIndex = 7;
             // 
             // ajouteArticle
             // 

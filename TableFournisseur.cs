@@ -17,26 +17,12 @@ namespace Gestionnaire_Pro
         }
         private void LoadTheme()
         {
-            foreach (Control btns in panel1.Controls)
+            foreach (var item in Controls)
             {
-                if (btns.GetType() == typeof(Button))
-                {
-                    Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
-                }
+                if(item.GetType()==new Panel().GetType())
+                ((Panel)item).BackColor =ThemeColor.ChangeColorBrightness(ThemeColor.PrimaryColor,0.2);
             }
-            foreach (Control btns in panel2.Controls)
-            {
-                if (btns.GetType() == typeof(Button))
-                {
-                    Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
-                }
-            }
+            
             //fournisseurTable.EnableHeadersVisualStyles = false;
             fournisseurTable.ColumnHeadersDefaultCellStyle.BackColor = ThemeColor.PrimaryColor;
             fournisseurTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;

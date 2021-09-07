@@ -106,5 +106,17 @@ namespace Gestionnaire_Pro.Properties {
                 this["venteLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autoCodeBarre {
+            get {
+                return ((bool)(this["autoCodeBarre"]));
+            }
+            set {
+                this["autoCodeBarre"] = value;
+            }
+        }
     }
 }

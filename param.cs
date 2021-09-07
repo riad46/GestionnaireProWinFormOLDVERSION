@@ -18,13 +18,16 @@ namespace Gestionnaire_Pro
         private void sub_btn_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.activeLogin = loginAcrive_checkBox.Checked;
+            Properties.Settings.Default.autoCodeBarre = autoCodeBarre_checkBox.Checked;
             Properties.Settings.Default.Save();
-            
+
+
         }
 
         private void param_Load(object sender, EventArgs e)
         {
             loginAcrive_checkBox.Checked = Properties.Settings.Default.activeLogin;
+            autoCodeBarre_checkBox.Checked = Properties.Settings.Default.autoCodeBarre;
         }
     }
 }

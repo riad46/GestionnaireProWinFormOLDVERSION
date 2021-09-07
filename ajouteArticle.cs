@@ -12,13 +12,47 @@ namespace Gestionnaire_Pro
     public partial class ajouteArticle : Form
     {
         private List<Fournisseur> mesFournisseurs = new List<Fournisseur>();
+        private List<Article> _mesArticles = new List<Article>();
         private int _id;
         
         public ajouteArticle()
         {
             InitializeComponent();
-            LoadTheme();   
+            LoadTheme();
+            GetMyArticles();
+            if (Properties.Settings.Default.autoCodeBarre)
+            {
+                codeBarre_txt.Enabled = false;
+                AutoGenerateCodeBarre();
+            }
         }
+        public ajouteArticle(Article article)
+        {
+
+            
+            InitializeComponent();
+            GetMyArticles();
+            if (Properties.Settings.Default.autoCodeBarre)
+            {
+                codeBarre_txt.Enabled = false;
+                AutoGenerateCodeBarre();
+            }
+
+            _id = article.Id;
+            mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs().Result;
+            codeBarre_txt.Text = article.codeBarre;
+            nom_txt.Text = article.nom;
+            qnt_txt.Text = article.quantité.ToString();
+            type_txt.Text = article.type;
+            prixAchat_txt.Text = article.prixAchat.ToString();
+            prixVente_txt.Text = article.prixVente.ToString();
+            dateExp.Value = article.dateExpiration.Value;
+            if (article.FournisseurId != null)
+                Fournisseur_combo.Text = mesFournisseurs.Find(f => f.Id == article.FournisseurId).nom;
+
+
+        }
+
         private void LoadTheme()
         {
             foreach (var item in Controls)
@@ -30,26 +64,23 @@ namespace Gestionnaire_Pro
                 }
             }
         }
-
-        public ajouteArticle(Article article)
+        
+        private void GetMyArticles()
         {
-            InitializeComponent();
-            _id = article.Id;
-            mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs().Result;
-            codeBarre_txt.Text = article.codeBarre;
-            nom_txt.Text = article.nom;
-            qnt_txt.Text =  article.quantité.ToString();
-            type_txt.Text = article.type;
-            prixAchat_txt.Text = article.prixAchat.ToString();
-            prixVente_txt.Text = article.prixVente.ToString();
-            dateExp.Value = article.dateExpiration.Value;
-            if(article.FournisseurId !=null)
-            Fournisseur_combo.Text = mesFournisseurs.Find(f=>f.Id==article.FournisseurId).nom;
-           
+            _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+        }
+        private void AutoGenerateCodeBarre()
+        {
+            Random r = new Random();
+            var codeBarre=r.Next(1111111, 12345678);
+            while(_mesArticles.FindIndex(a=>a.codeBarre==codeBarre.ToString()) != -1)
+            {
+                codeBarre = r.Next(1111111, 12345678);
+            }
+            codeBarre_txt.Text = codeBarre.ToString();
 
         }
-
-       
+      
         private void CleanTheFormBoxes()
         {
             codeBarre_txt.Text = "";
@@ -64,6 +95,12 @@ namespace Gestionnaire_Pro
 
         private void AddNewArticle()
         {
+            // CheckArticleAvalability();
+            if (_mesArticles.FindIndex(a => a.codeBarre == codeBarre_txt.Text || a.nom == nom_txt.Text) != -1)
+            {
+                MessageBox.Show("Article Existe Déja !!");
+                return;
+            }
             var myArticle = new Article
             {
                 codeBarre = codeBarre_txt.Text,
@@ -140,8 +177,15 @@ namespace Gestionnaire_Pro
 
         private void sub_btn_Click(object sender, EventArgs e)
         {
+           
             ActionToDo();      
             CleanTheFormBoxes();
+            GetMyArticles();
+            if (Properties.Settings.Default.autoCodeBarre)
+            {
+                codeBarre_txt.Enabled = false;
+                AutoGenerateCodeBarre();
+            }
         }
 
         private void ajouteArticle_Load(object sender, EventArgs e)
