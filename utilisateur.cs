@@ -146,7 +146,7 @@ namespace Gestionnaire_Pro
                     return;
                 }
                 AddUtilisateur();
-                descriptionAction = $"{GlobalClass.username} a Ajouté l'utlisateur {username_txt.Text}";
+                descriptionAction = $" Ajouté l'utlisateur {username_txt.Text}";
             }
             if (GlobalClass.typeOp == 1)
             {
@@ -158,13 +158,13 @@ namespace Gestionnaire_Pro
                 }
 
                 ModifyUtilisateur();
-                descriptionAction = $"{GlobalClass.username} a Modifier l'utlisateur {username_txt.Text}";
+                descriptionAction = $" Modifier l'utlisateur {username_txt.Text}";
                
             }
             GlobalClass.typeOp = 0;
             CleanBoxes();
             SetUpTable();
-            GlobalClass.AddAction(descriptionAction);
+            GlobalClass.AddAction(GlobalClass.username, descriptionAction);
            
         }
 

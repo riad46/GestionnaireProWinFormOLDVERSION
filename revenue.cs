@@ -153,8 +153,8 @@ namespace Gestionnaire_Pro
             dateMin_box.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 00, 00, 00);
 
             SearchForRevenue();
-            var descriptionAction = $"{GlobalClass.username} a Entrée dans Revenue !!!!!!!!!!!!!!!!!!!!!!!!";
-            GlobalClass.AddAction(descriptionAction);
+            var descriptionAction = $" Entrée dans Revenue !!!!!!!!!!!!!!!!!!!!!!!!";
+            GlobalClass.AddAction(GlobalClass.username,descriptionAction);
         }
 
         private void sub_btn_Click(object sender, EventArgs e)

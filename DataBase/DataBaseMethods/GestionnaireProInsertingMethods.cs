@@ -64,7 +64,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             {
                 connection.ExecuteAsync(sql,new {
                     descriptionAction=action.descriptionAction,
-                    nomUtilisateur=action.nomUtilisateur,
+                    nomUtilisateur=action.utilisateur,
                     dateAction=action.dateAction
                 });
             }

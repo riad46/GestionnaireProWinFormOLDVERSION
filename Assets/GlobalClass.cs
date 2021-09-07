@@ -24,14 +24,14 @@ namespace Gestionnaire_Pro
         public static bool isAdmin=true;
         internal static bool isSuperAdmin=false;
 
-        public static void AddAction(string descriptionAction)
+        public static void AddAction(string username,string descriptionAction)
         {
 
             GestionnaireProInsertingMethods.AddActionEffectué(new ActionEffectuer
             {
                 descriptionAction = descriptionAction,
 
-                nomUtilisateur = username,
+                utilisateur = username,
                 dateAction = DateTime.Now
             }) ;
 

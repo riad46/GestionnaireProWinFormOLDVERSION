@@ -92,8 +92,8 @@ namespace Gestionnaire_Pro
         private void tableClient_Load(object sender, EventArgs e)
         {
             RefreshClientTable();
-            var descriptionAction = $"{GlobalClass.username} a Entrée dans Table Client";
-            GlobalClass.AddAction(descriptionAction);
+            var descriptionAction = $" Entrée dans Table Client";
+            GlobalClass.AddAction(GlobalClass.username,descriptionAction);
 
         }
 

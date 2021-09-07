@@ -1149,13 +1149,7 @@ create table if not EXISTS ProduitExcluDeVerification(
             RemoveBtns(_btns); ;
             ActivateButton(sender);
         }
-        private void param_btn_Click(object sender, EventArgs e)
-        {
-            HideShowGreetingPanelAndLogo(0);
-            RemoveBtns(_btns); ;
-            ActivateButton(sender);
-
-        }
+       
         private void exit_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
@@ -1187,10 +1181,17 @@ create table if not EXISTS ProduitExcluDeVerification(
             Reset();
             HideShowGreetingPanelAndLogo(1);
         }
+
+
+
         #endregion
 
-     
-
-
+        private void actions_btn_Click(object sender, EventArgs e)
+        {
+            RemoveBtns(_btns);
+            ActivateButton(sender);
+            HideShowGreetingPanelAndLogo(0);
+            OpenChildForm(new historiqueAction());
+        }
     }
 }

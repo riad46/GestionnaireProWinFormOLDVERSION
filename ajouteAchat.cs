@@ -240,8 +240,8 @@ namespace Gestionnaire_Pro
             CleanTheBoxes();
             _mesArticles = new List<Article>();
             SetUpTable();
-            var descriptionActon = $"{GlobalClass.username} a ajouté un Achat ....";
-            GlobalClass.AddAction(descriptionActon);
+            var descriptionActon = $" ajouté un Achat ....";
+            GlobalClass.AddAction(GlobalClass.username,descriptionActon);
 
         }
 

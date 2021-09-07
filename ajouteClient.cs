@@ -57,14 +57,14 @@ namespace Gestionnaire_Pro
             {
                 case 0:
                     DataBase.DataBaseMethods.GestionnaireProInsertingMethods.AddClient(client);
-                    descriptionAction = $"{GlobalClass.username} a Ajouté Le Client {nom_txt.Text} avec {credit_txt} DA de Credit";
+                    descriptionAction = $"Ajouté Le Client {nom_txt.Text} avec {credit_txt} DA de Credit";
                     MessageBox.Show("Client a été ajouter avec Succée");
                     break;
 
                 case 1:
                     client.Id = _id;
                     DataBase.DataBaseMethods.GestionnaireProModifyDeleteMethods.ModifyClientInfos(client);
-                    descriptionAction = $"{GlobalClass.username} a Modifier Le Client {nom_txt.Text} avec {credit_txt} DA de Credit";
+                    descriptionAction = $"Modifier Le Client {nom_txt.Text} avec {credit_txt} DA de Credit";
                     MessageBox.Show("Client a été Modifier avec Succée");
                     break;
             }
@@ -75,7 +75,7 @@ namespace Gestionnaire_Pro
         {
             ActionToDo();
              
-            GlobalClass.AddAction(descriptionAction);
+            GlobalClass.AddAction(GlobalClass.username,descriptionAction);
         }
         private void cleanBoxes()
         {

@@ -512,7 +512,6 @@ P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.pai
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.param.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.Properties.Resources.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.revenue.resources
-P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.TableAchat.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.tableArticle.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.tableClient.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.TableFournisseur.resources
@@ -530,4 +529,4 @@ P:\GitHub\GestionnairePro\bin\Release\netcoreapp3.1\win-x86\System.Management.dl
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.ActivationWindow.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.ajoutCreditClient.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.LoginForm.resources
-P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.VenteChoices.resources
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\win-x86\Gestionnaire_Pro.historiqueAction.resources

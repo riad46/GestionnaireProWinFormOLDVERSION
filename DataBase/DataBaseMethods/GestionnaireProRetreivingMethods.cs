@@ -473,11 +473,13 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             
         }
         //----------------------------------------------------------------------------------- Action
-        public List<ActionEffectuer> GetAllActions()
+        public static async Task<List<ActionEffectuer>> GetAllActions()
         {
+            var sql = "SELECT * FROM actionsEffectué";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                return null;
+               var res=await connection.QueryAsync<ActionEffectuer>(sql);
+                return res.ToList();
             }
         }
         //----------------------------------------------------------------------------------------------------------------//

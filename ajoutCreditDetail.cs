@@ -81,8 +81,8 @@ namespace Gestionnaire_Pro
         private void sub_btn_Click(object sender, EventArgs e)
         {
             AddDetailsToDb();
-           var descriptionAction = $"{GlobalClass.username} a Ajouté Credit détailé au Client avec Réf {_id}";
-            GlobalClass.AddAction(descriptionAction);
+           var descriptionAction = $" a Ajouté Credit détailé au Client avec Réf {_id}";
+            GlobalClass.AddAction(GlobalClass.username,descriptionAction);
         }
 
         private void ajoutCreditDetail_Load(object sender, EventArgs e)

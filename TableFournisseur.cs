@@ -43,8 +43,8 @@ namespace Gestionnaire_Pro
         private void TableFournisseur_Load_1(object sender, EventArgs e)
         {
             ResetTable();
-            var descriptionAction = $"{GlobalClass.username} a Entrée dans Table Fournisseur";
-            GlobalClass.AddAction(descriptionAction);
+            var descriptionAction = $" Entrée dans Table Fournisseur";
+            GlobalClass.AddAction(GlobalClass.username,descriptionAction);
         }
         private void TableFournisseur_FormClosing(object sender, FormClosingEventArgs e)
         {

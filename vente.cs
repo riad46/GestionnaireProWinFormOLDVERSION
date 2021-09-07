@@ -380,7 +380,7 @@ namespace Gestionnaire_Pro
             {
                 ModifyVente();
                 ModifyDetailVente();
-                descriptionAction = $"{GlobalClass.username} A Modifier le Vente du Référence {_venteId }";
+                descriptionAction = $" Modifier le Vente du Référence {_venteId }";
                 //reset Operation type
                 GlobalClass.typeOp = 0;
             }
@@ -391,13 +391,13 @@ namespace Gestionnaire_Pro
 
                     return;
                 }
-                descriptionAction = $"{GlobalClass.username} A Modifier le Vente du Référence {_venteId }";
+                descriptionAction = $" Modifier le Vente du Référence {_venteId }";
                 AddVente();
                 AddDetailVente();
             }
 
 
-            GlobalClass.AddAction(descriptionAction);
+            GlobalClass.AddAction(GlobalClass.username, descriptionAction);
             ResetTable();
 
 

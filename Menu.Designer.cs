@@ -129,7 +129,7 @@ namespace Gestionnaire_Pro
             this.actions_btn.TabIndex = 18;
             this.actions_btn.Text = "Historique";
             this.actions_btn.UseVisualStyleBackColor = true;
-            this.actions_btn.Click += new System.EventHandler(this.param_btn_Click);
+            this.actions_btn.Click += new System.EventHandler(this.actions_btn_Click);
             // 
             // notification_btn
             // 

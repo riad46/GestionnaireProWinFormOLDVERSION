@@ -110,8 +110,8 @@ namespace Gestionnaire_Pro
         {
 
             ActionToDo(); 
-            var descriptionAction = $"{GlobalClass.username} a Modifier les informations du Boutique";
-            GlobalClass.AddAction(descriptionAction);
+            var descriptionAction = $"Modifier les informations du Boutique";
+            GlobalClass.AddAction(GlobalClass.username,descriptionAction);
         }
 
         private void infosBoutique_Load(object sender, EventArgs e)

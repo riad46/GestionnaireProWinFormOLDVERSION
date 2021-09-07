@@ -113,8 +113,8 @@ namespace Gestionnaire_Pro
         {
             articles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
             SetUpTable();
-            var descriptionAction = $"{GlobalClass.username} a Entrée dans Table Article !!";
-            GlobalClass.AddAction(descriptionAction);
+            var descriptionAction = $" a Entrée dans Table Article !!";
+            GlobalClass.AddAction(GlobalClass.username, descriptionAction);
         }
 
 

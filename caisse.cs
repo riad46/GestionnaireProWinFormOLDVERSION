@@ -124,8 +124,8 @@ namespace Gestionnaire_Pro
             SetUpTables();
             CalculateAll();
             PutValuesInBoxes();
-            var descriptionAction = $"{GlobalClass.username} a Entrée dans la Caisse !!!!!!!!!!!!!!!!!!!!!!!!";
-            GlobalClass.AddAction(descriptionAction);
+            var descriptionAction = $" Entrée dans la Caisse !!!!!!!!!!!!!!!!!!!!!!!!";
+            GlobalClass.AddAction(GlobalClass.username,descriptionAction);
         }
 
         private void search_btn_Click(object sender, EventArgs e)

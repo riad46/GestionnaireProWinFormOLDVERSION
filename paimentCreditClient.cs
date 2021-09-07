@@ -115,8 +115,8 @@ namespace Gestionnaire_Pro
         {
             SubmitOperation();
             RefreshThePage();
-            var descriptionAction = $"{GlobalClass.username} a Payé <<{creditAjout_txt}>> du  Credit de {client_combo.Text}";
-            GlobalClass.AddAction(descriptionAction);
+            var descriptionAction = $" Payé <<{creditAjout_txt}>> du  Credit de {client_combo.Text}";
+            GlobalClass.AddAction(GlobalClass.username, descriptionAction);
         }
 
         private void paimentCreditClient_Load(object sender, EventArgs e)
