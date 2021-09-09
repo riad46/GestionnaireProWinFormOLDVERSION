@@ -25,6 +25,9 @@
     <Compile Update="ajouteFournisseur.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ArticlesTotalStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Assets\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>

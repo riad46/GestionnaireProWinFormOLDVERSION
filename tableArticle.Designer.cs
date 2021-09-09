@@ -33,6 +33,7 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tableArticle));
             this.articleTable = new System.Windows.Forms.DataGridView();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -213,7 +214,7 @@ namespace Gestionnaire_Pro
             // 
             // reset_Stock
             // 
-            this.reset_Stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reset_Stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.reset_Stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reset_Stock.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.reset_Stock.Location = new System.Drawing.Point(18, 419);
@@ -235,6 +236,8 @@ namespace Gestionnaire_Pro
             this.FullRevenue_btn.TabIndex = 15;
             this.FullRevenue_btn.Text = "Voir Revenue Total";
             this.FullRevenue_btn.UseVisualStyleBackColor = true;
+            this.FullRevenue_btn.Visible = false;
+            this.FullRevenue_btn.Click += new System.EventHandler(this.FullRevenue_btn_Click);
             // 
             // deleteAll_btn
             // 
@@ -389,8 +392,9 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.articleTable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "tableArticle";
-            this.Text = "s";
+            this.Text = "Table d\'articles";
             this.Load += new System.EventHandler(this.tableArticle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.articleTable)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -33,6 +33,7 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListArticle));
             this.panel1 = new System.Windows.Forms.Panel();
             this.codeBarre_txt = new System.Windows.Forms.TextBox();
             this.nomArticle_txt = new System.Windows.Forms.TextBox();
@@ -217,7 +218,6 @@ namespace Gestionnaire_Pro
             this.articleTable.Size = new System.Drawing.Size(745, 396);
             this.articleTable.TabIndex = 1;
             this.articleTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.articleTable_CellDoubleClick);
-            
             // 
             // id
             // 
@@ -283,6 +283,7 @@ namespace Gestionnaire_Pro
             this.ClientSize = new System.Drawing.Size(745, 553);
             this.Controls.Add(this.articleTable);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListArticle";
             this.Text = "ListArticle";
             this.Load += new System.EventHandler(this.ListArticle_Load);

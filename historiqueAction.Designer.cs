@@ -31,6 +31,7 @@ namespace Gestionnaire_Pro
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(historiqueAction));
             this.actionsTable = new System.Windows.Forms.DataGridView();
             this.userCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateActionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,6 +105,7 @@ namespace Gestionnaire_Pro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.actionsTable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "historiqueAction";
             this.Text = "historiqueAction";
             this.Load += new System.EventHandler(this.historiqueAction_Load);

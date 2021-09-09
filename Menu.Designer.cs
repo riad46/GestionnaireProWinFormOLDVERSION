@@ -51,15 +51,15 @@ namespace Gestionnaire_Pro
             this.titleLbl = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.greetingPanel = new System.Windows.Forms.Panel();
+            this.hello_lbl = new System.Windows.Forms.Label();
+            this.nomBoutique_lbl = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.username_txt = new System.Windows.Forms.TextBox();
             this.sub_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.password_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.greetingPanel = new System.Windows.Forms.Panel();
-            this.hello_lbl = new System.Windows.Forms.Label();
-            this.nomBoutique_lbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -69,8 +69,8 @@ namespace Gestionnaire_Pro
             this.titlePanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.greetingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
@@ -363,17 +363,52 @@ namespace Gestionnaire_Pro
             // loginPanel
             // 
             this.loginPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loginPanel.Controls.Add(this.greetingPanel);
             this.loginPanel.Controls.Add(this.pictureBox2);
             this.loginPanel.Controls.Add(this.username_txt);
             this.loginPanel.Controls.Add(this.sub_btn);
             this.loginPanel.Controls.Add(this.label3);
             this.loginPanel.Controls.Add(this.password_txt);
             this.loginPanel.Controls.Add(this.label2);
-            this.loginPanel.Controls.Add(this.greetingPanel);
             this.loginPanel.Location = new System.Drawing.Point(28, 79);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(649, 380);
             this.loginPanel.TabIndex = 5;
+            // 
+            // greetingPanel
+            // 
+            this.greetingPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.greetingPanel.Controls.Add(this.hello_lbl);
+            this.greetingPanel.Controls.Add(this.nomBoutique_lbl);
+            this.greetingPanel.Location = new System.Drawing.Point(45, 49);
+            this.greetingPanel.Name = "greetingPanel";
+            this.greetingPanel.Size = new System.Drawing.Size(556, 314);
+            this.greetingPanel.TabIndex = 1;
+            this.greetingPanel.Visible = false;
+            // 
+            // hello_lbl
+            // 
+            this.hello_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.hello_lbl.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.hello_lbl.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.hello_lbl.Location = new System.Drawing.Point(0, 107);
+            this.hello_lbl.Name = "hello_lbl";
+            this.hello_lbl.Size = new System.Drawing.Size(553, 55);
+            this.hello_lbl.TabIndex = 1;
+            this.hello_lbl.Text = "Bonjour";
+            this.hello_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nomBoutique_lbl
+            // 
+            this.nomBoutique_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nomBoutique_lbl.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nomBoutique_lbl.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.nomBoutique_lbl.Location = new System.Drawing.Point(3, 16);
+            this.nomBoutique_lbl.Name = "nomBoutique_lbl";
+            this.nomBoutique_lbl.Size = new System.Drawing.Size(550, 46);
+            this.nomBoutique_lbl.TabIndex = 0;
+            this.nomBoutique_lbl.Text = "Ma Boutique";
+            this.nomBoutique_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -448,42 +483,6 @@ namespace Gestionnaire_Pro
             this.label2.TabIndex = 13;
             this.label2.Text = "Mot de Passe";
             // 
-            // greetingPanel
-            // 
-            this.greetingPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.greetingPanel.Controls.Add(this.hello_lbl);
-            this.greetingPanel.Controls.Add(this.nomBoutique_lbl);
-            this.greetingPanel.Location = new System.Drawing.Point(45, 49);
-            this.greetingPanel.Name = "greetingPanel";
-            this.greetingPanel.Size = new System.Drawing.Size(556, 314);
-            this.greetingPanel.TabIndex = 1;
-            this.greetingPanel.Visible = false;
-            // 
-            // hello_lbl
-            // 
-            this.hello_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.hello_lbl.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.hello_lbl.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.hello_lbl.Location = new System.Drawing.Point(122, 107);
-            this.hello_lbl.Name = "hello_lbl";
-            this.hello_lbl.Size = new System.Drawing.Size(295, 55);
-            this.hello_lbl.TabIndex = 1;
-            this.hello_lbl.Text = "Bonjour";
-            this.hello_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nomBoutique_lbl
-            // 
-            this.nomBoutique_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nomBoutique_lbl.AutoSize = true;
-            this.nomBoutique_lbl.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nomBoutique_lbl.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.nomBoutique_lbl.Location = new System.Drawing.Point(147, 16);
-            this.nomBoutique_lbl.Name = "nomBoutique_lbl";
-            this.nomBoutique_lbl.Size = new System.Drawing.Size(255, 46);
-            this.nomBoutique_lbl.TabIndex = 0;
-            this.nomBoutique_lbl.Text = "Ma Boutique";
-            this.nomBoutique_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -536,6 +535,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.titlePanel);
             this.Controls.Add(this.buttonsPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(962, 620);
             this.Name = "Menu";
             this.Text = "Menu";
@@ -548,9 +548,8 @@ namespace Gestionnaire_Pro
             this.mainPanel.ResumeLayout(false);
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.greetingPanel.ResumeLayout(false);
-            this.greetingPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();

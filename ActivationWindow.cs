@@ -27,6 +27,7 @@ namespace Gestionnaire_Pro
                 using (var m= new Menu())
                 {
                     m.ShowDialog();
+                    Close();
                 }
             }
             else

@@ -29,6 +29,7 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ajoutCreditClient));
             this.client_combo = new System.Windows.Forms.ComboBox();
             this.creditInit_txt = new System.Windows.Forms.TextBox();
             this.creditAjout_txt = new System.Windows.Forms.TextBox();
@@ -144,6 +145,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.creditAjout_txt);
             this.Controls.Add(this.creditInit_txt);
             this.Controls.Add(this.client_combo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ajoutCreditClient";
             this.Text = "Ajoute Credit de Client";
             this.Load += new System.EventHandler(this.ajoutCredit_Load);

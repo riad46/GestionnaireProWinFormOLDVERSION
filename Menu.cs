@@ -32,6 +32,7 @@ namespace Gestionnaire_Pro
        
         private void LoadFormSettings()
         {
+       
             if (Properties.Settings.Default.menuLocation != new Point(0, 0))
                 this.Location = Properties.Settings.Default.menuLocation;
             this.Size = Properties.Settings.Default.menuSize;
@@ -48,23 +49,30 @@ namespace Gestionnaire_Pro
 
 
             }
+        
         }
         private void LoadLogo()
         {
-            var boutiqueInfos=GestionnaireProRetreivingMethods.GetBoutiqueInfos().Result;
-            logoPic.Image = GlobalClass.byteArrayToImage( boutiqueInfos.logo);
+            if (GestionnaireProRetreivingMethods.RetreiveNumRows("infosBoutique").Result ==1)
+            {
+                var boutiqueInfos = GestionnaireProRetreivingMethods.GetBoutiqueInfos().Result;
+                logoPic.Image = GlobalClass.byteArrayToImage(boutiqueInfos.logo);
+            }
+            
         }
         
         private void Menu_Load(object sender, EventArgs e)
         {
-            LoadFormSettings();
-            LoadLogo();
+           
             //check if DB the file is there
             var myDb = new FileInfo("./GestionnairePro.db");
             if (!myDb.Exists)
             {
                 CreateFullDb();
             }
+
+            LoadFormSettings();
+            LoadLogo();
         }
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -72,77 +80,7 @@ namespace Gestionnaire_Pro
             Properties.Settings.Default.menuLocation=this.Location;
             Properties.Settings.Default.Save();
         }
-        #region loginForm
-        private void CleanBoxes()
-        {
-            username_txt.Text = "";
-            password_txt.Text = "";
-        }
-        private void RegularLogin(string username, string pass)
-        {
-
-
-            var _utilisateurs = GestionnaireProRetreivingMethods.GetAllUtilisateurs().Result;
-            var monUtilisateur = _utilisateurs.Find(u => u.nomUtilisateur == username && u.motDePass == pass);
-            if (monUtilisateur == null)
-            {
-                CleanBoxes();
-                MessageBox.Show("Nom d'utilisateur ou Mot de passe Incorrect !!");
-                return;
-            }
-            else
-            {
-                GlobalClass.username = monUtilisateur.nomUtilisateur;
-                GlobalClass.isAdmin = monUtilisateur.estAdmin;
-
-                CleanBoxes();
-
-            }
-        }
-        private void ShowPanelsAfterLogin()
-        {
-            loginPanel.Visible = false;
-            greetingPanel.Visible = true;
-
-            hello_lbl.Text = "Bonjour " + GlobalClass.username;
-
-        }
-        private void sub_btn_Click(object sender, EventArgs e)
-        {
-            var username = username_txt.Text;
-            var pass = password_txt.Text;
-
-            if (username == "riad46" && pass == "azqswx123-")
-            {
-                GlobalClass.username = "riad46";
-                GlobalClass.isAdmin = true;
-                CleanBoxes();
-                GiveOptionToRole();
-                ShowPanelsAfterLogin();
-                ActivatePanel();
-                return;
-
-
-            }
-
-            
-            
-            RegularLogin(username, pass);
-            GiveOptionToRole();
-            if (!string.IsNullOrEmpty(GlobalClass.username))
-            {
-                ActivatePanel();
-                loginPanel.Visible = false;
-                greetingPanel.Visible = true;
-                hello_lbl.Text = "Bonjour " + GlobalClass.username;
-            }
-
-        }
-
-
-
-
-        #endregion
+    
 
         /// <summary>
         /// 0 for hide 
@@ -310,7 +248,85 @@ create table if not EXISTS ProduitExcluDeVerification(
                 actions_btn.Enabled = true;
             }
         }
-       
+        #region loginForm
+        private void CleanBoxes()
+        {
+            username_txt.Text = "";
+            password_txt.Text = "";
+        }
+        private void RegularLogin(string username, string pass)
+        {
+
+
+            var _utilisateurs = GestionnaireProRetreivingMethods.GetAllUtilisateurs().Result;
+            var monUtilisateur = _utilisateurs.Find(u => u.nomUtilisateur == username && u.motDePass == pass);
+            if (monUtilisateur == null)
+            {
+                CleanBoxes();
+                MessageBox.Show("Nom d'utilisateur ou Mot de passe Incorrect !!");
+                return;
+            }
+            else
+            {
+                GlobalClass.username = monUtilisateur.nomUtilisateur;
+                GlobalClass.isAdmin = monUtilisateur.estAdmin;
+
+                CleanBoxes();
+
+            }
+        }
+        private void ShowPanelsAfterLogin()
+        {
+            loginPanel.Visible = false;
+            greetingPanel.Visible = true;
+
+            if (GestionnaireProRetreivingMethods.RetreiveNumRows("infosBoutique").Result == 1)
+            {
+                var boutiqueInfos = GestionnaireProRetreivingMethods.GetBoutiqueInfos().Result;
+                if (!string.IsNullOrEmpty(boutiqueInfos.nomBoutique))
+                    nomBoutique_lbl.Text = boutiqueInfos.nomBoutique;
+                    
+            }
+
+            hello_lbl.Text = $"Bonjour  {GlobalClass.username}";
+
+        }
+        private void sub_btn_Click(object sender, EventArgs e)
+        {
+            var username = username_txt.Text;
+            var pass = password_txt.Text;
+
+            if (username == "riad46" && pass == "azqswx123-")
+            {
+                GlobalClass.username = "riad46";
+                GlobalClass.isAdmin = true;
+                CleanBoxes();
+                GiveOptionToRole();
+                ShowPanelsAfterLogin();
+                ActivatePanel();
+                return;
+
+
+            }
+
+
+
+            RegularLogin(username, pass);
+            GiveOptionToRole();
+            if (!string.IsNullOrEmpty(GlobalClass.username))
+            {
+                ActivatePanel();
+                loginPanel.Visible = false;
+                greetingPanel.Visible = true;
+                hello_lbl.Text = "Bonjour " + GlobalClass.username;
+            }
+
+        }
+
+
+
+
+        #endregion
 
         #region Btn and Panel Effects
         private void Reset()

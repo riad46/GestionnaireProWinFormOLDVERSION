@@ -34,6 +34,7 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tableClient));
             this.panel1 = new System.Windows.Forms.Panel();
             this.add_btn = new System.Windows.Forms.Button();
             this.Modify_btn = new System.Windows.Forms.Button();
@@ -361,7 +362,9 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.detailsTable);
             this.Controls.Add(this.clientTable);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "tableClient";
+            this.Text = "Table client";
             this.Load += new System.EventHandler(this.tableClient_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

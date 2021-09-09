@@ -31,6 +31,7 @@ namespace Gestionnaire_Pro
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ajouteAchat));
             this.articleTable = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -458,6 +459,7 @@ namespace Gestionnaire_Pro
             this.ClientSize = new System.Drawing.Size(981, 525);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.articleTable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ajouteAchat";
             this.Text = "Nouvelle Achat";
             this.Load += new System.EventHandler(this.ajouteAchat_Load);

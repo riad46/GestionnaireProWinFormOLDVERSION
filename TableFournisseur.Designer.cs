@@ -33,6 +33,7 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableFournisseur));
             this.fournisseurTable = new System.Windows.Forms.DataGridView();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -281,8 +282,9 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.fournisseurTable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TableFournisseur";
-            this.Text = "TableFournisseur";
+            this.Text = "Table Fournisseur";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TableFournisseur_FormClosing);
             this.Load += new System.EventHandler(this.TableFournisseur_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.fournisseurTable)).EndInit();

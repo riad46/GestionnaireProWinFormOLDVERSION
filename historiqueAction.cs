@@ -27,6 +27,7 @@ namespace Gestionnaire_Pro
         {
 
             _mesAction = GestionnaireProRetreivingMethods.GetAllActions().Result;
+            _mesAction.Reverse();
             SetUpTable();
         }
     }

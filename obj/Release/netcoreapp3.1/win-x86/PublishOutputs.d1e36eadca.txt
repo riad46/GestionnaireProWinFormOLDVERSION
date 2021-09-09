@@ -273,24 +273,6 @@ C:\Users\riadd\Desktop\program\wpfgfx_cor3.dll
 C:\Users\riadd\Desktop\program\e_sqlite3.dll
 C:\Users\riadd\Desktop\program\DirectWriteForwarder.dll
 C:\Users\riadd\Desktop\program\System.Printing.dll
-C:\Users\riadd\Desktop\program\Microsoft.Win32.Primitives.dll
-C:\Users\riadd\Desktop\program\System.Collections.Concurrent.dll
-C:\Users\riadd\Desktop\program\System.Collections.dll
-C:\Users\riadd\Desktop\program\System.ComponentModel.dll
-C:\Users\riadd\Desktop\program\System.Diagnostics.StackTrace.dll
-C:\Users\riadd\Desktop\program\System.Diagnostics.TraceSource.dll
-C:\Users\riadd\Desktop\program\System.Private.Uri.dll
-C:\Users\riadd\Desktop\program\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\riadd\Desktop\program\System.Runtime.CompilerServices.VisualC.dll
-C:\Users\riadd\Desktop\program\System.Runtime.Serialization.Formatters.dll
-C:\Users\riadd\Desktop\program\System.Security.Principal.dll
-C:\Users\riadd\Desktop\program\System.Threading.dll
-C:\Users\riadd\Desktop\program\System.Private.CoreLib.dll
-C:\Users\riadd\Desktop\program\Accessibility.dll
-C:\Users\riadd\Desktop\program\System.Design.dll
-C:\Users\riadd\Desktop\program\System.Drawing.Design.dll
-C:\Users\riadd\Desktop\program\System.Drawing.dll
-C:\Users\riadd\Desktop\program\Gestionnaire Pro.pdb
 C:\Users\riadd\Desktop\program\Dapper.dll
 C:\Users\riadd\Desktop\program\Microsoft.Data.Sqlite.dll
 C:\Users\riadd\Desktop\program\Microsoft.Win32.Registry.dll
@@ -304,18 +286,24 @@ C:\Users\riadd\Desktop\program\System.Management.dll
 C:\Users\riadd\Desktop\program\System.Security.AccessControl.dll
 C:\Users\riadd\Desktop\program\System.Security.Principal.Windows.dll
 C:\Users\riadd\Desktop\program\Gestionnaire Pro.dll
+C:\Users\riadd\Desktop\program\Microsoft.Win32.Primitives.dll
+C:\Users\riadd\Desktop\program\System.Collections.Concurrent.dll
 C:\Users\riadd\Desktop\program\System.Collections.Immutable.dll
 C:\Users\riadd\Desktop\program\System.Collections.NonGeneric.dll
 C:\Users\riadd\Desktop\program\System.Collections.Specialized.dll
+C:\Users\riadd\Desktop\program\System.Collections.dll
 C:\Users\riadd\Desktop\program\System.ComponentModel.EventBasedAsync.dll
 C:\Users\riadd\Desktop\program\System.ComponentModel.Primitives.dll
 C:\Users\riadd\Desktop\program\System.ComponentModel.TypeConverter.dll
+C:\Users\riadd\Desktop\program\System.ComponentModel.dll
 C:\Users\riadd\Desktop\program\System.Console.dll
 C:\Users\riadd\Desktop\program\System.Data.Common.dll
 C:\Users\riadd\Desktop\program\System.Diagnostics.DiagnosticSource.dll
 C:\Users\riadd\Desktop\program\System.Diagnostics.FileVersionInfo.dll
 C:\Users\riadd\Desktop\program\System.Diagnostics.Process.dll
+C:\Users\riadd\Desktop\program\System.Diagnostics.StackTrace.dll
 C:\Users\riadd\Desktop\program\System.Diagnostics.Tools.dll
+C:\Users\riadd\Desktop\program\System.Diagnostics.TraceSource.dll
 C:\Users\riadd\Desktop\program\System.Drawing.Primitives.dll
 C:\Users\riadd\Desktop\program\System.IO.Compression.Brotli.dll
 C:\Users\riadd\Desktop\program\System.IO.Compression.dll
@@ -336,14 +324,18 @@ C:\Users\riadd\Desktop\program\System.Net.Sockets.dll
 C:\Users\riadd\Desktop\program\System.Net.WebClient.dll
 C:\Users\riadd\Desktop\program\System.Net.WebHeaderCollection.dll
 C:\Users\riadd\Desktop\program\System.ObjectModel.dll
+C:\Users\riadd\Desktop\program\System.Private.Uri.dll
 C:\Users\riadd\Desktop\program\System.Private.Xml.Linq.dll
 C:\Users\riadd\Desktop\program\System.Private.Xml.dll
 C:\Users\riadd\Desktop\program\System.Reflection.Metadata.dll
 C:\Users\riadd\Desktop\program\System.Resources.Writer.dll
+C:\Users\riadd\Desktop\program\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\riadd\Desktop\program\System.Runtime.CompilerServices.VisualC.dll
 C:\Users\riadd\Desktop\program\System.Runtime.Extensions.dll
 C:\Users\riadd\Desktop\program\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\riadd\Desktop\program\System.Runtime.InteropServices.dll
 C:\Users\riadd\Desktop\program\System.Runtime.Numerics.dll
+C:\Users\riadd\Desktop\program\System.Runtime.Serialization.Formatters.dll
 C:\Users\riadd\Desktop\program\System.Runtime.dll
 C:\Users\riadd\Desktop\program\System.Security.Claims.dll
 C:\Users\riadd\Desktop\program\System.Security.Cryptography.Algorithms.dll
@@ -352,9 +344,13 @@ C:\Users\riadd\Desktop\program\System.Security.Cryptography.Csp.dll
 C:\Users\riadd\Desktop\program\System.Security.Cryptography.Encoding.dll
 C:\Users\riadd\Desktop\program\System.Security.Cryptography.Primitives.dll
 C:\Users\riadd\Desktop\program\System.Security.Cryptography.X509Certificates.dll
+C:\Users\riadd\Desktop\program\System.Security.Principal.dll
 C:\Users\riadd\Desktop\program\System.Text.Encoding.CodePages.dll
 C:\Users\riadd\Desktop\program\System.Text.RegularExpressions.dll
 C:\Users\riadd\Desktop\program\System.Threading.Thread.dll
+C:\Users\riadd\Desktop\program\System.Threading.dll
+C:\Users\riadd\Desktop\program\System.Private.CoreLib.dll
+C:\Users\riadd\Desktop\program\Accessibility.dll
 C:\Users\riadd\Desktop\program\Microsoft.Win32.Registry.AccessControl.dll
 C:\Users\riadd\Desktop\program\Microsoft.Win32.SystemEvents.dll
 C:\Users\riadd\Desktop\program\PresentationCore.dll
@@ -373,10 +369,13 @@ C:\Users\riadd\Desktop\program\PresentationFramework.dll
 C:\Users\riadd\Desktop\program\PresentationUI.dll
 C:\Users\riadd\Desktop\program\ReachFramework.dll
 C:\Users\riadd\Desktop\program\System.Configuration.ConfigurationManager.dll
+C:\Users\riadd\Desktop\program\System.Design.dll
 C:\Users\riadd\Desktop\program\System.Diagnostics.EventLog.dll
 C:\Users\riadd\Desktop\program\System.Diagnostics.PerformanceCounter.dll
 C:\Users\riadd\Desktop\program\System.DirectoryServices.dll
 C:\Users\riadd\Desktop\program\System.Drawing.Common.dll
+C:\Users\riadd\Desktop\program\System.Drawing.Design.dll
+C:\Users\riadd\Desktop\program\System.Drawing.dll
 C:\Users\riadd\Desktop\program\System.IO.Packaging.dll
 C:\Users\riadd\Desktop\program\System.Resources.Extensions.dll
 C:\Users\riadd\Desktop\program\System.Security.Cryptography.Pkcs.dll
@@ -398,4 +397,5 @@ C:\Users\riadd\Desktop\program\UIAutomationProvider.dll
 C:\Users\riadd\Desktop\program\UIAutomationTypes.dll
 C:\Users\riadd\Desktop\program\WindowsBase.dll
 C:\Users\riadd\Desktop\program\WindowsFormsIntegration.dll
+C:\Users\riadd\Desktop\program\Gestionnaire Pro.pdb
 C:\Users\riadd\Desktop\program\Gestionnaire Pro.deps.json

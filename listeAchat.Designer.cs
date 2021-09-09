@@ -37,6 +37,7 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listeAchat));
             this.panel1 = new System.Windows.Forms.Panel();
             this.del_btn = new System.Windows.Forms.Button();
             this.search_btn = new System.Windows.Forms.Button();
@@ -45,10 +46,10 @@ namespace Gestionnaire_Pro
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.achatTable = new System.Windows.Forms.DataGridView();
-            this.detailsTable = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailsTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeBarre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -200,6 +201,28 @@ namespace Gestionnaire_Pro
             this.achatTable.TabIndex = 1;
             this.achatTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.achatTable_CellClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // DateA
+            // 
+            this.DateA.DataPropertyName = "dateAchat";
+            this.DateA.HeaderText = "Date Achat";
+            this.DateA.Name = "DateA";
+            this.DateA.ReadOnly = true;
+            // 
+            // montant
+            // 
+            this.montant.DataPropertyName = "montantTotal";
+            this.montant.HeaderText = "Montant Total (DA)";
+            this.montant.Name = "montant";
+            this.montant.ReadOnly = true;
+            // 
             // detailsTable
             // 
             this.detailsTable.AllowUserToAddRows = false;
@@ -258,28 +281,6 @@ namespace Gestionnaire_Pro
             this.detailsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.detailsTable.Size = new System.Drawing.Size(637, 276);
             this.detailsTable.TabIndex = 2;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // DateA
-            // 
-            this.DateA.DataPropertyName = "dateAchat";
-            this.DateA.HeaderText = "Date Achat";
-            this.DateA.Name = "DateA";
-            this.DateA.ReadOnly = true;
-            // 
-            // montant
-            // 
-            this.montant.DataPropertyName = "montantTotal";
-            this.montant.HeaderText = "Montant Total (DA)";
-            this.montant.Name = "montant";
-            this.montant.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -354,6 +355,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.detailsTable);
             this.Controls.Add(this.achatTable);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "listeAchat";
             this.Text = "listeAchat";
             this.Load += new System.EventHandler(this.listeAchat_Load);

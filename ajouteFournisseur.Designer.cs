@@ -29,6 +29,7 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ajouteFournisseur));
             this.nom_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sub_btn = new System.Windows.Forms.Button();
@@ -163,6 +164,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.sub_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nom_txt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ajouteFournisseur";
             this.Text = "Nouveau Fournisseur";
             this.ResumeLayout(false);

@@ -29,6 +29,7 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.username_txt = new System.Windows.Forms.TextBox();
             this.password_txt = new System.Windows.Forms.TextBox();
@@ -99,6 +100,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.username_txt);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";

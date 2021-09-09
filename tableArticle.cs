@@ -201,5 +201,10 @@ namespace Gestionnaire_Pro
 
 
         }
+
+        private void FullRevenue_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(infosBoutique));
             this.nom_txt = new System.Windows.Forms.TextBox();
             this.address_txt = new System.Windows.Forms.TextBox();
             this.numTlf_txt = new System.Windows.Forms.MaskedTextBox();
@@ -179,6 +180,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.numTlf_txt);
             this.Controls.Add(this.address_txt);
             this.Controls.Add(this.nom_txt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "infosBoutique";
             this.Text = "infosBoutique";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.infosBoutique_FormClosing);
