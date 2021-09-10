@@ -29,6 +29,7 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(utilisateur));
             this.userTable = new System.Windows.Forms.DataGridView();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -257,6 +258,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.pass_txt);
             this.Controls.Add(this.username_txt);
             this.Controls.Add(this.userTable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "utilisateur";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "utilisateur";

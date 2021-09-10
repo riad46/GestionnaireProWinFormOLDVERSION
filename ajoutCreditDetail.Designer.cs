@@ -30,6 +30,7 @@ namespace Gestionnaire_Pro
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ajoutCreditDetail));
             this.tablecreditDetail = new System.Windows.Forms.DataGridView();
             this.des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,6 +131,7 @@ namespace Gestionnaire_Pro
             this.ClientSize = new System.Drawing.Size(734, 479);
             this.Controls.Add(this.sub_btn);
             this.Controls.Add(this.tablecreditDetail);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ajoutCreditDetail";
             this.Text = "Credit en Detail";
             this.Load += new System.EventHandler(this.ajoutCreditDetail_Load);

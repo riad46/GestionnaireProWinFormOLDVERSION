@@ -93,26 +93,6 @@ namespace Gestionnaire_Pro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cosmetics {
-            get {
-                object obj = ResourceManager.GetObject("cosmetics", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap history {
-            get {
-                object obj = ResourceManager.GetObject("history", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap inventory__1_ {
             get {
                 object obj = ResourceManager.GetObject("inventory (1)", resourceCulture);
@@ -206,16 +186,6 @@ namespace Gestionnaire_Pro.Properties {
         internal static System.Drawing.Bitmap shopping_basket {
             get {
                 object obj = ResourceManager.GetObject("shopping-basket", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap shopping_cart {
-            get {
-                object obj = ResourceManager.GetObject("shopping-cart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

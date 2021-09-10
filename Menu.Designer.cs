@@ -94,7 +94,7 @@ namespace Gestionnaire_Pro
             this.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonsPanel.Location = new System.Drawing.Point(0, 0);
             this.buttonsPanel.Name = "buttonsPanel";
-            this.buttonsPanel.Size = new System.Drawing.Size(229, 632);
+            this.buttonsPanel.Size = new System.Drawing.Size(251, 682);
             this.buttonsPanel.TabIndex = 0;
             // 
             // settings_btn
@@ -108,9 +108,11 @@ namespace Gestionnaire_Pro
             this.settings_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.settings_btn.Location = new System.Drawing.Point(0, 472);
             this.settings_btn.Name = "settings_btn";
-            this.settings_btn.Size = new System.Drawing.Size(229, 50);
+            this.settings_btn.Size = new System.Drawing.Size(251, 50);
             this.settings_btn.TabIndex = 19;
             this.settings_btn.Text = "Parametres Générales";
+            this.settings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.settings_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.settings_btn.UseVisualStyleBackColor = true;
             this.settings_btn.Click += new System.EventHandler(this.seetings_btn_Click);
             // 
@@ -123,9 +125,9 @@ namespace Gestionnaire_Pro
             this.actions_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.actions_btn.Image = global::Gestionnaire_Pro.Properties.Resources.rinse__1_;
             this.actions_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.actions_btn.Location = new System.Drawing.Point(0, 522);
+            this.actions_btn.Location = new System.Drawing.Point(0, 572);
             this.actions_btn.Name = "actions_btn";
-            this.actions_btn.Size = new System.Drawing.Size(229, 50);
+            this.actions_btn.Size = new System.Drawing.Size(251, 50);
             this.actions_btn.TabIndex = 18;
             this.actions_btn.Text = "Historique";
             this.actions_btn.UseVisualStyleBackColor = true;
@@ -142,7 +144,7 @@ namespace Gestionnaire_Pro
             this.notification_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.notification_btn.Location = new System.Drawing.Point(0, 422);
             this.notification_btn.Name = "notification_btn";
-            this.notification_btn.Size = new System.Drawing.Size(229, 50);
+            this.notification_btn.Size = new System.Drawing.Size(251, 50);
             this.notification_btn.TabIndex = 17;
             this.notification_btn.Text = "Notifications";
             this.notification_btn.UseVisualStyleBackColor = true;
@@ -160,7 +162,7 @@ namespace Gestionnaire_Pro
             this.user_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.user_btn.Location = new System.Drawing.Point(0, 372);
             this.user_btn.Name = "user_btn";
-            this.user_btn.Size = new System.Drawing.Size(229, 50);
+            this.user_btn.Size = new System.Drawing.Size(251, 50);
             this.user_btn.TabIndex = 16;
             this.user_btn.Text = "Utilisateurs";
             this.user_btn.UseVisualStyleBackColor = true;
@@ -177,7 +179,7 @@ namespace Gestionnaire_Pro
             this.fournisseurs_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.fournisseurs_btn.Location = new System.Drawing.Point(0, 322);
             this.fournisseurs_btn.Name = "fournisseurs_btn";
-            this.fournisseurs_btn.Size = new System.Drawing.Size(229, 50);
+            this.fournisseurs_btn.Size = new System.Drawing.Size(251, 50);
             this.fournisseurs_btn.TabIndex = 15;
             this.fournisseurs_btn.Text = "Fournisseurs";
             this.fournisseurs_btn.UseVisualStyleBackColor = true;
@@ -194,7 +196,7 @@ namespace Gestionnaire_Pro
             this.clients_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clients_btn.Location = new System.Drawing.Point(0, 272);
             this.clients_btn.Name = "clients_btn";
-            this.clients_btn.Size = new System.Drawing.Size(229, 50);
+            this.clients_btn.Size = new System.Drawing.Size(251, 50);
             this.clients_btn.TabIndex = 14;
             this.clients_btn.Text = "Clients";
             this.clients_btn.UseVisualStyleBackColor = true;
@@ -211,7 +213,7 @@ namespace Gestionnaire_Pro
             this.rev_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rev_btn.Location = new System.Drawing.Point(0, 222);
             this.rev_btn.Name = "rev_btn";
-            this.rev_btn.Size = new System.Drawing.Size(229, 50);
+            this.rev_btn.Size = new System.Drawing.Size(251, 50);
             this.rev_btn.TabIndex = 11;
             this.rev_btn.Text = "Statistique";
             this.rev_btn.UseVisualStyleBackColor = true;
@@ -226,9 +228,9 @@ namespace Gestionnaire_Pro
             this.exit_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.exit_btn.Image = ((System.Drawing.Image)(resources.GetObject("exit_btn.Image")));
             this.exit_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exit_btn.Location = new System.Drawing.Point(0, 572);
+            this.exit_btn.Location = new System.Drawing.Point(0, 622);
             this.exit_btn.Name = "exit_btn";
-            this.exit_btn.Size = new System.Drawing.Size(229, 60);
+            this.exit_btn.Size = new System.Drawing.Size(251, 60);
             this.exit_btn.TabIndex = 7;
             this.exit_btn.Text = "Quitter";
             this.exit_btn.UseVisualStyleBackColor = true;
@@ -245,7 +247,7 @@ namespace Gestionnaire_Pro
             this.articles_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.articles_btn.Location = new System.Drawing.Point(0, 172);
             this.articles_btn.Name = "articles_btn";
-            this.articles_btn.Size = new System.Drawing.Size(229, 50);
+            this.articles_btn.Size = new System.Drawing.Size(251, 50);
             this.articles_btn.TabIndex = 4;
             this.articles_btn.Text = "Produits";
             this.articles_btn.UseVisualStyleBackColor = true;
@@ -262,7 +264,7 @@ namespace Gestionnaire_Pro
             this.achat_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.achat_btn.Location = new System.Drawing.Point(0, 122);
             this.achat_btn.Name = "achat_btn";
-            this.achat_btn.Size = new System.Drawing.Size(229, 50);
+            this.achat_btn.Size = new System.Drawing.Size(251, 50);
             this.achat_btn.TabIndex = 3;
             this.achat_btn.Text = "Achat";
             this.achat_btn.UseVisualStyleBackColor = true;
@@ -279,7 +281,7 @@ namespace Gestionnaire_Pro
             this.vente_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.vente_btn.Location = new System.Drawing.Point(0, 72);
             this.vente_btn.Name = "vente_btn";
-            this.vente_btn.Size = new System.Drawing.Size(229, 50);
+            this.vente_btn.Size = new System.Drawing.Size(251, 50);
             this.vente_btn.TabIndex = 2;
             this.vente_btn.Text = "Vente";
             this.vente_btn.UseVisualStyleBackColor = true;
@@ -293,7 +295,7 @@ namespace Gestionnaire_Pro
             this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.logoPanel.Location = new System.Drawing.Point(0, 0);
             this.logoPanel.Name = "logoPanel";
-            this.logoPanel.Size = new System.Drawing.Size(229, 72);
+            this.logoPanel.Size = new System.Drawing.Size(251, 72);
             this.logoPanel.TabIndex = 0;
             // 
             // logoLbl
@@ -313,9 +315,9 @@ namespace Gestionnaire_Pro
             this.titlePanel.Controls.Add(this.exitChildForm_btn);
             this.titlePanel.Controls.Add(this.titleLbl);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titlePanel.Location = new System.Drawing.Point(229, 0);
+            this.titlePanel.Location = new System.Drawing.Point(251, 0);
             this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(717, 72);
+            this.titlePanel.Size = new System.Drawing.Size(695, 72);
             this.titlePanel.TabIndex = 1;
             // 
             // exitChildForm_btn
@@ -339,7 +341,7 @@ namespace Gestionnaire_Pro
             this.titleLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.titleLbl.Font = new System.Drawing.Font("Times New Roman", 22.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.titleLbl.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.titleLbl.Location = new System.Drawing.Point(178, 19);
+            this.titleLbl.Location = new System.Drawing.Point(167, 19);
             this.titleLbl.Name = "titleLbl";
             this.titleLbl.Size = new System.Drawing.Size(377, 35);
             this.titleLbl.TabIndex = 0;
@@ -355,9 +357,9 @@ namespace Gestionnaire_Pro
             this.mainPanel.Controls.Add(this.pictureBox1);
             this.mainPanel.Controls.Add(this.logoPic);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(229, 72);
+            this.mainPanel.Location = new System.Drawing.Point(251, 72);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(717, 560);
+            this.mainPanel.Size = new System.Drawing.Size(695, 610);
             this.mainPanel.TabIndex = 2;
             // 
             // loginPanel
@@ -370,7 +372,7 @@ namespace Gestionnaire_Pro
             this.loginPanel.Controls.Add(this.label3);
             this.loginPanel.Controls.Add(this.password_txt);
             this.loginPanel.Controls.Add(this.label2);
-            this.loginPanel.Location = new System.Drawing.Point(28, 79);
+            this.loginPanel.Location = new System.Drawing.Point(17, 104);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(649, 380);
             this.loginPanel.TabIndex = 5;
@@ -488,9 +490,9 @@ namespace Gestionnaire_Pro
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 507);
+            this.panel1.Location = new System.Drawing.Point(0, 557);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(717, 53);
+            this.panel1.Size = new System.Drawing.Size(695, 53);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -500,7 +502,7 @@ namespace Gestionnaire_Pro
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(717, 53);
+            this.label1.Size = new System.Drawing.Size(695, 53);
             this.label1.TabIndex = 1;
             this.label1.Text = "Créer par Derrar Mourad Riad ,N°Téléphone :  0799244307";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -509,7 +511,7 @@ namespace Gestionnaire_Pro
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Gestionnaire_Pro.Properties.Resources.rmdaTem;
-            this.pictureBox1.Location = new System.Drawing.Point(521, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(499, 7);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(193, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -519,7 +521,7 @@ namespace Gestionnaire_Pro
             // logoPic
             // 
             this.logoPic.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.logoPic.Location = new System.Drawing.Point(148, 262);
+            this.logoPic.Location = new System.Drawing.Point(137, 312);
             this.logoPic.Name = "logoPic";
             this.logoPic.Size = new System.Drawing.Size(407, 244);
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -531,7 +533,7 @@ namespace Gestionnaire_Pro
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(946, 632);
+            this.ClientSize = new System.Drawing.Size(946, 682);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.titlePanel);
             this.Controls.Add(this.buttonsPanel);

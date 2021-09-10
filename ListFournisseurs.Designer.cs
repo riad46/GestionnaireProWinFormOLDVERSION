@@ -33,6 +33,7 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListFournisseurs));
             this.panel1 = new System.Windows.Forms.Panel();
             this.num_txt = new System.Windows.Forms.TextBox();
             this.nom_txt = new System.Windows.Forms.TextBox();
@@ -218,6 +219,7 @@ namespace Gestionnaire_Pro
             this.ClientSize = new System.Drawing.Size(637, 548);
             this.Controls.Add(this.fournisseurTable);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListFournisseurs";
             this.Text = "List de Fournisseurs";
             this.Load += new System.EventHandler(this.ListFournisseurs_Load);
