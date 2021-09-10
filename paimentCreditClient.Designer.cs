@@ -133,7 +133,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.client_combo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "paimentCreditClient";
-            this.Text = "paimentCreditClient";
+            this.Text = "paiment de Credit Client";
             this.Load += new System.EventHandler(this.paimentCreditClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

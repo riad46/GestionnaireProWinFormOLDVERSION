@@ -110,7 +110,7 @@ namespace Gestionnaire_Pro
             this.settings_btn.Name = "settings_btn";
             this.settings_btn.Size = new System.Drawing.Size(229, 50);
             this.settings_btn.TabIndex = 19;
-            this.settings_btn.Text = "Settings";
+            this.settings_btn.Text = "Parametres Générales";
             this.settings_btn.UseVisualStyleBackColor = true;
             this.settings_btn.Click += new System.EventHandler(this.seetings_btn_Click);
             // 

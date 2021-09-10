@@ -80,6 +80,8 @@ namespace Gestionnaire_Pro
             // 
             // del_btn
             // 
+            this.del_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.del_btn.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.del_btn.Location = new System.Drawing.Point(484, 64);
             this.del_btn.Name = "del_btn";
             this.del_btn.Size = new System.Drawing.Size(150, 37);
@@ -89,46 +91,51 @@ namespace Gestionnaire_Pro
             // 
             // search_btn
             // 
-            this.search_btn.Location = new System.Drawing.Point(222, 28);
+            this.search_btn.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.search_btn.Location = new System.Drawing.Point(332, 9);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(112, 37);
+            this.search_btn.Size = new System.Drawing.Size(118, 37);
             this.search_btn.TabIndex = 7;
             this.search_btn.Text = "Recherche";
             this.search_btn.UseVisualStyleBackColor = true;
             // 
             // montant_txt
             // 
-            this.montant_txt.Location = new System.Drawing.Point(104, 61);
+            this.montant_txt.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.montant_txt.Location = new System.Drawing.Point(161, 61);
             this.montant_txt.Name = "montant_txt";
-            this.montant_txt.Size = new System.Drawing.Size(98, 23);
+            this.montant_txt.Size = new System.Drawing.Size(144, 32);
             this.montant_txt.TabIndex = 6;
             this.montant_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(21, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 15);
+            this.label2.Size = new System.Drawing.Size(111, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Date Achat";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(21, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 15);
+            this.label1.Size = new System.Drawing.Size(135, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Montant Total";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(104, 10);
+            this.dateTimePicker1.Location = new System.Drawing.Point(161, 10);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(144, 32);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // achatTable
@@ -357,7 +364,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "listeAchat";
-            this.Text = "listeAchat";
+            this.Text = "Table d\'Achats";
             this.Load += new System.EventHandler(this.listeAchat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

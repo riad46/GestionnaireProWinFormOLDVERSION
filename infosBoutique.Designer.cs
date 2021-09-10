@@ -182,7 +182,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.nom_txt);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "infosBoutique";
-            this.Text = "infosBoutique";
+            this.Text = "informations de Boutique";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.infosBoutique_FormClosing);
             this.Load += new System.EventHandler(this.infosBoutique_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

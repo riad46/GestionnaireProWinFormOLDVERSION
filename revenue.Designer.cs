@@ -370,7 +370,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "revenue";
-            this.Text = "revenue";
+            this.Text = "Revenue";
             this.Load += new System.EventHandler(this.revenue_Load);
             this.recherche.ResumeLayout(false);
             this.recherche.PerformLayout();

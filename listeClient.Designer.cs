@@ -209,7 +209,7 @@ namespace Gestionnaire_Pro
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "listeClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "listeClient";
+            this.Text = "liste de Clients";
             this.Load += new System.EventHandler(this.listeClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientTable)).EndInit();
             this.panel1.ResumeLayout(false);

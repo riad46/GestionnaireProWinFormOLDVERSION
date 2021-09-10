@@ -403,7 +403,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "vente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vente";
+            this.Text = "Nouveau Vente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.vente_FormClosing);
             this.Load += new System.EventHandler(this.vente_Load);
             this.panel1.ResumeLayout(false);

@@ -219,7 +219,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.fournisseurTable);
             this.Controls.Add(this.panel1);
             this.Name = "ListFournisseurs";
-            this.Text = "ListFournisseurs";
+            this.Text = "List de Fournisseurs";
             this.Load += new System.EventHandler(this.ListFournisseurs_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

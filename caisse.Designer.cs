@@ -406,7 +406,7 @@ namespace Gestionnaire_Pro
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "caisse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "caisse";
+            this.Text = "Caisse";
             this.Load += new System.EventHandler(this.caisse_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -393,7 +393,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.articleTable);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "tableArticle";
-            this.Text = "Table d\'articles";
+            this.Text = "Table d\'article";
             this.Load += new System.EventHandler(this.tableArticle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.articleTable)).EndInit();
             this.panel1.ResumeLayout(false);

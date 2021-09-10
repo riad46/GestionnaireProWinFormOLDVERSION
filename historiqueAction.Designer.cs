@@ -107,7 +107,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.actionsTable);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "historiqueAction";
-            this.Text = "historiqueAction";
+            this.Text = "historique d\'Action";
             this.Load += new System.EventHandler(this.historiqueAction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.actionsTable)).EndInit();
             this.ResumeLayout(false);

@@ -299,7 +299,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.articleTable);
             this.Controls.Add(this.panel1);
             this.Name = "ArticlesTotalStatistics";
-            this.Text = "ArticlesTotalStatistics";
+            this.Text = "Statistiques d\'articles";
             this.Load += new System.EventHandler(this.ArticlesTotalStatistics_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
