@@ -6,6 +6,8 @@
     <RootNamespace>Gestionnaire_Pro</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <StartupObject>Gestionnaire_Pro.Program</StartupObject>
+    <Platforms>AnyCPU;x86</Platforms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
