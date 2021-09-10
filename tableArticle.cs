@@ -33,7 +33,7 @@ namespace Gestionnaire_Pro
             articleTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
             articleTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
         }
-            private int GetCurrentSelectedTableRowId()
+        private int GetCurrentSelectedTableRowId()
         {
             if(articles.Count>0)
             return (int)articleTable.SelectedRows[0].Cells[0].Value;
@@ -192,19 +192,14 @@ namespace Gestionnaire_Pro
 
             SearchForArticlesWithFilers(codeBarre, nomArticle, typeArticle, nomF);
 
-
-
-
-
-
-
-
-
         }
 
         private void FullRevenue_btn_Click(object sender, EventArgs e)
         {
-
+            using (var thisForm=new ArticlesTotalStatistics())
+            {
+                thisForm.ShowDialog();
+            }
         }
     }
 }

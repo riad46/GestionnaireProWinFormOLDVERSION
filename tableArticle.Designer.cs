@@ -236,7 +236,6 @@ namespace Gestionnaire_Pro
             this.FullRevenue_btn.TabIndex = 15;
             this.FullRevenue_btn.Text = "Voir Revenue Total";
             this.FullRevenue_btn.UseVisualStyleBackColor = true;
-            this.FullRevenue_btn.Visible = false;
             this.FullRevenue_btn.Click += new System.EventHandler(this.FullRevenue_btn_Click);
             // 
             // deleteAll_btn
