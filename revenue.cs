@@ -41,9 +41,11 @@ namespace Gestionnaire_Pro
         }
         private void SetUpTable(List<DetailVente> detailVentes)
         {
+            var bindingArticlesList = new BindingList<DetailVente>(detailVentes);
+            var source = new BindingSource(bindingArticlesList, null);
 
             revenueTable.AutoGenerateColumns = false;
-            revenueTable.DataSource = detailVentes;
+            revenueTable.DataSource = source;
             totalPaye_lbl.Text = _totalAchat.ToString() + " DA";
             revTotal_lbl.Text = _totalPaye.ToString() + " DA";
             revNet_lbl.Text = (_totalPaye-_totalAchat).ToString() + " DA";

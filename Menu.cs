@@ -224,6 +224,38 @@ create table if not EXISTS ProduitExcluDeVerification(
   articleId int NOT NULL,
   FOREIGN KEY(articleId) REFERENCES articles(id)
    ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table if not exists factures(
+  id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  dateFacture datetime not null unique,
+  montantTotale float not null,
+  remise float not null,
+  netPayé float NOT NULL,
+  ajouterPar varchar(20) NOT NULL,
+  dateModification datetime ,
+  modifierPar varchar(20),
+  nouveauMontantTotal float,
+  nouvelleRemise float ,
+  clientId int ,
+  FOREIGN KEY(clientId) REFERENCES clients(id)
+  ON DELETE CASCADE ON UPDATE CASCADE
+);
+create table if not EXISTS detailFactures(
+  id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  codeBarre Varchar(20) NOT NULL , 
+  nom Varchar(30) NOT NULL ,
+  Type Varchar(20) ,
+  Quantité float NOT NULL ,
+  prixAchat FLoat not null,
+  prixVente float NOT NULL,
+  remise float not NULL,
+  nouvelleQuantité float,
+  nouvelleRemise float,
+  nouveauTotale float,
+  factureId int NOT NULL,
+  FOREIGN key(factureId) REFERENCES factures(id) 
+  ON DELETE CASCADE ON UPDATE CASCADE
 );";
             using (var connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
@@ -430,7 +462,6 @@ create table if not EXISTS ProduitExcluDeVerification(
            // _btns = new List<Button>();
 
         }
-
         private void CreateVenteBtns()
         {
             var nvVente_btn = new RoundButton();
@@ -950,7 +981,71 @@ create table if not EXISTS ProduitExcluDeVerification(
 
             }
         }
+        private void CreateFactureBtns()
+        {
+            var nvFacture_btn = new RoundButton();
+            nvFacture_btn.Anchor = AnchorStyles.Top;
+            nvFacture_btn.FlatStyle = FlatStyle.Flat;
+            nvFacture_btn.Size = new Size(480, 80);
+            nvFacture_btn.Location = new Point((this.Width - nvFacture_btn.Width) / 2 - 100, 40);
+            nvFacture_btn.Name = "nvFacture_btn";
+            nvFacture_btn.BackColor = ThemeColor.PrimaryColor;
+            nvFacture_btn.ForeColor = Color.White;
+            nvFacture_btn.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold);
+            nvFacture_btn.TabIndex = 1;
+            nvFacture_btn.Text = "Nouvelle Facture";
+            nvFacture_btn.UseVisualStyleBackColor = true;
+            nvFacture_btn.Click += new EventHandler(nvFacture_btn_Click);
 
+            var historiqueFacture_btn = new RoundButton();
+            historiqueFacture_btn.Anchor = AnchorStyles.Top;
+            historiqueFacture_btn.FlatStyle = FlatStyle.Flat;
+            historiqueFacture_btn.Size = new Size(480, 80);
+            historiqueFacture_btn.Location = new Point((this.Width - historiqueFacture_btn.Width) / 2 - 100, 140);
+            historiqueFacture_btn.Name = "historiqueFacture_btn";
+            historiqueFacture_btn.BackColor = ThemeColor.PrimaryColor;
+            historiqueFacture_btn.ForeColor = Color.White;
+            historiqueFacture_btn.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold);
+            historiqueFacture_btn.TabIndex = 1;
+            historiqueFacture_btn.Text = "List de Facture";
+            historiqueFacture_btn.UseVisualStyleBackColor = true;
+            historiqueFacture_btn.Click += new EventHandler(historiqueFacture_btn_Click);
+
+            if (mainPanel.Controls.Contains(historiqueFacture_btn))
+            {
+                mainPanel.Controls[mainPanel.Controls.IndexOf(historiqueFacture_btn)].Visible = true;
+
+            }
+            if (mainPanel.Controls.Contains(nvFacture_btn))
+            {
+                mainPanel.Controls[mainPanel.Controls.IndexOf(nvFacture_btn)].Visible = true;
+
+            }
+
+
+            if (!mainPanel.Controls.Contains(historiqueFacture_btn))
+            {
+                mainPanel.Controls.Add(historiqueFacture_btn);
+                _btns.Add(historiqueFacture_btn);
+
+            }
+            if (!mainPanel.Controls.Contains(nvFacture_btn))
+            {
+                mainPanel.Controls.Add(nvFacture_btn);
+                _btns.Add(nvFacture_btn);
+
+            }
+        }
+
+        private void historiqueFacture_btn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void nvFacture_btn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Buttons events
@@ -1148,7 +1243,12 @@ create table if not EXISTS ProduitExcluDeVerification(
             CreateParamsBtns();
         }
         #endregion
+        #region Facture
+        private void facture_btn_Click(object sender, EventArgs e)
+        {
 
+        }
+        #endregion
         private void user_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
@@ -1209,5 +1309,8 @@ create table if not EXISTS ProduitExcluDeVerification(
             HideShowGreetingPanelAndLogo(0);
             OpenChildForm(new historiqueAction());
         }
+
+      
     }
-}
+
+ }

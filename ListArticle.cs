@@ -58,9 +58,10 @@ namespace Gestionnaire_Pro
 
         private void SetUpTable()
         {
-          
+            var bindingArticlesList = new BindingList<Article>(articles);
+            var source = new BindingSource(bindingArticlesList, null);
             articleTable.AutoGenerateColumns = false;
-            articleTable.DataSource = articles;
+            articleTable.DataSource = source;
 
             for (int i =0; i < articleTable.Rows.Count; i++)
             {

@@ -219,30 +219,30 @@ namespace Gestionnaire_Pro
             // totalPaye_lbl
             // 
             this.totalPaye_lbl.AutoSize = true;
-            this.totalPaye_lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.totalPaye_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.totalPaye_lbl.Location = new System.Drawing.Point(563, 39);
             this.totalPaye_lbl.Name = "totalPaye_lbl";
-            this.totalPaye_lbl.Size = new System.Drawing.Size(54, 21);
+            this.totalPaye_lbl.Size = new System.Drawing.Size(67, 26);
             this.totalPaye_lbl.TabIndex = 5;
             this.totalPaye_lbl.Text = "label5";
             // 
             // revTotal_lbl
             // 
             this.revTotal_lbl.AutoSize = true;
-            this.revTotal_lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.revTotal_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.revTotal_lbl.Location = new System.Drawing.Point(563, 91);
             this.revTotal_lbl.Name = "revTotal_lbl";
-            this.revTotal_lbl.Size = new System.Drawing.Size(76, 23);
+            this.revTotal_lbl.Size = new System.Drawing.Size(100, 26);
             this.revTotal_lbl.TabIndex = 6;
             this.revTotal_lbl.Text = "00000111";
             // 
             // revNet_lbl
             // 
             this.revNet_lbl.AutoSize = true;
-            this.revNet_lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.revNet_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.revNet_lbl.Location = new System.Drawing.Point(563, 153);
             this.revNet_lbl.Name = "revNet_lbl";
-            this.revNet_lbl.Size = new System.Drawing.Size(54, 21);
+            this.revNet_lbl.Size = new System.Drawing.Size(67, 26);
             this.revNet_lbl.TabIndex = 7;
             this.revNet_lbl.Text = "label7";
             // 

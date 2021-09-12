@@ -432,11 +432,11 @@ namespace Gestionnaire_Pro
         private void AbortVente()
         {
             _mesArticleAvendre = new List<Article>();
-            SetUpTable();
+          
         }
         private void abort_btn_Click(object sender, EventArgs e)
         {
-            ResetArticlesStock();
+           
             AbortVente();
         }
 

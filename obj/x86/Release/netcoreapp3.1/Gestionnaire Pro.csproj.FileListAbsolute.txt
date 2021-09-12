@@ -74,3 +74,4 @@ P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.csproj.
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.dll
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.pdb
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache
+P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
