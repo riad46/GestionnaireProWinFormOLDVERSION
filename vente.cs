@@ -391,7 +391,7 @@ namespace Gestionnaire_Pro
 
                     return;
                 }
-                descriptionAction = $" Modifier le Vente du Référence {_venteId }";
+               
                 AddVente();
                 AddDetailVente();
             }

@@ -33,6 +33,15 @@ namespace Gestionnaire_Pro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.buttonsPanel = new System.Windows.Forms.Panel();
+            this.settings_btn = new System.Windows.Forms.Button();
+            this.notification_btn = new System.Windows.Forms.Button();
+            this.user_btn = new System.Windows.Forms.Button();
+            this.fournisseurs_btn = new System.Windows.Forms.Button();
+            this.clients_btn = new System.Windows.Forms.Button();
+            this.rev_btn = new System.Windows.Forms.Button();
+            this.articles_btn = new System.Windows.Forms.Button();
+            this.achat_btn = new System.Windows.Forms.Button();
+            this.facture_btn = new System.Windows.Forms.Button();
             this.actions_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
             this.vente_btn = new System.Windows.Forms.Button();
@@ -56,15 +65,6 @@ namespace Gestionnaire_Pro
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
-            this.facture_btn = new System.Windows.Forms.Button();
-            this.settings_btn = new System.Windows.Forms.Button();
-            this.notification_btn = new System.Windows.Forms.Button();
-            this.user_btn = new System.Windows.Forms.Button();
-            this.fournisseurs_btn = new System.Windows.Forms.Button();
-            this.clients_btn = new System.Windows.Forms.Button();
-            this.rev_btn = new System.Windows.Forms.Button();
-            this.articles_btn = new System.Windows.Forms.Button();
-            this.achat_btn = new System.Windows.Forms.Button();
             this.buttonsPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.titlePanel.SuspendLayout();
@@ -98,6 +98,162 @@ namespace Gestionnaire_Pro
             this.buttonsPanel.Name = "buttonsPanel";
             this.buttonsPanel.Size = new System.Drawing.Size(251, 738);
             this.buttonsPanel.TabIndex = 0;
+            // 
+            // settings_btn
+            // 
+            this.settings_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settings_btn.FlatAppearance.BorderSize = 0;
+            this.settings_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settings_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.settings_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.settings_btn.Image = global::Gestionnaire_Pro.Properties.Resources.adjust__1_;
+            this.settings_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settings_btn.Location = new System.Drawing.Point(0, 522);
+            this.settings_btn.Name = "settings_btn";
+            this.settings_btn.Size = new System.Drawing.Size(251, 50);
+            this.settings_btn.TabIndex = 28;
+            this.settings_btn.Text = "Parametres Générales";
+            this.settings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.settings_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.settings_btn.UseVisualStyleBackColor = true;
+            this.settings_btn.Click += new System.EventHandler(this.settings_btn_Click);
+            // 
+            // notification_btn
+            // 
+            this.notification_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.notification_btn.FlatAppearance.BorderSize = 0;
+            this.notification_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.notification_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.notification_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.notification_btn.Image = global::Gestionnaire_Pro.Properties.Resources.notification__1_;
+            this.notification_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.notification_btn.Location = new System.Drawing.Point(0, 472);
+            this.notification_btn.Name = "notification_btn";
+            this.notification_btn.Size = new System.Drawing.Size(251, 50);
+            this.notification_btn.TabIndex = 27;
+            this.notification_btn.Text = "Notifications";
+            this.notification_btn.UseVisualStyleBackColor = true;
+            this.notification_btn.Visible = false;
+            this.notification_btn.Click += new System.EventHandler(this.notification_btn_Click);
+            // 
+            // user_btn
+            // 
+            this.user_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.user_btn.FlatAppearance.BorderSize = 0;
+            this.user_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.user_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.user_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.user_btn.Image = global::Gestionnaire_Pro.Properties.Resources.login__1_;
+            this.user_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.user_btn.Location = new System.Drawing.Point(0, 422);
+            this.user_btn.Name = "user_btn";
+            this.user_btn.Size = new System.Drawing.Size(251, 50);
+            this.user_btn.TabIndex = 26;
+            this.user_btn.Text = "Utilisateurs";
+            this.user_btn.UseVisualStyleBackColor = true;
+            this.user_btn.Click += new System.EventHandler(this.user_btn_Click);
+            // 
+            // fournisseurs_btn
+            // 
+            this.fournisseurs_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fournisseurs_btn.FlatAppearance.BorderSize = 0;
+            this.fournisseurs_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fournisseurs_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.fournisseurs_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.fournisseurs_btn.Image = global::Gestionnaire_Pro.Properties.Resources.salesman__1_;
+            this.fournisseurs_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.fournisseurs_btn.Location = new System.Drawing.Point(0, 372);
+            this.fournisseurs_btn.Name = "fournisseurs_btn";
+            this.fournisseurs_btn.Size = new System.Drawing.Size(251, 50);
+            this.fournisseurs_btn.TabIndex = 25;
+            this.fournisseurs_btn.Text = "Fournisseurs";
+            this.fournisseurs_btn.UseVisualStyleBackColor = true;
+            this.fournisseurs_btn.Click += new System.EventHandler(this.fournisseurs_btn_Click);
+            // 
+            // clients_btn
+            // 
+            this.clients_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.clients_btn.FlatAppearance.BorderSize = 0;
+            this.clients_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clients_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.clients_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.clients_btn.Image = global::Gestionnaire_Pro.Properties.Resources.profile__1_;
+            this.clients_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clients_btn.Location = new System.Drawing.Point(0, 322);
+            this.clients_btn.Name = "clients_btn";
+            this.clients_btn.Size = new System.Drawing.Size(251, 50);
+            this.clients_btn.TabIndex = 24;
+            this.clients_btn.Text = "Clients";
+            this.clients_btn.UseVisualStyleBackColor = true;
+            this.clients_btn.Click += new System.EventHandler(this.clients_btn_Click);
+            // 
+            // rev_btn
+            // 
+            this.rev_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rev_btn.FlatAppearance.BorderSize = 0;
+            this.rev_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rev_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rev_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.rev_btn.Image = ((System.Drawing.Image)(resources.GetObject("rev_btn.Image")));
+            this.rev_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rev_btn.Location = new System.Drawing.Point(0, 272);
+            this.rev_btn.Name = "rev_btn";
+            this.rev_btn.Size = new System.Drawing.Size(251, 50);
+            this.rev_btn.TabIndex = 23;
+            this.rev_btn.Text = "Statistique";
+            this.rev_btn.UseVisualStyleBackColor = true;
+            this.rev_btn.Click += new System.EventHandler(this.rev_btn_Click);
+            // 
+            // articles_btn
+            // 
+            this.articles_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.articles_btn.FlatAppearance.BorderSize = 0;
+            this.articles_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.articles_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.articles_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.articles_btn.Image = ((System.Drawing.Image)(resources.GetObject("articles_btn.Image")));
+            this.articles_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.articles_btn.Location = new System.Drawing.Point(0, 222);
+            this.articles_btn.Name = "articles_btn";
+            this.articles_btn.Size = new System.Drawing.Size(251, 50);
+            this.articles_btn.TabIndex = 22;
+            this.articles_btn.Text = "Produits";
+            this.articles_btn.UseVisualStyleBackColor = true;
+            this.articles_btn.Click += new System.EventHandler(this.articles_btn_Click);
+            // 
+            // achat_btn
+            // 
+            this.achat_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.achat_btn.FlatAppearance.BorderSize = 0;
+            this.achat_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.achat_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.achat_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.achat_btn.Image = ((System.Drawing.Image)(resources.GetObject("achat_btn.Image")));
+            this.achat_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.achat_btn.Location = new System.Drawing.Point(0, 172);
+            this.achat_btn.Name = "achat_btn";
+            this.achat_btn.Size = new System.Drawing.Size(251, 50);
+            this.achat_btn.TabIndex = 21;
+            this.achat_btn.Text = "Achat";
+            this.achat_btn.UseVisualStyleBackColor = true;
+            this.achat_btn.Click += new System.EventHandler(this.achat_btn_Click);
+            // 
+            // facture_btn
+            // 
+            this.facture_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.facture_btn.FlatAppearance.BorderSize = 0;
+            this.facture_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.facture_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.facture_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.facture_btn.Image = ((System.Drawing.Image)(resources.GetObject("facture_btn.Image")));
+            this.facture_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.facture_btn.Location = new System.Drawing.Point(0, 122);
+            this.facture_btn.Name = "facture_btn";
+            this.facture_btn.Size = new System.Drawing.Size(251, 50);
+            this.facture_btn.TabIndex = 20;
+            this.facture_btn.Text = "Facture";
+            this.facture_btn.UseVisualStyleBackColor = true;
+            this.facture_btn.Click += new System.EventHandler(this.facture_btn_Click);
             // 
             // actions_btn
             // 
@@ -374,9 +530,9 @@ namespace Gestionnaire_Pro
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Gestionnaire_Pro.Properties.Resources.rmdaTem;
-            this.pictureBox1.Location = new System.Drawing.Point(499, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(584, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 115);
+            this.pictureBox1.Size = new System.Drawing.Size(108, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -390,154 +546,6 @@ namespace Gestionnaire_Pro
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPic.TabIndex = 6;
             this.logoPic.TabStop = false;
-            // 
-            // facture_btn
-            // 
-            this.facture_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.facture_btn.FlatAppearance.BorderSize = 0;
-            this.facture_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.facture_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.facture_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.facture_btn.Image = ((System.Drawing.Image)(resources.GetObject("facture_btn.Image")));
-            this.facture_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.facture_btn.Location = new System.Drawing.Point(0, 122);
-            this.facture_btn.Name = "facture_btn";
-            this.facture_btn.Size = new System.Drawing.Size(251, 50);
-            this.facture_btn.TabIndex = 20;
-            this.facture_btn.Text = "Facture";
-            this.facture_btn.UseVisualStyleBackColor = true;
-            this.facture_btn.Click += new System.EventHandler(this.facture_btn_Click);
-            // 
-            // settings_btn
-            // 
-            this.settings_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settings_btn.FlatAppearance.BorderSize = 0;
-            this.settings_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settings_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.settings_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.settings_btn.Image = global::Gestionnaire_Pro.Properties.Resources.adjust__1_;
-            this.settings_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settings_btn.Location = new System.Drawing.Point(0, 522);
-            this.settings_btn.Name = "settings_btn";
-            this.settings_btn.Size = new System.Drawing.Size(251, 50);
-            this.settings_btn.TabIndex = 28;
-            this.settings_btn.Text = "Parametres Générales";
-            this.settings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.settings_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.settings_btn.UseVisualStyleBackColor = true;
-            // 
-            // notification_btn
-            // 
-            this.notification_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.notification_btn.FlatAppearance.BorderSize = 0;
-            this.notification_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.notification_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.notification_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.notification_btn.Image = global::Gestionnaire_Pro.Properties.Resources.notification__1_;
-            this.notification_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.notification_btn.Location = new System.Drawing.Point(0, 472);
-            this.notification_btn.Name = "notification_btn";
-            this.notification_btn.Size = new System.Drawing.Size(251, 50);
-            this.notification_btn.TabIndex = 27;
-            this.notification_btn.Text = "Notifications";
-            this.notification_btn.UseVisualStyleBackColor = true;
-            this.notification_btn.Visible = false;
-            // 
-            // user_btn
-            // 
-            this.user_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.user_btn.FlatAppearance.BorderSize = 0;
-            this.user_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.user_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.user_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.user_btn.Image = global::Gestionnaire_Pro.Properties.Resources.login__1_;
-            this.user_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.user_btn.Location = new System.Drawing.Point(0, 422);
-            this.user_btn.Name = "user_btn";
-            this.user_btn.Size = new System.Drawing.Size(251, 50);
-            this.user_btn.TabIndex = 26;
-            this.user_btn.Text = "Utilisateurs";
-            this.user_btn.UseVisualStyleBackColor = true;
-            // 
-            // fournisseurs_btn
-            // 
-            this.fournisseurs_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fournisseurs_btn.FlatAppearance.BorderSize = 0;
-            this.fournisseurs_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fournisseurs_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fournisseurs_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.fournisseurs_btn.Image = global::Gestionnaire_Pro.Properties.Resources.salesman__1_;
-            this.fournisseurs_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fournisseurs_btn.Location = new System.Drawing.Point(0, 372);
-            this.fournisseurs_btn.Name = "fournisseurs_btn";
-            this.fournisseurs_btn.Size = new System.Drawing.Size(251, 50);
-            this.fournisseurs_btn.TabIndex = 25;
-            this.fournisseurs_btn.Text = "Fournisseurs";
-            this.fournisseurs_btn.UseVisualStyleBackColor = true;
-            // 
-            // clients_btn
-            // 
-            this.clients_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.clients_btn.FlatAppearance.BorderSize = 0;
-            this.clients_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clients_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.clients_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.clients_btn.Image = global::Gestionnaire_Pro.Properties.Resources.profile__1_;
-            this.clients_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clients_btn.Location = new System.Drawing.Point(0, 322);
-            this.clients_btn.Name = "clients_btn";
-            this.clients_btn.Size = new System.Drawing.Size(251, 50);
-            this.clients_btn.TabIndex = 24;
-            this.clients_btn.Text = "Clients";
-            this.clients_btn.UseVisualStyleBackColor = true;
-            // 
-            // rev_btn
-            // 
-            this.rev_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rev_btn.FlatAppearance.BorderSize = 0;
-            this.rev_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rev_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rev_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.rev_btn.Image = ((System.Drawing.Image)(resources.GetObject("rev_btn.Image")));
-            this.rev_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rev_btn.Location = new System.Drawing.Point(0, 272);
-            this.rev_btn.Name = "rev_btn";
-            this.rev_btn.Size = new System.Drawing.Size(251, 50);
-            this.rev_btn.TabIndex = 23;
-            this.rev_btn.Text = "Statistique";
-            this.rev_btn.UseVisualStyleBackColor = true;
-            // 
-            // articles_btn
-            // 
-            this.articles_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.articles_btn.FlatAppearance.BorderSize = 0;
-            this.articles_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.articles_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.articles_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.articles_btn.Image = ((System.Drawing.Image)(resources.GetObject("articles_btn.Image")));
-            this.articles_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.articles_btn.Location = new System.Drawing.Point(0, 222);
-            this.articles_btn.Name = "articles_btn";
-            this.articles_btn.Size = new System.Drawing.Size(251, 50);
-            this.articles_btn.TabIndex = 22;
-            this.articles_btn.Text = "Produits";
-            this.articles_btn.UseVisualStyleBackColor = true;
-            // 
-            // achat_btn
-            // 
-            this.achat_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.achat_btn.FlatAppearance.BorderSize = 0;
-            this.achat_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.achat_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.achat_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.achat_btn.Image = ((System.Drawing.Image)(resources.GetObject("achat_btn.Image")));
-            this.achat_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.achat_btn.Location = new System.Drawing.Point(0, 172);
-            this.achat_btn.Name = "achat_btn";
-            this.achat_btn.Size = new System.Drawing.Size(251, 50);
-            this.achat_btn.TabIndex = 21;
-            this.achat_btn.Text = "Achat";
-            this.achat_btn.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 

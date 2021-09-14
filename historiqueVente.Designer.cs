@@ -254,9 +254,9 @@ namespace Gestionnaire_Pro
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(3, 0);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(763, 215);
+            this.groupBox1.Size = new System.Drawing.Size(763, 212);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recherche";
@@ -287,7 +287,7 @@ namespace Gestionnaire_Pro
             this.sub_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.sub_btn.ForeColor = System.Drawing.Color.White;
-            this.sub_btn.Location = new System.Drawing.Point(566, 151);
+            this.sub_btn.Location = new System.Drawing.Point(566, 150);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(181, 46);
             this.sub_btn.TabIndex = 10;
@@ -381,6 +381,7 @@ namespace Gestionnaire_Pro
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "historiqueVente";
             this.Text = "Historique de Vente";
+            
             this.Shown += new System.EventHandler(this.historiqueVente_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.historiqueTable)).EndInit();
             this.panel1.ResumeLayout(false);

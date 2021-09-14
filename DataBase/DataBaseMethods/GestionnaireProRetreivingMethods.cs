@@ -97,11 +97,14 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 return res.ToList();
             }
         }
+
+       
+
         /// <summary>
-    /// use it in vente  
-    /// </summary>
-    /// <param name="codeBarre"></param>
-    /// <returns></returns>
+        /// use it in vente  
+        /// </summary>
+        /// <param name="codeBarre"></param>
+        /// <returns></returns>
         public static async Task<Article> GetArticleForVente(string codeBarre)
         {
             var sql = $"SELECT id,codeBarre,nom,Quantité,type,prixAchat,prixVente FROM articles where codeBarre ='{codeBarre}' ";
@@ -368,6 +371,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             return detailsVentes;
         }
 
+
         //use in revenue
         public static async Task<List<int>> GetVenteIds(DateTime dateMin,DateTime dateMax)
         {
@@ -445,8 +449,48 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 return res.ToList();
             }
         }
-            //--------------------------------------------------------------------------------  infoBoutique
-            public static async Task<InfoBoutique> GetBoutiqueInfos()
+
+        //----------------------------------------------------------------------------- Facture+details
+         public static async Task<List<Facture>> GetFacturesByFilter(int Id, int clientId, float total, DateTime dateMin, DateTime dateMax)
+       
+        {
+            var param = new { Id = Id, clientId = clientId, total = total, dateMin = dateMin, dateMax = dateMax };
+            var sql = "Select f.id,f.dateFacture,f.montantTotale,f.remise,f.netPayé,f.ajouterPar,c.* FROM factures f LEFT JOIN clients c ";
+            if (Id != 0 || clientId > 0 || total >= 0)
+            {
+                sql += " WHERE ";
+                if (Id > -1)
+                {
+                    sql += " f.id=@Id AND ";
+                }
+                if (clientId > -1) sql += " f.clientId=@clientId AND ";
+                if (total > -1) sql += "f.montantTotale=@total AND ";
+                if (dateMin != null) sql += " f.dateFacture >=@dateMin AND ";
+                if (dateMin != null) sql += " f.dateFacture <=@dateMax  ";
+
+            }
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                var res = await connection.QueryAsync<Facture, Client, Facture>(sql, (facture, client) =>
+                {
+                    if (facture.clientId != null)
+                        facture.Client = client;
+                    return facture;
+                }, param);
+                return res.ToList();
+            }
+        }
+         public static async Task<List<DetailsFacture>> GetDetailsFactureByFactureId(int id)
+        {
+            var sql = "select  id,codeBarre,nom,Type,Quantité,prixAchat,prixVente From detailVentes where venteId IN @id";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                var res = await connection.QueryAsync<DetailsFacture>(sql,id);
+                return res.ToList();
+            }
+        }
+        //--------------------------------------------------------------------------------  infoBoutique
+        public static async Task<InfoBoutique> GetBoutiqueInfos()
         {
             var sql = "SELECT * FROM infosBoutique where id=1";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))

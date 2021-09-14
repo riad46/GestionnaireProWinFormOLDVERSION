@@ -132,6 +132,16 @@ WHERE id=@Id";
                 await connection.ExecuteAsync(sql);
             }
         }
+
+        public static async void DeleteFacture(int factureId)
+        {
+            var sql = $"DELETE FROM factures WHERE id ={factureId}";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                await connection.ExecuteAsync(sql);
+            }
+        }
+
         public static async void DeleteAllFournisseur()
         {
             var sql = $"DELETE FROM fournisseurs";

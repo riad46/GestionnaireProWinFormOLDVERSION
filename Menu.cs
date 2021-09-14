@@ -233,15 +233,11 @@ create table if not exists factures(
   remise float not null,
   netPayé float NOT NULL,
   ajouterPar varchar(20) NOT NULL,
-  dateModification datetime ,
-  modifierPar varchar(20),
-  nouveauMontantTotal float,
-  nouvelleRemise float ,
   clientId int ,
   FOREIGN KEY(clientId) REFERENCES clients(id)
   ON DELETE CASCADE ON UPDATE CASCADE
 );
-create table if not EXISTS detailFactures(
+create table if not EXISTS detailsFactures(
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
   codeBarre Varchar(20) NOT NULL , 
   nom Varchar(30) NOT NULL ,
@@ -250,9 +246,6 @@ create table if not EXISTS detailFactures(
   prixAchat FLoat not null,
   prixVente float NOT NULL,
   remise float not NULL,
-  nouvelleQuantité float,
-  nouvelleRemise float,
-  nouveauTotale float,
   factureId int NOT NULL,
   FOREIGN key(factureId) REFERENCES factures(id) 
   ON DELETE CASCADE ON UPDATE CASCADE
@@ -1037,15 +1030,7 @@ create table if not EXISTS detailFactures(
             }
         }
 
-        private void historiqueFacture_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void nvFacture_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+      
         #endregion
 
         #region Buttons events
@@ -1235,7 +1220,7 @@ create table if not EXISTS detailFactures(
                 OpenChildForm(new param());
             }
         }
-        private void seetings_btn_Click(object sender, EventArgs e)
+        private void settings_btn_Click(object sender, EventArgs e)
         {
             RemoveBtns(_btns);
             ActivateButton(sender);
@@ -1246,7 +1231,20 @@ create table if not EXISTS detailFactures(
         #region Facture
         private void facture_btn_Click(object sender, EventArgs e)
         {
+            RemoveBtns(_btns);
+            ActivateButton(sender);
+            HideShowGreetingPanelAndLogo(0);
+            CreateFactureBtns();
+            
+        }
+        private void historiqueFacture_btn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TableFactures());
+        }
 
+        private void nvFacture_btn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ajoutFacture());
         }
         #endregion
         private void user_btn_Click(object sender, EventArgs e)
@@ -1288,6 +1286,7 @@ create table if not EXISTS detailFactures(
         }
         private void exitChildForm_btn_Click(object sender, EventArgs e)
         {
+            RemoveBtns(_btns);
             panel1.Visible = true;
             if (activeForm != null)
             {
@@ -1310,7 +1309,7 @@ create table if not EXISTS detailFactures(
             OpenChildForm(new historiqueAction());
         }
 
-      
+       
     }
 
  }

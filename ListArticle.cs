@@ -34,6 +34,7 @@ namespace Gestionnaire_Pro
         /// <summary>
         /// if it is called from achat use this  
         /// achat call gives the value 1 to achatCall variable
+        /// previous Form =vente => achatCall=0
         /// </summary>
         /// <param name="achatIndex"></param>
         public ListArticle(int achatIndex)
@@ -93,7 +94,6 @@ namespace Gestionnaire_Pro
                 if ((float)articleTable.SelectedRows[0].Cells[_qntCell].Value > 0)
                 {
                     GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, (float)articleTable.SelectedRows[0].Cells[_qntCell].Value - 1);
-
                 }
                 else
                 {

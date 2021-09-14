@@ -29,10 +29,10 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.venteTable = new System.Windows.Forms.DataGridView();
             this.codeBarreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,12 +70,12 @@ namespace Gestionnaire_Pro
             this.venteTable.AllowUserToAddRows = false;
             this.venteTable.AllowUserToDeleteRows = false;
             this.venteTable.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.venteTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.venteTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.venteTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -83,13 +83,13 @@ namespace Gestionnaire_Pro
             this.venteTable.BackgroundColor = System.Drawing.SystemColors.Window;
             this.venteTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.venteTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.venteTable.ColumnHeadersHeight = 60;
             this.venteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeBarreCol,
@@ -105,25 +105,27 @@ namespace Gestionnaire_Pro
             this.venteTable.MultiSelect = false;
             this.venteTable.Name = "venteTable";
             this.venteTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.venteTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.venteTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.venteTable.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.venteTable.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.venteTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.venteTable.RowTemplate.Height = 40;
             this.venteTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.venteTable.Size = new System.Drawing.Size(690, 482);
             this.venteTable.TabIndex = 5;
+            this.venteTable.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.venteTable_EditingControlShowing);
+            this.venteTable.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.venteTable_RowStateChanged);
             // 
             // codeBarreCol
             // 
@@ -217,6 +219,7 @@ namespace Gestionnaire_Pro
             this.listArticle_btn.TabIndex = 3;
             this.listArticle_btn.Text = "Liste d\'Article";
             this.listArticle_btn.UseVisualStyleBackColor = true;
+            this.listArticle_btn.Click += new System.EventHandler(this.listArticle_btn_Click);
             // 
             // client_combo
             // 
@@ -236,6 +239,7 @@ namespace Gestionnaire_Pro
             this.remise_txt.Name = "remise_txt";
             this.remise_txt.Size = new System.Drawing.Size(186, 39);
             this.remise_txt.TabIndex = 4;
+            this.remise_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.remise_txt_KeyPress);
             // 
             // codeBarre_txt
             // 
@@ -244,6 +248,7 @@ namespace Gestionnaire_Pro
             this.codeBarre_txt.Name = "codeBarre_txt";
             this.codeBarre_txt.Size = new System.Drawing.Size(186, 39);
             this.codeBarre_txt.TabIndex = 3;
+            this.codeBarre_txt.TextChanged += new System.EventHandler(this.codeBarre_txt_TextChanged);
             // 
             // panel3
             // 
@@ -272,6 +277,7 @@ namespace Gestionnaire_Pro
             this.del_btn.TabIndex = 2;
             this.del_btn.Text = "Supprimer";
             this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // abort_btn
             // 
@@ -285,6 +291,7 @@ namespace Gestionnaire_Pro
             this.abort_btn.TabIndex = 1;
             this.abort_btn.Text = "Annuler";
             this.abort_btn.UseVisualStyleBackColor = true;
+            this.abort_btn.Click += new System.EventHandler(this.abort_btn_Click);
             // 
             // sub_btn
             // 
@@ -298,6 +305,7 @@ namespace Gestionnaire_Pro
             this.sub_btn.TabIndex = 0;
             this.sub_btn.Text = "Valider";
             this.sub_btn.UseVisualStyleBackColor = true;
+            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // totalLabel
             // 
@@ -394,7 +402,7 @@ namespace Gestionnaire_Pro
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ajoutFacture";
-            this.Text = "ajoutFacture";
+            this.Text = "Nouvelle Facture";
             this.Load += new System.EventHandler(this.ajoutFacture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.venteTable)).EndInit();
             this.panel2.ResumeLayout(false);

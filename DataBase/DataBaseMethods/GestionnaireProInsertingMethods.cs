@@ -212,9 +212,43 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
         }
 
+        //Facture
+        public static async void AddFacture(Facture maFacture)
+        {
+            var sql = @"INSERT INTO factures(dateFacture,montantTotale,remise,netPayé,ajouterPar,clientId) VALUES(
+                        @dateFacture,
+                        @montantTotale,
+                        @remise,
+                        @netPayé,
+                        @ajouterPar,
+                        @clientId)";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                await connection.ExecuteScalarAsync(sql, maFacture);
+            }
+        }
 
+        public static async void AddDetailsFacture(List<DetailsFacture> details)
+        {
+            var sql = @"INSERT INTO detailsFactures(codeBarre,nom,Type,Quantité,prixAchat,prixVente,remise,factureId) VALUES(
+                      @codeBarre,
+                      @nom,
+                      @Type,
+                      @Quantité,
+                      @prixAchat,
+                      @prixVente,
+                      @remise,
+                      @factureId)";
 
-        
+            foreach (var item in details)
+            {
+                using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+                {
 
+                    await connection.ExecuteAsync(sql, item);
+                }
+
+            }
+        }
     }
 }
