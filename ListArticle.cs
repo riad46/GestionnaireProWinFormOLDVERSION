@@ -56,7 +56,6 @@ namespace Gestionnaire_Pro
             articleTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
 
         }
-
         private void SetUpTable()
         {
             var bindingArticlesList = new BindingList<Article>(articles);
@@ -113,7 +112,6 @@ namespace Gestionnaire_Pro
 
            
         }
-
         private void articleTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (GlobalClass.typeOp == 10) 

@@ -60,7 +60,17 @@ namespace Gestionnaire_Pro
             }
             
         }
-        
+        private void VerifyProducts()
+        {
+            if (Properties.Settings.Default.checkQnt)
+            {
+                GlobalClass.CheckForArticleQnt(Properties.Settings.Default.checkQntValue);
+            }
+            if (Properties.Settings.Default.checkDate)
+            {
+                GlobalClass.CheckForArticlesExpirationDate(Properties.Settings.Default.checkDateValue);
+            }
+        }
         private void Menu_Load(object sender, EventArgs e)
         {
            
@@ -73,6 +83,7 @@ namespace Gestionnaire_Pro
 
             LoadFormSettings();
             LoadLogo();
+            VerifyProducts();
         }
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -219,13 +230,18 @@ create table if not EXISTS actionsEffectué(
   dateAction datetime NOT NULL
  
 );
-create table if not EXISTS ProduitExcluDeVerification(
+create table if not EXISTS ProduitExcluDeQntVerification(
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
   articleId int NOT NULL,
   FOREIGN KEY(articleId) REFERENCES articles(id)
    ON DELETE CASCADE ON UPDATE CASCADE
 );
-
+create table if not EXISTS ProduitExcluDeDateVerification(
+  id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  articleId int NOT NULL,
+  FOREIGN KEY(articleId) REFERENCES articles(id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+);
 create table if not exists factures(
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
   dateFacture datetime not null unique,
@@ -1262,6 +1278,7 @@ create table if not EXISTS detailsFactures(
             HideShowGreetingPanelAndLogo(0);
             RemoveBtns(_btns); ;
             ActivateButton(sender);
+            OpenChildForm(new Notification());
         }
        
         private void exit_btn_Click(object sender, EventArgs e)

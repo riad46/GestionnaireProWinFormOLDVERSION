@@ -97,7 +97,15 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 return res.ToList();
             }
         }
-
+        public static async Task<Article> GetArticleById(int id)
+        {
+            var sql ="SELECT * FROM articles WHERE id=@id";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+             var res= await connection.QueryFirstAsync<Article>(sql,new { id =id });
+                return res;
+            }
+        }
        
 
         /// <summary>
@@ -526,7 +534,28 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 return res.ToList();
             }
         }
-        //----------------------------------------------------------------------------------------------------------------//
+        //-----------------------------------------------Produit de Vérifications
+        public static async Task<List<ArticleExcluAnotification>> GetQntNONVerifiedProducts()
+        {
+            var sql = "SELECT * FROM ProduitExcluDeQntVerification";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                var res = await connection.QueryAsync<ArticleExcluAnotification>(sql);
+                return res.ToList();
+            }
+        }
+        public static async Task<List<ArticleExcluAnotification>> GetDateNONVerifiedProducts()
+        {
+            var sql = "SELECT * FROM ProduitExcluDeDateVerification";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                var res = await connection.QueryAsync<ArticleExcluAnotification>(sql);
+                return res.ToList();
+            }
+        }
+
+
+        //------------------------------------------------------------------------------------------------//
 
 
 

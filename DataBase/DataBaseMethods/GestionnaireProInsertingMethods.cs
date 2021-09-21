@@ -33,7 +33,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         }
       
         //Fournisseurs
-        public static void AddFournisseur(Fournisseur fournisseur)
+        public static async void AddFournisseur(Fournisseur fournisseur)
         {
             var sql = $@"INSERT INTO fournisseurs (nom,address,numTlf,creditArendre) VALUES (
   @nom,
@@ -44,7 +44,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
 ";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                connection.ExecuteAsync(sql,new {
+              await   connection.ExecuteAsync(sql,new {
                     @nom=fournisseur.nom,
                     @address=fournisseur.Address,
                     @numTlf=fournisseur.numTlf,
@@ -53,7 +53,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
         }
         //ACTION
-        public static void AddActionEffectué(ActionEffectuer action)
+        public static async void AddActionEffectué(ActionEffectuer action)
         {
             var sql = $@"INSERT INTO actionsEffectué (descriptionAction,utilisateur,dateAction) VALUES (
 @descriptionAction,
@@ -62,7 +62,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
 );";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                connection.ExecuteAsync(sql,new {
+            await    connection.ExecuteAsync(sql,new {
                     descriptionAction=action.descriptionAction,
                     nomUtilisateur=action.utilisateur,
                     dateAction=action.dateAction
@@ -70,12 +70,12 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
         }
         //INFO BOUTIQUE
-        public static void AddInfoBoutique(InfoBoutique infoBoutique)
+        public static async void AddInfoBoutique(InfoBoutique infoBoutique)
         {
            var sql = "INSERT INTO infosBoutique(nomBoutique,address,numTlf,logo) VALUES (@nomBoutique,@address,@numTlf,@logo)";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                connection.ExecuteAsync(sql, infoBoutique);
+               await connection.ExecuteAsync(sql, infoBoutique);
             }
         }
         //utilisateur
@@ -167,7 +167,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         }
 
         //client
-        public static async void AddClient(Client client)
+         public static async void AddClient(Client client)
         {
             var sql = $@"INSERT INTO clients (nom,address,numTlf,credit) VALUES (
                          @nom,
@@ -181,8 +181,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 await connection.ExecuteAsync(sql,client);
             }
         }
-       
-         public static void AddDetailCreditClient(List<DetailCreditClient> detailCreditClients)
+         public static async void AddDetailCreditClient(List<DetailCreditClient> detailCreditClients)
         {
             
             var sql = @"INSERT INTO detailCreditClients (descriptionProduit,dateCredit,prixTotale,restApayé,estPayé,clientId) VALUES (
@@ -205,7 +204,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                         estpaye=detail.estPayé,
                         clientId=detail.ClientId
                     };
-                    connection.ExecuteAsync(sql, param);
+                   await connection.ExecuteAsync(sql, param);
                 }
 
 
@@ -213,7 +212,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         }
 
         //Facture
-        public static async void AddFacture(Facture maFacture)
+         public static async void AddFacture(Facture maFacture)
         {
             var sql = @"INSERT INTO factures(dateFacture,montantTotale,remise,netPayé,ajouterPar,clientId) VALUES(
                         @dateFacture,
@@ -227,8 +226,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                 await connection.ExecuteScalarAsync(sql, maFacture);
             }
         }
-
-        public static async void AddDetailsFacture(List<DetailsFacture> details)
+         public static async void AddDetailsFacture(List<DetailsFacture> details)
         {
             var sql = @"INSERT INTO detailsFactures(codeBarre,nom,Type,Quantité,prixAchat,prixVente,remise,factureId) VALUES(
                       @codeBarre,
@@ -248,6 +246,34 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
                     await connection.ExecuteAsync(sql, item);
                 }
 
+            }
+        }
+
+        //ArticleExcluAnotification
+         public static async void AddDateVerifiedProducts(List<int> ids)
+        {
+            var sql = "INSERT INTO ProduitExcluDeDateVerification(articleId) VALUES(@articleId)";
+            foreach (var id in ids)
+            {
+
+              using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+              {
+
+                 await connection.ExecuteAsync(sql, new {articleId=id});
+              }
+            }
+        }
+         public static async void AddQNTVerifiedProducts(List<int> ids)
+        {
+            var sql = "INSERT INTO ProduitExcluDeQntVerification(articleId) VALUES(@articleId)";
+            foreach (var id in ids)
+            {
+
+                using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+                {
+
+                    await connection.ExecuteAsync(sql, new { articleId = id });
+                }
             }
         }
     }

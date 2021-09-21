@@ -2,6 +2,7 @@
 using Gestionnaire_Pro.DataBase.Models;
 using Microsoft.VisualBasic;
 using System;
+using System.Collections.Generic;
 using System.Management;
 using System.Windows.Forms;
 
@@ -56,7 +57,7 @@ namespace Gestionnaire_Pro
             return data;
         }
     
-     public static void CheckForInputToBeNumbers(KeyPressEventArgs e,TextBox t1 )
+         public static void CheckForInputToBeNumbers(KeyPressEventArgs e,TextBox t1 )
         {
             char ch = e.KeyChar;
             
@@ -78,6 +79,58 @@ namespace Gestionnaire_Pro
             }
         }
 
+        public static void CheckForArticleQnt(float minQNT)
+        {
+            var listArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+            var articlesExcluDeVérificationIds = GestionnaireProRetreivingMethods.GetQntNONVerifiedProducts().Result;
+            foreach (var articleExclu in articlesExcluDeVérificationIds)
+            {
+                var index = listArticles.FindIndex(a => a.Id == articleExclu.Id);
+                if(index>-1)
+                listArticles.RemoveAt(index);
+            }
+            foreach (var article in listArticles)
+            {
+                if (article.quantité <= minQNT)
+                {
+                    MessageBox.Show(new Form(),@$"Vérifier Votre Stock !Au Minimum:
+l'Article : {article.nom} A Seulement Quantité = {article.quantité} Restant !!!!!!","Attention",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                   
+                }
+                
+            }
+
+        }
+        public static void CheckForArticlesExpirationDate(float numberOfDays)
+        {
+            var listArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
+            var articlesExcluDeVérificationIds = GestionnaireProRetreivingMethods.GetDateNONVerifiedProducts().Result;
+            foreach (var articleExclu in articlesExcluDeVérificationIds)
+            {
+                var index = listArticles.FindIndex(a => a.Id == articleExclu.Id);
+                if(index>-1)
+                listArticles.RemoveAt(index);
+            }
+           
+            foreach (var article in listArticles)
+            {
+                if(article.dateExpiration != null)
+                {
+                    var numDays = (DateTime.Now - article.dateExpiration).Value.Days;
+                    if ( numDays <= numberOfDays)
+                    {
+                        
+                        
+                        MessageBox.Show(new Form(),@$"Vérifier Votre Stock !Au Minimum :
+l'Article : {article.nom} A Seulement  {numDays} Jours Restant jusqu'à Expiration !!!!!!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                   
+                   
+            }
+        }
        
     }
 }

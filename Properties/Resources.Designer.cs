@@ -93,6 +93,16 @@ namespace Gestionnaire_Pro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap completed_task__1_ {
+            get {
+                object obj = ResourceManager.GetObject("completed-task (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap inventory__1_ {
             get {
                 object obj = ResourceManager.GetObject("inventory (1)", resourceCulture);

@@ -133,7 +133,6 @@ namespace Gestionnaire_Pro
             this.notification_btn.TabIndex = 27;
             this.notification_btn.Text = "Notifications";
             this.notification_btn.UseVisualStyleBackColor = true;
-            this.notification_btn.Visible = false;
             this.notification_btn.Click += new System.EventHandler(this.notification_btn_Click);
             // 
             // user_btn
@@ -245,7 +244,7 @@ namespace Gestionnaire_Pro
             this.facture_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.facture_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.facture_btn.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.facture_btn.Image = ((System.Drawing.Image)(resources.GetObject("facture_btn.Image")));
+            this.facture_btn.Image = global::Gestionnaire_Pro.Properties.Resources.completed_task__1_;
             this.facture_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.facture_btn.Location = new System.Drawing.Point(0, 122);
             this.facture_btn.Name = "facture_btn";

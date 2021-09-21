@@ -146,7 +146,7 @@ namespace Gestionnaire_Pro
                     {
                         if (monArticle.quantité > 0)
                         {
-                            GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité - 1);
+                           
                             monArticle.quantité = 1;
                             _mesArticleAvendre.Add(monArticle);
                             nbrArticle++;
@@ -163,7 +163,7 @@ namespace Gestionnaire_Pro
                         if (monArticle.quantité > 0)
                         {
                             _mesArticleAvendre[_mesArticleAvendre.IndexOf(monArticleSearch)].quantité += 1;
-                            GestionnaireProModifyDeleteMethods.SetArticleQnt(monArticle.Id, monArticle.quantité - 1);
+                           
                         }
                         else
                         {

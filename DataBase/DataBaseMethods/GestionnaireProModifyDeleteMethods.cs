@@ -447,9 +447,24 @@ WHERE id=@Id";
         }
 
 
+        //---------------------------NOTIFICATIONS
 
-
-
+        public static async void DeleteArticleFromQntCheck(int articleId)
+        {
+            var sql = "DELETE FROM ProduitExcluDeQntVerification WHERE articleId=@id";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                await connection.ExecuteAsync(sql, new { id = articleId });
+            }
+        }
+        public static async void DeleteArticleFromDateCheck(int articleId)
+        {
+            var sql = "DELETE FROM ProduitExcluDeDateVerification WHERE articleId=@id";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+                await connection.ExecuteAsync(sql,new { id=articleId});
+            }
+        }
 
 
 

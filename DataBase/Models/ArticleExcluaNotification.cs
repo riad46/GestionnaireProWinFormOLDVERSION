@@ -8,7 +8,7 @@ namespace Gestionnaire_Pro.DataBase.Models
     {
         public int Id { get; set; }
 
-        public int ArticleId { get; set; }
+        public int articleId { get; set; }
         public Article Article { get; set; }
 
     }

@@ -118,5 +118,53 @@ namespace Gestionnaire_Pro.Properties {
                 this["autoCodeBarre"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool checkQnt {
+            get {
+                return ((bool)(this["checkQnt"]));
+            }
+            set {
+                this["checkQnt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public float checkQntValue {
+            get {
+                return ((float)(this["checkQntValue"]));
+            }
+            set {
+                this["checkQntValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool checkDate {
+            get {
+                return ((bool)(this["checkDate"]));
+            }
+            set {
+                this["checkDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public float checkDateValue {
+            get {
+                return ((float)(this["checkDateValue"]));
+            }
+            set {
+                this["checkDateValue"] = value;
+            }
+        }
     }
 }
