@@ -7,6 +7,7 @@ namespace Gestionnaire_Pro.DataBase.Models
     public class Client
     {
         public int Id { get; set; }
+        public string numRegistre { get; set; }
         public string nom { get; set; }
         public string? address { get; set; }
         public string? numTlf { get; set; }

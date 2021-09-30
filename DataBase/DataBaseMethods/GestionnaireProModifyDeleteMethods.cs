@@ -42,6 +42,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         {
             var sql = @"UPDATE clients
 SET 
+numRegistre=@numRegistre,
 nom=@nom,
 numTlf=@numTlf,
 address=@address,

@@ -13,7 +13,12 @@ namespace Gestionnaire_Pro
 {
     public partial class vente : Form
     {
+        //use when Modifying a vente
         private int _venteId=0;
+        //use in Printing
+        private Vente lastAddedVente= new Vente();
+
+
         private List<Article> _mesArticles = new List<Article>();
         private List<Article> _mesArticleAvendre = new List<Article>();
         private readonly int _codeBarreIndex = 0;
@@ -28,11 +33,42 @@ namespace Gestionnaire_Pro
         private float totalRemise = 0;
         private int nbrArticle = 0;
         private float nbrPiece = 0;
+      
 
         public vente()
         {
             InitializeComponent();
             LoadTheme();
+        }
+        public vente(int venteId)
+        {
+
+            InitializeComponent();
+            LoadTheme();
+            
+            _venteId = venteId;
+            var mesArticle = GestionnaireProRetreivingMethods.GetAllDetailVentes(new List<int> { venteId }).Result;
+            foreach (var item in mesArticle)
+            {
+                _mesArticleAvendre.Add(new Article
+                {
+
+                    Id = item.Id,
+                    codeBarre = item.codeBarre,
+                    nom = item.nom,
+                    prixAchat = item.prixAchat,
+                    prixVente = item.prixVente,
+                    quantité = item.Quantité,
+                    type = item.Type
+
+                });
+                var client_Id = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(venteId, -1, -1, default, DateTime.Now).Result[0].clientId;
+                if (client_Id != null)
+                    client_combo.Text = GestionnaireProRetreivingMethods.GetClientNameById((int)client_Id).Result;
+
+            }
+
+
         }
         private void vente_Load(object sender, EventArgs e)
         {
@@ -68,35 +104,7 @@ namespace Gestionnaire_Pro
             venteTable.DefaultCellStyle.SelectionBackColor = ThemeColor.SecondaryColor;
             venteTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = ThemeColor.PrimaryColor;
         }
-        public vente(int venteId)
-        {
-
-            InitializeComponent();
-            LoadTheme();
-            _venteId = venteId;
-            var mesArticle = GestionnaireProRetreivingMethods.GetAllDetailVentes(new List<int> { venteId }).Result;
-            foreach (var item in mesArticle)
-            {
-                _mesArticleAvendre.Add(new Article
-                {
-
-                    Id = item.Id,
-                    codeBarre = item.codeBarre,
-                    nom = item.nom,
-                    prixAchat = item.prixAchat,
-                    prixVente = item.prixVente,
-                    quantité = item.Quantité,
-                    type = item.Type
-
-                });
-                var client_Id = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(venteId, -1, -1, default, DateTime.Now).Result[0].clientId;
-               if(client_Id !=null)
-                client_combo.Text = GestionnaireProRetreivingMethods.GetClientNameById((int)client_Id).Result ;
-
-            }
-
-
-        }
+       
         private int GetCurrentSelectedTableRow()
         {
             if (venteTable.RowCount > 0)
@@ -129,11 +137,16 @@ namespace Gestionnaire_Pro
             {
                 monVente.clientId = GestionnaireProRetreivingMethods.GetClientIdByName(client_combo.Text).Result;
             }
+            
+            lastAddedVente = monVente;
             GestionnaireProInsertingMethods.AddVente(monVente);
         }
         private void AddDetailVente()
         {
             var venteId = GestionnaireProRetreivingMethods.RetreiveLastInsertedRowId("ventes").Result;
+            //used in printing
+            lastAddedVente.Id = venteId;
+            //-------------------
             var details = new List<DetailVente>();
             int i = 0;
             foreach (var item in _mesArticleAvendre)
@@ -145,7 +158,7 @@ namespace Gestionnaire_Pro
                     nom = item.nom,
                     Type = item.type,
                     prixAchat = item.prixAchat,
-                    prixVente = item.prixVente * item.quantité,
+                    prixVente = item.prixVente ,
                     Quantité = item.quantité,
                     remise = Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
                     VenteId = venteId
@@ -155,11 +168,11 @@ namespace Gestionnaire_Pro
             }
             GestionnaireProInsertingMethods.AddDetailVente(details);
         }
-
         private void ModifyVente()
         {
             var vente = new Vente
             {
+                Id = _venteId,
                 dateModification = DateTime.Now,
                 modifierPar = GlobalClass.username,
                 nouveauMontantTotal = total,
@@ -171,6 +184,9 @@ namespace Gestionnaire_Pro
             {
                 vente.clientId = GestionnaireProRetreivingMethods.GetClientIdByName(client_combo.Text).Result;
             }
+          
+            lastAddedVente = vente;
+            lastAddedVente.Id = _venteId;
             GestionnaireProModifyDeleteMethods.ModifyVente(vente);
 
 
@@ -187,7 +203,6 @@ namespace Gestionnaire_Pro
                     nouveauTotal = item.prixVente * item.quantité,
                     nouvelleQnt = item.quantité,
                     nouvelleRemise = Convert.ToSingle(venteTable[_remiseIndex, i].Value),
-
 
                 });
                 i++;
@@ -372,7 +387,27 @@ namespace Gestionnaire_Pro
         {
             SetCodeBarre();
         }
+        private void printFacture()
+        {
+            if (!print_checkBox.Checked)
+            {
+                return;
+            }
 
+                //DateTime dateFacture=DateTime.Now; BECAUSE IN ALL CASES I USE THE DATE WHEN THE FACTURE WAS ACTUALLY PRINTED FOR SECURITY MATTERS
+                Client client=null;
+
+            if(!string.IsNullOrEmpty(client_combo.Text.Trim()))
+             client =GestionnaireProRetreivingMethods.GetClientsByFilter(null,client_combo.Text.Trim(),null).Result[0];
+            
+            var factureId =lastAddedVente.Id;
+           
+
+            using (var factureForm = new FactureToPrint(DateTime.Now,_mesArticleAvendre,client,factureId,total,totalRemise,total-totalRemise))
+            {
+                factureForm.ShowDialog();
+            }
+        }
         private void sub_btn_Click(object sender, EventArgs e)
         {
             var descriptionAction = "";
@@ -398,6 +433,9 @@ namespace Gestionnaire_Pro
 
 
             GlobalClass.AddAction(GlobalClass.username, descriptionAction);
+           
+            
+            printFacture();    
             ResetTable();
 
 
@@ -432,7 +470,7 @@ namespace Gestionnaire_Pro
         private void AbortVente()
         {
             _mesArticleAvendre = new List<Article>();
-          
+            SetUpTable();
         }
         private void abort_btn_Click(object sender, EventArgs e)
         {

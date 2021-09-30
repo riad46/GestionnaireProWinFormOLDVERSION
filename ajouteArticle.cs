@@ -32,11 +32,7 @@ namespace Gestionnaire_Pro
             
             InitializeComponent();
             GetMyArticles();
-            if (Properties.Settings.Default.autoCodeBarre)
-            {
-                codeBarre_txt.Enabled = false;
-                AutoGenerateCodeBarre();
-            }
+          
 
             _id = article.Id;
             mesFournisseurs = GestionnaireProRetreivingMethods.GetAllFournisseurs().Result;
@@ -186,6 +182,7 @@ namespace Gestionnaire_Pro
                 codeBarre_txt.Enabled = false;
                 AutoGenerateCodeBarre();
             }
+          
         }
 
         private void ajouteArticle_Load(object sender, EventArgs e)

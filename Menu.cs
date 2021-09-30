@@ -134,6 +134,7 @@ CREATE TABLE if not EXISTS infosBoutique(
 );
 create TABLE if not EXISTS clients( 
   id INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  numRegistre varchar(40) NOT NULL,
   nom varchar(20) NOT NULL unique ,
   address VARCHAR(50),
   numTlf varchar(14),

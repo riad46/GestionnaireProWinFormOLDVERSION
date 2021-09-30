@@ -53,7 +53,7 @@ namespace Gestionnaire_Pro
             int i = 0;
             foreach (var item in detailVentes)
             {
-                revenueTable[total_Col.Index, i].Value = item.prixVente;
+                revenueTable[total_Col.Index, i].Value = (item.prixVente*item.Quantité)-item.remise;
                 i++;
             }
         }
@@ -71,12 +71,12 @@ namespace Gestionnaire_Pro
                 {
                     item.prixAchat = item.prixAchat * item.Quantité;
                     result.Add(item);
-                    totalPayedForItems.Add(item.prixVente);
+                    totalPayedForItems.Add(item.prixVente*item.Quantité -item.remise);
                 }
                 else
                 {
                     result[myItemIndex].Quantité += item.Quantité;
-                    totalPayedForItems[myItemIndex] += item.prixVente ;
+                    totalPayedForItems[myItemIndex] += (item.prixVente * item.Quantité - item.remise);
                     
                     result[myItemIndex].prixAchat += item.prixAchat * item.Quantité;
                 }

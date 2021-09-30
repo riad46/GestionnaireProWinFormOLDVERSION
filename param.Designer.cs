@@ -32,13 +32,14 @@ namespace Gestionnaire_Pro
             this.sub_btn = new Gestionnaire_Pro.Assets.RoundButton();
             this.loginAcrive_checkBox = new System.Windows.Forms.CheckBox();
             this.autoCodeBarre_checkBox = new System.Windows.Forms.CheckBox();
+            this.autoNumRegistre_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // sub_btn
             // 
             this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sub_btn.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sub_btn.Location = new System.Drawing.Point(113, 149);
+            this.sub_btn.Location = new System.Drawing.Point(113, 202);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(306, 61);
             this.sub_btn.TabIndex = 3;
@@ -69,11 +70,24 @@ namespace Gestionnaire_Pro
             this.autoCodeBarre_checkBox.Text = "Génération Automatique du Code_Barre des Articles";
             this.autoCodeBarre_checkBox.UseVisualStyleBackColor = true;
             // 
+            // autoNumRegistre_checkBox
+            // 
+            this.autoNumRegistre_checkBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.autoNumRegistre_checkBox.AutoSize = true;
+            this.autoNumRegistre_checkBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.autoNumRegistre_checkBox.Location = new System.Drawing.Point(42, 159);
+            this.autoNumRegistre_checkBox.Name = "autoNumRegistre_checkBox";
+            this.autoNumRegistre_checkBox.Size = new System.Drawing.Size(475, 28);
+            this.autoNumRegistre_checkBox.TabIndex = 5;
+            this.autoNumRegistre_checkBox.Text = "Génération Automatique du N° Registre de Clients";
+            this.autoNumRegistre_checkBox.UseVisualStyleBackColor = true;
+            // 
             // param
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 450);
+            this.Controls.Add(this.autoNumRegistre_checkBox);
             this.Controls.Add(this.autoCodeBarre_checkBox);
             this.Controls.Add(this.sub_btn);
             this.Controls.Add(this.loginAcrive_checkBox);
@@ -93,5 +107,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.CheckBox loginAcrive_checkBox;
         private Assets.RoundButton sub_btn;
         private System.Windows.Forms.CheckBox autoCodeBarre_checkBox;
+        private System.Windows.Forms.CheckBox autoNumRegistre_checkBox;
     }
 }

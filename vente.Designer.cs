@@ -60,6 +60,7 @@
             this.remiseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.print_checkBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -145,6 +146,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Linen;
+            this.panel2.Controls.Add(this.print_checkBox);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -392,6 +394,17 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // print_checkBox
+            // 
+            this.print_checkBox.AutoSize = true;
+            this.print_checkBox.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.print_checkBox.Location = new System.Drawing.Point(70, 150);
+            this.print_checkBox.Name = "print_checkBox";
+            this.print_checkBox.Size = new System.Drawing.Size(172, 23);
+            this.print_checkBox.TabIndex = 9;
+            this.print_checkBox.Text = "Imprimer une Facture";
+            this.print_checkBox.UseVisualStyleBackColor = true;
+            // 
             // vente
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -444,5 +457,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prixU;
         private System.Windows.Forms.DataGridViewTextBoxColumn remiseCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.CheckBox print_checkBox;
     }
 }

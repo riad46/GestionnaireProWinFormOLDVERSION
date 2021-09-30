@@ -40,12 +40,15 @@ namespace Gestionnaire_Pro
             this.Modify_btn = new System.Windows.Forms.Button();
             this.del_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numRegistre_txt = new System.Windows.Forms.TextBox();
             this.numTlf_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nom_txt = new System.Windows.Forms.TextBox();
             this.clientTable = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numRegistre_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +75,7 @@ namespace Gestionnaire_Pro
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 140);
+            this.panel1.Size = new System.Drawing.Size(955, 172);
             this.panel1.TabIndex = 0;
             // 
             // add_btn
@@ -81,7 +84,7 @@ namespace Gestionnaire_Pro
             this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.add_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_btn.ForeColor = System.Drawing.Color.White;
-            this.add_btn.Location = new System.Drawing.Point(476, 12);
+            this.add_btn.Location = new System.Drawing.Point(631, 12);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(153, 47);
             this.add_btn.TabIndex = 3;
@@ -95,7 +98,7 @@ namespace Gestionnaire_Pro
             this.Modify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Modify_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Modify_btn.ForeColor = System.Drawing.Color.White;
-            this.Modify_btn.Location = new System.Drawing.Point(635, 12);
+            this.Modify_btn.Location = new System.Drawing.Point(790, 12);
             this.Modify_btn.Name = "Modify_btn";
             this.Modify_btn.Size = new System.Drawing.Size(153, 47);
             this.Modify_btn.TabIndex = 2;
@@ -109,7 +112,7 @@ namespace Gestionnaire_Pro
             this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.del_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.del_btn.ForeColor = System.Drawing.Color.White;
-            this.del_btn.Location = new System.Drawing.Point(635, 81);
+            this.del_btn.Location = new System.Drawing.Point(790, 81);
             this.del_btn.Name = "del_btn";
             this.del_btn.Size = new System.Drawing.Size(153, 47);
             this.del_btn.TabIndex = 1;
@@ -119,6 +122,8 @@ namespace Gestionnaire_Pro
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.numRegistre_txt);
             this.groupBox1.Controls.Add(this.numTlf_txt);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -127,14 +132,32 @@ namespace Gestionnaire_Pro
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox1.Location = new System.Drawing.Point(11, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(338, 129);
+            this.groupBox1.Size = new System.Drawing.Size(338, 169);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recherche Client";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(19, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 21);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "N° Registre";
+            // 
+            // numRegistre_txt
+            // 
+            this.numRegistre_txt.Location = new System.Drawing.Point(138, 34);
+            this.numRegistre_txt.Name = "numRegistre_txt";
+            this.numRegistre_txt.Size = new System.Drawing.Size(173, 35);
+            this.numRegistre_txt.TabIndex = 0;
+            this.numRegistre_txt.TextChanged += new System.EventHandler(this.numRegistre_txt_TextChanged);
+            // 
             // numTlf_txt
             // 
-            this.numTlf_txt.Location = new System.Drawing.Point(151, 80);
+            this.numTlf_txt.Location = new System.Drawing.Point(138, 126);
             this.numTlf_txt.Name = "numTlf_txt";
             this.numTlf_txt.Size = new System.Drawing.Size(173, 35);
             this.numTlf_txt.TabIndex = 6;
@@ -144,7 +167,7 @@ namespace Gestionnaire_Pro
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(32, 90);
+            this.label1.Location = new System.Drawing.Point(19, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 21);
             this.label1.TabIndex = 5;
@@ -154,7 +177,7 @@ namespace Gestionnaire_Pro
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(32, 45);
+            this.label2.Location = new System.Drawing.Point(19, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 21);
             this.label2.TabIndex = 4;
@@ -162,7 +185,7 @@ namespace Gestionnaire_Pro
             // 
             // nom_txt
             // 
-            this.nom_txt.Location = new System.Drawing.Point(151, 35);
+            this.nom_txt.Location = new System.Drawing.Point(138, 81);
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(173, 35);
             this.nom_txt.TabIndex = 3;
@@ -197,6 +220,7 @@ namespace Gestionnaire_Pro
             this.clientTable.ColumnHeadersHeight = 60;
             this.clientTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
+            this.numRegistre_Col,
             this.nom,
             this.address,
             this.num,
@@ -212,7 +236,7 @@ namespace Gestionnaire_Pro
             this.clientTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.clientTable.EnableHeadersVisualStyles = false;
             this.clientTable.GridColor = System.Drawing.Color.White;
-            this.clientTable.Location = new System.Drawing.Point(0, 146);
+            this.clientTable.Location = new System.Drawing.Point(0, 178);
             this.clientTable.MultiSelect = false;
             this.clientTable.Name = "clientTable";
             this.clientTable.ReadOnly = true;
@@ -225,7 +249,7 @@ namespace Gestionnaire_Pro
             this.clientTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.clientTable.RowTemplate.Height = 40;
             this.clientTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientTable.Size = new System.Drawing.Size(800, 211);
+            this.clientTable.Size = new System.Drawing.Size(955, 275);
             this.clientTable.TabIndex = 2;
             this.clientTable.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.tableCl_CellStateChanged);
             this.clientTable.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tableCl_RowPostPaint);
@@ -240,11 +264,17 @@ namespace Gestionnaire_Pro
             this.id.ReadOnly = true;
             this.id.Width = 151;
             // 
+            // numRegistre_Col
+            // 
+            this.numRegistre_Col.DataPropertyName = "numRegistre";
+            this.numRegistre_Col.HeaderText = "N° Registre";
+            this.numRegistre_Col.Name = "numRegistre_Col";
+            this.numRegistre_Col.ReadOnly = true;
+            // 
             // nom
             // 
             this.nom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.nom.DataPropertyName = "nom";
-            this.nom.Frozen = true;
             this.nom.HeaderText = "Nom";
             this.nom.Name = "nom";
             this.nom.ReadOnly = true;
@@ -306,7 +336,7 @@ namespace Gestionnaire_Pro
             this.detailsTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.detailsTable.EnableHeadersVisualStyles = false;
             this.detailsTable.GridColor = System.Drawing.Color.White;
-            this.detailsTable.Location = new System.Drawing.Point(0, 363);
+            this.detailsTable.Location = new System.Drawing.Point(0, 459);
             this.detailsTable.MultiSelect = false;
             this.detailsTable.Name = "detailsTable";
             this.detailsTable.ReadOnly = true;
@@ -314,7 +344,7 @@ namespace Gestionnaire_Pro
             this.detailsTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.detailsTable.RowTemplate.Height = 40;
             this.detailsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.detailsTable.Size = new System.Drawing.Size(800, 254);
+            this.detailsTable.Size = new System.Drawing.Size(955, 158);
             this.detailsTable.TabIndex = 3;
             // 
             // descCol
@@ -358,7 +388,7 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 617);
+            this.ClientSize = new System.Drawing.Size(955, 617);
             this.Controls.Add(this.detailsTable);
             this.Controls.Add(this.clientTable);
             this.Controls.Add(this.panel1);
@@ -385,11 +415,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.TextBox nom_txt;
         private System.Windows.Forms.TextBox numTlf_txt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn credit;
         private System.Windows.Forms.DataGridViewTextBoxColumn descCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col;
@@ -398,5 +423,13 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button Modify_btn;
         private System.Windows.Forms.Button del_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numRegistre_Col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn credit;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox numRegistre_txt;
     }
 }

@@ -215,7 +215,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         /// <returns></returns>
         public static async Task<List<Client>> GetAllClients()
         {
-            var sql = "Select id,nom,Address,numTlf,credit FROM clients ";
+            var sql = "Select id,numRegistre,nom,Address,numTlf,credit FROM clients ";
 
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
@@ -225,13 +225,22 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             }
 
         }
-        public static async Task<List<Client>> GetClientsByFilter(string nom,string numTlf)
+        public static async Task<List<Client>> GetClientsByFilter(string numRegistre,string nom,string numTlf)
         {
-            var param = new { name = "%"+nom+"%", num = "%" + numTlf+ "%"  };
-            var sql = "SELECT id,nom,Address,numTlf,credit FROM clients WHERE ";
+            var param = new { registerNumber = "%" + numRegistre + "%", name = "%"+nom+"%", num = "%" + numTlf+ "%"  };
+            var sql = "SELECT id,numRegistre,nom,Address,numTlf,credit FROM clients WHERE ";
+            if (!string.IsNullOrWhiteSpace(numRegistre) && numRegistre != "")
+            {
+                sql += "numRegistre LIKE @registerNumber";
+                if (!string.IsNullOrWhiteSpace(nom) || !string.IsNullOrWhiteSpace(numTlf))
+                    sql += " AND ";
+            }
+            
+            
             if (!string.IsNullOrWhiteSpace(nom) && nom != "") 
             { 
                 sql += " nom LIKE @name";
+               
                 if (!string.IsNullOrWhiteSpace(numTlf) && numTlf != "") 
                     sql += "AND numTlf LIKE @num";
             }
@@ -239,10 +248,9 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             {
                 sql += "numTlf LIKE @num";
             }
-            else
-            {
-                sql += "1";
-            }
+
+            if (string.IsNullOrWhiteSpace(numRegistre) && string.IsNullOrWhiteSpace(nom) && string.IsNullOrWhiteSpace(numTlf))
+                sql += " 1";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
                 var res = await connection.QueryAsync<Client>(sql,param);
@@ -504,8 +512,10 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
                 var res = await connection.QueryAsync<InfoBoutique>(sql);
+                if(res.Count()>0)
                 return res.First();
             }
+            return null;
         }
         //--------------------------------------------------------------------------------  utilisateurs
 

@@ -35,16 +35,19 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listeClient));
             this.clientTable = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numRegistre_txt = new System.Windows.Forms.TextBox();
             this.numTlf_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nom_txt = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numRegistre_Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.clientTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +84,7 @@ namespace Gestionnaire_Pro
             this.clientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.clientTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
+            this.numRegistre_Col,
             this.nom,
             this.address,
             this.num,
@@ -111,6 +115,78 @@ namespace Gestionnaire_Pro
             this.clientTable.TabIndex = 0;
             this.clientTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableClient_CellDoubleClick);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.numRegistre_txt);
+            this.panel1.Controls.Add(this.numTlf_txt);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.nom_txt);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(652, 149);
+            this.panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(9, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 22);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "N° Registre";
+            // 
+            // numRegistre_txt
+            // 
+            this.numRegistre_txt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numRegistre_txt.Location = new System.Drawing.Point(134, 13);
+            this.numRegistre_txt.Name = "numRegistre_txt";
+            this.numRegistre_txt.Size = new System.Drawing.Size(173, 29);
+            this.numRegistre_txt.TabIndex = 0;
+            this.numRegistre_txt.TextChanged += new System.EventHandler(this.numRegistre_txt_TextChanged);
+            // 
+            // numTlf_txt
+            // 
+            this.numTlf_txt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numTlf_txt.Location = new System.Drawing.Point(134, 113);
+            this.numTlf_txt.Name = "numTlf_txt";
+            this.numTlf_txt.Size = new System.Drawing.Size(173, 29);
+            this.numTlf_txt.TabIndex = 3;
+            this.numTlf_txt.TextChanged += new System.EventHandler(this.numTlf_txt_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(9, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 22);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Nom";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(9, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "N° Téléphone";
+            // 
+            // nom_txt
+            // 
+            this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nom_txt.Location = new System.Drawing.Point(134, 64);
+            this.nom_txt.Name = "nom_txt";
+            this.nom_txt.Size = new System.Drawing.Size(173, 29);
+            this.nom_txt.TabIndex = 0;
+            this.nom_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // id
             // 
             this.id.DataPropertyName = "Id";
@@ -118,6 +194,13 @@ namespace Gestionnaire_Pro
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
+            // 
+            // numRegistre_Col
+            // 
+            this.numRegistre_Col.DataPropertyName = "numRegistre";
+            this.numRegistre_Col.HeaderText = "N° Registre";
+            this.numRegistre_Col.Name = "numRegistre_Col";
+            this.numRegistre_Col.ReadOnly = true;
             // 
             // nom
             // 
@@ -147,57 +230,6 @@ namespace Gestionnaire_Pro
             this.credit.Name = "credit";
             this.credit.ReadOnly = true;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.numTlf_txt);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.nom_txt);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(652, 149);
-            this.panel1.TabIndex = 1;
-            // 
-            // numTlf_txt
-            // 
-            this.numTlf_txt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numTlf_txt.Location = new System.Drawing.Point(137, 59);
-            this.numTlf_txt.Name = "numTlf_txt";
-            this.numTlf_txt.Size = new System.Drawing.Size(173, 29);
-            this.numTlf_txt.TabIndex = 3;
-            this.numTlf_txt.TextChanged += new System.EventHandler(this.numTlf_txt_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 22);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nom";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "N° Téléphone";
-            // 
-            // nom_txt
-            // 
-            this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nom_txt.Location = new System.Drawing.Point(137, 10);
-            this.nom_txt.Name = "nom_txt";
-            this.nom_txt.Size = new System.Drawing.Size(173, 29);
-            this.nom_txt.TabIndex = 0;
-            this.nom_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // listeClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -226,7 +258,10 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.TextBox numTlf_txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox numRegistre_txt;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numRegistre_Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn num;

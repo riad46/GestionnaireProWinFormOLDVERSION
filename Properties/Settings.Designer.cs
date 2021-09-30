@@ -166,5 +166,17 @@ namespace Gestionnaire_Pro.Properties {
                 this["checkDateValue"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autoNumRegistre {
+            get {
+                return ((bool)(this["autoNumRegistre"]));
+            }
+            set {
+                this["autoNumRegistre"] = value;
+            }
+        }
     }
 }

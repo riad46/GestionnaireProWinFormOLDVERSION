@@ -19,6 +19,7 @@ namespace Gestionnaire_Pro
         {
             Properties.Settings.Default.activeLogin = loginAcrive_checkBox.Checked;
             Properties.Settings.Default.autoCodeBarre = autoCodeBarre_checkBox.Checked;
+            Properties.Settings.Default.autoNumRegistre = autoNumRegistre_checkBox.Checked;
             Properties.Settings.Default.Save();
 
 
@@ -28,6 +29,7 @@ namespace Gestionnaire_Pro
         {
             loginAcrive_checkBox.Checked = Properties.Settings.Default.activeLogin;
             autoCodeBarre_checkBox.Checked = Properties.Settings.Default.autoCodeBarre;
+            autoNumRegistre_checkBox.Checked = Properties.Settings.Default.autoNumRegistre;
         }
     }
 }

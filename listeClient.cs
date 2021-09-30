@@ -39,9 +39,9 @@ namespace Gestionnaire_Pro
             mesClients = GestionnaireProRetreivingMethods.GetAllClients().Result;
             
         }
-        private void SearchForClients(string nom,string numTlf)
+        private void SearchForClients(string numRegistre,string nom,string numTlf)
         {
-            mesClients= GestionnaireProRetreivingMethods.GetClientsByFilter(nom, numTlf).Result;
+            mesClients= GestionnaireProRetreivingMethods.GetClientsByFilter(numRegistre,nom, numTlf).Result;
         }
         private void SetUpTable()
         {
@@ -57,15 +57,21 @@ namespace Gestionnaire_Pro
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            SearchForClients(nom_txt.Text,numTlf_txt.Text);
+            SearchForClients(numRegistre_txt.Text.Trim(),nom_txt.Text.Trim(),numTlf_txt.Text.Trim());
             SetUpTable();
         }
 
         private void numTlf_txt_TextChanged(object sender, EventArgs e)
         {
-            SearchForClients(nom_txt.Text, numTlf_txt.Text);
+            SearchForClients(numRegistre_txt.Text.Trim(), nom_txt.Text.Trim(), numTlf_txt.Text.Trim());
             SetUpTable();
         }
+        private void numRegistre_txt_TextChanged(object sender, EventArgs e)
+        {
+            SearchForClients(numRegistre_txt.Text.Trim(), nom_txt.Text.Trim(), numTlf_txt.Text.Trim());
+            SetUpTable();
+        }
+
         private int GetCurrentSelectedTableRowIdId()
         {
             var row = clientTable.SelectedRows[0];
@@ -82,5 +88,7 @@ namespace Gestionnaire_Pro
                
            
         }
+
+     
     }
 }

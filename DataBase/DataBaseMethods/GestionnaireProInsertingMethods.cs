@@ -169,7 +169,8 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         //client
          public static async void AddClient(Client client)
         {
-            var sql = $@"INSERT INTO clients (nom,address,numTlf,credit) VALUES (
+            var sql = $@"INSERT INTO clients (numRegistre,nom,address,numTlf,credit) VALUES (
+                         @numRegistre,
                          @nom,
                          @address,
                          @numTlf,

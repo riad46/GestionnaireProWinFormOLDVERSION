@@ -31,6 +31,7 @@ namespace Gestionnaire_Pro
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FactureToPrint));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Boutique = new System.Windows.Forms.GroupBox();
             this.boutiqueNum_lbl = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@ namespace Gestionnaire_Pro
             this.qntCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.print_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.total_lbl = new System.Windows.Forms.Label();
             this.remise_lbl = new System.Windows.Forms.Label();
@@ -62,6 +64,7 @@ namespace Gestionnaire_Pro
             this.label7 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             this.Boutique.SuspendLayout();
             this.geoupbox.SuspendLayout();
@@ -92,9 +95,9 @@ namespace Gestionnaire_Pro
             this.Boutique.Controls.Add(this.BoutiqueAddress_lbl);
             this.Boutique.Controls.Add(this.label2);
             this.Boutique.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Boutique.Location = new System.Drawing.Point(0, 61);
+            this.Boutique.Location = new System.Drawing.Point(11, 61);
             this.Boutique.Name = "Boutique";
-            this.Boutique.Size = new System.Drawing.Size(451, 135);
+            this.Boutique.Size = new System.Drawing.Size(440, 135);
             this.Boutique.TabIndex = 6;
             this.Boutique.TabStop = false;
             this.Boutique.Text = "Informations du Boutique";
@@ -103,7 +106,7 @@ namespace Gestionnaire_Pro
             // 
             this.boutiqueNum_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.boutiqueNum_lbl.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.boutiqueNum_lbl.Location = new System.Drawing.Point(152, 67);
+            this.boutiqueNum_lbl.Location = new System.Drawing.Point(147, 67);
             this.boutiqueNum_lbl.Name = "boutiqueNum_lbl";
             this.boutiqueNum_lbl.Size = new System.Drawing.Size(225, 22);
             this.boutiqueNum_lbl.TabIndex = 17;
@@ -114,7 +117,7 @@ namespace Gestionnaire_Pro
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(11, 34);
+            this.label1.Location = new System.Drawing.Point(6, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 23);
             this.label1.TabIndex = 13;
@@ -125,7 +128,7 @@ namespace Gestionnaire_Pro
             // 
             this.BoutiqueAddress_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BoutiqueAddress_lbl.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BoutiqueAddress_lbl.Location = new System.Drawing.Point(103, 34);
+            this.BoutiqueAddress_lbl.Location = new System.Drawing.Point(98, 34);
             this.BoutiqueAddress_lbl.Name = "BoutiqueAddress_lbl";
             this.BoutiqueAddress_lbl.Size = new System.Drawing.Size(334, 22);
             this.BoutiqueAddress_lbl.TabIndex = 16;
@@ -136,7 +139,7 @@ namespace Gestionnaire_Pro
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(11, 67);
+            this.label2.Location = new System.Drawing.Point(6, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 23);
             this.label2.TabIndex = 14;
@@ -155,7 +158,7 @@ namespace Gestionnaire_Pro
             this.geoupbox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.geoupbox.Location = new System.Drawing.Point(473, 61);
             this.geoupbox.Name = "geoupbox";
-            this.geoupbox.Size = new System.Drawing.Size(321, 135);
+            this.geoupbox.Size = new System.Drawing.Size(314, 135);
             this.geoupbox.TabIndex = 5;
             this.geoupbox.TabStop = false;
             this.geoupbox.Text = "Client";
@@ -164,7 +167,7 @@ namespace Gestionnaire_Pro
             // 
             this.clientNumRegistre_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clientNumRegistre_lbl.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clientNumRegistre_lbl.Location = new System.Drawing.Point(122, 89);
+            this.clientNumRegistre_lbl.Location = new System.Drawing.Point(119, 89);
             this.clientNumRegistre_lbl.Name = "clientNumRegistre_lbl";
             this.clientNumRegistre_lbl.Size = new System.Drawing.Size(192, 22);
             this.clientNumRegistre_lbl.TabIndex = 12;
@@ -174,7 +177,7 @@ namespace Gestionnaire_Pro
             // 
             this.clientAddress_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clientAddress_lbl.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clientAddress_lbl.Location = new System.Drawing.Point(89, 57);
+            this.clientAddress_lbl.Location = new System.Drawing.Point(86, 57);
             this.clientAddress_lbl.Name = "clientAddress_lbl";
             this.clientAddress_lbl.Size = new System.Drawing.Size(226, 22);
             this.clientAddress_lbl.TabIndex = 11;
@@ -184,7 +187,7 @@ namespace Gestionnaire_Pro
             // 
             this.clientNom_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clientNom_lbl.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clientNom_lbl.Location = new System.Drawing.Point(71, 28);
+            this.clientNom_lbl.Location = new System.Drawing.Point(68, 28);
             this.clientNom_lbl.Name = "clientNom_lbl";
             this.clientNom_lbl.Size = new System.Drawing.Size(195, 22);
             this.clientNom_lbl.TabIndex = 8;
@@ -196,7 +199,7 @@ namespace Gestionnaire_Pro
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 89);
+            this.label5.Location = new System.Drawing.Point(3, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 22);
             this.label5.TabIndex = 10;
@@ -207,7 +210,7 @@ namespace Gestionnaire_Pro
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 56);
+            this.label4.Location = new System.Drawing.Point(3, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 23);
             this.label4.TabIndex = 9;
@@ -219,7 +222,7 @@ namespace Gestionnaire_Pro
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 28);
+            this.label3.Location = new System.Drawing.Point(3, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 22);
             this.label3.TabIndex = 8;
@@ -232,7 +235,7 @@ namespace Gestionnaire_Pro
             this.dateFacture_lbl.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateFacture_lbl.Location = new System.Drawing.Point(595, 8);
             this.dateFacture_lbl.Name = "dateFacture_lbl";
-            this.dateFacture_lbl.Size = new System.Drawing.Size(200, 23);
+            this.dateFacture_lbl.Size = new System.Drawing.Size(192, 23);
             this.dateFacture_lbl.TabIndex = 4;
             this.dateFacture_lbl.Text = "DD/MM/YYYY";
             this.dateFacture_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -243,7 +246,7 @@ namespace Gestionnaire_Pro
             this.nomBoutique_lbl.Font = new System.Drawing.Font("Times New Roman", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nomBoutique_lbl.Location = new System.Drawing.Point(191, 9);
             this.nomBoutique_lbl.Name = "nomBoutique_lbl";
-            this.nomBoutique_lbl.Size = new System.Drawing.Size(383, 42);
+            this.nomBoutique_lbl.Size = new System.Drawing.Size(373, 42);
             this.nomBoutique_lbl.TabIndex = 0;
             this.nomBoutique_lbl.Text = "Ma Boutique";
             this.nomBoutique_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,6 +264,8 @@ namespace Gestionnaire_Pro
             // 
             // articlesTable
             // 
+            this.articlesTable.AllowUserToAddRows = false;
+            this.articlesTable.AllowUserToDeleteRows = false;
             this.articlesTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -271,8 +276,8 @@ namespace Gestionnaire_Pro
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.articlesTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.articlesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -284,18 +289,20 @@ namespace Gestionnaire_Pro
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.articlesTable.DefaultCellStyle = dataGridViewCellStyle2;
-            this.articlesTable.Location = new System.Drawing.Point(1, 207);
+            this.articlesTable.Location = new System.Drawing.Point(3, 207);
             this.articlesTable.MultiSelect = false;
             this.articlesTable.Name = "articlesTable";
+            this.articlesTable.ReadOnly = true;
             this.articlesTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.articlesTable.RowHeadersVisible = false;
             this.articlesTable.RowTemplate.Height = 25;
-            this.articlesTable.Size = new System.Drawing.Size(799, 254);
+            this.articlesTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.articlesTable.Size = new System.Drawing.Size(797, 329);
             this.articlesTable.TabIndex = 1;
             // 
             // nomArticle
@@ -328,12 +335,23 @@ namespace Gestionnaire_Pro
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.print_btn);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 467);
+            this.panel2.Location = new System.Drawing.Point(0, 542);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 160);
+            this.panel2.Size = new System.Drawing.Size(800, 194);
             this.panel2.TabIndex = 2;
+            // 
+            // print_btn
+            // 
+            this.print_btn.Location = new System.Drawing.Point(0, 155);
+            this.print_btn.Name = "print_btn";
+            this.print_btn.Size = new System.Drawing.Size(800, 39);
+            this.print_btn.TabIndex = 16;
+            this.print_btn.Text = "Imprimer";
+            this.print_btn.UseVisualStyleBackColor = true;
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
             // groupBox1
             // 
@@ -344,54 +362,54 @@ namespace Gestionnaire_Pro
             this.groupBox1.Controls.Add(this.labelvc);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(491, 3);
+            this.groupBox1.Location = new System.Drawing.Point(495, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(305, 154);
+            this.groupBox1.Size = new System.Drawing.Size(305, 138);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
             // total_lbl
             // 
-            this.total_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.total_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.total_lbl.AutoSize = true;
-            this.total_lbl.Font = new System.Drawing.Font("SimSun", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.total_lbl.Location = new System.Drawing.Point(116, 15);
+            this.total_lbl.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.total_lbl.Location = new System.Drawing.Point(214, 19);
             this.total_lbl.Name = "total_lbl";
-            this.total_lbl.Size = new System.Drawing.Size(103, 25);
+            this.total_lbl.Size = new System.Drawing.Size(79, 19);
             this.total_lbl.TabIndex = 20;
             this.total_lbl.Text = "0.00 DA";
             this.total_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // remise_lbl
             // 
-            this.remise_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.remise_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.remise_lbl.AutoSize = true;
-            this.remise_lbl.Font = new System.Drawing.Font("SimSun", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.remise_lbl.Location = new System.Drawing.Point(116, 47);
+            this.remise_lbl.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.remise_lbl.Location = new System.Drawing.Point(214, 51);
             this.remise_lbl.Name = "remise_lbl";
-            this.remise_lbl.Size = new System.Drawing.Size(103, 25);
+            this.remise_lbl.Size = new System.Drawing.Size(79, 19);
             this.remise_lbl.TabIndex = 19;
             this.remise_lbl.Text = "0.00 DA";
             this.remise_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // netPayé_lbl
             // 
-            this.netPayé_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.netPayé_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.netPayé_lbl.AutoSize = true;
-            this.netPayé_lbl.Font = new System.Drawing.Font("SimSun", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.netPayé_lbl.Location = new System.Drawing.Point(116, 91);
+            this.netPayé_lbl.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.netPayé_lbl.Location = new System.Drawing.Point(214, 95);
             this.netPayé_lbl.Name = "netPayé_lbl";
-            this.netPayé_lbl.Size = new System.Drawing.Size(103, 25);
+            this.netPayé_lbl.Size = new System.Drawing.Size(79, 19);
             this.netPayé_lbl.TabIndex = 18;
             this.netPayé_lbl.Text = "0.00 DA";
             this.netPayé_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelvc
             // 
-            this.labelvc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelvc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelvc.AutoSize = true;
             this.labelvc.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelvc.Location = new System.Drawing.Point(6, 19);
+            this.labelvc.Location = new System.Drawing.Point(104, 23);
             this.labelvc.Name = "labelvc";
             this.labelvc.Size = new System.Drawing.Size(62, 22);
             this.labelvc.TabIndex = 15;
@@ -400,10 +418,10 @@ namespace Gestionnaire_Pro
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(6, 95);
+            this.label6.Location = new System.Drawing.Point(104, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 22);
             this.label6.TabIndex = 17;
@@ -412,10 +430,10 @@ namespace Gestionnaire_Pro
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(6, 47);
+            this.label7.Location = new System.Drawing.Point(104, 51);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 22);
             this.label7.TabIndex = 16;
@@ -430,15 +448,27 @@ namespace Gestionnaire_Pro
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // FactureToPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 627);
+            this.ClientSize = new System.Drawing.Size(800, 736);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.articlesTable);
             this.Controls.Add(this.panel1);
+            this.Location = new System.Drawing.Point(-30000, -20000);
             this.Name = "FactureToPrint";
             this.Text = "FactureToPrint";
             this.panel1.ResumeLayout(false);
@@ -488,5 +518,7 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Label label7;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button print_btn;
     }
 }

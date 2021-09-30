@@ -37,6 +37,9 @@
     <Compile Update="caisse.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FactureToPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="historiqueAction.cs">
       <SubType>Form</SubType>
     </Compile>

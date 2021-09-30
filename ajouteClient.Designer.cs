@@ -40,6 +40,8 @@ namespace Gestionnaire_Pro
             this.sub_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.nom_txt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numRegistre_txt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // numTlf_txt
@@ -109,7 +111,7 @@ namespace Gestionnaire_Pro
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(351, 169);
+            this.button2.Location = new System.Drawing.Point(345, 154);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(160, 41);
             this.button2.TabIndex = 15;
@@ -120,7 +122,7 @@ namespace Gestionnaire_Pro
             // 
             this.sub_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.sub_btn.Location = new System.Drawing.Point(351, 108);
+            this.sub_btn.Location = new System.Drawing.Point(345, 93);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(160, 41);
             this.sub_btn.TabIndex = 14;
@@ -148,12 +150,34 @@ namespace Gestionnaire_Pro
             this.nom_txt.Size = new System.Drawing.Size(149, 32);
             this.nom_txt.TabIndex = 10;
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(12, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(131, 26);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "N° Registre";
+            // 
+            // numRegistre_txt
+            // 
+            this.numRegistre_txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.numRegistre_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numRegistre_txt.Location = new System.Drawing.Point(168, 56);
+            this.numRegistre_txt.Name = "numRegistre_txt";
+            this.numRegistre_txt.Size = new System.Drawing.Size(149, 32);
+            this.numRegistre_txt.TabIndex = 0;
+            // 
             // ajouteClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(517, 478);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numRegistre_txt);
             this.Controls.Add(this.numTlf_txt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.credit_txt);
@@ -184,5 +208,7 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Button sub_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nom_txt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox numRegistre_txt;
     }
 }

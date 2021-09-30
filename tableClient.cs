@@ -53,9 +53,9 @@ namespace Gestionnaire_Pro
             return (int)clientTable.SelectedRows[0].Cells[0].Value;
             return default;
         }
-        private void SearchForClients(string nom, string numTlf)
+        private void SearchForClients(string numRegistre,string nom, string numTlf)
         {
-            _mesClients = GestionnaireProRetreivingMethods.GetClientsByFilter(nom, numTlf).Result;
+            _mesClients = GestionnaireProRetreivingMethods.GetClientsByFilter(numRegistre,nom, numTlf).Result;
         }
         private void SearchClientDetails()
         {
@@ -79,18 +79,24 @@ namespace Gestionnaire_Pro
 
         private void nom_txt_TextChanged(object sender, EventArgs e)
         {
-            SearchForClients(nom_txt.Text, numTlf_txt.Text);
+            SearchForClients(numRegistre_txt.Text.Trim(), nom_txt.Text.Trim(), numTlf_txt.Text.Trim());
             SetUpClientTable();
         }
 
         private void numTlf_txt_TextChanged(object sender, EventArgs e)
         {
-            SearchForClients(nom_txt.Text, numTlf_txt.Text);
+            SearchForClients(numRegistre_txt.Text.Trim(), nom_txt.Text.Trim(), numTlf_txt.Text.Trim());
+            SetUpClientTable();
+        }
+        private void numRegistre_txt_TextChanged(object sender, EventArgs e)
+        {
+            SearchForClients(numRegistre_txt.Text.Trim(), nom_txt.Text.Trim(), numTlf_txt.Text.Trim());
             SetUpClientTable();
         }
 
         private void tableClient_Load(object sender, EventArgs e)
         {
+            
             RefreshClientTable();
             var descriptionAction = $" Entrée dans Table Client";
             GlobalClass.AddAction(GlobalClass.username,descriptionAction);
@@ -136,5 +142,7 @@ namespace Gestionnaire_Pro
             RefreshClientTable();
             RefreshDetailsTable();
         }
+
+        
     }
 }
