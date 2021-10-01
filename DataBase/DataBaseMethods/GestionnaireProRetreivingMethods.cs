@@ -436,7 +436,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         public static async Task<List<Vente>> GetHistoriqueDeVenteByFilter(int Id,int clientId, float total,DateTime dateMin,DateTime dateMax)
         {
             var param = new { Id=Id,clientId=clientId,total=total,dateMin=dateMin,dateMax=dateMax };
-            var sql = "Select v.id,v.dateVente,v.montantTotale,v.remise,v.netPayé,v.ajouterPar,v.dateModification,v.modifierPar,v.nouveauMontantTotal,v.nouvelleRemise,c.* FROM ventes v LEFT JOIN clients c ";
+            var sql = "Select DISTINCT v.id,v.dateVente,v.montantTotale,v.remise,v.netPayé,v.ajouterPar,v.dateModification,v.modifierPar,v.nouveauMontantTotal,v.nouvelleRemise,c.* FROM ventes v LEFT JOIN clients c ";
             if(Id!=0 || clientId>0 ||total >=0)
             {
                 sql += " WHERE ";

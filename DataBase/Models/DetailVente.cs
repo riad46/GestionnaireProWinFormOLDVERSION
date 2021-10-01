@@ -13,6 +13,7 @@ namespace Gestionnaire_Pro.DataBase.Models
         public float Quantité { get; set; }
         public float prixAchat{ get; set; }
         public float prixVente { get; set; }
+        public float total { get; set; }
         public float remise { get; set; }
         public float nouvelleQnt { get; set; }
         public float nouvelleRemise { get; set; }

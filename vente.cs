@@ -160,6 +160,7 @@ namespace Gestionnaire_Pro
                     prixAchat = item.prixAchat,
                     prixVente = item.prixVente ,
                     Quantité = item.quantité,
+                    
                     remise = Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
                     VenteId = venteId
 
@@ -200,7 +201,7 @@ namespace Gestionnaire_Pro
             {
                 details.Add(new DetailVente
                 {
-                    nouveauTotal = item.prixVente * item.quantité,
+                    nouveauTotal = item.prixVente * item.quantité - Convert.ToSingle(venteTable[_remiseIndex, i].Value),
                     nouvelleQnt = item.quantité,
                     nouvelleRemise = Convert.ToSingle(venteTable[_remiseIndex, i].Value),
 
@@ -418,6 +419,7 @@ namespace Gestionnaire_Pro
                 descriptionAction = $" Modifier le Vente du Référence {_venteId }";
                 //reset Operation type
                 GlobalClass.typeOp = 0;
+                return;
             }
             else
             {
@@ -469,6 +471,7 @@ namespace Gestionnaire_Pro
 
         private void AbortVente()
         {
+             ResetArticlesStock();
             _mesArticleAvendre = new List<Article>();
             SetUpTable();
         }

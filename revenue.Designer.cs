@@ -134,7 +134,7 @@ namespace Gestionnaire_Pro
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(6, 48);
+            this.label7.Location = new System.Drawing.Point(6, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 21);
             this.label7.TabIndex = 12;
@@ -167,6 +167,7 @@ namespace Gestionnaire_Pro
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(123, 32);
             this.nom_txt.TabIndex = 1;
+            
             // 
             // type_txt
             // 
@@ -180,6 +181,7 @@ namespace Gestionnaire_Pro
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(278, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 22);
@@ -190,6 +192,7 @@ namespace Gestionnaire_Pro
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(278, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 22);
@@ -200,6 +203,7 @@ namespace Gestionnaire_Pro
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(278, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 22);
@@ -220,6 +224,7 @@ namespace Gestionnaire_Pro
             // 
             this.totalPaye_lbl.AutoSize = true;
             this.totalPaye_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalPaye_lbl.ForeColor = System.Drawing.Color.White;
             this.totalPaye_lbl.Location = new System.Drawing.Point(563, 39);
             this.totalPaye_lbl.Name = "totalPaye_lbl";
             this.totalPaye_lbl.Size = new System.Drawing.Size(67, 26);
@@ -230,6 +235,7 @@ namespace Gestionnaire_Pro
             // 
             this.revTotal_lbl.AutoSize = true;
             this.revTotal_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.revTotal_lbl.ForeColor = System.Drawing.Color.White;
             this.revTotal_lbl.Location = new System.Drawing.Point(563, 91);
             this.revTotal_lbl.Name = "revTotal_lbl";
             this.revTotal_lbl.Size = new System.Drawing.Size(100, 26);
@@ -240,7 +246,8 @@ namespace Gestionnaire_Pro
             // 
             this.revNet_lbl.AutoSize = true;
             this.revNet_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.revNet_lbl.Location = new System.Drawing.Point(563, 153);
+            this.revNet_lbl.ForeColor = System.Drawing.Color.White;
+            this.revNet_lbl.Location = new System.Drawing.Point(563, 148);
             this.revNet_lbl.Name = "revNet_lbl";
             this.revNet_lbl.Size = new System.Drawing.Size(67, 26);
             this.revNet_lbl.TabIndex = 7;
@@ -357,6 +364,7 @@ namespace Gestionnaire_Pro
             // 
             // total_Col
             // 
+            this.total_Col.DataPropertyName = "total";
             this.total_Col.HeaderText = "Total";
             this.total_Col.Name = "total_Col";
             this.total_Col.ReadOnly = true;

@@ -60,6 +60,7 @@ namespace Gestionnaire_Pro
         private void ProcessFinalList()
         {
             var result = new List<DetailVente>();
+            //
             var totalPayedForItems = new List<float>();
             
             if (_mesArticles.Count == 0) return;
@@ -86,7 +87,7 @@ namespace Gestionnaire_Pro
             //assign each total payed for their products
             for (int i = 0; i < result.Count; i++)
             {
-                result[i].prixVente = totalPayedForItems[i];
+                result[i].total = totalPayedForItems[i];
             }
 
             //add filter by name and type 
@@ -100,7 +101,7 @@ namespace Gestionnaire_Pro
                 }
                 if(!string.IsNullOrEmpty(type_txt.Text.Trim()))
                 {
-                    if (!item.Type.Contains(type_txt.Text.Trim()))
+                    if (!item.Type.ToLower().Contains(type_txt.Text.Trim().ToLower()))
                     {
                         continue;
                     }
@@ -108,7 +109,7 @@ namespace Gestionnaire_Pro
                     {
                         if (!string.IsNullOrEmpty(nom_txt.Text.Trim()))
                         {
-                            if (!item.nom.Contains(nom_txt.Text.Trim()))
+                            if (!item.nom.ToLower().Contains(nom_txt.Text.Trim().ToLower()))
                             {
                                 continue;
                             }
@@ -126,7 +127,7 @@ namespace Gestionnaire_Pro
                 }
                 else if (!string.IsNullOrEmpty(nom_txt.Text.Trim()))
                 {
-                    if (!item.nom.Contains(nom_txt.Text.Trim()))
+                    if (!item.nom.ToLower().Contains(nom_txt.Text.Trim().ToLower()))
                     {
                         continue;
                     }
@@ -143,7 +144,7 @@ namespace Gestionnaire_Pro
             foreach (var item in _mesArticles)
             {
                 //calculate total payed and revenue total 
-                _totalPaye +=  item.prixVente;
+                _totalPaye +=  item.total;
                 _totalAchat +=  item.prixAchat;
             }
           
@@ -165,5 +166,7 @@ namespace Gestionnaire_Pro
             _totalAchat = 0;
             SearchForRevenue();
         }
+
+       
     }
 }
