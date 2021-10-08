@@ -232,7 +232,7 @@ namespace Gestionnaire_Pro
             // dateFacture_lbl
             // 
             this.dateFacture_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateFacture_lbl.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateFacture_lbl.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateFacture_lbl.Location = new System.Drawing.Point(595, 8);
             this.dateFacture_lbl.Name = "dateFacture_lbl";
             this.dateFacture_lbl.Size = new System.Drawing.Size(192, 23);
@@ -246,7 +246,7 @@ namespace Gestionnaire_Pro
             this.nomBoutique_lbl.Font = new System.Drawing.Font("Times New Roman", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nomBoutique_lbl.Location = new System.Drawing.Point(191, 9);
             this.nomBoutique_lbl.Name = "nomBoutique_lbl";
-            this.nomBoutique_lbl.Size = new System.Drawing.Size(373, 42);
+            this.nomBoutique_lbl.Size = new System.Drawing.Size(373, 33);
             this.nomBoutique_lbl.TabIndex = 0;
             this.nomBoutique_lbl.Text = "Ma Boutique";
             this.nomBoutique_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -254,10 +254,10 @@ namespace Gestionnaire_Pro
             // factureId_lbl
             // 
             this.factureId_lbl.AutoSize = true;
-            this.factureId_lbl.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.factureId_lbl.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.factureId_lbl.Location = new System.Drawing.Point(11, 9);
             this.factureId_lbl.Name = "factureId_lbl";
-            this.factureId_lbl.Size = new System.Drawing.Size(111, 22);
+            this.factureId_lbl.Size = new System.Drawing.Size(98, 19);
             this.factureId_lbl.TabIndex = 15;
             this.factureId_lbl.Text = "Facture N°  ";
             this.factureId_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,7 +302,7 @@ namespace Gestionnaire_Pro
             this.articlesTable.RowHeadersVisible = false;
             this.articlesTable.RowTemplate.Height = 25;
             this.articlesTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.articlesTable.Size = new System.Drawing.Size(797, 329);
+            this.articlesTable.Size = new System.Drawing.Size(797, 225);
             this.articlesTable.TabIndex = 1;
             // 
             // nomArticle
@@ -321,7 +321,7 @@ namespace Gestionnaire_Pro
             // 
             // qntCol
             // 
-            this.qntCol.DataPropertyName = "quantité";
+            this.qntCol.DataPropertyName = "Quantité";
             this.qntCol.HeaderText = "QNT";
             this.qntCol.Name = "qntCol";
             this.qntCol.ReadOnly = true;
@@ -335,19 +335,21 @@ namespace Gestionnaire_Pro
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.print_btn);
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 542);
+            this.panel2.Location = new System.Drawing.Point(3, 438);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 194);
+            this.panel2.Size = new System.Drawing.Size(797, 186);
             this.panel2.TabIndex = 2;
             // 
             // print_btn
             // 
-            this.print_btn.Location = new System.Drawing.Point(0, 155);
+            this.print_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.print_btn.Location = new System.Drawing.Point(0, 147);
             this.print_btn.Name = "print_btn";
-            this.print_btn.Size = new System.Drawing.Size(800, 39);
+            this.print_btn.Size = new System.Drawing.Size(797, 39);
             this.print_btn.TabIndex = 16;
             this.print_btn.Text = "Imprimer";
             this.print_btn.UseVisualStyleBackColor = true;
@@ -362,9 +364,9 @@ namespace Gestionnaire_Pro
             this.groupBox1.Controls.Add(this.labelvc);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(495, 17);
+            this.groupBox1.Location = new System.Drawing.Point(471, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(305, 138);
+            this.groupBox1.Size = new System.Drawing.Size(305, 134);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
@@ -373,7 +375,7 @@ namespace Gestionnaire_Pro
             this.total_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.total_lbl.AutoSize = true;
             this.total_lbl.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.total_lbl.Location = new System.Drawing.Point(214, 19);
+            this.total_lbl.Location = new System.Drawing.Point(128, 15);
             this.total_lbl.Name = "total_lbl";
             this.total_lbl.Size = new System.Drawing.Size(79, 19);
             this.total_lbl.TabIndex = 20;
@@ -385,7 +387,7 @@ namespace Gestionnaire_Pro
             this.remise_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.remise_lbl.AutoSize = true;
             this.remise_lbl.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.remise_lbl.Location = new System.Drawing.Point(214, 51);
+            this.remise_lbl.Location = new System.Drawing.Point(128, 47);
             this.remise_lbl.Name = "remise_lbl";
             this.remise_lbl.Size = new System.Drawing.Size(79, 19);
             this.remise_lbl.TabIndex = 19;
@@ -397,7 +399,7 @@ namespace Gestionnaire_Pro
             this.netPayé_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.netPayé_lbl.AutoSize = true;
             this.netPayé_lbl.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.netPayé_lbl.Location = new System.Drawing.Point(214, 95);
+            this.netPayé_lbl.Location = new System.Drawing.Point(128, 91);
             this.netPayé_lbl.Name = "netPayé_lbl";
             this.netPayé_lbl.Size = new System.Drawing.Size(79, 19);
             this.netPayé_lbl.TabIndex = 18;
@@ -409,7 +411,7 @@ namespace Gestionnaire_Pro
             this.labelvc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelvc.AutoSize = true;
             this.labelvc.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelvc.Location = new System.Drawing.Point(104, 23);
+            this.labelvc.Location = new System.Drawing.Point(18, 19);
             this.labelvc.Name = "labelvc";
             this.labelvc.Size = new System.Drawing.Size(62, 22);
             this.labelvc.TabIndex = 15;
@@ -421,7 +423,7 @@ namespace Gestionnaire_Pro
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(104, 99);
+            this.label6.Location = new System.Drawing.Point(18, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 22);
             this.label6.TabIndex = 17;
@@ -433,7 +435,7 @@ namespace Gestionnaire_Pro
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(104, 51);
+            this.label7.Location = new System.Drawing.Point(18, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 22);
             this.label7.TabIndex = 16;
@@ -463,14 +465,18 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 736);
+            this.ClientSize = new System.Drawing.Size(800, 632);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.articlesTable);
             this.Controls.Add(this.panel1);
             this.Location = new System.Drawing.Point(-30000, -20000);
             this.Name = "FactureToPrint";
+            this.ShowInTaskbar = false;
             this.Text = "FactureToPrint";
+            this.Load += new System.EventHandler(this.FactureToPrint_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Boutique.ResumeLayout(false);
@@ -504,10 +510,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label factureId_lbl;
         private System.Windows.Forms.DataGridView articlesTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomArticle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prixVenteCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qntCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label total_lbl;
@@ -520,5 +522,9 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button print_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomArticle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prixVenteCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qntCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
     }
 }

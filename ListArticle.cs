@@ -118,7 +118,7 @@ namespace Gestionnaire_Pro
             {
                 SetUpArticleToSend();
                 Close();
-                GlobalClass.typeOp = 0;
+               
             }
 
 

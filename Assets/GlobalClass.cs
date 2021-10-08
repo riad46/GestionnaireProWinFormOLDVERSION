@@ -61,12 +61,17 @@ namespace Gestionnaire_Pro
         {
             char ch = e.KeyChar;
             
-            if ((ch == 44 || ch == 46) && (t1.Text.IndexOf(',') != -1 || t1.Text.IndexOf('.') != -1))
+            if(ch=='-' && t1.Text.IndexOf('-') != -1)
             {
                 e.Handled = true;
                 return;
             }
-            if (!char.IsDigit(ch) && ch != 44 && ch != 8)
+                if ((ch == 44 || ch == 46 ) && (t1.Text.IndexOf(',') != -1 || t1.Text.IndexOf('.') != -1))
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!char.IsDigit(ch) && ch != 44 && ch != 8 && ch!='-')
             {
                 e.Handled = true;
             }

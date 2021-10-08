@@ -79,3 +79,84 @@ P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.TableFact
 P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.Notification.resources
 P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.FactureToPrint.resources
 P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.exe
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.dll.config
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.deps.json
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.runtimeconfig.json
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.runtimeconfig.dev.json
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\SQLite-net.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\System.CodeDom.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\System.Management.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\linux-x64\native\libsqlite3.so
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\osx-x64\native\libsqlite3.dylib
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win7-x64\native\sqlite3.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win7-x86\native\sqlite3.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ActivationWindow.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutCreditClient.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutCreditDetail.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteAchat.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteArticle.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteClient.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ajouteFournisseur.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutFacture.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ArticlesTotalStatistics.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.caisse.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.FactureToPrint.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.historiqueAction.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.historiqueVente.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.infosBoutique.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ListArticle.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.listeAchat.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.listeClient.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ListFournisseurs.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.LoginForm.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.Menu.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.Notification.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.paimentCreditClient.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.param.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.Properties.Resources.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.revenue.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.tableArticle.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.tableClient.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.TableFactures.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.TableFournisseur.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.utilisateur.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.vente.resources
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.GenerateResource.cache
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.AssemblyInfoInputs.cache
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.AssemblyInfo.cs
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CoreCompileInputs.cache
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.CopyComplete
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.dll
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.pdb
+C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache

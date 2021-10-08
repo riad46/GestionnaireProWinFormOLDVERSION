@@ -81,18 +81,18 @@ namespace Gestionnaire_Pro
             // del_btn
             // 
             this.del_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.del_btn.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.del_btn.Location = new System.Drawing.Point(484, 64);
+            this.del_btn.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.del_btn.Location = new System.Drawing.Point(484, 77);
             this.del_btn.Name = "del_btn";
-            this.del_btn.Size = new System.Drawing.Size(150, 37);
+            this.del_btn.Size = new System.Drawing.Size(150, 31);
             this.del_btn.TabIndex = 8;
             this.del_btn.Text = "Supprimer";
             this.del_btn.UseVisualStyleBackColor = true;
             // 
             // search_btn
             // 
-            this.search_btn.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.search_btn.Location = new System.Drawing.Point(332, 9);
+            this.search_btn.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.search_btn.Location = new System.Drawing.Point(289, 35);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(118, 37);
             this.search_btn.TabIndex = 7;
@@ -101,41 +101,41 @@ namespace Gestionnaire_Pro
             // 
             // montant_txt
             // 
-            this.montant_txt.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.montant_txt.Location = new System.Drawing.Point(161, 61);
+            this.montant_txt.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.montant_txt.Location = new System.Drawing.Point(139, 61);
             this.montant_txt.Name = "montant_txt";
-            this.montant_txt.Size = new System.Drawing.Size(144, 32);
+            this.montant_txt.Size = new System.Drawing.Size(144, 27);
             this.montant_txt.TabIndex = 6;
             this.montant_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(21, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 25);
+            this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Date Achat";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(21, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 25);
+            this.label1.Size = new System.Drawing.Size(112, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Montant Total";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(161, 10);
+            this.dateTimePicker1.Location = new System.Drawing.Point(139, 16);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(144, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(144, 27);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // achatTable
@@ -204,7 +204,7 @@ namespace Gestionnaire_Pro
             this.achatTable.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.achatTable.RowTemplate.Height = 35;
             this.achatTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.achatTable.Size = new System.Drawing.Size(637, 232);
+            this.achatTable.Size = new System.Drawing.Size(637, 203);
             this.achatTable.TabIndex = 1;
             this.achatTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.achatTable_CellClick);
             // 
@@ -278,7 +278,7 @@ namespace Gestionnaire_Pro
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.detailsTable.DefaultCellStyle = dataGridViewCellStyle8;
             this.detailsTable.EnableHeadersVisualStyles = false;
-            this.detailsTable.Location = new System.Drawing.Point(0, 359);
+            this.detailsTable.Location = new System.Drawing.Point(0, 330);
             this.detailsTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.detailsTable.MultiSelect = false;
             this.detailsTable.Name = "detailsTable";
@@ -286,7 +286,7 @@ namespace Gestionnaire_Pro
             this.detailsTable.RowHeadersVisible = false;
             this.detailsTable.RowTemplate.Height = 35;
             this.detailsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.detailsTable.Size = new System.Drawing.Size(637, 276);
+            this.detailsTable.Size = new System.Drawing.Size(637, 265);
             this.detailsTable.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -358,7 +358,7 @@ namespace Gestionnaire_Pro
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(637, 647);
+            this.ClientSize = new System.Drawing.Size(637, 600);
             this.Controls.Add(this.detailsTable);
             this.Controls.Add(this.achatTable);
             this.Controls.Add(this.panel1);

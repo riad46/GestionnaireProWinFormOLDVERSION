@@ -1,4 +1,5 @@
 ﻿using Gestionnaire_Pro.DataBase.DataBaseMethods;
+using Gestionnaire_Pro.DataBase.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ namespace Gestionnaire_Pro
     
     public partial class historiqueVente : Form
     {
-        private List<DataBase.Models.Vente> _myTableData = new List<DataBase.Models.Vente>();
+        private List<Vente> _myTableData = new List<Vente>();
         private int clientID = -1;
         private readonly int _clientNameIndex = 5;
         private DateTime _dateMin=default;
@@ -44,7 +45,7 @@ namespace Gestionnaire_Pro
             SetUpTable();
             SetUpClientsInCells();
             
-           
+
         }
         private void SetUpClientsInCells()
         {
@@ -63,23 +64,12 @@ namespace Gestionnaire_Pro
             historiqueTable.AutoGenerateColumns = false;
             historiqueTable.DataSource = _myTableData;        
                 int i = 0;
-                foreach (var item in _myTableData)
-                {
-                    if(item.Client!=null)
-                    historiqueTable.Rows[i].Cells[6].Value = item.Client.nom;
-
-                }
-            //historiqueTable.Refresh();
+            SetUpClientsInCells();
+         
             
         }
       
-        private void historiqueVente_Shown(object sender, EventArgs e)
-        {
-            var datemin =  DateTime.Now;
-            dateMin_box.Value = new DateTime(datemin.Year,datemin.Month,datemin.Day,00,00,00);
-            dateMax_box.Value = DateTime.Now;
-            SearchForHistoriqueVentes();
-        }
+       
 
         private void SetValueToFilter(out float total,out int id,out DateTime _dateMin,out DateTime _dateMax) 
         {
@@ -102,10 +92,7 @@ namespace Gestionnaire_Pro
             float total;
             int Id;
 
-           
-
             SetValueToFilter(out total,out Id,out _dateMin,out _dateMax);
-            
             if(id_txt.Text.Trim() !="" || total_txt.Text.Trim() !="" || nomClient_txt.Text.Trim()!="")
             {
                 _myTableData = GestionnaireProRetreivingMethods.GetHistoriqueDeVenteByFilter(Id, clientID, total,default,DateTime.Now).Result;
@@ -126,10 +113,9 @@ namespace Gestionnaire_Pro
             var venteId = (int)historiqueTable[idCol.Index,historiqueTable.SelectedRows[0].Index].Value;
             using (var f=new vente(venteId))
             {
-                GlobalClass.typeOp = 1;
-                this.Visible = false;
+                GlobalClass.typeOp = 1;   
                 f.ShowDialog();
-                this.Visible = true;
+                
             }
         }
 
@@ -143,6 +129,12 @@ namespace Gestionnaire_Pro
             GlobalClass.CheckForInputToBeNumbers(e, id_txt);
         }
 
-       
+        private void historiqueVente_Load(object sender, EventArgs e)
+        {
+            var datemin = DateTime.Now;
+            dateMin_box.Value = new DateTime(datemin.Year, datemin.Month, datemin.Day, 00, 00, 00);
+            dateMax_box.Value = DateTime.Now;
+            SearchForHistoriqueVentes();
+        }
     }
 }

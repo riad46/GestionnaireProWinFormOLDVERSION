@@ -40,8 +40,31 @@ namespace Gestionnaire_Pro
         }
         private void SetUpTable(List<Article> mesArticles)
         {
+            var maListe = new List<DetailVente>();
+            foreach (var item in mesArticles)
+            {
+                maListe.Add(new DetailVente { 
+                Id=item.Id,
+                codeBarre=item.codeBarre,
+                nom=item.nom,
+                prixAchat=item.prixAchat,
+                prixVente=item.prixVente,
+                Quantité=item.quantité,
+                total=item.prixVente*item.quantité,
+                Type= item.type
+
+                });
+            }
+            var bindingArticlesList = new BindingList<DetailVente>(maListe);
+            var source = new BindingSource(bindingArticlesList, null);
+
             articlesTable.AutoGenerateColumns = false;
-            articlesTable.DataSource = mesArticles;
+            articlesTable.DataSource = source;
+            
+           
+           
+
+
         }
         private void SetUpClientInfos(Client client)
         {
@@ -49,7 +72,7 @@ namespace Gestionnaire_Pro
             {
                 clientNom_lbl.Text = client.nom;
                 clientAddress_lbl.Text = client.address;
-                //clientNumRegistre_lbl.Text = client.numRegistre;
+                clientNumRegistre_lbl.Text = client.numRegistre;
             }
 
 
@@ -70,11 +93,6 @@ namespace Gestionnaire_Pro
             Close();
 
         }
-
-       
-           
-    
-
         Bitmap memoryImage;
 
         private void CaptureScreen()
@@ -86,14 +104,10 @@ namespace Gestionnaire_Pro
             memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
            
         }
-
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(memoryImage, 0, 0);
         }
-
-     
-
         private void print_btn_Click(object sender, EventArgs e)
         {
             print_btn.Visible = false;
@@ -101,6 +115,11 @@ namespace Gestionnaire_Pro
             
             this.FormBorderStyle = (FormBorderStyle)BorderStyle.None;
             PrintTheForm();
+
+        }
+
+        private void FactureToPrint_Load(object sender, EventArgs e)
+        {
 
         }
     }

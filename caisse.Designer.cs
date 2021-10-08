@@ -33,6 +33,7 @@ namespace Gestionnaire_Pro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(caisse));
             this.panel1 = new System.Windows.Forms.Panel();
             this.search_btn = new System.Windows.Forms.Button();
@@ -86,7 +87,7 @@ namespace Gestionnaire_Pro
             // 
             // search_btn
             // 
-            this.search_btn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.search_btn.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.search_btn.Location = new System.Drawing.Point(407, 9);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(139, 35);
@@ -98,10 +99,10 @@ namespace Gestionnaire_Pro
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(160, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(270, 25);
+            this.label3.Size = new System.Drawing.Size(244, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Montant Initial dans la Caisse";
             // 
@@ -118,38 +119,38 @@ namespace Gestionnaire_Pro
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(20, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 25);
+            this.label1.Size = new System.Drawing.Size(32, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "De";
             // 
             // montantInitCaisse_txt
             // 
-            this.montantInitCaisse_txt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.montantInitCaisse_txt.Location = new System.Drawing.Point(436, 69);
+            this.montantInitCaisse_txt.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.montantInitCaisse_txt.Location = new System.Drawing.Point(419, 69);
             this.montantInitCaisse_txt.Name = "montantInitCaisse_txt";
-            this.montantInitCaisse_txt.Size = new System.Drawing.Size(184, 33);
+            this.montantInitCaisse_txt.Size = new System.Drawing.Size(184, 29);
             this.montantInitCaisse_txt.TabIndex = 2;
             this.montantInitCaisse_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.montantInitCaisse_txt_KeyPress);
             // 
             // dateMin_box
             // 
-            this.dateMin_box.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateMin_box.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateMin_box.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateMin_box.Location = new System.Drawing.Point(62, 9);
             this.dateMin_box.Name = "dateMin_box";
-            this.dateMin_box.Size = new System.Drawing.Size(147, 33);
+            this.dateMin_box.Size = new System.Drawing.Size(147, 29);
             this.dateMin_box.TabIndex = 1;
             // 
             // dateMax_box
             // 
-            this.dateMax_box.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateMax_box.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateMax_box.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateMax_box.Location = new System.Drawing.Point(243, 10);
             this.dateMax_box.Name = "dateMax_box";
-            this.dateMax_box.Size = new System.Drawing.Size(148, 33);
+            this.dateMax_box.Size = new System.Drawing.Size(148, 29);
             this.dateMax_box.TabIndex = 0;
             // 
             // groupBox1
@@ -170,7 +171,7 @@ namespace Gestionnaire_Pro
             this.venteTable.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.venteTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -249,19 +250,24 @@ namespace Gestionnaire_Pro
             // 
             this.achatTable.AllowUserToAddRows = false;
             this.achatTable.AllowUserToDeleteRows = false;
-            this.achatTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.achatTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.achatTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.achatTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.achatTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.achatTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.achatTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.achatTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.achatTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.achatTable.ColumnHeadersHeight = 50;
             this.achatTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -321,76 +327,76 @@ namespace Gestionnaire_Pro
             // montantDansCaisse_txt
             // 
             this.montantDansCaisse_txt.Enabled = false;
-            this.montantDansCaisse_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.montantDansCaisse_txt.Location = new System.Drawing.Point(308, 160);
+            this.montantDansCaisse_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.montantDansCaisse_txt.Location = new System.Drawing.Point(274, 160);
             this.montantDansCaisse_txt.Name = "montantDansCaisse_txt";
-            this.montantDansCaisse_txt.Size = new System.Drawing.Size(141, 32);
+            this.montantDansCaisse_txt.Size = new System.Drawing.Size(141, 29);
             this.montantDansCaisse_txt.TabIndex = 7;
             // 
             // totalVente_txt
             // 
             this.totalVente_txt.Enabled = false;
-            this.totalVente_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.totalVente_txt.Location = new System.Drawing.Point(164, 63);
+            this.totalVente_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalVente_txt.Location = new System.Drawing.Point(160, 60);
             this.totalVente_txt.Name = "totalVente_txt";
-            this.totalVente_txt.Size = new System.Drawing.Size(122, 32);
+            this.totalVente_txt.Size = new System.Drawing.Size(122, 29);
             this.totalVente_txt.TabIndex = 6;
             // 
             // totalAchat_txt
             // 
             this.totalAchat_txt.Enabled = false;
-            this.totalAchat_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.totalAchat_txt.Location = new System.Drawing.Point(164, 13);
+            this.totalAchat_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalAchat_txt.Location = new System.Drawing.Point(160, 13);
             this.totalAchat_txt.Name = "totalAchat_txt";
-            this.totalAchat_txt.Size = new System.Drawing.Size(122, 32);
+            this.totalAchat_txt.Size = new System.Drawing.Size(122, 29);
             this.totalAchat_txt.TabIndex = 5;
             // 
             // benfice_txt
             // 
             this.benfice_txt.Enabled = false;
-            this.benfice_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.benfice_txt.Location = new System.Drawing.Point(164, 108);
+            this.benfice_txt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.benfice_txt.Location = new System.Drawing.Point(160, 105);
             this.benfice_txt.Name = "benfice_txt";
-            this.benfice_txt.Size = new System.Drawing.Size(122, 32);
+            this.benfice_txt.Size = new System.Drawing.Size(122, 29);
             this.benfice_txt.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(18, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(263, 25);
+            this.label7.Size = new System.Drawing.Size(237, 23);
             this.label7.TabIndex = 3;
             this.label7.Text = "Montant Total dans la Caisse";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(18, 111);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 25);
+            this.label6.Size = new System.Drawing.Size(108, 23);
             this.label6.TabIndex = 2;
             this.label6.Text = "Bénifice Net";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(18, 63);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 25);
+            this.label5.Size = new System.Drawing.Size(124, 23);
             this.label5.TabIndex = 1;
             this.label5.Text = "Total de Vente";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(18, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 25);
+            this.label4.Size = new System.Drawing.Size(116, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Total d\'Achat";
             // 

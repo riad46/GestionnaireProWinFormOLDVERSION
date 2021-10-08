@@ -72,7 +72,7 @@ namespace Gestionnaire_Pro
             this.articleTable.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.articleTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -86,7 +86,7 @@ namespace Gestionnaire_Pro
             this.articleTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -121,7 +121,7 @@ namespace Gestionnaire_Pro
             this.articleTable.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.articleTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -309,77 +309,77 @@ namespace Gestionnaire_Pro
             // 
             // codeBarre_txt
             // 
-            this.codeBarre_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.codeBarre_txt.Location = new System.Drawing.Point(240, 9);
+            this.codeBarre_txt.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.codeBarre_txt.Location = new System.Drawing.Point(120, 7);
             this.codeBarre_txt.Name = "codeBarre_txt";
-            this.codeBarre_txt.Size = new System.Drawing.Size(154, 32);
+            this.codeBarre_txt.Size = new System.Drawing.Size(154, 27);
             this.codeBarre_txt.TabIndex = 15;
             this.codeBarre_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // nomArticle_txt
             // 
-            this.nomArticle_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nomArticle_txt.Location = new System.Drawing.Point(579, 9);
+            this.nomArticle_txt.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nomArticle_txt.Location = new System.Drawing.Point(459, 7);
             this.nomArticle_txt.Name = "nomArticle_txt";
-            this.nomArticle_txt.Size = new System.Drawing.Size(154, 32);
+            this.nomArticle_txt.Size = new System.Drawing.Size(154, 27);
             this.nomArticle_txt.TabIndex = 14;
             this.nomArticle_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // type_txt
             // 
-            this.type_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.type_txt.Location = new System.Drawing.Point(240, 51);
+            this.type_txt.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.type_txt.Location = new System.Drawing.Point(120, 49);
             this.type_txt.Name = "type_txt";
-            this.type_txt.Size = new System.Drawing.Size(154, 32);
+            this.type_txt.Size = new System.Drawing.Size(154, 27);
             this.type_txt.TabIndex = 13;
             this.type_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // nomF_txt
             // 
-            this.nomF_txt.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nomF_txt.Location = new System.Drawing.Point(579, 48);
+            this.nomF_txt.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nomF_txt.Location = new System.Drawing.Point(459, 46);
             this.nomF_txt.Name = "nomF_txt";
-            this.nomF_txt.Size = new System.Drawing.Size(154, 32);
+            this.nomF_txt.Size = new System.Drawing.Size(154, 27);
             this.nomF_txt.TabIndex = 12;
             this.nomF_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(131, 59);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(11, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 24);
+            this.label4.Size = new System.Drawing.Size(43, 19);
             this.label4.TabIndex = 11;
             this.label4.Text = "Type";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(410, 10);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(290, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 24);
+            this.label3.Size = new System.Drawing.Size(44, 19);
             this.label3.TabIndex = 10;
             this.label3.Text = "Nom";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(410, 54);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(290, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 24);
+            this.label2.Size = new System.Drawing.Size(139, 19);
             this.label2.TabIndex = 9;
             this.label2.Text = "Nom Fournisseur";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(131, 12);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(11, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 24);
+            this.label1.Size = new System.Drawing.Size(91, 19);
             this.label1.TabIndex = 8;
             this.label1.Text = "CodeBarre";
             // 

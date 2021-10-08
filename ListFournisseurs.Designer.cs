@@ -62,33 +62,33 @@ namespace Gestionnaire_Pro
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(637, 142);
+            this.panel1.Size = new System.Drawing.Size(637, 109);
             this.panel1.TabIndex = 0;
             // 
             // num_txt
             // 
             this.num_txt.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.num_txt.Location = new System.Drawing.Point(194, 52);
+            this.num_txt.Location = new System.Drawing.Point(147, 52);
             this.num_txt.Name = "num_txt";
-            this.num_txt.Size = new System.Drawing.Size(136, 29);
+            this.num_txt.Size = new System.Drawing.Size(183, 29);
             this.num_txt.TabIndex = 5;
             this.num_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // nom_txt
             // 
             this.nom_txt.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nom_txt.Location = new System.Drawing.Point(194, 9);
+            this.nom_txt.Location = new System.Drawing.Point(147, 9);
             this.nom_txt.Name = "nom_txt";
-            this.nom_txt.Size = new System.Drawing.Size(136, 29);
+            this.nom_txt.Size = new System.Drawing.Size(183, 29);
             this.nom_txt.TabIndex = 4;
             this.nom_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // credit_txt
             // 
             this.credit_txt.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.credit_txt.Location = new System.Drawing.Point(194, 100);
+            this.credit_txt.Location = new System.Drawing.Point(474, 12);
             this.credit_txt.Name = "credit_txt";
-            this.credit_txt.Size = new System.Drawing.Size(93, 29);
+            this.credit_txt.Size = new System.Drawing.Size(151, 29);
             this.credit_txt.TabIndex = 3;
             this.credit_txt.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             this.credit_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.credit_txt_KeyPress);
@@ -96,30 +96,30 @@ namespace Gestionnaire_Pro
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 100);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(339, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 26);
+            this.label3.Size = new System.Drawing.Size(137, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "Crédit A rendre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(12, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 26);
+            this.label2.Size = new System.Drawing.Size(122, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "N° Téléphone";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 26);
+            this.label1.Size = new System.Drawing.Size(49, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom";
             // 
@@ -130,7 +130,7 @@ namespace Gestionnaire_Pro
             this.fournisseurTable.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -145,7 +145,7 @@ namespace Gestionnaire_Pro
             this.fournisseurTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -160,7 +160,7 @@ namespace Gestionnaire_Pro
             this.Column1});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -168,7 +168,7 @@ namespace Gestionnaire_Pro
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.fournisseurTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.fournisseurTable.EnableHeadersVisualStyles = false;
-            this.fournisseurTable.Location = new System.Drawing.Point(0, 152);
+            this.fournisseurTable.Location = new System.Drawing.Point(0, 111);
             this.fournisseurTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.fournisseurTable.MultiSelect = false;
             this.fournisseurTable.Name = "fournisseurTable";
@@ -180,7 +180,7 @@ namespace Gestionnaire_Pro
             this.fournisseurTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.fournisseurTable.RowTemplate.Height = 45;
             this.fournisseurTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.fournisseurTable.Size = new System.Drawing.Size(637, 384);
+            this.fournisseurTable.Size = new System.Drawing.Size(637, 349);
             this.fournisseurTable.TabIndex = 1;
             // 
             // Nom
@@ -216,7 +216,7 @@ namespace Gestionnaire_Pro
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(637, 548);
+            this.ClientSize = new System.Drawing.Size(637, 464);
             this.Controls.Add(this.fournisseurTable);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

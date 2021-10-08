@@ -200,6 +200,25 @@ WHERE id=@Id";
                 await connection.ExecuteAsync(sql);
             }
         }
+
+        internal static async  void AddNewDetailVenteToExistingVente(DetailVente nouveauDetail)
+        {
+            var sql = @"INSERT INTO detailVentes(codeBarre,nom,Type,Quantité,prixAchat,prixVente,remise,venteId) VALUES(
+                      @codeBarre,
+                      @nom,
+                      @Type,
+                      @Quantité,
+                      @prixAchat,
+                      @prixVente,
+                      @remise,
+                      @VenteId)";
+            using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
+            {
+
+                await connection.ExecuteAsync(sql, nouveauDetail);
+            }
+        }
+
         public static async void ResetStock()
         {
             var sql = $@"UPDATE articles
@@ -341,7 +360,7 @@ WHERE id=@Id";
                        nouveauMontantTotal=@nouveauMontantTotal,
                        nouvelleRemise=@nouvelleRemise,
                        clientId=@clientId
-                       WHERE id=@Id 
+                        WHERE id=@Id 
                        ";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {

@@ -71,7 +71,7 @@ namespace Gestionnaire_Pro
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(745, 151);
+            this.panel1.Size = new System.Drawing.Size(745, 110);
             this.panel1.TabIndex = 0;
             // 
             // codeBarre_txt
@@ -157,7 +157,7 @@ namespace Gestionnaire_Pro
             this.articleTable.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -172,7 +172,7 @@ namespace Gestionnaire_Pro
             this.articleTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
@@ -200,7 +200,7 @@ namespace Gestionnaire_Pro
             this.articleTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.articleTable.EnableHeadersVisualStyles = false;
             this.articleTable.GridColor = System.Drawing.Color.White;
-            this.articleTable.Location = new System.Drawing.Point(0, 157);
+            this.articleTable.Location = new System.Drawing.Point(0, 113);
             this.articleTable.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.articleTable.MultiSelect = false;
             this.articleTable.Name = "articleTable";
@@ -208,14 +208,14 @@ namespace Gestionnaire_Pro
             this.articleTable.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.articleTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.articleTable.RowTemplate.Height = 40;
             this.articleTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.articleTable.Size = new System.Drawing.Size(745, 396);
+            this.articleTable.Size = new System.Drawing.Size(745, 283);
             this.articleTable.TabIndex = 1;
             this.articleTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.articleTable_CellDoubleClick);
             // 
@@ -280,7 +280,7 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 553);
+            this.ClientSize = new System.Drawing.Size(745, 404);
             this.Controls.Add(this.articleTable);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

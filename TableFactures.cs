@@ -13,7 +13,7 @@ namespace Gestionnaire_Pro
     {
         private List<DataBase.Models.Facture> _myTableData = new List<DataBase.Models.Facture>();
         private int clientID = -1;
-        private readonly int _clientNameIndex = 5;
+        private readonly int _clientNameIndex = 6;
         private DateTime _dateMin = default;
         private DateTime _dateMax = DateTime.Now;
         public TableFactures()
@@ -115,7 +115,13 @@ namespace Gestionnaire_Pro
         }
         private void historique_Table_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            var factureId = (int)historiqueTable[idCol.Index, historiqueTable.SelectedRows[0].Index].Value;
+            using (var f = new ajoutFacture(factureId))
+            {
+                GlobalClass.typeOp = 1;
+                f.ShowDialog();
+                
+            }
         }
         private void id_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -152,7 +158,10 @@ namespace Gestionnaire_Pro
             SetUpTable();
         }
 
-        
+        private void TableFactures_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

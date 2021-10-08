@@ -84,7 +84,7 @@ namespace Gestionnaire_Pro
             this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.add_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_btn.ForeColor = System.Drawing.Color.White;
-            this.add_btn.Location = new System.Drawing.Point(631, 12);
+            this.add_btn.Location = new System.Drawing.Point(790, 12);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(153, 47);
             this.add_btn.TabIndex = 3;
@@ -98,7 +98,7 @@ namespace Gestionnaire_Pro
             this.Modify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Modify_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Modify_btn.ForeColor = System.Drawing.Color.White;
-            this.Modify_btn.Location = new System.Drawing.Point(790, 12);
+            this.Modify_btn.Location = new System.Drawing.Point(790, 65);
             this.Modify_btn.Name = "Modify_btn";
             this.Modify_btn.Size = new System.Drawing.Size(153, 47);
             this.Modify_btn.TabIndex = 2;
@@ -112,7 +112,7 @@ namespace Gestionnaire_Pro
             this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.del_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.del_btn.ForeColor = System.Drawing.Color.White;
-            this.del_btn.Location = new System.Drawing.Point(790, 81);
+            this.del_btn.Location = new System.Drawing.Point(790, 122);
             this.del_btn.Name = "del_btn";
             this.del_btn.Size = new System.Drawing.Size(153, 47);
             this.del_btn.TabIndex = 1;
@@ -202,9 +202,6 @@ namespace Gestionnaire_Pro
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.clientTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.clientTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.clientTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.clientTable.BackgroundColor = System.Drawing.Color.White;
             this.clientTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -233,10 +230,11 @@ namespace Gestionnaire_Pro
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.clientTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.clientTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.clientTable.EnableHeadersVisualStyles = false;
             this.clientTable.GridColor = System.Drawing.Color.White;
-            this.clientTable.Location = new System.Drawing.Point(0, 178);
+            this.clientTable.Location = new System.Drawing.Point(0, 172);
             this.clientTable.MultiSelect = false;
             this.clientTable.Name = "clientTable";
             this.clientTable.ReadOnly = true;
@@ -249,7 +247,7 @@ namespace Gestionnaire_Pro
             this.clientTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.clientTable.RowTemplate.Height = 40;
             this.clientTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientTable.Size = new System.Drawing.Size(955, 275);
+            this.clientTable.Size = new System.Drawing.Size(955, 445);
             this.clientTable.TabIndex = 2;
             this.clientTable.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.tableCl_CellStateChanged);
             this.clientTable.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.tableCl_RowPostPaint);
@@ -309,9 +307,6 @@ namespace Gestionnaire_Pro
             this.detailsTable.AllowUserToDeleteRows = false;
             this.detailsTable.AllowUserToOrderColumns = true;
             this.detailsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.detailsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.detailsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.detailsTable.BackgroundColor = System.Drawing.Color.White;
             this.detailsTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -333,10 +328,11 @@ namespace Gestionnaire_Pro
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.detailsTable.DefaultCellStyle = dataGridViewCellStyle5;
+            this.detailsTable.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.detailsTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.detailsTable.EnableHeadersVisualStyles = false;
             this.detailsTable.GridColor = System.Drawing.Color.White;
-            this.detailsTable.Location = new System.Drawing.Point(0, 459);
+            this.detailsTable.Location = new System.Drawing.Point(0, 264);
             this.detailsTable.MultiSelect = false;
             this.detailsTable.Name = "detailsTable";
             this.detailsTable.ReadOnly = true;
@@ -344,7 +340,7 @@ namespace Gestionnaire_Pro
             this.detailsTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.detailsTable.RowTemplate.Height = 40;
             this.detailsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.detailsTable.Size = new System.Drawing.Size(955, 158);
+            this.detailsTable.Size = new System.Drawing.Size(955, 353);
             this.detailsTable.TabIndex = 3;
             // 
             // descCol

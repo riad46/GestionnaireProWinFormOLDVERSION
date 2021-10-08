@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gestionnaire_Pro.DataBase.Models
 {
-    class Facture
+    public class Facture
     {
         public int Id { get; set; }
         public DateTime dateFacture { get; set; }

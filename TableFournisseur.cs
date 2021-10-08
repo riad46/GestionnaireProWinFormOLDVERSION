@@ -63,12 +63,16 @@ namespace Gestionnaire_Pro
         }
         private void modify_btn_Click(object sender, EventArgs e)
         {
+            if (fournisseurTable.RowCount <= 0)
+                return;
             GlobalClass.typeOp = 1;
             ActionToDo();
            
         }
         private void del_btn_Click(object sender, EventArgs e)
         {
+            if (fournisseurTable.RowCount <= 0)
+                return;
             GlobalClass.typeOp = 2;
             ActionToDo();
           
@@ -76,8 +80,10 @@ namespace Gestionnaire_Pro
         private void ActionToDo()
         {
             int fournisseurId = default;
-           if (fournisseurTable.RowCount>0)
-             fournisseurId = (int)fournisseurTable.SelectedRows[0].Cells[0].Value;
+
+            if (fournisseurTable.RowCount >0)
+                
+            fournisseurId = (int)fournisseurTable.SelectedRows[0].Cells[0].Value;
 
             switch (GlobalClass.typeOp)
             {
@@ -141,6 +147,8 @@ namespace Gestionnaire_Pro
 
             SearchForFournisseur(nom, numTlf, credit);
         }
+
+       
     }
 
 

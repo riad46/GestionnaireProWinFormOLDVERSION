@@ -41,6 +41,7 @@
             this.nbrPieceLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.print_checkBox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.remiseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.print_checkBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -161,6 +161,17 @@
             this.panel2.Size = new System.Drawing.Size(293, 578);
             this.panel2.TabIndex = 1;
             // 
+            // print_checkBox
+            // 
+            this.print_checkBox.AutoSize = true;
+            this.print_checkBox.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.print_checkBox.Location = new System.Drawing.Point(70, 150);
+            this.print_checkBox.Name = "print_checkBox";
+            this.print_checkBox.Size = new System.Drawing.Size(172, 23);
+            this.print_checkBox.TabIndex = 9;
+            this.print_checkBox.Text = "Imprimer une Facture";
+            this.print_checkBox.UseVisualStyleBackColor = true;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -219,6 +230,7 @@
             this.remise_txt.Name = "remise_txt";
             this.remise_txt.Size = new System.Drawing.Size(186, 39);
             this.remise_txt.TabIndex = 4;
+            this.remise_txt.TextChanged += new System.EventHandler(this.remise_txt_TextChanged);
             this.remise_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.remise_txt_KeyPress);
             // 
             // codeBarre_txt
@@ -393,17 +405,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // print_checkBox
-            // 
-            this.print_checkBox.AutoSize = true;
-            this.print_checkBox.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.print_checkBox.Location = new System.Drawing.Point(70, 150);
-            this.print_checkBox.Name = "print_checkBox";
-            this.print_checkBox.Size = new System.Drawing.Size(172, 23);
-            this.print_checkBox.TabIndex = 9;
-            this.print_checkBox.Text = "Imprimer une Facture";
-            this.print_checkBox.UseVisualStyleBackColor = true;
             // 
             // vente
             // 

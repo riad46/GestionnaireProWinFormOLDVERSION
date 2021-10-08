@@ -29,10 +29,10 @@ namespace Gestionnaire_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.venteTable = new System.Windows.Forms.DataGridView();
             this.codeBarreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +41,7 @@ namespace Gestionnaire_Pro
             this.remiseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.print_checkBox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,12 +71,12 @@ namespace Gestionnaire_Pro
             this.venteTable.AllowUserToAddRows = false;
             this.venteTable.AllowUserToDeleteRows = false;
             this.venteTable.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.venteTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.venteTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.venteTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -83,13 +84,13 @@ namespace Gestionnaire_Pro
             this.venteTable.BackgroundColor = System.Drawing.SystemColors.Window;
             this.venteTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.venteTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.venteTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.venteTable.ColumnHeadersHeight = 60;
             this.venteTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeBarreCol,
@@ -105,21 +106,21 @@ namespace Gestionnaire_Pro
             this.venteTable.MultiSelect = false;
             this.venteTable.Name = "venteTable";
             this.venteTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.venteTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.venteTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.venteTable.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.venteTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.venteTable.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.venteTable.RowTemplate.Height = 40;
             this.venteTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.venteTable.Size = new System.Drawing.Size(690, 482);
@@ -167,6 +168,7 @@ namespace Gestionnaire_Pro
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Linen;
+            this.panel2.Controls.Add(this.print_checkBox);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -180,6 +182,18 @@ namespace Gestionnaire_Pro
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(304, 690);
             this.panel2.TabIndex = 4;
+            // 
+            // print_checkBox
+            // 
+            this.print_checkBox.AutoSize = true;
+            this.print_checkBox.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.print_checkBox.ForeColor = System.Drawing.Color.White;
+            this.print_checkBox.Location = new System.Drawing.Point(70, 147);
+            this.print_checkBox.Name = "print_checkBox";
+            this.print_checkBox.Size = new System.Drawing.Size(172, 23);
+            this.print_checkBox.TabIndex = 10;
+            this.print_checkBox.Text = "Imprimer une Facture";
+            this.print_checkBox.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -213,6 +227,7 @@ namespace Gestionnaire_Pro
             this.listArticle_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.listArticle_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.listArticle_btn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.listArticle_btn.ForeColor = System.Drawing.Color.White;
             this.listArticle_btn.Location = new System.Drawing.Point(70, 175);
             this.listArticle_btn.Name = "listArticle_btn";
             this.listArticle_btn.Size = new System.Drawing.Size(164, 27);
@@ -271,6 +286,7 @@ namespace Gestionnaire_Pro
             this.del_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.del_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.del_btn.ForeColor = System.Drawing.Color.White;
             this.del_btn.Location = new System.Drawing.Point(21, 143);
             this.del_btn.Name = "del_btn";
             this.del_btn.Size = new System.Drawing.Size(267, 48);
@@ -285,6 +301,7 @@ namespace Gestionnaire_Pro
             this.abort_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.abort_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.abort_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.abort_btn.ForeColor = System.Drawing.Color.White;
             this.abort_btn.Location = new System.Drawing.Point(21, 77);
             this.abort_btn.Name = "abort_btn";
             this.abort_btn.Size = new System.Drawing.Size(267, 48);
@@ -299,6 +316,7 @@ namespace Gestionnaire_Pro
             this.sub_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.sub_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sub_btn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sub_btn.ForeColor = System.Drawing.Color.White;
             this.sub_btn.Location = new System.Drawing.Point(21, 11);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(267, 48);
@@ -311,7 +329,7 @@ namespace Gestionnaire_Pro
             // 
             this.totalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.totalLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.totalLabel.Font = new System.Drawing.Font("SimSun-ExtB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalLabel.Font = new System.Drawing.Font("SimSun-ExtB", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.totalLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.totalLabel.Location = new System.Drawing.Point(279, 120);
             this.totalLabel.Name = "totalLabel";
@@ -323,7 +341,7 @@ namespace Gestionnaire_Pro
             // dateLabel
             // 
             this.dateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateLabel.Font = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateLabel.Font = new System.Drawing.Font("SimSun-ExtB", 15.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dateLabel.Location = new System.Drawing.Point(386, 10);
             this.dateLabel.Name = "dateLabel";
@@ -384,7 +402,7 @@ namespace Gestionnaire_Pro
             // 
             // codeBarreLabel
             // 
-            this.codeBarreLabel.Font = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.codeBarreLabel.Font = new System.Drawing.Font("SimSun-ExtB", 15.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.codeBarreLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.codeBarreLabel.Location = new System.Drawing.Point(3, 9);
             this.codeBarreLabel.Name = "codeBarreLabel";
@@ -397,12 +415,14 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1004, 690);
             this.Controls.Add(this.venteTable);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ajoutFacture";
             this.Text = "Nouvelle Facture";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ajoutFacture_FormClosing);
             this.Load += new System.EventHandler(this.ajoutFacture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.venteTable)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -447,5 +467,6 @@ namespace Gestionnaire_Pro
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label codeBarreLabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox print_checkBox;
     }
 }

@@ -381,8 +381,8 @@ namespace Gestionnaire_Pro
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "historiqueVente";
             this.Text = "Historique de Vente";
+            this.Load += new System.EventHandler(this.historiqueVente_Load);
             
-            this.Shown += new System.EventHandler(this.historiqueVente_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.historiqueTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

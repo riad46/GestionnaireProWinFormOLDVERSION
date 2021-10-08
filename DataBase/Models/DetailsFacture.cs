@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gestionnaire_Pro.DataBase.Models
 {
-    class DetailsFacture
+    public class DetailsFacture
     {
         public int Id { get; set; }
         public string codeBarre { get; set; }

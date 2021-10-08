@@ -1110,14 +1110,21 @@ create table if not EXISTS detailsFactures(
             OpenChildForm(new ajouteArticle());
             RemoveBtns(_btns);
         }
-
         private void tableArticle_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanelAndLogo(1);
-            OpenChildForm(new tableArticle());
-            RemoveBtns(_btns);
+            if(GlobalClass.isAdmin == true)
+            {
+                HideShowGreetingPanelAndLogo(1);
+                OpenChildForm(new tableArticle());
+                RemoveBtns(_btns);
+            }
+            else
+            {
+                MessageBox.Show("Vous n'etes pas Un Admin");
+            }
+           
+           
         }
-
         private void listArticle_btn_Click(object sender, EventArgs e)
         {
             HideShowGreetingPanelAndLogo(1);
@@ -1137,6 +1144,7 @@ create table if not EXISTS detailsFactures(
 
         private void caisse_btn_Click(object sender, EventArgs e)
         {
+         
             HideShowGreetingPanelAndLogo(1);
             OpenChildForm(new caisse());
             RemoveBtns(_btns);
@@ -1184,9 +1192,17 @@ create table if not EXISTS detailsFactures(
         }
         private void tableClient_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanelAndLogo(1);
-            OpenChildForm(new tableClient());
-            RemoveBtns(_btns);
+            if (GlobalClass.isAdmin == true)
+            {
+                HideShowGreetingPanelAndLogo(1);
+                OpenChildForm(new tableClient());
+                RemoveBtns(_btns);
+            }
+            else
+            {
+                MessageBox.Show("Vous n'etes pas Un Admin");
+            }
+            
         }
 
         #endregion
@@ -1200,9 +1216,17 @@ create table if not EXISTS detailsFactures(
         }
         private void tableFournisseur_btn_Click(object sender, EventArgs e)
         {
-            HideShowGreetingPanelAndLogo(1);
-            OpenChildForm(new TableFournisseur());
-            RemoveBtns(_btns);
+            if (GlobalClass.isAdmin == true)
+            {
+                HideShowGreetingPanelAndLogo(1);
+                OpenChildForm(new TableFournisseur());
+                RemoveBtns(_btns);
+            }
+            else
+            {
+                MessageBox.Show("Vous n'etes pas Un Admin");
+            }
+          
         }
 
         private void listFournisseur_btn_Click(object sender, EventArgs e)

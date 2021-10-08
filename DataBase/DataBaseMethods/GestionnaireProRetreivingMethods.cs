@@ -436,10 +436,10 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         public static async Task<List<Vente>> GetHistoriqueDeVenteByFilter(int Id,int clientId, float total,DateTime dateMin,DateTime dateMax)
         {
             var param = new { Id=Id,clientId=clientId,total=total,dateMin=dateMin,dateMax=dateMax };
-            var sql = "Select DISTINCT v.id,v.dateVente,v.montantTotale,v.remise,v.netPayé,v.ajouterPar,v.dateModification,v.modifierPar,v.nouveauMontantTotal,v.nouvelleRemise,c.* FROM ventes v LEFT JOIN clients c ";
-            if(Id!=0 || clientId>0 ||total >=0)
+            var sql = "Select DISTINCT v.id,v.dateVente,v.montantTotale,v.remise,v.netPayé,v.ajouterPar,v.dateModification,v.modifierPar,v.nouveauMontantTotal,v.nouvelleRemise,c.* FROM ventes v LEFT JOIN clients c on v.clientId = c.id";
+            if(Id!=0 || clientId>0 ||total !=0)
             {
-                sql += " WHERE ";
+                sql += " WHERE";
                 if (Id >-1)
                 {
                     sql += " v.id=@Id AND ";
@@ -458,9 +458,9 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
             {
                 var res = await connection.QueryAsync<Vente, Client, Vente>(sql, (vente, client) =>
                 {
-                    if (vente.clientId != null)
-                        vente.Client = client;
+                    vente.Client = client;
                     return vente;
+
                 }, param);
                 return res.ToList();
             }
@@ -471,7 +471,7 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
        
         {
             var param = new { Id = Id, clientId = clientId, total = total, dateMin = dateMin, dateMax = dateMax };
-            var sql = "Select f.id,f.dateFacture,f.montantTotale,f.remise,f.netPayé,f.ajouterPar,c.* FROM factures f LEFT JOIN clients c ";
+            var sql = "Select f.id,f.dateFacture,f.montantTotale,f.remise,f.netPayé,f.ajouterPar,c.* FROM factures f LEFT JOIN clients c on f.clientId=c.id ";
             if (Id != 0 || clientId > 0 || total >= 0)
             {
                 sql += " WHERE ";
@@ -498,10 +498,10 @@ namespace Gestionnaire_Pro.DataBase.DataBaseMethods
         }
          public static async Task<List<DetailsFacture>> GetDetailsFactureByFactureId(int id)
         {
-            var sql = "select  id,codeBarre,nom,Type,Quantité,prixAchat,prixVente From detailVentes where venteId IN @id";
+            var sql = "select  id,codeBarre,nom,Type,Quantité,prixAchat,prixVente,remise From detailsFactures where factureId= @id";
             using (IDbConnection connection = new SqliteConnection(GestionnaireProConnection.GetConnectionString("SQLiteConnection")))
             {
-                var res = await connection.QueryAsync<DetailsFacture>(sql,id);
+                var res = await connection.QueryAsync<DetailsFacture>(sql, new { id=id });
                 return res.ToList();
             }
         }

@@ -12,7 +12,7 @@ namespace Gestionnaire_Pro
 {
     public partial class ajoutFacture : Form
     {
-        private int _venteId = 0;
+        private int _factureId = 0;
         private List<Article> _mesArticles = new List<Article>();
         private List<Article> _mesArticleAvendre = new List<Article>();
         private readonly int _codeBarreIndex = 0;
@@ -34,6 +34,34 @@ namespace Gestionnaire_Pro
             InitializeComponent();
             LoadTheme();
         }
+        public ajoutFacture(int factureId)
+        {
+            InitializeComponent();
+            LoadTheme();
+
+
+            _factureId = factureId;
+            var details = GestionnaireProRetreivingMethods.GetDetailsFactureByFactureId(factureId).Result;
+            foreach (var detail in details)
+            {
+                _mesArticleAvendre.Add(new Article
+                {
+                    Id = detail.Id,
+                    codeBarre = detail.codeBarre,
+                    nom = detail.nom,
+                    type = detail.Type,
+                    quantité = detail.Quantité,
+                    prixAchat = detail.prixAchat,
+                    prixVente = detail.prixVente
+
+                });
+            }
+            var client_Id = GestionnaireProRetreivingMethods.GetFacturesByFilter(factureId, -1, -1, default, DateTime.Now).Result[0].clientId;
+            if (client_Id != null)
+                client_combo.Text = GestionnaireProRetreivingMethods.GetClientNameById((int)client_Id).Result;
+            SetUpTable();
+            
+        }
         private void LoadTheme()
         {
 
@@ -52,6 +80,10 @@ namespace Gestionnaire_Pro
         {
             if (GlobalClass.typeOp == 1)
             {
+                listArticle_btn.Enabled = false;
+                abort_btn.Enabled = false;
+                del_btn.Enabled = false;
+                GlobalClass.typeOp = 0;
                 SetUpTable();
             }
             AddClientsToCombo();
@@ -288,6 +320,7 @@ namespace Gestionnaire_Pro
         private void AddDetailsFacture()
         {
             var factureId = GestionnaireProRetreivingMethods.RetreiveLastInsertedRowId("factures").Result;
+            _factureId = factureId;
             var details = new List<DetailsFacture>();
             int i = 0;
             foreach (var item in _mesArticleAvendre)
@@ -299,7 +332,7 @@ namespace Gestionnaire_Pro
                     nom = item.nom,
                     Type = item.type,
                     prixAchat = item.prixAchat,
-                    prixVente = item.prixVente * item.quantité,
+                    prixVente = item.prixVente,
                     Quantité = item.quantité,
                     remise = Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
                     factureId = factureId
@@ -309,22 +342,54 @@ namespace Gestionnaire_Pro
             }
             GestionnaireProInsertingMethods.AddDetailsFacture(details);
         }
+
+        private void printFacture()
+        {
+            if (!print_checkBox.Checked)
+            {
+                return;
+            }
+
+            //DateTime dateFacture=DateTime.Now; BECAUSE IN ALL CASES I USE THE DATE WHEN THE FACTURE WAS ACTUALLY PRINTED FOR SECURITY MATTERS
+            Client client = null;
+
+            if (!string.IsNullOrEmpty(client_combo.Text.Trim()))
+                client = GestionnaireProRetreivingMethods.GetClientsByFilter(null, client_combo.Text.Trim(), null).Result[0];
+
+            var factureId = _factureId;
+
+
+            using (var factureForm = new FactureToPrint(DateTime.Now, _mesArticleAvendre, client, factureId, total, totalRemise, total - totalRemise))
+            {
+                factureForm.ShowDialog();
+            }
+        }
         private void sub_btn_Click(object sender, EventArgs e)
         {
             if (_mesArticleAvendre.Count == 0)
             {
                 return;
             }
-            if (GlobalClass.typeOp == 1)
-            {
-                //Only Print the Facture
-                return;
-            }
+           
             
             AddFacture();
             AddDetailsFacture();
+            printFacture();
             _mesArticleAvendre = new List<Article>();
+           
             SetUpTable();
+            client_combo.Text = "";
+            
+
+        }
+
+        
+
+        private void ajoutFacture_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            listArticle_btn.Enabled = true;
+            abort_btn.Enabled = true;
+            del_btn.Enabled = true;
         }
     }
 }

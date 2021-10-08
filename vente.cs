@@ -17,6 +17,12 @@ namespace Gestionnaire_Pro
         private int _venteId=0;
         //use in Printing
         private Vente lastAddedVente= new Vente();
+        //used to define the type of op 
+        private readonly short typeOp = GlobalClass.typeOp;
+
+
+        //use to remove deleted articles
+        List<int> deletedArticlesIds = new List<int>();
 
 
         private List<Article> _mesArticles = new List<Article>();
@@ -78,6 +84,10 @@ namespace Gestionnaire_Pro
 
             if (GlobalClass.typeOp == 1)
             {
+                listArticle_btn.Enabled = false;
+                abort_btn.Enabled = false;
+                del_btn.Enabled = false;
+              
                 SetUpTable();
             }
             AddClientsToCombo();
@@ -89,6 +99,7 @@ namespace Gestionnaire_Pro
             Properties.Settings.Default.venteLocation = this.Location;
             Properties.Settings.Default.Save();
             ResetArticlesStock();
+            GlobalClass.typeOp = 0;
         }
         private void LoadTheme()
         {
@@ -122,8 +133,8 @@ namespace Gestionnaire_Pro
         }
         private void AddVente()
         {
-            if (remise_txt.Text == "") remise_txt.Text = "0";
-            totalRemise += Convert.ToSingle(remise_txt.Text);
+           
+           
             var monVente = new Vente()
             {
                 ajouterPar = GlobalClass.username,
@@ -143,6 +154,9 @@ namespace Gestionnaire_Pro
         }
         private void AddDetailVente()
         {
+            float remiseParArticle=0;
+            if (remise_txt.Text.Length>0)
+             remiseParArticle =Convert.ToSingle(remise_txt.Text)/_mesArticleAvendre.Count;
             var venteId = GestionnaireProRetreivingMethods.RetreiveLastInsertedRowId("ventes").Result;
             //used in printing
             lastAddedVente.Id = venteId;
@@ -161,7 +175,7 @@ namespace Gestionnaire_Pro
                     prixVente = item.prixVente ,
                     Quantité = item.quantité,
                     
-                    remise = Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value),
+                    remise = Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value)+remiseParArticle,
                     VenteId = venteId
 
                 });
@@ -185,6 +199,10 @@ namespace Gestionnaire_Pro
             {
                 vente.clientId = GestionnaireProRetreivingMethods.GetClientIdByName(client_combo.Text).Result;
             }
+            else
+            {
+                vente.clientId = null;
+            }
           
             lastAddedVente = vente;
             lastAddedVente.Id = _venteId;
@@ -195,7 +213,11 @@ namespace Gestionnaire_Pro
         private void ModifyDetailVente()
         {
             List<DetailVente> details = new List<DetailVente>();
-
+            //use it to check for new Added articles to vente after the modification
+            var alreadyExistingDetails = GestionnaireProRetreivingMethods.GetAllDetailVentes(new List<int> { _venteId }).Result;
+            //use to add new articles
+            var nonExistingDetails = new List<DetailVente>();
+           
             int i = 0;
             foreach (var item in _mesArticleAvendre)
             {
@@ -207,8 +229,20 @@ namespace Gestionnaire_Pro
 
                 });
                 i++;
+                
+                var notExistedDetailVenteIndex = alreadyExistingDetails.FindIndex(a => a.Id == item.Id) ;
+                if (notExistedDetailVenteIndex != -1)
+                    nonExistingDetails.Add( alreadyExistingDetails[notExistedDetailVenteIndex]);
             }
             GestionnaireProModifyDeleteMethods.ModifyDetailVente(details);
+            foreach (var nouveauDetail in nonExistingDetails)
+            {
+                GestionnaireProModifyDeleteMethods.AddNewDetailVenteToExistingVente(nouveauDetail);
+            }
+            foreach (var item in deletedArticlesIds)
+            {
+                GestionnaireProModifyDeleteMethods.DeleteDetailVente(item);
+            }
         }
         private void SetUpTable()
         {
@@ -251,22 +285,26 @@ namespace Gestionnaire_Pro
             for (int i = 0; i < venteTable.Rows.Count; i++)
             {
                 venteTable.Rows[i].Cells[_totalIndex].Value = (Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_prixVenteIndex].Value)) - (Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value));
-                total += (float)venteTable.Rows[i].Cells[_totalIndex].Value;
+                total += (Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_prixVenteIndex].Value));
 
-
-                totalRemise += Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value);
-
+                totalRemise += (Convert.ToSingle(venteTable.Rows[i].Cells[_remiseIndex].Value) * Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value));
                 nbrPiece += Convert.ToSingle(venteTable.Rows[i].Cells[_qntIndex].Value);
             }
-
+            if (remise_txt.Text.Length>0)
+            {
+                totalRemise += Convert.ToSingle(remise_txt.Text);
+            }
+            
+            
             PutValuesInTitles(total, nbrArticle, nbrPiece);
 
         }
         private void PutValuesInTitles(float total, int nbrArticle, float nbrPiece)
         {
-            totalLabel.Text = total + " DA";
-            nbrArticleLabel.Text = "Articles :" + nbrArticle;
+            totalLabel.Text = total-totalRemise + " DA";
+            nbrArticleLabel.Text = "Articles :" + _mesArticleAvendre.Count.ToString(); 
             nbrPieceLabel.Text = "Pieces :" + nbrPiece;
+            
         }
 
         private Article SearchForArticle(string codeBarre)
@@ -395,15 +433,21 @@ namespace Gestionnaire_Pro
                 return;
             }
 
-                //DateTime dateFacture=DateTime.Now; BECAUSE IN ALL CASES I USE THE DATE WHEN THE FACTURE WAS ACTUALLY PRINTED FOR SECURITY MATTERS
+           
+                //DateTime dateFacture=DateTime.Now; // BECAUSE IN ALL CASES I USE THE DATE WHEN THE FACTURE WAS ACTUALLY PRINTED FOR SECURITY MATTERS
                 Client client=null;
 
             if(!string.IsNullOrEmpty(client_combo.Text.Trim()))
              client =GestionnaireProRetreivingMethods.GetClientsByFilter(null,client_combo.Text.Trim(),null).Result[0];
-            
+            if (GlobalClass.typeOp == 1)
+            {
+                using (var factureForm = new FactureToPrint(DateTime.Now, _mesArticleAvendre, client, _venteId, total, totalRemise, total - totalRemise))
+                {
+                    factureForm.ShowDialog();
+                }
+                return;
+            }
             var factureId =lastAddedVente.Id;
-           
-
             using (var factureForm = new FactureToPrint(DateTime.Now,_mesArticleAvendre,client,factureId,total,totalRemise,total-totalRemise))
             {
                 factureForm.ShowDialog();
@@ -414,12 +458,13 @@ namespace Gestionnaire_Pro
             var descriptionAction = "";
             if (GlobalClass.typeOp == 1)
             {
-                ModifyVente();
-                ModifyDetailVente();
-                descriptionAction = $" Modifier le Vente du Référence {_venteId }";
+              //  ModifyVente();
+             //   ModifyDetailVente();
+             //   descriptionAction = $" Modifier le Vente du Référence {_venteId }";
                 //reset Operation type
-                GlobalClass.typeOp = 0;
-                return;
+               
+              //  Close();
+              //  return;
             }
             else
             {
@@ -432,13 +477,19 @@ namespace Gestionnaire_Pro
                 AddVente();
                 AddDetailVente();
             }
-
+           
+            listArticle_btn.Enabled = true;
+            abort_btn.Enabled = true;
+            del_btn.Enabled = true;
 
             GlobalClass.AddAction(GlobalClass.username, descriptionAction);
            
             
             printFacture();    
             ResetTable();
+            remise_txt.Text = "";
+
+          
 
 
         }
@@ -466,6 +517,7 @@ namespace Gestionnaire_Pro
                     _mesArticles = GestionnaireProRetreivingMethods.GetAllArticles().Result;
                     SetUpTable();
                 }
+                GlobalClass.typeOp = typeOp;
             }
         }
 
@@ -496,28 +548,25 @@ namespace Gestionnaire_Pro
 
             ResetSingleArticleStock(_mesArticles.Find(a => a.codeBarre == GetCurrentSelectedTableRow_CodeBarre()).Id, Convert.ToSingle(venteTable[_qntIndex, myRow].Value));
             var myArticleIndex = _mesArticleAvendre.FindIndex(a => a.codeBarre == GetCurrentSelectedTableRow_CodeBarre());
+            deletedArticlesIds.Add(_mesArticleAvendre[myArticleIndex].Id);
             _mesArticleAvendre.RemoveAt(myArticleIndex);
             SetUpTable();
         }
-
         private void del_btn_Click(object sender, EventArgs e)
         {
             DeleteCurrentSelectedRow();
         }
 
+
         private void remise_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
             GlobalClass.CheckForInputToBeNumbers(e, remise_txt);
-        }
-
-       
+        }  
         private void QNT_KeyPress(object sender, KeyPressEventArgs e,TextBox t1)
         {
             GlobalClass.CheckForInputToBeNumbers(e, t1);
             
         }
-      
-
         private void venteTable_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
 
@@ -534,10 +583,14 @@ namespace Gestionnaire_Pro
                     }
                 }
         }
-      
-            
+
+        private void remise_txt_TextChanged(object sender, EventArgs e)
+        {
+            CalculateAll();
            
+            
         }
+    }
 }
 
 

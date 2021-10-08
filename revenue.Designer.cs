@@ -78,43 +78,44 @@ namespace Gestionnaire_Pro
             this.recherche.Controls.Add(this.nom_txt);
             this.recherche.Controls.Add(this.type_txt);
             this.recherche.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.recherche.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.recherche.Location = new System.Drawing.Point(724, 3);
+            this.recherche.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.recherche.Location = new System.Drawing.Point(808, 3);
             this.recherche.Name = "recherche";
-            this.recherche.Size = new System.Drawing.Size(530, 208);
+            this.recherche.Size = new System.Drawing.Size(446, 167);
             this.recherche.TabIndex = 0;
             this.recherche.TabStop = false;
             this.recherche.Text = "Filtre";
             // 
             // dateMax_box
             // 
-            this.dateMax_box.CalendarFont = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateMax_box.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateMax_box.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.dateMax_box.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateMax_box.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateMax_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateMax_box.Location = new System.Drawing.Point(316, 31);
+            this.dateMax_box.Location = new System.Drawing.Point(50, 75);
             this.dateMax_box.Name = "dateMax_box";
-            this.dateMax_box.Size = new System.Drawing.Size(205, 32);
+            this.dateMax_box.Size = new System.Drawing.Size(189, 29);
             this.dateMax_box.TabIndex = 15;
             this.dateMax_box.Value = new System.DateTime(2021, 8, 19, 13, 51, 34, 0);
             // 
             // dateMin_box
             // 
+            this.dateMin_box.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateMin_box.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.dateMin_box.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateMin_box.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateMin_box.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateMin_box.Location = new System.Drawing.Point(83, 31);
+            this.dateMin_box.Location = new System.Drawing.Point(50, 30);
             this.dateMin_box.Name = "dateMin_box";
-            this.dateMin_box.Size = new System.Drawing.Size(207, 32);
+            this.dateMin_box.Size = new System.Drawing.Size(189, 29);
             this.dateMin_box.TabIndex = 10;
             this.dateMin_box.Value = new System.DateTime(2021, 8, 19, 13, 51, 34, 0);
             // 
             // sub_btn
             // 
             this.sub_btn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sub_btn.Location = new System.Drawing.Point(197, 165);
+            this.sub_btn.Location = new System.Drawing.Point(317, 114);
             this.sub_btn.Name = "sub_btn";
-            this.sub_btn.Size = new System.Drawing.Size(117, 37);
+            this.sub_btn.Size = new System.Drawing.Size(126, 37);
             this.sub_btn.TabIndex = 14;
             this.sub_btn.Text = "Valider";
             this.sub_btn.UseVisualStyleBackColor = true;
@@ -124,7 +125,7 @@ namespace Gestionnaire_Pro
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(293, 36);
+            this.label8.Location = new System.Drawing.Point(23, 81);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 21);
             this.label8.TabIndex = 13;
@@ -134,17 +135,17 @@ namespace Gestionnaire_Pro
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(6, 36);
+            this.label7.Location = new System.Drawing.Point(10, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 21);
+            this.label7.Size = new System.Drawing.Size(34, 21);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Date De";
+            this.label7.Text = " De";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(255, 116);
+            this.label6.Location = new System.Drawing.Point(256, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 21);
             this.label6.TabIndex = 11;
@@ -154,7 +155,7 @@ namespace Gestionnaire_Pro
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 116);
+            this.label5.Location = new System.Drawing.Point(256, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 21);
             this.label5.TabIndex = 10;
@@ -163,16 +164,15 @@ namespace Gestionnaire_Pro
             // nom_txt
             // 
             this.nom_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nom_txt.Location = new System.Drawing.Point(316, 110);
+            this.nom_txt.Location = new System.Drawing.Point(317, 30);
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(123, 32);
             this.nom_txt.TabIndex = 1;
-            
             // 
             // type_txt
             // 
             this.type_txt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.type_txt.Location = new System.Drawing.Point(83, 110);
+            this.type_txt.Location = new System.Drawing.Point(317, 72);
             this.type_txt.Name = "type_txt";
             this.type_txt.Size = new System.Drawing.Size(123, 32);
             this.type_txt.TabIndex = 0;
@@ -182,7 +182,7 @@ namespace Gestionnaire_Pro
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(278, 34);
+            this.label1.Location = new System.Drawing.Point(226, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 22);
             this.label1.TabIndex = 1;
@@ -193,7 +193,7 @@ namespace Gestionnaire_Pro
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(278, 86);
+            this.label2.Location = new System.Drawing.Point(226, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 22);
             this.label2.TabIndex = 2;
@@ -204,7 +204,7 @@ namespace Gestionnaire_Pro
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(278, 148);
+            this.label3.Location = new System.Drawing.Point(226, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 22);
             this.label3.TabIndex = 3;
@@ -213,7 +213,7 @@ namespace Gestionnaire_Pro
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(278, 108);
+            this.label4.Location = new System.Drawing.Point(226, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(427, 15);
             this.label4.TabIndex = 4;
@@ -225,7 +225,7 @@ namespace Gestionnaire_Pro
             this.totalPaye_lbl.AutoSize = true;
             this.totalPaye_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.totalPaye_lbl.ForeColor = System.Drawing.Color.White;
-            this.totalPaye_lbl.Location = new System.Drawing.Point(563, 39);
+            this.totalPaye_lbl.Location = new System.Drawing.Point(511, 16);
             this.totalPaye_lbl.Name = "totalPaye_lbl";
             this.totalPaye_lbl.Size = new System.Drawing.Size(67, 26);
             this.totalPaye_lbl.TabIndex = 5;
@@ -236,7 +236,7 @@ namespace Gestionnaire_Pro
             this.revTotal_lbl.AutoSize = true;
             this.revTotal_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.revTotal_lbl.ForeColor = System.Drawing.Color.White;
-            this.revTotal_lbl.Location = new System.Drawing.Point(563, 91);
+            this.revTotal_lbl.Location = new System.Drawing.Point(511, 68);
             this.revTotal_lbl.Name = "revTotal_lbl";
             this.revTotal_lbl.Size = new System.Drawing.Size(100, 26);
             this.revTotal_lbl.TabIndex = 6;
@@ -247,7 +247,7 @@ namespace Gestionnaire_Pro
             this.revNet_lbl.AutoSize = true;
             this.revNet_lbl.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.revNet_lbl.ForeColor = System.Drawing.Color.White;
-            this.revNet_lbl.Location = new System.Drawing.Point(563, 148);
+            this.revNet_lbl.Location = new System.Drawing.Point(511, 125);
             this.revNet_lbl.Name = "revNet_lbl";
             this.revNet_lbl.Size = new System.Drawing.Size(67, 26);
             this.revNet_lbl.TabIndex = 7;
@@ -261,7 +261,7 @@ namespace Gestionnaire_Pro
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(9, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(263, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(211, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -280,7 +280,7 @@ namespace Gestionnaire_Pro
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1257, 226);
+            this.panel1.Size = new System.Drawing.Size(1257, 194);
             this.panel1.TabIndex = 10;
             // 
             // revenueTable
@@ -318,7 +318,7 @@ namespace Gestionnaire_Pro
             this.total_Col});
             this.revenueTable.EnableHeadersVisualStyles = false;
             this.revenueTable.GridColor = System.Drawing.Color.White;
-            this.revenueTable.Location = new System.Drawing.Point(0, 226);
+            this.revenueTable.Location = new System.Drawing.Point(0, 200);
             this.revenueTable.MultiSelect = false;
             this.revenueTable.Name = "revenueTable";
             this.revenueTable.ReadOnly = true;
@@ -331,7 +331,7 @@ namespace Gestionnaire_Pro
             this.revenueTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.revenueTable.RowTemplate.Height = 35;
             this.revenueTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.revenueTable.Size = new System.Drawing.Size(1257, 449);
+            this.revenueTable.Size = new System.Drawing.Size(1257, 475);
             this.revenueTable.TabIndex = 11;
             // 
             // codeBarre_Col
@@ -373,6 +373,7 @@ namespace Gestionnaire_Pro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1257, 675);
             this.Controls.Add(this.revenueTable);
             this.Controls.Add(this.panel1);
