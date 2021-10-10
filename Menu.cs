@@ -72,6 +72,16 @@ namespace Gestionnaire_Pro
         }
         private void Menu_Load(object sender, EventArgs e)
         {
+            //check for the program activations
+            if ( !(Properties.Settings.Default.isActivated == true && ProgramActivation.GetThisActivationCode() == Properties.Settings.Default.activationCode))
+            {
+
+                Properties.Settings.Default.isActivated = false;
+                Properties.Settings.Default.activationCode = "";
+                Properties.Settings.Default.Save();
+                Application.Run(new ActivationWindow());
+            }
+
             greetingPanel.Parent = mainPanel;
             DesactivatePanel();
             //check if DB the file is there
