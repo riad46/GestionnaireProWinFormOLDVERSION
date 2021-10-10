@@ -75,3 +75,7 @@ P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\Gestionnaire_Pro.historiqueA
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\Gestionnaire Pro.GeneratedMSBuildEditorConfig.editorconfig
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\Gestionnaire_Pro.ArticlesTotalStatistics.resources
 P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\Gestionnaire_Pro.ajoutFacture.resources
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\Gestionnaire_Pro.FactureToPrint.resources
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\Gestionnaire_Pro.Notification.resources
+P:\GitHub\GestionnairePro\obj\Release\netcoreapp3.1\Gestionnaire_Pro.TableFactures.resources

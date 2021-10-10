@@ -55,10 +55,16 @@
     <Compile Update="listeAchat.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="listeClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ListFournisseurs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Notification.cs">
@@ -67,28 +73,22 @@
     <Compile Update="paimentCreditClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="tableArticle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="listeClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="TableFactures.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="TableFournisseur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="param.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="revenue.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="tableArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="tableClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TableFactures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TableFournisseur.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="utilisateur.cs">

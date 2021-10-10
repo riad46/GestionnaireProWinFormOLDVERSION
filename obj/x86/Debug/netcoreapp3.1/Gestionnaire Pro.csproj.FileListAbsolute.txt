@@ -78,7 +78,6 @@ P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.ajoutFact
 P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.TableFactures.resources
 P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.Notification.resources
 P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire_Pro.FactureToPrint.resources
-P:\GitHub\GestionnairePro\obj\x86\Debug\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
 C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.exe
 C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.dll.config
 C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\bin\x86\Debug\netcoreapp3.1\Gestionnaire Pro.deps.json

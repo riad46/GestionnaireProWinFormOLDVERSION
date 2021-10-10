@@ -74,7 +74,6 @@ P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.csproj.
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.dll
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.pdb
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache
-P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire_Pro.ajoutFacture.resources
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire_Pro.TableFactures.resources
 P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire_Pro.FactureToPrint.resources
@@ -159,3 +158,4 @@ C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Rel
 C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.dll
 C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.pdb
 C:\Users\riadd\Desktop\low resolution GestionairePro\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.genruntimeconfig.cache
+P:\GitHub\GestionnairePro\obj\x86\Release\netcoreapp3.1\Gestionnaire Pro.csproj.AssemblyReference.cache

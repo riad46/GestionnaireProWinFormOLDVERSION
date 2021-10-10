@@ -98,6 +98,7 @@ namespace Gestionnaire_Pro
             this.buttonsPanel.Name = "buttonsPanel";
             this.buttonsPanel.Size = new System.Drawing.Size(251, 738);
             this.buttonsPanel.TabIndex = 0;
+            this.buttonsPanel.Click += new System.EventHandler(this.buttonsPanel_Click);
             // 
             // settings_btn
             // 
@@ -112,8 +113,7 @@ namespace Gestionnaire_Pro
             this.settings_btn.Name = "settings_btn";
             this.settings_btn.Size = new System.Drawing.Size(251, 50);
             this.settings_btn.TabIndex = 28;
-            this.settings_btn.Text = "Parametres Générales";
-            this.settings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.settings_btn.Text = "     Parametres ";
             this.settings_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.settings_btn.UseVisualStyleBackColor = true;
             this.settings_btn.Click += new System.EventHandler(this.settings_btn_Click);
@@ -335,7 +335,7 @@ namespace Gestionnaire_Pro
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlePanel.Location = new System.Drawing.Point(251, 0);
             this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(695, 72);
+            this.titlePanel.Size = new System.Drawing.Size(703, 72);
             this.titlePanel.TabIndex = 1;
             // 
             // exitChildForm_btn
@@ -359,7 +359,7 @@ namespace Gestionnaire_Pro
             this.titleLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.titleLbl.Font = new System.Drawing.Font("Times New Roman", 22.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.titleLbl.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.titleLbl.Location = new System.Drawing.Point(167, 19);
+            this.titleLbl.Location = new System.Drawing.Point(171, 19);
             this.titleLbl.Name = "titleLbl";
             this.titleLbl.Size = new System.Drawing.Size(377, 35);
             this.titleLbl.TabIndex = 0;
@@ -377,7 +377,7 @@ namespace Gestionnaire_Pro
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(251, 72);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(695, 666);
+            this.mainPanel.Size = new System.Drawing.Size(703, 666);
             this.mainPanel.TabIndex = 2;
             // 
             // loginPanel
@@ -390,7 +390,7 @@ namespace Gestionnaire_Pro
             this.loginPanel.Controls.Add(this.label3);
             this.loginPanel.Controls.Add(this.password_txt);
             this.loginPanel.Controls.Add(this.label2);
-            this.loginPanel.Location = new System.Drawing.Point(17, 132);
+            this.loginPanel.Location = new System.Drawing.Point(21, 132);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(649, 380);
             this.loginPanel.TabIndex = 5;
@@ -510,7 +510,7 @@ namespace Gestionnaire_Pro
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 613);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(695, 53);
+            this.panel1.Size = new System.Drawing.Size(703, 53);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -520,7 +520,7 @@ namespace Gestionnaire_Pro
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(695, 53);
+            this.label1.Size = new System.Drawing.Size(703, 53);
             this.label1.TabIndex = 1;
             this.label1.Text = "Créer par Derrar Mourad Riad ,N°Téléphone :  0799244307";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -529,7 +529,7 @@ namespace Gestionnaire_Pro
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Gestionnaire_Pro.Properties.Resources.rmdaTem;
-            this.pictureBox1.Location = new System.Drawing.Point(584, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(592, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(108, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -539,7 +539,7 @@ namespace Gestionnaire_Pro
             // logoPic
             // 
             this.logoPic.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.logoPic.Location = new System.Drawing.Point(137, 368);
+            this.logoPic.Location = new System.Drawing.Point(141, 368);
             this.logoPic.Name = "logoPic";
             this.logoPic.Size = new System.Drawing.Size(407, 244);
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -551,7 +551,7 @@ namespace Gestionnaire_Pro
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(946, 738);
+            this.ClientSize = new System.Drawing.Size(954, 738);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.titlePanel);
             this.Controls.Add(this.buttonsPanel);

@@ -45,6 +45,7 @@ namespace Gestionnaire_Pro
         {
             InitializeComponent();
             LoadTheme();
+            this.Visible = true;
         }
         public vente(int venteId)
         {
@@ -80,7 +81,7 @@ namespace Gestionnaire_Pro
         {
             if (Properties.Settings.Default.venteLocation != new Point(0, 0))
                 this.Location = Properties.Settings.Default.venteLocation;
-            this.Size = Properties.Settings.Default.venteSize;
+                this.Size = Properties.Settings.Default.venteSize;
 
             if (GlobalClass.typeOp == 1)
             {

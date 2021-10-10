@@ -25,8 +25,7 @@ namespace Gestionnaire_Pro
         public Menu()
         {
             InitializeComponent();
-            greetingPanel.Parent = mainPanel;
-            DesactivatePanel();
+           
         }
       
        
@@ -73,7 +72,8 @@ namespace Gestionnaire_Pro
         }
         private void Menu_Load(object sender, EventArgs e)
         {
-           
+            greetingPanel.Parent = mainPanel;
+            DesactivatePanel();
             //check if DB the file is there
             var myDb = new FileInfo("./GestionnairePro.db");
             if (!myDb.Exists)
@@ -371,6 +371,36 @@ create table if not EXISTS detailsFactures(
         #endregion
 
         #region Btn and Panel Effects
+         private void SetUpPanelForUsingWindow()
+        {
+            logoLbl.Text = "";
+            buttonsPanel.Width = 51;
+            foreach (var btns in buttonsPanel.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    var btn = (Button)btns;
+                    btn.Text = "";
+                }
+            }
+        }
+        private void ReturnButtonsPanelToDefault()
+        {
+            logoLbl.Text = "Gestionnaire Pro";
+            buttonsPanel.Width = 251;
+            vente_btn.Text = "Vente";
+            facture_btn.Text = "Facture";
+            achat_btn.Text = "Achat";
+            clients_btn.Text = "Client";
+            fournisseurs_btn.Text = "Fournisseur";
+            notification_btn.Text = "Notification";
+            settings_btn.Text = "      Paramètres";
+            actions_btn.Text = "Historique";
+            articles_btn.Text = "Produits";
+            exit_btn.Text = "Quitter";
+            rev_btn.Text = "Statistiques";
+            user_btn.Text = "Utilisateurs";
+        }
         private void Reset()
         {
             DisableButton();
@@ -441,7 +471,7 @@ create table if not EXISTS detailsFactures(
             {
                 activeForm.Close();
             }
-           
+            SetUpPanelForUsingWindow();
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -453,6 +483,7 @@ create table if not EXISTS detailsFactures(
             titleLbl.Text = childForm.Text;
             panel1.Visible = false;
             exitChildForm_btn.Visible = true;
+            
         }
         #endregion
 
@@ -1083,10 +1114,10 @@ create table if not EXISTS detailsFactures(
         }
         private void nvVente_btn_Click(object sender, EventArgs e)
         {
-            using (var venteForm = new vente())
-            {
-                venteForm.ShowDialog();
-            }
+           
+            HideShowGreetingPanelAndLogo(1);
+            OpenChildForm(new vente());
+            RemoveBtns(_btns);
         }
         private void historiqueVente_btn_Click(object sender, EventArgs e)
         {
@@ -1337,6 +1368,7 @@ create table if not EXISTS detailsFactures(
             ActivatePanel();
             Reset();
             HideShowGreetingPanelAndLogo(1);
+            ReturnButtonsPanelToDefault();
         }
 
 
@@ -1351,7 +1383,10 @@ create table if not EXISTS detailsFactures(
             OpenChildForm(new historiqueAction());
         }
 
-       
+        private void buttonsPanel_Click(object sender, EventArgs e)
+        {
+            ReturnButtonsPanelToDefault();
+        }
     }
 
  }

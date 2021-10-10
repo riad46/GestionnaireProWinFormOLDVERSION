@@ -22,17 +22,20 @@ namespace Gestionnaire_Pro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //check for activation code 
+           
+                
+
             if (Properties.Settings.Default.isActivated == true && ProgramActivation.GetThisActivationCode() == Properties.Settings.Default.activationCode)
             {
                 Application.Run(new Menu());
             }
             else
-            {
+            { 
+         
                 Properties.Settings.Default.isActivated = false;
                 Properties.Settings.Default.activationCode = "";
                 Properties.Settings.Default.Save();
                 Application.Run(new ActivationWindow());
-
             }
 
 
