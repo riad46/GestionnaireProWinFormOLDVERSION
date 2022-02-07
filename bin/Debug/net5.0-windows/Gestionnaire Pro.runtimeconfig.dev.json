@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\riadd\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\riadd\\.nuget\\packages"
-    ]
-  }
-}
